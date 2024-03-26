@@ -20,7 +20,8 @@ namespace Modern_Pharmacy_Managment_System
            // Application.Run(new SignUp());
          // Application.Run(new DashBoard());
            // Application.Run(new Login());
-           Application.Run(new StaffModule());
+          // Application.Run(new StaffModule());
+           Application.Run(new StaffForm());
         }
     }
 }
