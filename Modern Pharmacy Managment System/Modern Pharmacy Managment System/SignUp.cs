@@ -42,9 +42,18 @@ namespace Modern_Pharmacy_Managment_System
 
         }
 
-        private void signupLoginLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void signupLoginLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)//Go back to login
         {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
 
+        private void backBtn_Click(object sender, EventArgs e) // Go back to login
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }

@@ -18,10 +18,10 @@ namespace Modern_Pharmacy_Managment_System
             Application.SetCompatibleTextRenderingDefault(false);
            // Application.Run(new Form1());
            // Application.Run(new SignUp());
-         // Application.Run(new DashBoard());
+         Application.Run(new DashBoard());
            // Application.Run(new Login());
           // Application.Run(new StaffModule());
-           Application.Run(new StaffForm());
+        //  Application.Run(new StaffForm());
 
         }
     }

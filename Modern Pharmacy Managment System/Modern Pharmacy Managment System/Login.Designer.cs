@@ -38,6 +38,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.signupLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,15 +61,19 @@ namespace Modern_Pharmacy_Managment_System
             this.signupName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.signupName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.signupName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.signupName.DisabledState.Parent = this.signupName;
             this.signupName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.signupName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.signupName.FocusedState.Parent = this.signupName;
             this.signupName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.signupName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.signupName.HoverState.Parent = this.signupName;
             this.signupName.Location = new System.Drawing.Point(447, 131);
             this.signupName.Name = "signupName";
             this.signupName.PasswordChar = '\0';
             this.signupName.PlaceholderText = "Enter Your ID/Name";
             this.signupName.SelectedText = "";
+            this.signupName.ShadowDecoration.Parent = this.signupName;
             this.signupName.Size = new System.Drawing.Size(237, 44);
             this.signupName.TabIndex = 1;
             this.signupName.TextOffset = new System.Drawing.Point(25, 0);
@@ -81,15 +86,19 @@ namespace Modern_Pharmacy_Managment_System
             this.signupPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.signupPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.signupPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.signupPhone.DisabledState.Parent = this.signupPhone;
             this.signupPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.signupPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.signupPhone.FocusedState.Parent = this.signupPhone;
             this.signupPhone.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.signupPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.signupPhone.HoverState.Parent = this.signupPhone;
             this.signupPhone.Location = new System.Drawing.Point(447, 213);
             this.signupPhone.Name = "signupPhone";
             this.signupPhone.PasswordChar = '\0';
             this.signupPhone.PlaceholderText = "Password";
             this.signupPhone.SelectedText = "";
+            this.signupPhone.ShadowDecoration.Parent = this.signupPhone;
             this.signupPhone.Size = new System.Drawing.Size(237, 44);
             this.signupPhone.TabIndex = 2;
             this.signupPhone.TextOffset = new System.Drawing.Point(25, 0);
@@ -97,11 +106,15 @@ namespace Modern_Pharmacy_Managment_System
             // signupBtn
             // 
             this.signupBtn.BorderRadius = 12;
+            this.signupBtn.CheckedState.Parent = this.signupBtn;
+            this.signupBtn.CustomImages.Parent = this.signupBtn;
             this.signupBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(55)))), ((int)(((byte)(174)))));
             this.signupBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.signupBtn.ForeColor = System.Drawing.Color.White;
+            this.signupBtn.HoverState.Parent = this.signupBtn;
             this.signupBtn.Location = new System.Drawing.Point(447, 296);
             this.signupBtn.Name = "signupBtn";
+            this.signupBtn.ShadowDecoration.Parent = this.signupBtn;
             this.signupBtn.Size = new System.Drawing.Size(237, 45);
             this.signupBtn.TabIndex = 4;
             this.signupBtn.Text = "Login";
@@ -110,11 +123,11 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.signupAccountLabel.AutoSize = true;
             this.signupAccountLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupAccountLabel.Location = new System.Drawing.Point(514, 356);
+            this.signupAccountLabel.Location = new System.Drawing.Point(469, 363);
             this.signupAccountLabel.Name = "signupAccountLabel";
-            this.signupAccountLabel.Size = new System.Drawing.Size(89, 15);
+            this.signupAccountLabel.Size = new System.Drawing.Size(134, 15);
             this.signupAccountLabel.TabIndex = 7;
-            this.signupAccountLabel.Text = "Create Account";
+            this.signupAccountLabel.Text = "Don\'t Have an Account?";
             // 
             // label1
             // 
@@ -148,12 +161,24 @@ namespace Modern_Pharmacy_Managment_System
             this.label3.TabIndex = 10;
             this.label3.Text = "Login";
             // 
+            // signupLabel
+            // 
+            this.signupLabel.AutoSize = true;
+            this.signupLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signupLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.signupLabel.Location = new System.Drawing.Point(610, 363);
+            this.signupLabel.Name = "signupLabel";
+            this.signupLabel.Size = new System.Drawing.Size(52, 17);
+            this.signupLabel.TabIndex = 11;
+            this.signupLabel.Text = "Sign Up";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(733, 485);
+            this.Controls.Add(this.signupLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -163,6 +188,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Controls.Add(this.signupName);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -180,5 +206,6 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label signupLabel;
     }
 }

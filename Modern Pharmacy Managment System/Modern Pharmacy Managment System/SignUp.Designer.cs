@@ -44,9 +44,11 @@ namespace Modern_Pharmacy_Managment_System
             this.signupLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.signupPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.signupName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.backBtn = new Modern_Pharmacy_Managment_System.ProjectButton();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainPanelSignup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.backBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -59,6 +61,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.backBtn);
             this.guna2Panel1.Controls.Add(this.pictureBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -101,7 +104,7 @@ namespace Modern_Pharmacy_Managment_System
             this.signupLoginLabel.AutoSize = true;
             this.signupLoginLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupLoginLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.signupLoginLabel.Location = new System.Drawing.Point(208, 376);
+            this.signupLoginLabel.Location = new System.Drawing.Point(234, 362);
             this.signupLoginLabel.Name = "signupLoginLabel";
             this.signupLoginLabel.Size = new System.Drawing.Size(37, 15);
             this.signupLoginLabel.TabIndex = 7;
@@ -113,7 +116,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.signupAccountLabel.AutoSize = true;
             this.signupAccountLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupAccountLabel.Location = new System.Drawing.Point(60, 376);
+            this.signupAccountLabel.Location = new System.Drawing.Point(86, 362);
             this.signupAccountLabel.Name = "signupAccountLabel";
             this.signupAccountLabel.Size = new System.Drawing.Size(142, 15);
             this.signupAccountLabel.TabIndex = 6;
@@ -143,7 +146,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // signupBtn
             // 
-            this.signupBtn.BorderRadius = 12;
+            this.signupBtn.BorderRadius = 5;
             this.signupBtn.CheckedState.Parent = this.signupBtn;
             this.signupBtn.CustomImages.Parent = this.signupBtn;
             this.signupBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(179)))), ((int)(((byte)(151)))));
@@ -153,7 +156,7 @@ namespace Modern_Pharmacy_Managment_System
             this.signupBtn.Location = new System.Drawing.Point(59, 286);
             this.signupBtn.Name = "signupBtn";
             this.signupBtn.ShadowDecoration.Parent = this.signupBtn;
-            this.signupBtn.Size = new System.Drawing.Size(237, 45);
+            this.signupBtn.Size = new System.Drawing.Size(237, 33);
             this.signupBtn.TabIndex = 3;
             this.signupBtn.Text = "Sign Up";
             this.signupBtn.Click += new System.EventHandler(this.signupBtn_Click);
@@ -182,6 +185,7 @@ namespace Modern_Pharmacy_Managment_System
             this.signupPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.signupPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.signupPhone.FocusedState.Parent = this.signupPhone;
+            this.signupPhone.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.signupPhone.HoverState.Parent = this.signupPhone;
             this.signupPhone.Location = new System.Drawing.Point(59, 205);
@@ -207,6 +211,7 @@ namespace Modern_Pharmacy_Managment_System
             this.signupName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.signupName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.signupName.FocusedState.Parent = this.signupName;
+            this.signupName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.signupName.HoverState.Parent = this.signupName;
             this.signupName.Location = new System.Drawing.Point(59, 114);
@@ -218,6 +223,20 @@ namespace Modern_Pharmacy_Managment_System
             this.signupName.Size = new System.Drawing.Size(237, 44);
             this.signupName.TabIndex = 0;
             this.signupName.TextOffset = new System.Drawing.Point(25, 0);
+            // 
+            // backBtn
+            // 
+            this.backBtn.BackColor = System.Drawing.Color.White;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.ImageHover = ((System.Drawing.Image)(resources.GetObject("backBtn.ImageHover")));
+            this.backBtn.ImageNormal = ((System.Drawing.Image)(resources.GetObject("backBtn.ImageNormal")));
+            this.backBtn.Location = new System.Drawing.Point(12, 12);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(39, 37);
+            this.backBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.backBtn.TabIndex = 8;
+            this.backBtn.TabStop = false;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // SignUp
             // 
@@ -234,6 +253,7 @@ namespace Modern_Pharmacy_Managment_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mainPanelSignup.ResumeLayout(false);
             this.mainPanelSignup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.backBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,5 +273,6 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label signupAccountLabel;
         private System.Windows.Forms.LinkLabel signupLoginLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private ProjectButton backBtn;
     }
 }

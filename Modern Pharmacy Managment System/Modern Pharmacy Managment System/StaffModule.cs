@@ -73,5 +73,10 @@ namespace Modern_Pharmacy_Managment_System
                 Application.Exit();
             }
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            // USer Name Label
+        }
     }
 }
