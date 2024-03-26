@@ -1,0 +1,136 @@
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe.config
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Guna.UI2.dll
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.AssemblyReference.cache
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignUp.resources
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
+C:\Users\ishti\OneDrive\Desktop\Project\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.AssemblyReference.cache
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe.config
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignUp.resources
+C:\Users\RAFSAN\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.DashBoard.resources
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe.config
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.pdb
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\FontAwesome.Sharp.dll
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.AssemblyReference.cache
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.DashBoard.resources
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignUp.resources
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
+E:\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe.config
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.AssemblyReference.cache
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.DashBoard.resources
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignUp.resources
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
+C:\Users\nulln\Desktop\git\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe.config
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.AssemblyReference.cache
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.DashBoard.resources
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignUp.resources
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
+C:\Users\ishti\OneDrive\Desktop\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe.config
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.pdb
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\FontAwesome.Sharp.dll
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.AssemblyReference.cache
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerForm.resources
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.DashBoard.resources
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignUp.resources
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffForm.resources
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
+C:\ENTERTAINMENT\STUDY MATERIAL\project Temp 2\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe.config
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.AssemblyReference.cache
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerForm.resources
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.DashBoard.resources
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignUp.resources
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffForm.resources
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\nulln\Downloads\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Login.resources
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.AssemblyReference.cache
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe.config
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerForm.resources
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.DashBoard.resources
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Login.resources
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignUp.resources
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffForm.resources
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
+C:\Users\RAFSAN\Downloads\version-2.0-with-login-main\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe.config
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.AssemblyReference.cache
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerForm.resources
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.DashBoard.resources
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Login.resources
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignUp.resources
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffForm.resources
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
+C:\Users\nulln\Desktop\Temporary-repository-main\Pharmacy-Managment-System-C-Sharp\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
