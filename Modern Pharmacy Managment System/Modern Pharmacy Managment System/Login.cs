@@ -21,5 +21,10 @@ namespace Modern_Pharmacy_Managment_System
         {
 
         }
+
+        private void signupLabel_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
