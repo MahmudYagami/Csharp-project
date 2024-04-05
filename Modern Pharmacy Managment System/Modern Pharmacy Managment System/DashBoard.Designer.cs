@@ -338,6 +338,7 @@ namespace Modern_Pharmacy_Managment_System
             this.mainpanel.Name = "mainpanel";
             this.mainpanel.Size = new System.Drawing.Size(993, 614);
             this.mainpanel.TabIndex = 2;
+            this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpanel_Paint);
             // 
             // DashBoard
             // 
@@ -349,6 +350,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Controls.Add(this.LeftPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DashBoard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashBoard";
             ((System.ComponentModel.ISupportInitialize)(this.AdminPictureBox)).EndInit();
             this.LeftPanel.ResumeLayout(false);

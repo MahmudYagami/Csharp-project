@@ -157,12 +157,19 @@ namespace Modern_Pharmacy_Managment_System
 
         private void StaffBtn_Click(object sender, EventArgs e)
         {
-           /// loadform(new StaffForm());
+           loadform(new StaffForm());
         }
 
         private void TimerPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void mainpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+       
     }
 }

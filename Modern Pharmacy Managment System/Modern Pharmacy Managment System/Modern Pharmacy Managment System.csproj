@@ -58,6 +58,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,11 +76,24 @@
     <Compile Include="DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmpLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpLogin.Designer.cs">
+      <DependentUpon>EmpLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Functions.cs" />
+    <Compile Include="LeavesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeavesForm.Designer.cs">
+      <DependentUpon>LeavesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -108,14 +127,29 @@
     <Compile Include="StaffModule.Designer.cs">
       <DependentUpon>StaffModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewLeave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewLeave.Designer.cs">
+      <DependentUpon>ViewLeave.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmpLogin.resx">
+      <DependentUpon>EmpLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeavesForm.resx">
+      <DependentUpon>LeavesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -140,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StaffModule.resx">
       <DependentUpon>StaffModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewLeave.resx">
+      <DependentUpon>ViewLeave.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
