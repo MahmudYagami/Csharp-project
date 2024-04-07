@@ -18,7 +18,6 @@ namespace Modern_Pharmacy_Managment_System
             InitializeComponent();
             Con = new Functions();
             ShowCategories();
-
         }
 
         private void ShowCategories()
@@ -125,6 +124,20 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show(Ex.Message);
             }
 
+        }
+
+        private void StaffFormEmployeesBtn_Click(object sender, EventArgs e)
+        {
+            StaffForm sf = new StaffForm();
+            sf.Show();
+            this.Hide();
+        }
+
+        private void LeaveBtn_Click(object sender, EventArgs e)
+        {
+            LeavesForm lf = new LeavesForm();
+            lf.Show();
+            this.Hide();
         }
     }
 }

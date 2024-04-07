@@ -98,13 +98,7 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void iconButton5_Click(object sender, EventArgs e)
-        {
-
-            Category ct = new Category();
-            ct.Show();
-            this.Hide();
-        }
+        
 
         private void EmpEditBtnStaff_Click(object sender, EventArgs e)
         {
@@ -179,6 +173,20 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show(Ex.Message);
             }
 
+        }
+
+        private void LeaveBtn_Click(object sender, EventArgs e)
+        {
+            LeavesForm lf = new LeavesForm();
+            lf.Show();
+            this.Hide();
+        }
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+
+            Category ct = new Category();
+            ct.Show();
+            this.Hide();
         }
     }
 }

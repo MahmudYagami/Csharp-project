@@ -47,7 +47,7 @@ namespace Modern_Pharmacy_Managment_System
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-3, -2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(549, 599);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -116,12 +116,13 @@ namespace Modern_Pharmacy_Managment_System
             this.signupBtn.ForeColor = System.Drawing.Color.White;
             this.signupBtn.HoverState.Parent = this.signupBtn;
             this.signupBtn.Location = new System.Drawing.Point(596, 364);
-            this.signupBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.signupBtn.Margin = new System.Windows.Forms.Padding(4);
             this.signupBtn.Name = "signupBtn";
             this.signupBtn.ShadowDecoration.Parent = this.signupBtn;
             this.signupBtn.Size = new System.Drawing.Size(316, 55);
             this.signupBtn.TabIndex = 4;
             this.signupBtn.Text = "Login";
+            this.signupBtn.Click += new System.EventHandler(this.signupBtn_Click);
             // 
             // signupAccountLabel
             // 
@@ -197,7 +198,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Controls.Add(this.signupPhone);
             this.Controls.Add(this.signupName);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

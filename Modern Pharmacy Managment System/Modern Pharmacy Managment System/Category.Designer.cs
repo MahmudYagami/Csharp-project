@@ -276,6 +276,7 @@ namespace Modern_Pharmacy_Managment_System
             this.LeaveBtn.Text = "Leaves";
             this.LeaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.LeaveBtn.UseVisualStyleBackColor = false;
+            this.LeaveBtn.Click += new System.EventHandler(this.LeaveBtn_Click);
             // 
             // iconButton5
             // 
@@ -310,6 +311,7 @@ namespace Modern_Pharmacy_Managment_System
             this.StaffFormEmployeesBtn.Text = "Employees";
             this.StaffFormEmployeesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.StaffFormEmployeesBtn.UseVisualStyleBackColor = false;
+            this.StaffFormEmployeesBtn.Click += new System.EventHandler(this.StaffFormEmployeesBtn_Click);
             // 
             // Category
             // 
