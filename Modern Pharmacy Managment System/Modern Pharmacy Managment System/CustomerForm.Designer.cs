@@ -42,6 +42,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +50,7 @@ namespace Modern_Pharmacy_Managment_System
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.btnAdd);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 439);
@@ -66,7 +68,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnAdd.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnAdd.ImageRotate = 0F;
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(613, 3);
+            this.btnAdd.Location = new System.Drawing.Point(564, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnAdd.PressedState.ImageSize = new System.Drawing.Size(30, 30);
@@ -162,6 +164,16 @@ namespace Modern_Pharmacy_Managment_System
             this.Delete.Name = "Delete";
             this.Delete.Width = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(53, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Manage Customer";
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +187,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.ResumeLayout(false);
 
@@ -192,5 +205,6 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private Guna.UI2.WinForms.Guna2ImageButton btnAdd;
+        private System.Windows.Forms.Label label1;
     }
 }

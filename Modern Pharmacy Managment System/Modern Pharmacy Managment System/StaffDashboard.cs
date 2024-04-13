@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Modern_Pharmacy_Managment_System
 {
@@ -18,6 +19,8 @@ namespace Modern_Pharmacy_Managment_System
 
             lblName.Text = Login.EmpName + "";
             lblId.Text = Login.EmpId + " ";
+            loadform(new StaffInfoPanel());
+
         }
 
 
@@ -34,22 +37,27 @@ namespace Modern_Pharmacy_Managment_System
             f.Show();
         }
 
-        private void btnLeave_Click(object sender, EventArgs e)
+        
+
+        
+
+        private void lblDashboard_Click(object sender, EventArgs e)
+        {
+            loadform(new StaffInfoPanel());
+        }
+
+
+        private void btnLeave_Click_1(object sender, EventArgs e)
         {
             loadform(new ViewLeave());
         }
 
-        private void lblName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCustomer_Click(object sender, EventArgs e)
+        private void btnCustomer_Click_1(object sender, EventArgs e)
         {
             loadform(new CustomerForm());
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
+        private void btnSettings_Click_1(object sender, EventArgs e)
         {
             loadform(new StaffSettings());
         }
