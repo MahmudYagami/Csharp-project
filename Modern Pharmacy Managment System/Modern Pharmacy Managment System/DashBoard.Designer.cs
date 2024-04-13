@@ -323,6 +323,7 @@ namespace Modern_Pharmacy_Managment_System
             this.TimeLabel.Size = new System.Drawing.Size(46, 20);
             this.TimeLabel.TabIndex = 0;
             this.TimeLabel.Text = "Time";
+            this.TimeLabel.Click += new System.EventHandler(this.TimeLabel_Click);
             // 
             // DateTimeShow
             // 
