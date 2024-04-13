@@ -44,11 +44,9 @@ namespace Modern_Pharmacy_Managment_System
             this.signupLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.signupPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.signupName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.backBtn = new Modern_Pharmacy_Managment_System.ProjectButton();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainPanelSignup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.backBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -61,7 +59,6 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.backBtn);
             this.guna2Panel1.Controls.Add(this.pictureBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -189,6 +186,7 @@ namespace Modern_Pharmacy_Managment_System
             this.signupPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.signupPhone.HoverState.Parent = this.signupPhone;
             this.signupPhone.Location = new System.Drawing.Point(59, 205);
+            this.signupPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.signupPhone.Name = "signupPhone";
             this.signupPhone.PasswordChar = '\0';
             this.signupPhone.PlaceholderText = "01111111111";
@@ -215,6 +213,7 @@ namespace Modern_Pharmacy_Managment_System
             this.signupName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.signupName.HoverState.Parent = this.signupName;
             this.signupName.Location = new System.Drawing.Point(59, 114);
+            this.signupName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.signupName.Name = "signupName";
             this.signupName.PasswordChar = '\0';
             this.signupName.PlaceholderText = "Enter Your Name";
@@ -223,20 +222,6 @@ namespace Modern_Pharmacy_Managment_System
             this.signupName.Size = new System.Drawing.Size(237, 44);
             this.signupName.TabIndex = 0;
             this.signupName.TextOffset = new System.Drawing.Point(25, 0);
-            // 
-            // backBtn
-            // 
-            this.backBtn.BackColor = System.Drawing.Color.White;
-            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
-            this.backBtn.ImageHover = ((System.Drawing.Image)(resources.GetObject("backBtn.ImageHover")));
-            this.backBtn.ImageNormal = ((System.Drawing.Image)(resources.GetObject("backBtn.ImageNormal")));
-            this.backBtn.Location = new System.Drawing.Point(12, 12);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(39, 37);
-            this.backBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.backBtn.TabIndex = 8;
-            this.backBtn.TabStop = false;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // SignUp
             // 
@@ -253,7 +238,6 @@ namespace Modern_Pharmacy_Managment_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mainPanelSignup.ResumeLayout(false);
             this.mainPanelSignup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.backBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,6 +257,5 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label signupAccountLabel;
         private System.Windows.Forms.LinkLabel signupLoginLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ProjectButton backBtn;
     }
 }
