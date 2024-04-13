@@ -63,8 +63,8 @@ namespace Modern_Pharmacy_Managment_System
                 {
                     int Emp = Convert.ToInt32(EmployeeCb.SelectedValue.ToString());
                     int Category = Convert.ToInt32(CategoriesCb.SelectedValue.ToString());
-                    string DateStart = DateStartCalender.Value.Date.ToString("yyyy-MM-dd");  
-                    string DateEnd = DateEndCalender.Value.Date.ToString("yyyy-MM-dd");    
+                    string DateStart = DateStartCalender.Value.Date.ToString("dd-MM-yyyy");  
+                    string DateEnd = DateEndCalender.Value.Date.ToString("dd-MM-yyyy");    
 
 
                     string DateApplied = DateTime.Today.Date.ToString();
@@ -210,6 +210,11 @@ namespace Modern_Pharmacy_Managment_System
             Category c = new Category();
             c.Show();
             this.Hide();
+        }
+
+        private void DateEndCalender_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

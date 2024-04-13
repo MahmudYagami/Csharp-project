@@ -20,7 +20,7 @@ namespace Modern_Pharmacy_Managment_System
 
         public Functions()
         {
-            ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ishti\OneDrive\Desktop\pro\Csharp-project\DATABASE TABLE\StaffDb.mdf;Connect Timeout=30";
+            ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RAFSAN\Desktop\Csharp-project\DATABASE TABLE\StaffDb.mdf;Connect Timeout=30";
             Con = new SqlConnection(ConStr);
             Cmd = new SqlCommand();
             Cmd.Connection = Con;

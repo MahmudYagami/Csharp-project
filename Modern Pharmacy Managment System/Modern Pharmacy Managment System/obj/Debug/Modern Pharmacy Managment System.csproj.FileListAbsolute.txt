@@ -324,11 +324,9 @@ C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern P
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.LeavesForm.resources
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Login.resources
-C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.ProjectButton.resources
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignUp.resources
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffForm.resources
-C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffModule.resources
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.ViewLeave.resources
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
