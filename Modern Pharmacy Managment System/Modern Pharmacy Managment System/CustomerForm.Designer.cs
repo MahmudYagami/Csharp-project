@@ -29,10 +29,11 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2ImageButton();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +42,6 @@ namespace Modern_Pharmacy_Managment_System
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,25 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(745, 60);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAdd.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAdd.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAdd.ImageRotate = 0F;
+            this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnAdd.Location = new System.Drawing.Point(613, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnAdd.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnAdd.Size = new System.Drawing.Size(64, 54);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.UseTransparentBackground = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvCustomer
             // 
@@ -142,25 +161,6 @@ namespace Modern_Pharmacy_Managment_System
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
             this.Delete.Name = "Delete";
             this.Delete.Width = 5;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAdd.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAdd.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAdd.ImageRotate = 0F;
-            this.btnAdd.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnAdd.Location = new System.Drawing.Point(678, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnAdd.PressedState.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnAdd.Size = new System.Drawing.Size(64, 54);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.UseTransparentBackground = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // CustomerForm
             // 

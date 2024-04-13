@@ -15,7 +15,12 @@ namespace Modern_Pharmacy_Managment_System
         public StaffDashboard()
         {
             InitializeComponent();
+
+            lblName.Text = Login.EmpName + "";
+            lblId.Text = Login.EmpId + " ";
         }
+
+
 
         public void loadform(object Form)
         {
@@ -34,7 +39,19 @@ namespace Modern_Pharmacy_Managment_System
             loadform(new ViewLeave());
         }
 
+        private void lblName_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            loadform(new CustomerForm());
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            loadform(new StaffSettings());
+        }
     }
-  }
-
+}

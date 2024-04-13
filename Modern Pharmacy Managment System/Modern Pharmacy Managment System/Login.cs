@@ -64,12 +64,18 @@ namespace Modern_Pharmacy_Managment_System
                         }
                         else
                         {
+                            /* 
+                               EmpId = Convert.ToInt32(dt.Rows[0][0].ToString());
+                               EmpName = dt.Rows[0][1].ToString();
+                               ViewLeave obj = new ViewLeave();
+                               obj.Show();
+                               this.Hide();
+                            */
                             EmpId = Convert.ToInt32(dt.Rows[0][0].ToString());
                             EmpName = dt.Rows[0][1].ToString();
-                            ViewLeave obj = new ViewLeave();
-                            obj.Show();
+                            StaffDashboard sd = new StaffDashboard();
+                            sd.Show();
                             this.Hide();
-
 
                         }
                     }

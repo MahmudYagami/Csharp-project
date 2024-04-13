@@ -117,11 +117,23 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffDashboard.Designer.cs">
+      <DependentUpon>StaffDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="StaffForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StaffForm.Designer.cs">
       <DependentUpon>StaffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffSettings.Designer.cs">
+      <DependentUpon>StaffSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewLeave.cs">
       <SubType>Form</SubType>
@@ -165,8 +177,14 @@
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StaffDashboard.resx">
+      <DependentUpon>StaffDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StaffForm.resx">
       <DependentUpon>StaffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffSettings.resx">
+      <DependentUpon>StaffSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewLeave.resx">
       <DependentUpon>ViewLeave.cs</DependentUpon>
