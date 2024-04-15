@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Modern_Pharmacy_Managment_System
 {
@@ -16,8 +17,11 @@ namespace Modern_Pharmacy_Managment_System
         public StaffForm()
         {
             InitializeComponent();
+        
             Con = new Functions();
+            
             ShowStaffForm();
+            
         }
         private void ShowStaffForm()
         {
@@ -96,9 +100,13 @@ namespace Modern_Pharmacy_Managment_System
             {
                 Key = Convert.ToInt32(EmployeeList.SelectedRows[0].Cells[0].Value.ToString());
             }
+
+
         }
 
         
+
+
 
         private void EmpEditBtnStaff_Click(object sender, EventArgs e)
         {

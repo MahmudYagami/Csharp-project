@@ -30,6 +30,7 @@ namespace Modern_Pharmacy_Managment_System
             RevenueBtn.MouseLeave += RevenueBtn_MouseLeave;
             DashBoardBtn.MouseEnter += DashBoardBtn_MouseEnter;
             DashBoardBtn.MouseLeave += DashBoardBtn_MouseLeave;
+            loadform(new AdminDashboard());
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -173,6 +174,11 @@ namespace Modern_Pharmacy_Managment_System
         private void TimeLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DashBoardBtn_Click(object sender, EventArgs e)
+        {
+            loadform(new AdminDashboard());
         }
     }
 }

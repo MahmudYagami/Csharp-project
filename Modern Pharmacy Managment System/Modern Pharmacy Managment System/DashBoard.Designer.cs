@@ -268,6 +268,7 @@ namespace Modern_Pharmacy_Managment_System
             this.DashBoardBtn.TabIndex = 2;
             this.DashBoardBtn.Text = "Dashboard";
             this.DashBoardBtn.UseVisualStyleBackColor = true;
+            this.DashBoardBtn.Click += new System.EventHandler(this.DashBoardBtn_Click);
             // 
             // topPanel
             // 

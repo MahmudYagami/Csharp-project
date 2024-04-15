@@ -29,16 +29,15 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Emp_manage_label = new System.Windows.Forms.Label();
             this.EmpLeftPanel = new System.Windows.Forms.Panel();
             this.LeaveBtn = new FontAwesome.Sharp.IconButton();
             this.CategoryBtnStaff = new FontAwesome.Sharp.IconButton();
             this.StaffFormEmployeesBtn = new FontAwesome.Sharp.IconButton();
             this.EmpTopPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.EmpNameTb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,8 +54,16 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.EmpGenderCb = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Emp_manage_label
@@ -87,9 +94,10 @@ namespace Modern_Pharmacy_Managment_System
             this.LeaveBtn.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
             this.LeaveBtn.IconColor = System.Drawing.Color.White;
             this.LeaveBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.LeaveBtn.Location = new System.Drawing.Point(810, 129);
+            this.LeaveBtn.IconSize = 35;
+            this.LeaveBtn.Location = new System.Drawing.Point(798, 136);
             this.LeaveBtn.Name = "LeaveBtn";
-            this.LeaveBtn.Size = new System.Drawing.Size(137, 54);
+            this.LeaveBtn.Size = new System.Drawing.Size(133, 42);
             this.LeaveBtn.TabIndex = 2;
             this.LeaveBtn.Text = "Leaves";
             this.LeaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -105,9 +113,9 @@ namespace Modern_Pharmacy_Managment_System
             this.CategoryBtnStaff.IconColor = System.Drawing.Color.White;
             this.CategoryBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.CategoryBtnStaff.IconSize = 35;
-            this.CategoryBtnStaff.Location = new System.Drawing.Point(810, 189);
+            this.CategoryBtnStaff.Location = new System.Drawing.Point(798, 184);
             this.CategoryBtnStaff.Name = "CategoryBtnStaff";
-            this.CategoryBtnStaff.Size = new System.Drawing.Size(137, 52);
+            this.CategoryBtnStaff.Size = new System.Drawing.Size(133, 42);
             this.CategoryBtnStaff.TabIndex = 1;
             this.CategoryBtnStaff.Text = "Categories";
             this.CategoryBtnStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -123,9 +131,9 @@ namespace Modern_Pharmacy_Managment_System
             this.StaffFormEmployeesBtn.IconColor = System.Drawing.Color.White;
             this.StaffFormEmployeesBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.StaffFormEmployeesBtn.IconSize = 30;
-            this.StaffFormEmployeesBtn.Location = new System.Drawing.Point(810, 65);
+            this.StaffFormEmployeesBtn.Location = new System.Drawing.Point(798, 83);
             this.StaffFormEmployeesBtn.Name = "StaffFormEmployeesBtn";
-            this.StaffFormEmployeesBtn.Size = new System.Drawing.Size(137, 57);
+            this.StaffFormEmployeesBtn.Size = new System.Drawing.Size(133, 48);
             this.StaffFormEmployeesBtn.TabIndex = 0;
             this.StaffFormEmployeesBtn.Text = "Employees";
             this.StaffFormEmployeesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -142,19 +150,9 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpTopPanel.Size = new System.Drawing.Size(980, 29);
             this.EmpTopPanel.TabIndex = 2;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(368, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Manage Employees";
-            // 
             // EmpNameTb
             // 
+            this.EmpNameTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmpNameTb.Location = new System.Drawing.Point(40, 90);
             this.EmpNameTb.Multiline = true;
             this.EmpNameTb.Name = "EmpNameTb";
@@ -219,7 +217,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // EmpEditBtnStaff
             // 
-            this.EmpEditBtnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(2)))), ((int)(((byte)(82)))));
+            this.EmpEditBtnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
             this.EmpEditBtnStaff.FlatAppearance.BorderSize = 0;
             this.EmpEditBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EmpEditBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -236,7 +234,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // EmpSaveBtnStaff
             // 
-            this.EmpSaveBtnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(1)))), ((int)(((byte)(113)))));
+            this.EmpSaveBtnStaff.BackColor = System.Drawing.Color.Black;
             this.EmpSaveBtnStaff.FlatAppearance.BorderSize = 0;
             this.EmpSaveBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EmpSaveBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -253,7 +251,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // EmpDltBtnStaff
             // 
-            this.EmpDltBtnStaff.BackColor = System.Drawing.Color.Crimson;
+            this.EmpDltBtnStaff.BackColor = System.Drawing.Color.Gray;
             this.EmpDltBtnStaff.FlatAppearance.BorderSize = 0;
             this.EmpDltBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EmpDltBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -302,61 +300,56 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // EmployeeList
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
-            this.EmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.EmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.EmployeeList.BackgroundColor = System.Drawing.Color.White;
-            this.EmployeeList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EmployeeList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            this.EmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.EmployeeList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.EmployeeList.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployeeList.DefaultCellStyle = dataGridViewCellStyle15;
-            this.EmployeeList.EnableHeadersVisualStyles = false;
-            this.EmployeeList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
-            this.EmployeeList.Location = new System.Drawing.Point(40, 335);
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.EmployeeList.ColumnHeadersHeight = 4;
+            this.EmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeeList.DefaultCellStyle = dataGridViewCellStyle18;
+            this.EmployeeList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
+            this.EmployeeList.Location = new System.Drawing.Point(40, 344);
             this.EmployeeList.Name = "EmployeeList";
             this.EmployeeList.RowHeadersVisible = false;
             this.EmployeeList.RowHeadersWidth = 51;
             this.EmployeeList.RowTemplate.Height = 24;
-            this.EmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmployeeList.Size = new System.Drawing.Size(925, 267);
+            this.EmployeeList.Size = new System.Drawing.Size(925, 238);
             this.EmployeeList.TabIndex = 23;
-            this.EmployeeList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.FeterRiver;
-            this.EmployeeList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
+            this.EmployeeList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.GreenSea;
+            this.EmployeeList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
             this.EmployeeList.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.EmployeeList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.EmployeeList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.EmployeeList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.EmployeeList.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.EmployeeList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
-            this.EmployeeList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.EmployeeList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
+            this.EmployeeList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             this.EmployeeList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.EmployeeList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.EmployeeList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.EmployeeList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.EmployeeList.ThemeStyle.HeaderStyle.Height = 30;
+            this.EmployeeList.ThemeStyle.HeaderStyle.Height = 4;
             this.EmployeeList.ThemeStyle.ReadOnly = false;
-            this.EmployeeList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
+            this.EmployeeList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
             this.EmployeeList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.EmployeeList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.EmployeeList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.EmployeeList.ThemeStyle.RowsStyle.Height = 24;
-            this.EmployeeList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
+            this.EmployeeList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
             this.EmployeeList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.EmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeList_CellContentClick);
             // 
@@ -382,12 +375,73 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpGenderCb.Size = new System.Drawing.Size(121, 24);
             this.EmpGenderCb.TabIndex = 25;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dataGridView1.Location = new System.Drawing.Point(40, 312);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(913, 26);
+            this.dataGridView1.TabIndex = 26;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.HeaderText = "Address";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.HeaderText = "Password";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.HeaderText = "Phone";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Gender";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Name";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.HeaderText = "Employee Id";
+            this.Column1.MinimumWidth = 10;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 114;
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(995, 614);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CategoryBtnStaff);
             this.Controls.Add(this.LeaveBtn);
             this.Controls.Add(this.EmpGenderCb);
@@ -407,7 +461,6 @@ namespace Modern_Pharmacy_Managment_System
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.EmpNameTb);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.EmpTopPanel);
             this.Controls.Add(this.EmpLeftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -418,6 +471,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpTopPanel.ResumeLayout(false);
             this.EmpTopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,7 +482,6 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label Emp_manage_label;
         private System.Windows.Forms.Panel EmpLeftPanel;
         private System.Windows.Forms.Panel EmpTopPanel;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox EmpNameTb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -448,5 +501,12 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2DataGridView EmployeeList;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox EmpGenderCb;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
