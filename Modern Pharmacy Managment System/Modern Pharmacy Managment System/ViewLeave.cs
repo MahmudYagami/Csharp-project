@@ -29,5 +29,10 @@ namespace Modern_Pharmacy_Managment_System
             LeaveList.DataSource = Con.GetData(Query);
 
         }
+
+        private void EmpIdLbl_Click(object sender, EventArgs e)
+        {
+            // emp id 
+        }
     }
 }

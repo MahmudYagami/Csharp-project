@@ -152,7 +152,7 @@ namespace Modern_Pharmacy_Managment_System
         }
         private void CustomerBtn_Click(object sender, EventArgs e)
         {
-           // loadform(new CustomerForm());
+          loadform(new CustomerForm());
         }
 
         private void StaffBtn_Click(object sender, EventArgs e)
