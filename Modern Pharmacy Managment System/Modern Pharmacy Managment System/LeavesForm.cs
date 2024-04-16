@@ -1,6 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace Modern_Pharmacy_Managment_System
 {
     public partial class LeavesForm : Form
@@ -159,6 +166,11 @@ namespace Modern_Pharmacy_Managment_System
         private void EmployeesBtn_Click(object sender, EventArgs e)
         {
             StaffForm sf = new StaffForm();
+            Point location = new Point(598, 250); // Adjust the coordinates as needed
+
+            // Show the Category form
+            sf.StartPosition = FormStartPosition.Manual;
+            sf.Location = location;
             sf.Show();
             this.Hide();
         }
@@ -166,6 +178,11 @@ namespace Modern_Pharmacy_Managment_System
         private void iconButton5_Click(object sender, EventArgs e)
         {
             Category c = new Category();
+            Point location = new Point(598, 250); // Adjust the coordinates as needed
+
+            // Show the Category form
+            c.StartPosition = FormStartPosition.Manual;
+            c.Location = location;
             c.Show();
             this.Hide();
         }

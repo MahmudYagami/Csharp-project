@@ -23,7 +23,7 @@ namespace Modern_Pharmacy_Managment_System
             // Application.Run(new StaffModule());
             // Application.Run(new StaffForm());
             // Application.Run(new Category());
-           // Application.Run(new LeavesForm());
+            //Application.Run(new LeavesForm());
            // Application.Run(new StaffDashboard());
 
         }

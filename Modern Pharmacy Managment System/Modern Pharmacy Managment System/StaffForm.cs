@@ -186,6 +186,12 @@ namespace Modern_Pharmacy_Managment_System
         private void LeaveBtn_Click(object sender, EventArgs e)
         {
             LeavesForm lf = new LeavesForm();
+
+            Point location = new Point(598, 250); // Adjust the coordinates as needed
+
+            // Show the Category form
+            lf.StartPosition = FormStartPosition.Manual;
+            lf.Location = location;
             lf.Show();
             this.Hide();
         }
@@ -193,6 +199,11 @@ namespace Modern_Pharmacy_Managment_System
         {
 
             Category ct = new Category();
+            Point location = new Point(598, 250); // Adjust the coordinates as needed
+
+            // Show the Category form
+            ct.StartPosition = FormStartPosition.Manual;
+            ct.Location = location;
             ct.Show();
             this.Hide();
         }
