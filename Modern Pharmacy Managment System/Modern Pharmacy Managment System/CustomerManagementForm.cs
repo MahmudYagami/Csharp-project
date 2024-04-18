@@ -13,7 +13,7 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class CustomerManagementForm : Form
     {
-      SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ishti\OneDrive\Desktop\Csharp-project\DATABASE TABLE\StaffDbDemo.mdf;Integrated Security=True;Connect Timeout=30");
+      SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=StaffDb;Integrated Security=True");
       SqlCommand cm = new SqlCommand();
 
         //Functions con;

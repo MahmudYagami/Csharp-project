@@ -20,7 +20,7 @@ namespace Modern_Pharmacy_Managment_System
 
 
             // Total Number of customer.
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ishti\OneDrive\Desktop\Csharp-project\DATABASE TABLE\StaffDbDemo.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=StaffDb;Integrated Security=True");
             con.Open();
             SqlCommand cm = new SqlCommand("SELECT Count(*) From tbCustomer", con);
             var totalCustomer = cm.ExecuteScalar();
