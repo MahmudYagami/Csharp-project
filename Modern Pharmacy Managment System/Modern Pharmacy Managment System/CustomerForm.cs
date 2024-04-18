@@ -8,63 +8,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Modern_Pharmacy_Managment_System
 {
    
     public partial class CustomerForm : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RAFSAN\Desktop\StaffDb.mdf;Integrated Security=True;Connect Timeout=30");
-        SqlCommand cm = new SqlCommand();
-        SqlDataReader dr;
+       Functions Con;
+        
+
         public CustomerForm()
         {
             InitializeComponent();
-            LoadCustomer();
-        }
-        public void LoadCustomer()
-        {
-            int i = 0;
-            dgvCustomer.Rows.Clear();
-            cm = new SqlCommand("SELECT * FROM tbCustomer", con);
-            con.Open();
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                i++;
-                dgvCustomer.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString());
-            }
-            dr.Close();
-            con.Close();
+            Con = new Functions();
+            showCustomerForm();
+          
         }
 
-        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void showCustomerForm()
         {
-            string colName = dgvCustomer.Columns[e.ColumnIndex].Name;
-            if (colName == "Edit")
-            {
-                CustomerManagementForm customerModule = new CustomerManagementForm();
-                customerModule.lblCId.Text = dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString();
-                customerModule.txtCuName.Text = dgvCustomer.Rows[e.RowIndex].Cells[2].Value.ToString();
-                customerModule.txtCPhone.Text = dgvCustomer.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string Query = "select * from tbCustomer";
+            dgvCustomer.DataSource = Con.GetData(Query);
 
-                customerModule.btnSave.Enabled = false;
-                customerModule.btnUpdate.Enabled = true;
-                customerModule.ShowDialog();
-            }
-            else if (colName == "Delete")
-            {
-                if (MessageBox.Show("Are you sure you want to delete this customer?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    con.Open();
-                    cm = new SqlCommand("DELETE FROM tbCustomer WHERE cid LIKE '" + dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
-                    cm.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Record has been successfully deleted!");
-                }
-            }
-            LoadCustomer();
+           // string Query = "SELECT cid AS 'Customer ID', cname AS 'Customer Name', cphone AS 'Phone Number', cpoints AS 'Reward Points' FROM tbCustomer";
+          //  dgvCustomer.DataSource = Con.GetData(Query);
+            // Hide the Customer ID column if you don't want to display it
+            
+
         }
+
+        string Key = "";
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -72,7 +47,64 @@ namespace Modern_Pharmacy_Managment_System
             moduleForm.btnSave.Enabled = true;
             moduleForm.btnUpdate.Enabled = false;
             moduleForm.ShowDialog();
-            LoadCustomer();
+            showCustomerForm();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string remove = tbSearchBox.Text;
+            string Query = "delete from tbCustomer WHERE cname = '" + remove + "'";
+            Query = string.Format(Query, Key);
+            Con.SetData(Query);
+            showCustomerForm();
+            MessageBox.Show("Employee Deleted!!!");
+            tbSearchBox.Text = "";
+        }
+
+        private void tbSearchBox_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = tbSearchBox.Text.Trim();
+            string Query = "SELECT * FROM tbCustomer WHERE cname LIKE '%" + searchText + "%'";
+            dgvCustomer.DataSource = Con.GetData(Query);
+        }
+
+ 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            if (dgvCustomer.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvCustomer.SelectedRows[0];
+                string customerName = selectedRow.Cells[1].Value.ToString();
+                string customerPhone = selectedRow.Cells[2].Value.ToString();
+
+                CustomerManagementForm cmf = new CustomerManagementForm();
+                cmf.lblCId.Text = dgvCustomer.Rows[0].Cells[0].Value.ToString();
+                cmf.txtCuName.Text = customerName;
+                cmf.txtCPhone.Text = customerPhone;
+                cmf.btnSave.Enabled = false;
+                cmf.btnUpdate.Enabled = true;
+                cmf.ShowDialog();
+          
+                showCustomerForm();
+            }
+            else
+            {
+                MessageBox.Show("Please select a customer to update.", "Select Customer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            tbSearchBox.Text = "";
+        }
+
+        private void CustomerForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCustomer_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            tbSearchBox.Text = dgvCustomer.SelectedRows[0].Cells[1].Value.ToString();
+            Key = dgvCustomer.SelectedRows[0].Cells[1].Value.ToString();    
         }
     }
 }

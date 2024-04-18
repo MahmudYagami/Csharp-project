@@ -18,7 +18,7 @@ namespace Modern_Pharmacy_Managment_System
             InitializeComponent();
 
             lblName.Text = Login.EmpName + "";
-            lblId.Text = Login.EmpId + " ";
+            //lblId.Text = Login.EmpId + " ";
             loadform(new StaffInfoPanel());
 
         }

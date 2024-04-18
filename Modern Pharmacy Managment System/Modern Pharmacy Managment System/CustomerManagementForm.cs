@@ -13,28 +13,67 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class CustomerManagementForm : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RAFSAN\Desktop\StaffDb.mdf;Integrated Security=True;Connect Timeout=30");
-        SqlCommand cm = new SqlCommand();
+      SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ishti\OneDrive\Desktop\Csharp-project\DATABASE TABLE\StaffDbDemo.mdf;Integrated Security=True;Connect Timeout=30");
+      SqlCommand cm = new SqlCommand();
+
+        //Functions con;
+
         public CustomerManagementForm()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            //con = new Functions();
         }
 
         private void CustomerManagementForm_Load(object sender, EventArgs e)
         {
 
         }
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            // Validate phone number length and start
+            if (phoneNumber.Length != 11 || !phoneNumber.StartsWith("01"))
+            {
+                MessageBox.Show("Please enter a valid phone number starting with '01' and having exactly 11 digits.", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Validate SIM company (third digit)
+            char thirdDigit = phoneNumber[2];
+            if (!(thirdDigit == '5' || thirdDigit == '3' || thirdDigit == '7' || thirdDigit == '9' || thirdDigit == '8' || thirdDigit == '6'))
+            {
+                MessageBox.Show("Please enter a valid phone number with a supported SIM company (third digit can be 5, 3, 7, 9, 8, or 6).", "Invalid SIM Company", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Validate all digits
+            foreach (char digit in phoneNumber.Substring(2))
+            {
+                if (!char.IsDigit(digit))
+                {
+                    MessageBox.Show("Please enter a valid phone number containing only digits.", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+
+            return true;
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
+                string phoneNumber = txtCPhone.Text.Trim();
+                if (!IsValidPhoneNumber(phoneNumber))
+                {
+                    return;
+                }
+
+                // Continue saving if phone number is valid
                 if (MessageBox.Show("Are you sure you want to save this customer?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-
                     cm = new SqlCommand("INSERT INTO tbCustomer(cname,cphone,cpoints)VALUES(@cname, @cphone,@cpoints)", con);
                     cm.Parameters.AddWithValue("@cname", txtCuName.Text);
-                    cm.Parameters.AddWithValue("@cphone", txtCPhone.Text);
+                    cm.Parameters.AddWithValue("@cphone", phoneNumber);
                     cm.Parameters.AddWithValue("@cpoints", 0);
                     con.Open();
                     cm.ExecuteNonQuery();
@@ -42,11 +81,9 @@ namespace Modern_Pharmacy_Managment_System
                     MessageBox.Show("User has been successfully saved.");
                     Clear();
                 }
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -59,8 +96,61 @@ namespace Modern_Pharmacy_Managment_System
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+         
+        }
+        private void txtCuName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
             try
             {
+                string phoneNumber = txtCPhone.Text.Trim();
+                if (!IsValidPhoneNumber(phoneNumber))
+                {
+                    return;
+                }
+
+                // Continue saving if phone number is valid
+                if (MessageBox.Show("Are you sure you want to save this customer?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cm = new SqlCommand("INSERT INTO tbCustomer(cname,cphone,cpoints)VALUES(@cname, @cphone,@cpoints)", con);
+                    cm.Parameters.AddWithValue("@cname", txtCuName.Text);
+                    cm.Parameters.AddWithValue("@cphone", phoneNumber);
+                    cm.Parameters.AddWithValue("@cpoints", 0);
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("User has been successfully saved.");
+                    Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string phoneNumber = txtCPhone.Text.Trim();
+                if (!IsValidPhoneNumber(phoneNumber))
+                {
+                    return;
+                }
+
                 if (MessageBox.Show("Are you sure you want to update this Customer?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
@@ -82,21 +172,11 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click_1(object sender, EventArgs e)
         {
             Clear();
             btnSave.Enabled = true;
             btnUpdate.Enabled = false;
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void txtCuName_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

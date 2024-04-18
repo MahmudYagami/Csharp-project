@@ -35,8 +35,6 @@
             this.lblDashboard = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblId = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.btnSettings = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -51,8 +49,6 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(77)))), ((int)(((byte)(107)))));
-            this.guna2Panel2.Controls.Add(this.lblId);
-            this.guna2Panel2.Controls.Add(this.label1);
             this.guna2Panel2.Controls.Add(this.guna2ImageButton1);
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Controls.Add(this.lblDashboard);
@@ -60,7 +56,7 @@
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1002, 86);
+            this.guna2Panel2.Size = new System.Drawing.Size(1128, 65);
             this.guna2Panel2.TabIndex = 1;
             // 
             // guna2ImageButton1
@@ -73,7 +69,7 @@
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(18, 18);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(966, 25);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(1082, 26);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(18, 18);
@@ -86,7 +82,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(748, 31);
+            this.label2.Location = new System.Drawing.Point(842, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 22);
             this.label2.TabIndex = 2;
@@ -95,11 +91,11 @@
             // lblDashboard
             // 
             this.lblDashboard.AutoSize = true;
-            this.lblDashboard.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboard.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDashboard.ForeColor = System.Drawing.Color.White;
-            this.lblDashboard.Location = new System.Drawing.Point(18, 31);
+            this.lblDashboard.Location = new System.Drawing.Point(18, 20);
             this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(113, 22);
+            this.lblDashboard.Size = new System.Drawing.Size(160, 32);
             this.lblDashboard.TabIndex = 0;
             this.lblDashboard.Text = "Dashboard";
             this.lblDashboard.Click += new System.EventHandler(this.lblDashboard_Click);
@@ -109,7 +105,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(232)))), ((int)(((byte)(166)))));
-            this.lblName.Location = new System.Drawing.Point(868, 31);
+            this.lblName.Location = new System.Drawing.Point(964, 30);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(66, 22);
             this.lblName.TabIndex = 1;
@@ -125,32 +121,10 @@
             this.guna2Panel1.Controls.Add(this.guna2Button2);
             this.guna2Panel1.Controls.Add(this.btnLeave);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 86);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 65);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(211, 530);
+            this.guna2Panel1.Size = new System.Drawing.Size(211, 551);
             this.guna2Panel1.TabIndex = 2;
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.ForeColor = System.Drawing.Color.Black;
-            this.lblId.Location = new System.Drawing.Point(456, 35);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(30, 25);
-            this.lblId.TabIndex = 1;
-            this.lblId.Text = "ID";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(416, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ID:";
             // 
             // guna2Button6
             // 
@@ -260,16 +234,16 @@
             // mainPanel
             // 
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(211, 86);
+            this.mainPanel.Location = new System.Drawing.Point(211, 65);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(791, 530);
+            this.mainPanel.Size = new System.Drawing.Size(917, 551);
             this.mainPanel.TabIndex = 3;
             // 
             // StaffDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 616);
+            this.ClientSize = new System.Drawing.Size(1128, 616);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
@@ -293,8 +267,6 @@
         private System.Windows.Forms.Label lblName;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2Button btnSettings;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
