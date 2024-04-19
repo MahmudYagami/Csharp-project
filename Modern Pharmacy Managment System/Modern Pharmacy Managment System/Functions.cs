@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 namespace Modern_Pharmacy_Managment_System
 {
     class Functions
@@ -20,7 +20,7 @@ namespace Modern_Pharmacy_Managment_System
 
         public Functions()
         {
-            ConStr = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=helloUpdated;Integrated Security=True";
+            ConStr = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True";
             Con = new SqlConnection(ConStr);
             Cmd = new SqlCommand();
             Cmd.Connection = Con;
@@ -46,6 +46,29 @@ namespace Modern_Pharmacy_Managment_System
             Cmd.CommandText = Query;
             Cnt = Cmd.ExecuteNonQuery();
             return Cnt;
+        }
+
+        public int insertData(SqlCommand cmd)
+        {
+            int rowsAffected = 0;
+            try
+            {
+                if (Con.State == ConnectionState.Closed)
+                {
+                    Con.Open();
+                }
+                cmd.Connection = Con;
+                rowsAffected = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                Con.Close();
+            }
+            return rowsAffected;
         }
     }
 }
