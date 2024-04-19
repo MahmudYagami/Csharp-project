@@ -14,7 +14,7 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class OrderForm : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=helloUpdated;Integrated Security=True");
 
         public OrderForm()
         {
@@ -237,7 +237,7 @@ namespace Modern_Pharmacy_Managment_System
 
             try
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=helloUpdated;Integrated Security=True"))
                 {
                     con.Open();
                     using (SqlCommand cm = new SqlCommand(query, con))
@@ -263,7 +263,7 @@ namespace Modern_Pharmacy_Managment_System
 
             try
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=helloUpdated;Integrated Security=True"))
                 {
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(query, con))
@@ -304,7 +304,7 @@ namespace Modern_Pharmacy_Managment_System
                 // Update the income in the AccountTbl
                 string updateQuery = "UPDATE AccountTbl SET Income = Income + @totalAmount";
 
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=helloUpdated;Integrated Security=True"))
                 {
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(updateQuery, con))
