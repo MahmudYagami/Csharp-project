@@ -299,12 +299,12 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox tbSearchBox;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvCustomer;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        public Guna.UI2.WinForms.Guna2DataGridView dgvCustomer;
     }
 }

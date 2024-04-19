@@ -61,5 +61,15 @@ namespace Modern_Pharmacy_Managment_System
         {
             loadform(new StaffSettings());
         }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            loadform(new OrderForm());
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -32,8 +32,8 @@ namespace Modern_Pharmacy_Managment_System
             dgvCustomer.DataSource = Con.GetData(Query);
 
            // string Query = "SELECT cid AS 'Customer ID', cname AS 'Customer Name', cphone AS 'Phone Number', cpoints AS 'Reward Points' FROM tbCustomer";
-          //  dgvCustomer.DataSource = Con.GetData(Query);
-            // Hide the Customer ID column if you don't want to display it
+           //  dgvCustomer.DataSource = Con.GetData(Query);
+           // Hide the Customer ID column if you don't want to display it
             
 
         }
@@ -47,6 +47,7 @@ namespace Modern_Pharmacy_Managment_System
             moduleForm.btnSave.Enabled = true;
             moduleForm.btnUpdate.Enabled = false;
             moduleForm.ShowDialog();
+
             showCustomerForm();
         }
 
@@ -56,9 +57,9 @@ namespace Modern_Pharmacy_Managment_System
             string Query = "delete from tbCustomer WHERE cname = '" + remove + "'";
             Query = string.Format(Query, Key);
             Con.SetData(Query);
-            showCustomerForm();
             MessageBox.Show("Employee Deleted!!!");
             tbSearchBox.Text = "";
+            showCustomerForm();
         }
 
         private void tbSearchBox_TextChanged(object sender, EventArgs e)
@@ -66,6 +67,7 @@ namespace Modern_Pharmacy_Managment_System
             string searchText = tbSearchBox.Text.Trim();
             string Query = "SELECT * FROM tbCustomer WHERE cname LIKE '%" + searchText + "%'";
             dgvCustomer.DataSource = Con.GetData(Query);
+            
         }
 
  
@@ -93,7 +95,7 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Please select a customer to update.", "Select Customer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            tbSearchBox.Text = "";
+            tbSearchBox.Text = "";         
         }
 
         private void CustomerForm_Load(object sender, EventArgs e)
