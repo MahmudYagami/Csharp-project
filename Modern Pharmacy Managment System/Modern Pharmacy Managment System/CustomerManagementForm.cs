@@ -13,7 +13,7 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class CustomerManagementForm : Form
     {
-      SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=StaffDb;Integrated Security=True");
+      SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True");
       SqlCommand cm = new SqlCommand();
 
         //Functions con;

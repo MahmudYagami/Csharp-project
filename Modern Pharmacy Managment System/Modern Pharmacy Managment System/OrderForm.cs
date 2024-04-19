@@ -14,7 +14,8 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class OrderForm : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True");
+        private  static string constr = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True";
+        SqlConnection con = new SqlConnection(constr);
 
         public OrderForm()
         {
@@ -52,7 +53,6 @@ namespace Modern_Pharmacy_Managment_System
            
             SqlCommand cm = new SqlCommand("SELECT OId, OName, OUnit, OPrice, OTotalCost FROM OrderTbl", con);
             DataTable dt = new DataTable();
-
             con.Open();
 
             SqlDataReader sdr = cm.ExecuteReader();
@@ -70,25 +70,7 @@ namespace Modern_Pharmacy_Managment_System
             moduleForm.btnUpdate.Enabled = false;
             moduleForm.ShowDialog();
             
-            // showCustomer();
-        }
-
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-            if (dgvOrder.Rows.Count > 0)
-            {/*
-                if (InsertOrderInfo())
-                {
-                  //  txtBoxTotalPurchage.Text = null;
-                 //   cartProducts.Clear();
-                    dgvOrder.Rows.Clear();
-                }
-                */
-            }
-            else
-            {
-                MessageBox.Show("Please add products to the cart first", "No Items in Cart!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            //showCustomer();
         }
 
         private void UpdateTotalAmount()
@@ -237,7 +219,7 @@ namespace Modern_Pharmacy_Managment_System
 
             try
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
                     using (SqlCommand cm = new SqlCommand(query, con))
@@ -263,7 +245,7 @@ namespace Modern_Pharmacy_Managment_System
 
             try
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(query, con))
@@ -298,31 +280,7 @@ namespace Modern_Pharmacy_Managment_System
         {
             try
             {
-                // Convert the txtTotalAmount text to a decimal value
-                decimal totalAmount = decimal.Parse(txtTotalAmount.Text);
 
-                // Update the income in the AccountTbl
-                string updateQuery = "UPDATE AccountTbl SET Income = Income + @totalAmount";
-
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True"))
-                {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand(updateQuery, con))
-                    {
-                        cmd.Parameters.AddWithValue("@totalAmount", totalAmount);
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Income updated successfully!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Failed to update income.");
-                        }
-                    }
-                }
-
-                dgvOrder.Rows.Clear();
             }
             catch (Exception ex)
             {
