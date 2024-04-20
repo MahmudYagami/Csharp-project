@@ -98,7 +98,7 @@ namespace Modern_Pharmacy_Managment_System
             this.LeftPanel.Location = new System.Drawing.Point(0, 0);
             this.LeftPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LeftPanel.Name = "LeftPanel";
-            this.LeftPanel.Size = new System.Drawing.Size(268, 673);
+            this.LeftPanel.Size = new System.Drawing.Size(268, 805);
             this.LeftPanel.TabIndex = 0;
             // 
             // flowdropdownpanel
@@ -278,7 +278,7 @@ namespace Modern_Pharmacy_Managment_System
             this.topPanel.Location = new System.Drawing.Point(268, 0);
             this.topPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(993, 59);
+            this.topPanel.Size = new System.Drawing.Size(1239, 59);
             this.topPanel.TabIndex = 1;
             // 
             // TimerPanel
@@ -334,11 +334,10 @@ namespace Modern_Pharmacy_Managment_System
             // mainpanel
             // 
             this.mainpanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainpanel.Location = new System.Drawing.Point(268, 59);
+            this.mainpanel.Location = new System.Drawing.Point(297, 74);
             this.mainpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(993, 614);
+            this.mainpanel.Size = new System.Drawing.Size(1173, 720);
             this.mainpanel.TabIndex = 2;
             this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpanel_Paint);
             // 
@@ -346,7 +345,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 673);
+            this.ClientSize = new System.Drawing.Size(1507, 805);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.LeftPanel);

@@ -69,7 +69,7 @@ namespace Modern_Pharmacy_Managment_System
             this.DateEndCalender.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateEndCalender.MinDate = new System.DateTime(2024, 4, 5, 0, 0, 0, 0);
             this.DateEndCalender.Name = "DateEndCalender";
-            this.DateEndCalender.Size = new System.Drawing.Size(153, 36);
+            this.DateEndCalender.Size = new System.Drawing.Size(193, 36);
             this.DateEndCalender.TabIndex = 48;
             this.DateEndCalender.Value = new System.DateTime(2024, 4, 5, 17, 31, 20, 106);
             this.DateEndCalender.ValueChanged += new System.EventHandler(this.DateEndCalender_ValueChanged);
@@ -85,7 +85,7 @@ namespace Modern_Pharmacy_Managment_System
             this.DateStartCalender.MaxDate = new System.DateTime(9988, 12, 31, 0, 0, 0, 0);
             this.DateStartCalender.MinDate = new System.DateTime(2024, 4, 6, 0, 0, 0, 0);
             this.DateStartCalender.Name = "DateStartCalender";
-            this.DateStartCalender.Size = new System.Drawing.Size(143, 36);
+            this.DateStartCalender.Size = new System.Drawing.Size(211, 36);
             this.DateStartCalender.TabIndex = 47;
             this.DateStartCalender.Value = new System.DateTime(2024, 4, 6, 0, 0, 0, 0);
             // 
@@ -144,7 +144,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.EmpTopPanel.Location = new System.Drawing.Point(0, 0);
             this.EmpTopPanel.Name = "EmpTopPanel";
-            this.EmpTopPanel.Size = new System.Drawing.Size(995, 32);
+            this.EmpTopPanel.Size = new System.Drawing.Size(1212, 32);
             this.EmpTopPanel.TabIndex = 28;
             // 
             // LeaveEmpLabel
@@ -399,7 +399,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 614);
+            this.ClientSize = new System.Drawing.Size(1212, 722);
             this.Controls.Add(this.RefreshBtn);
             this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.SearchCb);

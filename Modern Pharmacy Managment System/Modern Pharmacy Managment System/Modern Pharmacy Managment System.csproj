@@ -79,6 +79,12 @@
     <Compile Include="Category.Designer.cs">
       <DependentUpon>Category.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerDashboard.Designer.cs">
+      <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,12 +136,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SignUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SignUp.Designer.cs">
-      <DependentUpon>SignUp.cs</DependentUpon>
-    </Compile>
     <Compile Include="StaffDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +175,9 @@
     <EmbeddedResource Include="Category.resx">
       <DependentUpon>Category.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerDashboard.resx">
+      <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,9 +211,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SignUp.resx">
-      <DependentUpon>SignUp.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StaffDashboard.resx">
       <DependentUpon>StaffDashboard.cs</DependentUpon>
     </EmbeddedResource>

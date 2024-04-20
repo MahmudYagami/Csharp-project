@@ -14,7 +14,7 @@ namespace Modern_Pharmacy_Managment_System
     public partial class CustomerManagementForm : Form
     {
 
-      SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=hello;Integrated Security=True");
+      SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=helloUpdated;Integrated Security=True");
 
       
 
@@ -62,35 +62,7 @@ namespace Modern_Pharmacy_Managment_System
             return true;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string phoneNumber = txtCPhone.Text.Trim();
-                if (!IsValidPhoneNumber(phoneNumber))
-                {
-                    return;
-                }
-
-                // Continue saving if phone number is valid
-                if (MessageBox.Show("Are you sure you want to save this customer?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    cm = new SqlCommand("INSERT INTO tbCustomer(cname,cphone,cpoints)VALUES(@cname, @cphone,@cpoints)", con);
-                    cm.Parameters.AddWithValue("@cname", txtCuName.Text);
-                    cm.Parameters.AddWithValue("@cphone", phoneNumber);
-                    cm.Parameters.AddWithValue("@cpoints", 0);
-                    con.Open();
-                    cm.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("User has been successfully saved.");
-                    Clear();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         public void Clear()
         {
@@ -98,15 +70,9 @@ namespace Modern_Pharmacy_Managment_System
             txtCPhone.Clear();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-           
-        }
+      
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-         
-        }
+       
         private void txtCuName_TextChanged(object sender, EventArgs e)
         {
 
@@ -129,9 +95,11 @@ namespace Modern_Pharmacy_Managment_System
                 // Continue saving if phone number is valid
                 if (MessageBox.Show("Are you sure you want to save this customer?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cm = new SqlCommand("INSERT INTO tbCustomer(cname,cphone,cpoints)VALUES(@cname, @cphone,@cpoints)", con);
+                    cm = new SqlCommand("INSERT INTO tbCustomer(cname,cphone,cpassword,cpoints)VALUES(@cname, @cphone,@cpassword,@cpoints)", con);
                     cm.Parameters.AddWithValue("@cname", txtCuName.Text);
+
                     cm.Parameters.AddWithValue("@cphone", phoneNumber);
+                    cm.Parameters.AddWithValue("@cpassword", CustomerPassTxt.Text);
                     cm.Parameters.AddWithValue("@cpoints", 0);
                     con.Open();
                     cm.ExecuteNonQuery();
@@ -158,9 +126,10 @@ namespace Modern_Pharmacy_Managment_System
                 if (MessageBox.Show("Are you sure you want to update this Customer?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
-                    cm = new SqlCommand("UPDATE tbCustomer SET cname = @cname,cphone=@cphone WHERE cid LIKE '" + lblCId.Text + "' ", con);
+                    cm = new SqlCommand("UPDATE tbCustomer SET cname = @cname,cphone=@cphone,cpassword=@cpassword WHERE cid LIKE '" + lblCId.Text + "' ", con);
                     cm.Parameters.AddWithValue("@cname", txtCuName.Text);
                     cm.Parameters.AddWithValue("@cphone", txtCPhone.Text);
+                    cm.Parameters.AddWithValue("@cpassword", CustomerPassTxt.Text);
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();

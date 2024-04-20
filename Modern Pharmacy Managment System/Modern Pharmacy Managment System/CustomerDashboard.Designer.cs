@@ -1,5 +1,4 @@
-﻿
-namespace Modern_Pharmacy_Managment_System
+﻿namespace Modern_Pharmacy_Managment_System
 {
     partial class CustomerDashboard
     {
@@ -35,10 +34,12 @@ namespace Modern_Pharmacy_Managment_System
             this.Customer_settings_Btn = new FontAwesome.Sharp.IconButton();
             this.Buy_Medicine_btn = new FontAwesome.Sharp.IconButton();
             this.LogoPanel = new System.Windows.Forms.Panel();
-            this.topPanel = new System.Windows.Forms.Panel();
             this.CustomerMainPanel = new System.Windows.Forms.Panel();
+            this.topPanel = new System.Windows.Forms.Panel();
+            this.CustomerNameTxt = new System.Windows.Forms.Label();
             this.LeftPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // LeftPanel
@@ -47,11 +48,11 @@ namespace Modern_Pharmacy_Managment_System
             this.LeftPanel.Controls.Add(this.panel1);
             this.LeftPanel.Controls.Add(this.LogoPanel);
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LeftPanel.Location = new System.Drawing.Point(0, 0);
+            this.LeftPanel.Location = new System.Drawing.Point(0, 59);
             this.LeftPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LeftPanel.Name = "LeftPanel";
-            this.LeftPanel.Size = new System.Drawing.Size(268, 643);
-            this.LeftPanel.TabIndex = 1;
+            this.LeftPanel.Size = new System.Drawing.Size(268, 700);
+            this.LeftPanel.TabIndex = 4;
             // 
             // panel1
             // 
@@ -81,6 +82,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Customer_logout_btn.Size = new System.Drawing.Size(265, 87);
             this.Customer_logout_btn.TabIndex = 11;
             this.Customer_logout_btn.Text = "Logout";
+            this.Customer_logout_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Customer_logout_btn.UseVisualStyleBackColor = false;
             // 
             // Customer_settings_Btn
@@ -101,6 +103,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Customer_settings_Btn.Size = new System.Drawing.Size(265, 90);
             this.Customer_settings_Btn.TabIndex = 10;
             this.Customer_settings_Btn.Text = "Settings";
+            this.Customer_settings_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Customer_settings_Btn.UseVisualStyleBackColor = false;
             // 
             // Buy_Medicine_btn
@@ -122,8 +125,9 @@ namespace Modern_Pharmacy_Managment_System
             this.Buy_Medicine_btn.Size = new System.Drawing.Size(265, 84);
             this.Buy_Medicine_btn.TabIndex = 9;
             this.Buy_Medicine_btn.Text = "Buy Medicine";
+            this.Buy_Medicine_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Buy_Medicine_btn.UseVisualStyleBackColor = false;
-            this.Buy_Medicine_btn.Click += new System.EventHandler(this.Buy_Medicine_btn_Click_1);
+            this.Buy_Medicine_btn.Click += new System.EventHandler(this.Buy_Medicine_btn_Click);
             // 
             // LogoPanel
             // 
@@ -135,38 +139,53 @@ namespace Modern_Pharmacy_Managment_System
             this.LogoPanel.Size = new System.Drawing.Size(268, 83);
             this.LogoPanel.TabIndex = 0;
             // 
-            // topPanel
-            // 
-            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(268, 0);
-            this.topPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(977, 59);
-            this.topPanel.TabIndex = 2;
-            // 
             // CustomerMainPanel
             // 
             this.CustomerMainPanel.BackColor = System.Drawing.SystemColors.Highlight;
             this.CustomerMainPanel.Location = new System.Drawing.Point(292, 81);
             this.CustomerMainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CustomerMainPanel.Name = "CustomerMainPanel";
-            this.CustomerMainPanel.Size = new System.Drawing.Size(920, 551);
-            this.CustomerMainPanel.TabIndex = 3;
+            this.CustomerMainPanel.Size = new System.Drawing.Size(1212, 673);
+            this.CustomerMainPanel.TabIndex = 6;
+            // 
+            // topPanel
+            // 
+            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
+            this.topPanel.Controls.Add(this.CustomerNameTxt);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(1516, 59);
+            this.topPanel.TabIndex = 5;
+            // 
+            // CustomerNameTxt
+            // 
+            this.CustomerNameTxt.AutoSize = true;
+            this.CustomerNameTxt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomerNameTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CustomerNameTxt.Location = new System.Drawing.Point(1108, 9);
+            this.CustomerNameTxt.Name = "CustomerNameTxt";
+            this.CustomerNameTxt.Size = new System.Drawing.Size(87, 30);
+            this.CustomerNameTxt.TabIndex = 2;
+            this.CustomerNameTxt.Text = "Name";
             // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1245, 643);
+            this.ClientSize = new System.Drawing.Size(1516, 759);
+            this.Controls.Add(this.LeftPanel);
             this.Controls.Add(this.CustomerMainPanel);
             this.Controls.Add(this.topPanel);
-            this.Controls.Add(this.LeftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerDashboard";
             this.LeftPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -174,12 +193,13 @@ namespace Modern_Pharmacy_Managment_System
         #endregion
 
         private System.Windows.Forms.Panel LeftPanel;
-        private System.Windows.Forms.Panel LogoPanel;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton Customer_logout_btn;
         private FontAwesome.Sharp.IconButton Customer_settings_Btn;
         private FontAwesome.Sharp.IconButton Buy_Medicine_btn;
-        private System.Windows.Forms.Panel topPanel;
+        private System.Windows.Forms.Panel LogoPanel;
         private System.Windows.Forms.Panel CustomerMainPanel;
+        private System.Windows.Forms.Panel topPanel;
+        private System.Windows.Forms.Label CustomerNameTxt;
     }
 }

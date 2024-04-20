@@ -12,17 +12,15 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class CustomerDashboard : Form
     {
-        public CustomerDashboard()
+        public CustomerDashboard(string customerName)
         {
             InitializeComponent();
-
             Buy_Medicine_btn.MouseEnter += Buy_Medicine_btn_MouseEnter;
             Buy_Medicine_btn.MouseLeave += Buy_Medicine_btn_MouseLeave;
-        }
 
-        private void Buy_Medicine_btn_Click(object sender, EventArgs e)
-        {
-           
+            CustomerNameTxt.Text = "Welcome, " + customerName + "!";
+
+
         }
 
         private void Buy_Medicine_btn_MouseEnter(object sender, EventArgs e)
@@ -50,7 +48,7 @@ namespace Modern_Pharmacy_Managment_System
             f.Show();
         }
 
-        private void Buy_Medicine_btn_Click_1(object sender, EventArgs e)
+        private void Buy_Medicine_btn_Click(object sender, EventArgs e)
         {
             loadform(new OrderForm());
         }
