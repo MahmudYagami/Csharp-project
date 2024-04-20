@@ -110,5 +110,12 @@ namespace Modern_Pharmacy_Managment_System
                 }
             }
         }
+
+        private void lblSignup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SignupForm signup = new SignupForm();
+            signup.Show();
+            this.Hide();
+        }
     }
 }
