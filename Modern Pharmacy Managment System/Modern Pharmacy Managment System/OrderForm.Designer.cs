@@ -51,17 +51,17 @@ namespace Modern_Pharmacy_Managment_System
             this.btnAddToCart = new Guna.UI2.WinForms.Guna2Button();
             this.txtUnit = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtCPhone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCName = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnRemove = new Guna.UI2.WinForms.Guna2Button();
             this.btnBkash = new Guna.UI2.WinForms.Guna2Button();
             this.btnPay = new Guna.UI2.WinForms.Guna2Button();
             this.txtGrandTotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtTotalAmount = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtRewards = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblSuggestionName = new System.Windows.Forms.Label();
+            this.btnUseReward = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.addToCartPanel.SuspendLayout();
@@ -227,6 +227,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // txtSearchMedicine
             // 
+            this.txtSearchMedicine.BorderRadius = 8;
             this.txtSearchMedicine.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearchMedicine.DefaultText = "";
             this.txtSearchMedicine.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -243,10 +244,12 @@ namespace Modern_Pharmacy_Managment_System
             this.txtSearchMedicine.SelectedText = "";
             this.txtSearchMedicine.Size = new System.Drawing.Size(236, 40);
             this.txtSearchMedicine.TabIndex = 41;
+            this.txtSearchMedicine.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSearchMedicine.TextChanged += new System.EventHandler(this.txtSearchMedicine_TextChanged);
             // 
             // txtCustomerName
             // 
+            this.txtCustomerName.BorderRadius = 8;
             this.txtCustomerName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCustomerName.DefaultText = "";
             this.txtCustomerName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -256,13 +259,14 @@ namespace Modern_Pharmacy_Managment_System
             this.txtCustomerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerName.Location = new System.Drawing.Point(661, 12);
+            this.txtCustomerName.Location = new System.Drawing.Point(637, 12);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.PasswordChar = '\0';
             this.txtCustomerName.PlaceholderText = "Member Phone";
             this.txtCustomerName.SelectedText = "";
-            this.txtCustomerName.Size = new System.Drawing.Size(198, 40);
+            this.txtCustomerName.Size = new System.Drawing.Size(222, 40);
             this.txtCustomerName.TabIndex = 47;
+            this.txtCustomerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
             // 
             // guna2TextBox5
@@ -311,7 +315,7 @@ namespace Modern_Pharmacy_Managment_System
             this.addToCartPanel.Location = new System.Drawing.Point(3, 371);
             this.addToCartPanel.Margin = new System.Windows.Forms.Padding(2);
             this.addToCartPanel.Name = "addToCartPanel";
-            this.addToCartPanel.Size = new System.Drawing.Size(451, 177);
+            this.addToCartPanel.Size = new System.Drawing.Size(362, 177);
             this.addToCartPanel.TabIndex = 54;
             // 
             // btnAddToCart
@@ -327,7 +331,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnAddToCart.Image = ((System.Drawing.Image)(resources.GetObject("btnAddToCart.Image")));
             this.btnAddToCart.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAddToCart.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnAddToCart.Location = new System.Drawing.Point(121, 124);
+            this.btnAddToCart.Location = new System.Drawing.Point(93, 123);
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.Size = new System.Drawing.Size(180, 44);
             this.btnAddToCart.TabIndex = 54;
@@ -348,7 +352,7 @@ namespace Modern_Pharmacy_Managment_System
             this.txtUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUnit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUnit.Location = new System.Drawing.Point(51, 73);
+            this.txtUnit.Location = new System.Drawing.Point(23, 72);
             this.txtUnit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.PasswordChar = '\0';
@@ -361,20 +365,63 @@ namespace Modern_Pharmacy_Managment_System
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.guna2Panel1.Controls.Add(this.btnUseReward);
+            this.guna2Panel1.Controls.Add(this.txtCPhone);
+            this.guna2Panel1.Controls.Add(this.txtCName);
             this.guna2Panel1.Controls.Add(this.btnRemove);
             this.guna2Panel1.Controls.Add(this.btnBkash);
             this.guna2Panel1.Controls.Add(this.btnPay);
             this.guna2Panel1.Controls.Add(this.txtGrandTotal);
             this.guna2Panel1.Controls.Add(this.label4);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox3);
-            this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.txtTotalAmount);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox2);
+            this.guna2Panel1.Controls.Add(this.txtRewards);
             this.guna2Panel1.Controls.Add(this.label2);
-            this.guna2Panel1.Location = new System.Drawing.Point(474, 372);
+            this.guna2Panel1.Location = new System.Drawing.Point(384, 372);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(431, 176);
+            this.guna2Panel1.Size = new System.Drawing.Size(521, 176);
             this.guna2Panel1.TabIndex = 55;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // txtCPhone
+            // 
+            this.txtCPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCPhone.DefaultText = "";
+            this.txtCPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCPhone.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCPhone.Location = new System.Drawing.Point(213, 12);
+            this.txtCPhone.Name = "txtCPhone";
+            this.txtCPhone.PasswordChar = '\0';
+            this.txtCPhone.PlaceholderText = "Customer Phone";
+            this.txtCPhone.SelectedText = "";
+            this.txtCPhone.Size = new System.Drawing.Size(170, 36);
+            this.txtCPhone.TabIndex = 64;
+            this.txtCPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtCName
+            // 
+            this.txtCName.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtCName.DefaultText = "";
+            this.txtCName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCName.Location = new System.Drawing.Point(18, 12);
+            this.txtCName.Name = "txtCName";
+            this.txtCName.PasswordChar = '\0';
+            this.txtCName.PlaceholderText = "Customer Name";
+            this.txtCName.ReadOnly = true;
+            this.txtCName.SelectedText = "";
+            this.txtCName.Size = new System.Drawing.Size(173, 36);
+            this.txtCName.TabIndex = 63;
+            this.txtCName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnRemove
             // 
@@ -389,7 +436,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
             this.btnRemove.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnRemove.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnRemove.Location = new System.Drawing.Point(18, 125);
+            this.btnRemove.Location = new System.Drawing.Point(65, 123);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(120, 44);
             this.btnRemove.TabIndex = 62;
@@ -411,7 +458,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnBkash.Image = ((System.Drawing.Image)(resources.GetObject("btnBkash.Image")));
             this.btnBkash.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBkash.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnBkash.Location = new System.Drawing.Point(276, 124);
+            this.btnBkash.Location = new System.Drawing.Point(323, 122);
             this.btnBkash.Name = "btnBkash";
             this.btnBkash.Size = new System.Drawing.Size(120, 44);
             this.btnBkash.TabIndex = 61;
@@ -431,7 +478,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnPay.Image = ((System.Drawing.Image)(resources.GetObject("btnPay.Image")));
             this.btnPay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPay.ImageSize = new System.Drawing.Size(31, 31);
-            this.btnPay.Location = new System.Drawing.Point(147, 125);
+            this.btnPay.Location = new System.Drawing.Point(194, 123);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(120, 44);
             this.btnPay.TabIndex = 60;
@@ -450,58 +497,29 @@ namespace Modern_Pharmacy_Managment_System
             this.txtGrandTotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGrandTotal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtGrandTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGrandTotal.Location = new System.Drawing.Point(224, 84);
+            this.txtGrandTotal.Location = new System.Drawing.Point(333, 84);
             this.txtGrandTotal.Name = "txtGrandTotal";
             this.txtGrandTotal.PasswordChar = '\0';
-            this.txtGrandTotal.PlaceholderText = "";
+            this.txtGrandTotal.PlaceholderText = "0.0";
             this.txtGrandTotal.ReadOnly = true;
             this.txtGrandTotal.SelectedText = "";
-            this.txtGrandTotal.Size = new System.Drawing.Size(173, 28);
+            this.txtGrandTotal.Size = new System.Drawing.Size(185, 28);
             this.txtGrandTotal.TabIndex = 56;
             this.txtGrandTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(221, 64);
+            this.label4.Location = new System.Drawing.Point(330, 64);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 17);
             this.label4.TabIndex = 53;
             this.label4.Text = "Grand Total:";
             // 
-            // guna2TextBox3
-            // 
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Location = new System.Drawing.Point(18, 83);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(173, 28);
-            this.guna2TextBox3.TabIndex = 57;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 63);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
-            this.label3.TabIndex = 54;
-            this.label3.Text = "Discount:";
-            // 
             // txtTotalAmount
             // 
-            this.txtTotalAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotalAmount.Cursor = System.Windows.Forms.Cursors.No;
             this.txtTotalAmount.DefaultText = "";
             this.txtTotalAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtTotalAmount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -510,63 +528,67 @@ namespace Modern_Pharmacy_Managment_System
             this.txtTotalAmount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalAmount.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalAmount.Location = new System.Drawing.Point(302, 16);
+            this.txtTotalAmount.Location = new System.Drawing.Point(405, 12);
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.PasswordChar = '\0';
-            this.txtTotalAmount.PlaceholderText = "";
+            this.txtTotalAmount.PlaceholderText = "0.0";
             this.txtTotalAmount.ReadOnly = true;
             this.txtTotalAmount.SelectedText = "";
-            this.txtTotalAmount.Size = new System.Drawing.Size(113, 30);
+            this.txtTotalAmount.Size = new System.Drawing.Size(113, 36);
             this.txtTotalAmount.TabIndex = 58;
             this.txtTotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2TextBox2
+            // txtRewards
             // 
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(18, 28);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(173, 28);
-            this.guna2TextBox2.TabIndex = 59;
+            this.txtRewards.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtRewards.DefaultText = "";
+            this.txtRewards.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRewards.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRewards.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRewards.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRewards.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRewards.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtRewards.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRewards.Location = new System.Drawing.Point(18, 84);
+            this.txtRewards.Name = "txtRewards";
+            this.txtRewards.PasswordChar = '\0';
+            this.txtRewards.PlaceholderText = "0.0";
+            this.txtRewards.ReadOnly = true;
+            this.txtRewards.SelectedText = "";
+            this.txtRewards.Size = new System.Drawing.Size(173, 28);
+            this.txtRewards.TabIndex = 59;
+            this.txtRewards.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 8);
+            this.label2.Location = new System.Drawing.Point(15, 64);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 17);
             this.label2.TabIndex = 55;
             this.label2.Text = "Reward Points:";
             // 
-            // lblSuggestionName
+            // btnUseReward
             // 
-            this.lblSuggestionName.AutoSize = true;
-            this.lblSuggestionName.BackColor = System.Drawing.Color.Transparent;
-            this.lblSuggestionName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuggestionName.Location = new System.Drawing.Point(726, 43);
-            this.lblSuggestionName.Name = "lblSuggestionName";
-            this.lblSuggestionName.Size = new System.Drawing.Size(57, 21);
-            this.lblSuggestionName.TabIndex = 56;
-            this.lblSuggestionName.Text = "label1";
-            this.lblSuggestionName.Click += new System.EventHandler(this.lblSuggestionName_Click_1);
+            this.btnUseReward.BorderRadius = 3;
+            this.btnUseReward.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUseReward.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUseReward.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUseReward.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUseReward.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUseReward.ForeColor = System.Drawing.Color.White;
+            this.btnUseReward.Location = new System.Drawing.Point(195, 84);
+            this.btnUseReward.Name = "btnUseReward";
+            this.btnUseReward.Size = new System.Drawing.Size(130, 28);
+            this.btnUseReward.TabIndex = 65;
+            this.btnUseReward.Text = "Use Rewards";
             // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 551);
-            this.Controls.Add(this.lblSuggestionName);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.addToCartPanel);
             this.Controls.Add(this.btnAdd);
@@ -614,11 +636,11 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2Button btnPay;
         private Guna.UI2.WinForms.Guna2TextBox txtGrandTotal;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtTotalAmount;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox txtRewards;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblSuggestionName;
+        private Guna.UI2.WinForms.Guna2TextBox txtCName;
+        private Guna.UI2.WinForms.Guna2TextBox txtCPhone;
+        private Guna.UI2.WinForms.Guna2Button btnUseReward;
     }
 }
