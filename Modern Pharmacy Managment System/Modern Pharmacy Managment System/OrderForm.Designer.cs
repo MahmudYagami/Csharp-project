@@ -62,11 +62,6 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblSuggestionName = new System.Windows.Forms.Label();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.addToCartPanel.SuspendLayout();
@@ -80,7 +75,7 @@ namespace Modern_Pharmacy_Managment_System
             this.lblSettingTitle.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblSettingTitle.Location = new System.Drawing.Point(37, 12);
             this.lblSettingTitle.Name = "lblSettingTitle";
-            this.lblSettingTitle.Size = new System.Drawing.Size(110, 34);
+            this.lblSettingTitle.Size = new System.Drawing.Size(88, 28);
             this.lblSettingTitle.TabIndex = 32;
             this.lblSettingTitle.Text = "Order ";
             // 
@@ -123,8 +118,7 @@ namespace Modern_Pharmacy_Managment_System
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.RowHeadersVisible = false;
-            this.dgvProduct.RowHeadersWidth = 51;
-            this.dgvProduct.Size = new System.Drawing.Size(454, 308);
+            this.dgvProduct.Size = new System.Drawing.Size(451, 308);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvProduct.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -152,7 +146,6 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.Column1.DataPropertyName = "PId";
             this.Column1.HeaderText = "ID";
-            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
@@ -160,7 +153,6 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.Column2.DataPropertyName = "PName";
             this.Column2.HeaderText = "Name";
-            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
@@ -168,7 +160,6 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.Column3.DataPropertyName = "PSellingPrice";
             this.Column3.HeaderText = "Price";
-            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
@@ -176,7 +167,6 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.Column4.DataPropertyName = "PStock";
             this.Column4.HeaderText = "Stock";
-            this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
@@ -198,12 +188,6 @@ namespace Modern_Pharmacy_Managment_System
             this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOrder.ColumnHeadersHeight = 36;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,11 +197,10 @@ namespace Modern_Pharmacy_Managment_System
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvOrder.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvOrder.Location = new System.Drawing.Point(477, 59);
+            this.dgvOrder.Location = new System.Drawing.Point(474, 58);
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.ReadOnly = true;
             this.dgvOrder.RowHeadersVisible = false;
-            this.dgvOrder.RowHeadersWidth = 51;
             this.dgvOrder.Size = new System.Drawing.Size(431, 308);
             this.dgvOrder.TabIndex = 40;
             this.dgvOrder.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -254,7 +237,6 @@ namespace Modern_Pharmacy_Managment_System
             this.txtSearchMedicine.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchMedicine.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearchMedicine.Location = new System.Drawing.Point(218, 12);
-            this.txtSearchMedicine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearchMedicine.Name = "txtSearchMedicine";
             this.txtSearchMedicine.PasswordChar = '\0';
             this.txtSearchMedicine.PlaceholderText = "Search Medicine";
@@ -275,7 +257,6 @@ namespace Modern_Pharmacy_Managment_System
             this.txtCustomerName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerName.Location = new System.Drawing.Point(661, 12);
-            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.PasswordChar = '\0';
             this.txtCustomerName.PlaceholderText = "Member Phone";
@@ -296,7 +277,6 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2TextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox5.Location = new System.Drawing.Point(668, 287);
-            this.guna2TextBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox5.Name = "guna2TextBox5";
             this.guna2TextBox5.PasswordChar = '\0';
             this.guna2TextBox5.PlaceholderText = "";
@@ -369,7 +349,7 @@ namespace Modern_Pharmacy_Managment_System
             this.txtUnit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUnit.Location = new System.Drawing.Point(51, 73);
-            this.txtUnit.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUnit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.PasswordChar = '\0';
             this.txtUnit.PlaceholderText = "Amount want to buy";
@@ -471,7 +451,6 @@ namespace Modern_Pharmacy_Managment_System
             this.txtGrandTotal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtGrandTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGrandTotal.Location = new System.Drawing.Point(224, 84);
-            this.txtGrandTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGrandTotal.Name = "txtGrandTotal";
             this.txtGrandTotal.PasswordChar = '\0';
             this.txtGrandTotal.PlaceholderText = "";
@@ -487,7 +466,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label4.Location = new System.Drawing.Point(221, 64);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 21);
+            this.label4.Size = new System.Drawing.Size(88, 17);
             this.label4.TabIndex = 53;
             this.label4.Text = "Grand Total:";
             // 
@@ -503,7 +482,6 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox3.Location = new System.Drawing.Point(18, 83);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
             this.guna2TextBox3.PlaceholderText = "";
@@ -517,7 +495,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label3.Location = new System.Drawing.Point(15, 63);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 21);
+            this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 54;
             this.label3.Text = "Discount:";
             // 
@@ -533,7 +511,6 @@ namespace Modern_Pharmacy_Managment_System
             this.txtTotalAmount.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalAmount.Location = new System.Drawing.Point(302, 16);
-            this.txtTotalAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.PasswordChar = '\0';
             this.txtTotalAmount.PlaceholderText = "";
@@ -555,7 +532,6 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.Location = new System.Drawing.Point(18, 28);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
             this.guna2TextBox2.PlaceholderText = "";
@@ -569,7 +545,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label2.Location = new System.Drawing.Point(15, 8);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 21);
+            this.label2.Size = new System.Drawing.Size(104, 17);
             this.label2.TabIndex = 55;
             this.label2.Text = "Reward Points:";
             // 
@@ -578,58 +554,18 @@ namespace Modern_Pharmacy_Managment_System
             this.lblSuggestionName.AutoSize = true;
             this.lblSuggestionName.BackColor = System.Drawing.Color.Transparent;
             this.lblSuggestionName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuggestionName.Location = new System.Drawing.Point(523, 12);
+            this.lblSuggestionName.Location = new System.Drawing.Point(726, 43);
             this.lblSuggestionName.Name = "lblSuggestionName";
-            this.lblSuggestionName.Size = new System.Drawing.Size(72, 23);
+            this.lblSuggestionName.Size = new System.Drawing.Size(57, 21);
             this.lblSuggestionName.TabIndex = 56;
             this.lblSuggestionName.Text = "label1";
             this.lblSuggestionName.Click += new System.EventHandler(this.lblSuggestionName_Click_1);
             // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "OId";
-            this.Column5.HeaderText = "Id";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "OName";
-            this.Column6.HeaderText = "Name";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "OUnit";
-            this.Column7.HeaderText = "Unit";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "OPrice";
-            this.Column8.HeaderText = "Price";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "OTotalCost";
-            this.Column9.HeaderText = "Cost";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
             // OrderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 551);
+            this.ClientSize = new System.Drawing.Size(917, 551);
             this.Controls.Add(this.lblSuggestionName);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.addToCartPanel);
@@ -684,10 +620,5 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSuggestionName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

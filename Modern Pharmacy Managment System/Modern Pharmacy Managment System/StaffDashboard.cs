@@ -71,5 +71,15 @@ namespace Modern_Pharmacy_Managment_System
         {
 
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            loadform(new StaffInfoPanel());
+        }
+
+        private void btnDashboard_Click_1(object sender, EventArgs e)
+        {
+            loadform(new StaffInfoPanel());
+        }
     }
 }

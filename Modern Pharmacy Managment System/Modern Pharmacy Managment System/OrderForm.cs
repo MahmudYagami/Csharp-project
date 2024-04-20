@@ -86,8 +86,7 @@ namespace Modern_Pharmacy_Managment_System
             // Iterate through each row in dgvOrder and sum up the OTotalCost
             foreach (DataGridViewRow row in dgvOrder.Rows)
             {
-                //totalAmount += Convert.ToDecimal(row.Cells["OTotalCost"].Value);
-                totalAmount += Convert.ToDecimal(row.Cells[4].Value);
+                totalAmount += Convert.ToDecimal(row.Cells["OTotalCost"].Value);
             }
 
             return totalAmount;
