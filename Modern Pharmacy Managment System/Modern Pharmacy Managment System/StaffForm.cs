@@ -14,203 +14,206 @@ namespace Modern_Pharmacy_Managment_System
     public partial class StaffForm : Form
     {
         Functions Con;
+        int Key = 0; // For storing the selected employee's key
+
         public StaffForm()
         {
             InitializeComponent();
-        
             Con = new Functions();
-            
             ShowStaffForm();
-            
         }
+
         private void ShowStaffForm()
         {
-            string Query = "select * from EmployeeTbl";
-            EmployeeList.DataSource = Con.GetData(Query);
-
+            try
+            {
+                string query = "select * from EmployeeTbl";
+                EmployeeList.DataSource = Con.GetData(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
-
-        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        private void EmployeeList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = EmployeeList.Rows[e.RowIndex];
+                EmpNameTb.Text = row.Cells["EmpName"].Value.ToString();
 
-        }
 
+                EmpGenderCb.SelectedItem = row.Cells["EmpGen"].Value.ToString();
+                EmpPhoneTb.Text = row.Cells["EmpPhone"].Value.ToString();
+                EmpPassTb.Text = row.Cells["EmpPass"].Value.ToString();
+                EmpAddressTb.Text = row.Cells["EmpAdd"].Value.ToString();
+                EmployeeJoiningCalender.Value = Convert.ToDateTime(row.Cells["EmpJoiningDate"].Value);
+                EmpSalaryBox.Text = row.Cells["EmpSalary"].Value.ToString();
 
-        private void StaffFormEmployeesBtn_Click(object sender, EventArgs e)
-        {
-
+                Key = Convert.ToInt32(row.Cells["EmpId"].Value);
+            }
         }
 
         private void EmpSaveBtnStaff_Click(object sender, EventArgs e)
         {
             try
             {
-                if (EmpNameTb.Text == ""||EmpPhoneTb.Text==""||EmpPassTb.Text==""||EmpGenderCb.SelectedIndex==-1)
-                {
-                    MessageBox.Show("Missing Datails!!!");
-                }
-                else
-                {
-                    string Name = EmpNameTb.Text;
-                    string Gender = EmpGenderCb.SelectedItem.ToString();
-                    string phone = EmpPhoneTb.Text;
-                    string pass = EmpPassTb.Text;
-                    string Add = EmpAddressTb.Text;
-                    
-                    string Query = "insert into EmployeeTbl values('{0}','{1}','{2}','{3}','{4}')";
-                    Query = string.Format(Query, Name,Gender,phone,pass,Add);
-                    Con.SetData(Query);
-                    ShowStaffForm();
-                    MessageBox.Show("Employee Added!!!");
-                    EmpNameTb.Text = "";
-                    EmpPhoneTb.Text = "";
-                    EmpPassTb.Text = "";
-                    
-                  
-                    EmpAddressTb.Text = "";
-                    
+                string name = EmpNameTb.Text;
+                string gender = EmpGenderCb.SelectedItem != null ? EmpGenderCb.SelectedItem.ToString() : "";
+                string phone = EmpPhoneTb.Text;
+                string pass = EmpPassTb.Text;
+                string add = EmpAddressTb.Text;
+                DateTime joiningDate = EmployeeJoiningCalender.Value;
+                float salary = float.Parse(EmpSalaryBox.Text);
 
+                string query = "insert into EmployeeTbl (EmpName, EmpGen, EmpPhone, EmpPass, EmpAdd, EmpJoiningDate, EmpSalary) " +
+                               "values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', {6})";
+                query = string.Format(query, name, gender, phone, pass, add, joiningDate.ToString("yyyy-MM-dd"), salary);
+                Con.SetData(query);
 
-                }
-
+                ShowStaffForm();
+                MessageBox.Show("Employee Added!!!");
+                ClearFields();
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(Ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
-
-        int Key = 0;
-        private void EmployeeList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            EmpNameTb.Text = EmployeeList.SelectedRows[0].Cells[1].Value.ToString();
-            EmpGenderCb.Text = EmployeeList.SelectedRows[0].Cells[2].Value.ToString();
-            EmpPhoneTb.Text = EmployeeList.SelectedRows[0].Cells[3].Value.ToString();
-            EmpPassTb.Text = EmployeeList.SelectedRows[0].Cells[4].Value.ToString();
-            EmpAddressTb.Text = EmployeeList.SelectedRows[0].Cells[5].Value.ToString();
-          
-            
-            if (EmpNameTb.Text == "")
-            {
-                Key = 0;
-
-            }
-
-            else
-            {
-                Key = Convert.ToInt32(EmployeeList.SelectedRows[0].Cells[0].Value.ToString());
-            }
-
-
-        }
-
-        
-
-
 
         private void EmpEditBtnStaff_Click(object sender, EventArgs e)
         {
             try
             {
-                if (EmpNameTb.Text == "" || EmpPhoneTb.Text == "" || EmpPassTb.Text == "" || EmpGenderCb.SelectedIndex == -1)
+                if (Key != 0)
                 {
-                    MessageBox.Show("Missing Datails!!!");
+                    string name = EmpNameTb.Text;
+                    string gender = EmpGenderCb.SelectedItem != null ? EmpGenderCb.SelectedItem.ToString() : "";
+                    string phone = EmpPhoneTb.Text;
+                    string pass = EmpPassTb.Text;
+                    string add = EmpAddressTb.Text;
+                    DateTime joiningDate = EmployeeJoiningCalender.Value;
+                    float salary = float.Parse(EmpSalaryBox.Text);
+
+                    string query = "update EmployeeTbl set EmpName='{0}', EmpGen='{1}', EmpPhone='{2}', EmpPass='{3}', " +
+                                   "EmpAdd='{4}', EmpJoiningDate='{5}', EmpSalary={6} where EmpId={7}";
+                    query = string.Format(query, name, gender, phone, pass, add, joiningDate.ToString("yyyy-MM-dd"), salary, Key);
+                    Con.SetData(query);
+
+                    ShowStaffForm();
+                    MessageBox.Show("Employee Updated!!!");
+                    ClearFields();
                 }
                 else
                 {
-                    string Name = EmpNameTb.Text;
-                    string Gender = EmpGenderCb.SelectedItem.ToString();
-                    string phone = EmpPhoneTb.Text;
-                    string pass = EmpPassTb.Text;
-                    string Add = EmpAddressTb.Text;
-                    
-                    string Query = "update EmployeeTbl set EmpName='{0}',EmpGen='{1}',EmpPhone='{2}',EmpPass='{3}',EmpAdd='{4}' where EmpId={5}";
-                    Query = string.Format(Query, Name, Gender, phone, pass, Add,Key);
-                    Con.SetData(Query);
-                    ShowStaffForm();
-                    MessageBox.Show("Employee Updated!!!");
-                    EmpNameTb.Text = "";
-                    EmpPhoneTb.Text = "";
-                    EmpPassTb.Text = "";
-
-
-                    EmpAddressTb.Text = "";
-                    
-
-
+                    MessageBox.Show("Please select an employee to edit.");
                 }
-
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(Ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
-
         }
 
         private void EmpDltBtnStaff_Click(object sender, EventArgs e)
         {
+
+
             try
             {
-                if (EmpNameTb.Text == "" || EmpPhoneTb.Text == "" || EmpPassTb.Text == "" || EmpGenderCb.SelectedIndex == -1 )
+                if (Key != 0)
                 {
-                    MessageBox.Show("Missing Datails!!!");
+                    string query = "delete from EmployeeTbl where EmpId={0}";
+                    query = string.Format(query, Key);
+                    Con.SetData(query);
+                    ShowStaffForm();
+                    MessageBox.Show("Employee Deleted!!!");
+                    ClearFields();
                 }
                 else
                 {
-
-                    string Query = "delete from EmployeeTbl where EmpId={0}";
-                    Query = string.Format(Query, Key);
-                    Con.SetData(Query);
-                    ShowStaffForm();
-                    MessageBox.Show("Employee Deleted!!!");
-                    EmpNameTb.Text = "";
-                    EmpPhoneTb.Text = "";
-                    EmpPassTb.Text = "";
-
-
-                    EmpAddressTb.Text = "";
-                    
-
-
+                    MessageBox.Show("Please select an employee to delete.");
                 }
-
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(Ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
 
+        }
+
+        private void ClearFields()
+        {
+            EmpNameTb.Text = "";
+            EmpPhoneTb.Text = "";
+            EmpPassTb.Text = "";
+            EmpAddressTb.Text = "";
+            EmpGenderCb.SelectedIndex = -1;
+            EmployeeJoiningCalender.Value = DateTime.Now;
+            EmpSalaryBox.Text = "";
+        }
+
+        private void EmployeeList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = EmployeeList.Rows[e.RowIndex];
+                EmpNameTb.Text = row.Cells["EmpName"].Value.ToString();
+                EmpGenderCb.SelectedItem = row.Cells["EmpGen"].Value.ToString();
+                EmpPhoneTb.Text = row.Cells["EmpPhone"].Value.ToString();
+                EmpPassTb.Text = row.Cells["EmpPass"].Value.ToString();
+                EmpAddressTb.Text = row.Cells["EmpAdd"].Value.ToString();
+                EmployeeJoiningCalender.Value = Convert.ToDateTime(row.Cells["EmpJoiningDate"].Value);
+                EmpSalaryBox.Text = row.Cells["EmpSalary"].Value.ToString();
+
+                Key = Convert.ToInt32(row.Cells["EmpId"].Value);
+            }
         }
 
         private void LeaveBtn_Click(object sender, EventArgs e)
         {
-            LeavesForm lf = new LeavesForm();
+            try
+            {
+                LeavesForm lf = new LeavesForm();
+                Point location = new Point(598, 250); // Adjust the coordinates as needed
 
-            Point location = new Point(598, 250); // Adjust the coordinates as needed
-
-            // Show the Category form
-            lf.StartPosition = FormStartPosition.Manual;
-            lf.Location = location;
-            lf.Show();
-            this.Hide();
+                // Show the LeavesForm
+                lf.StartPosition = FormStartPosition.Manual;
+                lf.Location = location;
+                lf.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
-        private void iconButton5_Click(object sender, EventArgs e)
+
+        private void EmpDltBtnStaff_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                if (Key != 0)
+                {
+                    string query = "delete from EmployeeTbl where EmpId={0}";
+                    query = string.Format(query, Key);
+                    Con.SetData(query);
+                    ShowStaffForm();
+                    MessageBox.Show("Employee Deleted!!!");
+                    ClearFields();
+                }
+                else
+                {
+                    MessageBox.Show("Please select an employee to delete.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
-            Category ct = new Category();
-            Point location = new Point(598, 250); // Adjust the coordinates as needed
-
-            // Show the Category form
-            ct.StartPosition = FormStartPosition.Manual;
-            ct.Location = location;
-            ct.Show();
-            this.Hide();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
