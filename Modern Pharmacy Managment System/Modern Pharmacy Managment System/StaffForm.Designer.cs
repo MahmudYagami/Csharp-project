@@ -378,7 +378,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeJoiningCalender.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.EmployeeJoiningCalender.Location = new System.Drawing.Point(577, 98);
             this.EmployeeJoiningCalender.MaxDate = new System.DateTime(9988, 12, 31, 0, 0, 0, 0);
-            this.EmployeeJoiningCalender.MinDate = new System.DateTime(2024, 4, 6, 0, 0, 0, 0);
+            this.EmployeeJoiningCalender.MinDate = new System.DateTime(2023, 3, 1, 0, 0, 0, 0);
             this.EmployeeJoiningCalender.Name = "EmployeeJoiningCalender";
             this.EmployeeJoiningCalender.Size = new System.Drawing.Size(211, 36);
             this.EmployeeJoiningCalender.TabIndex = 57;

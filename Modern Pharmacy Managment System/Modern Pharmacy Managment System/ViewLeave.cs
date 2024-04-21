@@ -34,5 +34,10 @@ namespace Modern_Pharmacy_Managment_System
         {
             // emp id 
         }
+
+        private void LeaveList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
