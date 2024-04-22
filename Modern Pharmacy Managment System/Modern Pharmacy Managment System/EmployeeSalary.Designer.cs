@@ -29,7 +29,6 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.EmpIdTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SalaryAmountTxt = new System.Windows.Forms.TextBox();
@@ -37,23 +36,17 @@ namespace Modern_Pharmacy_Managment_System
             this.label2 = new System.Windows.Forms.Label();
             this.SalaryView = new System.Windows.Forms.DataGridView();
             this.SalaryPaidButton = new FontAwesome.Sharp.IconButton();
+            this.EmpIdTxt = new System.Windows.Forms.TextBox();
+            this.DeleteSalaryBtn = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // EmpIdTxt
-            // 
-            this.EmpIdTxt.Location = new System.Drawing.Point(126, 58);
-            this.EmpIdTxt.Multiline = true;
-            this.EmpIdTxt.Name = "EmpIdTxt";
-            this.EmpIdTxt.Size = new System.Drawing.Size(218, 37);
-            this.EmpIdTxt.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.label3.Location = new System.Drawing.Point(122, 32);
+            this.label3.Location = new System.Drawing.Point(169, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 23);
             this.label3.TabIndex = 7;
@@ -64,7 +57,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.label1.Location = new System.Drawing.Point(122, 112);
+            this.label1.Location = new System.Drawing.Point(169, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 23);
             this.label1.TabIndex = 9;
@@ -72,7 +65,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // SalaryAmountTxt
             // 
-            this.SalaryAmountTxt.Location = new System.Drawing.Point(126, 138);
+            this.SalaryAmountTxt.Location = new System.Drawing.Point(173, 142);
             this.SalaryAmountTxt.Multiline = true;
             this.SalaryAmountTxt.Name = "SalaryAmountTxt";
             this.SalaryAmountTxt.Size = new System.Drawing.Size(218, 38);
@@ -81,9 +74,10 @@ namespace Modern_Pharmacy_Managment_System
             // PayDateCalender
             // 
             this.PayDateCalender.Checked = true;
+            this.PayDateCalender.FillColor = System.Drawing.Color.Silver;
             this.PayDateCalender.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PayDateCalender.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.PayDateCalender.Location = new System.Drawing.Point(126, 226);
+            this.PayDateCalender.Location = new System.Drawing.Point(173, 230);
             this.PayDateCalender.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.PayDateCalender.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.PayDateCalender.Name = "PayDateCalender";
@@ -96,7 +90,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.label2.Location = new System.Drawing.Point(122, 200);
+            this.label2.Location = new System.Drawing.Point(169, 204);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 23);
             this.label2.TabIndex = 11;
@@ -114,22 +108,52 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // SalaryPaidButton
             // 
-            this.SalaryPaidButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.SalaryPaidButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.SalaryPaidButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalaryPaidButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalaryPaidButton.IconChar = FontAwesome.Sharp.IconChar.MoneyBill1Wave;
             this.SalaryPaidButton.IconColor = System.Drawing.Color.Black;
             this.SalaryPaidButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SalaryPaidButton.Location = new System.Drawing.Point(508, 175);
+            this.SalaryPaidButton.Location = new System.Drawing.Point(418, 230);
             this.SalaryPaidButton.Name = "SalaryPaidButton";
-            this.SalaryPaidButton.Size = new System.Drawing.Size(75, 23);
+            this.SalaryPaidButton.Size = new System.Drawing.Size(179, 54);
             this.SalaryPaidButton.TabIndex = 13;
-            this.SalaryPaidButton.Text = "Paid";
-            this.SalaryPaidButton.UseVisualStyleBackColor = true;
+            this.SalaryPaidButton.Text = "Pay ";
+            this.SalaryPaidButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SalaryPaidButton.UseVisualStyleBackColor = false;
             this.SalaryPaidButton.Click += new System.EventHandler(this.SalaryPaidButton_Click);
+            // 
+            // EmpIdTxt
+            // 
+            this.EmpIdTxt.Location = new System.Drawing.Point(173, 62);
+            this.EmpIdTxt.Multiline = true;
+            this.EmpIdTxt.Name = "EmpIdTxt";
+            this.EmpIdTxt.Size = new System.Drawing.Size(218, 37);
+            this.EmpIdTxt.TabIndex = 0;
+            // 
+            // DeleteSalaryBtn
+            // 
+            this.DeleteSalaryBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.DeleteSalaryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteSalaryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteSalaryBtn.IconChar = FontAwesome.Sharp.IconChar.MoneyBill1Wave;
+            this.DeleteSalaryBtn.IconColor = System.Drawing.Color.Black;
+            this.DeleteSalaryBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DeleteSalaryBtn.Location = new System.Drawing.Point(621, 230);
+            this.DeleteSalaryBtn.Name = "DeleteSalaryBtn";
+            this.DeleteSalaryBtn.Size = new System.Drawing.Size(179, 54);
+            this.DeleteSalaryBtn.TabIndex = 14;
+            this.DeleteSalaryBtn.Text = "Delete";
+            this.DeleteSalaryBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DeleteSalaryBtn.UseVisualStyleBackColor = false;
+            this.DeleteSalaryBtn.Click += new System.EventHandler(this.DeleteSalaryBtn_Click);
             // 
             // EmployeeSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 669);
+            this.Controls.Add(this.DeleteSalaryBtn);
             this.Controls.Add(this.SalaryPaidButton);
             this.Controls.Add(this.SalaryView);
             this.Controls.Add(this.label2);
@@ -149,8 +173,6 @@ namespace Modern_Pharmacy_Managment_System
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox EmpIdTxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox SalaryAmountTxt;
@@ -158,5 +180,7 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView SalaryView;
         private FontAwesome.Sharp.IconButton SalaryPaidButton;
+        private System.Windows.Forms.TextBox EmpIdTxt;
+        private FontAwesome.Sharp.IconButton DeleteSalaryBtn;
     }
 }

@@ -30,7 +30,27 @@ namespace Modern_Pharmacy_Managment_System
 
         private void PaySalaryBtn_Click(object sender, EventArgs e)
         {
+            // Reload data when the "Salary Paid" button is clicked
+        }
 
+        private void DeleteSalaryBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedRowIndex = SalaryView.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = SalaryView.Rows[selectedRowIndex];
+                int salaryId = Convert.ToInt32(selectedRow.Cells["SalaryId"].Value);
+
+                string deleteQuery = "DELETE FROM SalaryTbl WHERE SalaryId = " + salaryId;
+                Con.SetData(deleteQuery);
+
+                MessageBox.Show("Salary record deleted successfully!");
+                LoadSalaryData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private DateTime GetJoiningDate(int empId)
@@ -133,7 +153,8 @@ namespace Modern_Pharmacy_Managment_System
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            LoadSalaryData(); // Reload data when the "Salary Paid" button is clicked
+            LoadSalaryData();
+
         }
     }
 }

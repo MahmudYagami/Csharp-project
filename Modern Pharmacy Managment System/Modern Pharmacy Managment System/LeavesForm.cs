@@ -190,5 +190,10 @@ namespace Modern_Pharmacy_Managment_System
         {
 
         }
+
+        private void EmployeeCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
