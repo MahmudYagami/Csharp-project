@@ -53,6 +53,57 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SalaryPaidButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int empId = int.Parse(EmpIdTxt.Text);
+                float salaryAmount = float.Parse(SalaryAmountTxt.Text);
+                DateTime payDate = PayDateCalender.Value;
+
+                // Check if it's been more than 30 days since joining
+                DateTime joiningDate = GetJoiningDate(empId);
+                TimeSpan daysSinceJoining = payDate - joiningDate;
+                if (daysSinceJoining.TotalDays < 30)
+                {
+                    MessageBox.Show("Salary can only be paid after 30 days of joining.");
+                    return;
+                }
+
+                // Check if the employee exists
+                if (!EmployeeExists(empId))
+                {
+                    MessageBox.Show("Employee with ID " + empId + " does not exist.");
+                    return;
+                }
+
+                // Check if the salary amount matches the expected amount
+                float expectedSalary = GetExpectedSalary(empId);
+                if (salaryAmount != expectedSalary)
+                {
+                    MessageBox.Show("Salary amount does not match with the expected amount.");
+                    return;
+                }
+
+                // Insert salary payment into SalaryTbl
+                string insertQuery = "INSERT INTO SalaryTbl (EmpId, SalaryPaidAmount, SalaryPaidDate) VALUES ({0}, {1}, '{2}')";
+                insertQuery = string.Format(insertQuery, empId, salaryAmount, payDate.ToString("yyyy-MM-dd"));
+                Con.SetData(insertQuery);
+
+                MessageBox.Show("Salary paid successfully!");
+                LoadSalaryData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
         private DateTime GetJoiningDate(int empId)
         {
             try
@@ -109,52 +160,44 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void SalaryPaidButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click_1(object sender, EventArgs e)
         {
+
             try
             {
-                int empId = int.Parse(EmpIdTxt.Text);
-                float salaryAmount = float.Parse(SalaryAmountTxt.Text);
-                DateTime payDate = PayDateCalender.Value;
+                string searchText = SearchTextBox.Text.Trim();
 
-                // Check if it's been more than 30 days since joining
-                DateTime joiningDate = GetJoiningDate(empId);
-                TimeSpan daysSinceJoining = payDate - joiningDate;
-                if (daysSinceJoining.TotalDays < 30)
+                // If the search text is empty, reload the original table data
+                if (string.IsNullOrWhiteSpace(searchText))
                 {
-                    MessageBox.Show("Salary can only be paid after 30 days of joining.");
+                    LoadSalaryData();
                     return;
                 }
 
-                // Check if the employee exists
-                if (!EmployeeExists(empId))
+                int empId = int.Parse(searchText);
+
+                // Cast the DataSource of the DataGridView to a DataTable
+                DataTable dataTable = (DataTable)SalaryView.DataSource;
+
+                // Filter the DataTable to select rows where EmpId matches the input empId
+                DataRow[] filteredRows = dataTable.Select($"EmpId = {empId}");
+
+                // Create a new DataTable with the same schema as the original DataTable
+                DataTable filteredDataTable = dataTable.Clone();
+
+                // Add the filtered rows to the new DataTable
+                foreach (DataRow row in filteredRows)
                 {
-                    MessageBox.Show("Employee with ID " + empId + " does not exist.");
-                    return;
+                    filteredDataTable.ImportRow(row);
                 }
 
-                // Check if the salary amount matches the expected amount
-                float expectedSalary = GetExpectedSalary(empId);
-                if (salaryAmount != expectedSalary)
-                {
-                    MessageBox.Show("Salary amount does not match with the expected amount.");
-                    return;
-                }
-
-                // Insert salary payment into SalaryTbl
-                string insertQuery = "INSERT INTO SalaryTbl (EmpId, SalaryPaidAmount, SalaryPaidDate) VALUES ({0}, {1}, '{2}')";
-                insertQuery = string.Format(insertQuery, empId, salaryAmount, payDate.ToString("yyyy-MM-dd"));
-                Con.SetData(insertQuery);
-
-                MessageBox.Show("Salary paid successfully!");
-                LoadSalaryData();
+                // Set the DataSource of the DataGridView to the filtered DataTable
+                SalaryView.DataSource = filteredDataTable;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error searching employee: " + ex.Message);
             }
-            LoadSalaryData();
-
         }
     }
 }
