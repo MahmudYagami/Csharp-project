@@ -29,9 +29,9 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SalaryAmountTxt = new System.Windows.Forms.TextBox();
@@ -45,7 +45,10 @@ namespace Modern_Pharmacy_Managment_System
             this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SearchButton = new FontAwesome.Sharp.IconButton();
+            this.Emp_manage_label = new System.Windows.Forms.Label();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryView)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -81,14 +84,14 @@ namespace Modern_Pharmacy_Managment_System
             // PayDateCalender
             // 
             this.PayDateCalender.Checked = true;
-            this.PayDateCalender.FillColor = System.Drawing.Color.Silver;
+            this.PayDateCalender.FillColor = System.Drawing.Color.DimGray;
             this.PayDateCalender.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PayDateCalender.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.PayDateCalender.Location = new System.Drawing.Point(150, 253);
             this.PayDateCalender.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.PayDateCalender.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.PayDateCalender.Name = "PayDateCalender";
-            this.PayDateCalender.Size = new System.Drawing.Size(200, 54);
+            this.PayDateCalender.Size = new System.Drawing.Size(221, 54);
             this.PayDateCalender.TabIndex = 10;
             this.PayDateCalender.Value = new System.DateTime(2024, 4, 21, 21, 9, 19, 426);
             // 
@@ -105,11 +108,12 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // SalaryPaidButton
             // 
-            this.SalaryPaidButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.SalaryPaidButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.SalaryPaidButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SalaryPaidButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SalaryPaidButton.IconChar = FontAwesome.Sharp.IconChar.MoneyBill1Wave;
-            this.SalaryPaidButton.IconColor = System.Drawing.Color.Black;
+            this.SalaryPaidButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SalaryPaidButton.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.SalaryPaidButton.IconColor = System.Drawing.Color.White;
             this.SalaryPaidButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SalaryPaidButton.Location = new System.Drawing.Point(455, 183);
             this.SalaryPaidButton.Name = "SalaryPaidButton";
@@ -148,27 +152,28 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // SalaryView
             // 
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.SalaryView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SalaryView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
-            this.SalaryView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SalaryView.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.SalaryView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SalaryView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.SalaryView.ColumnHeadersHeight = 19;
+            this.SalaryView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SalaryView.DefaultCellStyle = dataGridViewCellStyle9;
             this.SalaryView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.SalaryView.Location = new System.Drawing.Point(26, 342);
+            this.SalaryView.Location = new System.Drawing.Point(23, 370);
             this.SalaryView.Name = "SalaryView";
             this.SalaryView.RowHeadersVisible = false;
             this.SalaryView.RowHeadersWidth = 51;
@@ -187,7 +192,7 @@ namespace Modern_Pharmacy_Managment_System
             this.SalaryView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.SalaryView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalaryView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.SalaryView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SalaryView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.SalaryView.ThemeStyle.HeaderStyle.Height = 19;
             this.SalaryView.ThemeStyle.ReadOnly = false;
             this.SalaryView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
@@ -200,11 +205,12 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.Emp_manage_label);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1113, 38);
+            this.panel1.Size = new System.Drawing.Size(1113, 36);
             this.panel1.TabIndex = 16;
             // 
             // SearchTextBox
@@ -254,11 +260,32 @@ namespace Modern_Pharmacy_Managment_System
             this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click_1);
             // 
+            // Emp_manage_label
+            // 
+            this.Emp_manage_label.AutoSize = true;
+            this.Emp_manage_label.Font = new System.Drawing.Font("Microsoft Tai Le", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Emp_manage_label.ForeColor = System.Drawing.Color.White;
+            this.Emp_manage_label.Location = new System.Drawing.Point(349, 7);
+            this.Emp_manage_label.Name = "Emp_manage_label";
+            this.Emp_manage_label.Size = new System.Drawing.Size(391, 29);
+            this.Emp_manage_label.TabIndex = 1;
+            this.Emp_manage_label.Text = "EMPLOYEE SALARY MANAGEMENT";
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 339);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1113, 10);
+            this.guna2Panel1.TabIndex = 20;
+            // 
             // EmployeeSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 515);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1113, 570);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchTextBox);
@@ -277,6 +304,8 @@ namespace Modern_Pharmacy_Managment_System
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeSalary";
             ((System.ComponentModel.ISupportInitialize)(this.SalaryView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +325,7 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2TextBox SearchTextBox;
         private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton SearchButton;
+        private System.Windows.Forms.Label Emp_manage_label;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

@@ -180,5 +180,10 @@ namespace Modern_Pharmacy_Managment_System
         {
             loadform(new AdminDashboard());
         }
+
+        private void SalaryPayBtn_Click(object sender, EventArgs e)
+        {
+            loadform(new EmployeeSalary());
+        }
     }
 }

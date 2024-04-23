@@ -17,7 +17,7 @@ namespace Modern_Pharmacy_Managment_System
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new Form1());
-            //Application.Run(new DashBoard());
+            Application.Run(new DashBoard());
             //Application.Run(new Login());
             // Application.Run(new StaffModule());
              // Application.Run(new StaffForm());
@@ -28,7 +28,7 @@ namespace Modern_Pharmacy_Managment_System
             //Application.Run(new OrderForm());
             //  Application.Run(new CustomerDashboard());
             //Application.Run(new SignupForm());
-            Application.Run(new EmployeeSalary());
+           // Application.Run(new EmployeeSalary());
             //Application.Run(new ViewSalary());
 
 
