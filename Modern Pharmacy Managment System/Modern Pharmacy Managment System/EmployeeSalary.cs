@@ -13,6 +13,10 @@ namespace Modern_Pharmacy_Managment_System
             InitializeComponent();
             Con = new Functions();
             LoadSalaryData();
+            SalaryView.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Set selection mode to full row select
+            SalaryView.MultiSelect = false; // Allow only single row selection
+            SalaryView.ReadOnly = true; // Make DataGridView read-only
+            SalaryView.SelectionChanged += SalaryView_SelectionChanged; // Handle selection changed event
         }
 
         private void LoadSalaryData()
@@ -28,6 +32,17 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
+        private void SalaryView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (SalaryView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = SalaryView.SelectedRows[0];
+                EmpIdTxt.Text = selectedRow.Cells["EmpId"].Value.ToString();
+                SalaryAmountTxt.Text = selectedRow.Cells["SalaryPaidAmount"].Value.ToString();
+                PayDateCalender.Value = Convert.ToDateTime(selectedRow.Cells["SalaryPaidDate"].Value);
+            }
+        }
+
         private void PaySalaryBtn_Click(object sender, EventArgs e)
         {
             // Reload data when the "Salary Paid" button is clicked
@@ -37,15 +52,21 @@ namespace Modern_Pharmacy_Managment_System
         {
             try
             {
-                int selectedRowIndex = SalaryView.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = SalaryView.Rows[selectedRowIndex];
-                int salaryId = Convert.ToInt32(selectedRow.Cells["SalaryId"].Value);
+                if (SalaryView.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow selectedRow = SalaryView.SelectedRows[0];
+                    int salaryId = Convert.ToInt32(selectedRow.Cells["SalaryId"].Value);
 
-                string deleteQuery = "DELETE FROM SalaryTbl WHERE SalaryId = " + salaryId;
-                Con.SetData(deleteQuery);
+                    string deleteQuery = "DELETE FROM SalaryTbl WHERE SalaryId = " + salaryId;
+                    Con.SetData(deleteQuery);
 
-                MessageBox.Show("Salary record deleted successfully!");
-                LoadSalaryData();
+                    MessageBox.Show("Salary record deleted successfully!");
+                    LoadSalaryData();
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to delete.");
+                }
             }
             catch (Exception ex)
             {
@@ -55,7 +76,7 @@ namespace Modern_Pharmacy_Managment_System
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void SalaryPaidButton_Click(object sender, EventArgs e)

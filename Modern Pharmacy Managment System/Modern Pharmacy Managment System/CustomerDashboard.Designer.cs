@@ -105,6 +105,7 @@
             this.Customer_settings_Btn.Text = "Settings";
             this.Customer_settings_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Customer_settings_Btn.UseVisualStyleBackColor = false;
+            this.Customer_settings_Btn.Click += new System.EventHandler(this.Customer_settings_Btn_Click);
             // 
             // Buy_Medicine_btn
             // 

@@ -30,6 +30,12 @@ namespace Modern_Pharmacy_Managment_System
             RevenueBtn.MouseLeave += RevenueBtn_MouseLeave;
             DashBoardBtn.MouseEnter += DashBoardBtn_MouseEnter;
             DashBoardBtn.MouseLeave += DashBoardBtn_MouseLeave;
+
+            StaffBtn.MouseEnter += StaffBtn_MouseEnter;
+            StaffBtn.MouseLeave += StaffBtn_MouseLeave;
+
+            SalaryPayBtn.MouseEnter += SalaryPayBtn_MouseEnter;
+            SalaryPayBtn.MouseLeave += SalaryPayBtn_MouseLeave;
             loadform(new AdminDashboard());
         }
 
@@ -122,6 +128,28 @@ namespace Modern_Pharmacy_Managment_System
         {
             // Change button background color back to normal when mouse leaves
             RevenueBtn.BackColor = Color.FromArgb(40, 51, 66); // Change to the default background color of your form
+        }
+
+        private void StaffBtn_MouseEnter(object sender, EventArgs e)
+        {
+            // Change button background color when mouse enters
+            StaffBtn.BackColor = Color.Red; // Change to desired color
+        }
+        private void StaffBtn_MouseLeave(object sender, EventArgs e)
+        {
+            // Change button background color back to normal when mouse leaves
+            StaffBtn.BackColor = Color.FromArgb(29, 36, 46); // Change to the default background color of your form
+        }
+
+        private void SalaryPayBtn_MouseEnter(object sender, EventArgs e)
+        {
+            // Change button background color when mouse enters
+            SalaryPayBtn.BackColor = Color.Purple; // Change to desired color
+        }
+        private void SalaryPayBtn_MouseLeave(object sender, EventArgs e)
+        {
+            // Change button background color back to normal when mouse leaves
+            SalaryPayBtn.BackColor = Color.FromArgb(29, 36, 46); // Change to the default background color of your form
         }
 
         private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)

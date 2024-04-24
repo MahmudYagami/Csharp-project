@@ -84,9 +84,9 @@ namespace Modern_Pharmacy_Managment_System
             this.Emp_manage_label.ForeColor = System.Drawing.Color.White;
             this.Emp_manage_label.Location = new System.Drawing.Point(312, 0);
             this.Emp_manage_label.Name = "Emp_manage_label";
-            this.Emp_manage_label.Size = new System.Drawing.Size(382, 31);
+            this.Emp_manage_label.Size = new System.Drawing.Size(503, 31);
             this.Emp_manage_label.TabIndex = 0;
-            this.Emp_manage_label.Text = "EMPLOYEE MANAGEMENT";
+            this.Emp_manage_label.Text = "EMPLOYEE SALARY MANAGEMENT";
             // 
             // SalaryInformation
             // 

@@ -97,6 +97,12 @@
     <Compile Include="CustomerManagementForm.Designer.cs">
       <DependentUpon>CustomerManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerSettings.Designer.cs">
+      <DependentUpon>CustomerSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerManagementForm.resx">
       <DependentUpon>CustomerManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerSettings.resx">
+      <DependentUpon>CustomerSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>

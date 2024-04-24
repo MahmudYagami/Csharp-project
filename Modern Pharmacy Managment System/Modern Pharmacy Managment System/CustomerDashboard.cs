@@ -52,5 +52,10 @@ namespace Modern_Pharmacy_Managment_System
         {
             loadform(new OrderForm());
         }
+
+        private void Customer_settings_Btn_Click(object sender, EventArgs e)
+        {
+            loadform(new CustomerSettings());
+        }
     }
 }
