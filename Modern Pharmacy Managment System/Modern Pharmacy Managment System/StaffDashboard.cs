@@ -81,5 +81,10 @@ namespace Modern_Pharmacy_Managment_System
         {
             loadform(new StaffInfoPanel());
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            loadform(new ViewSalary());
+        }
     }
 }

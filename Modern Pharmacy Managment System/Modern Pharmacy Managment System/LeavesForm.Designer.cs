@@ -114,6 +114,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeCb.Name = "EmployeeCb";
             this.EmployeeCb.Size = new System.Drawing.Size(121, 33);
             this.EmployeeCb.TabIndex = 45;
+            this.EmployeeCb.SelectedIndexChanged += new System.EventHandler(this.EmployeeCb_SelectedIndexChanged);
             // 
             // LeaveCategoriesLabel
             // 

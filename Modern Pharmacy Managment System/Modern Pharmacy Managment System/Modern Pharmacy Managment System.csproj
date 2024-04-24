@@ -97,6 +97,12 @@
     <Compile Include="CustomerManagementForm.Designer.cs">
       <DependentUpon>CustomerManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerSettings.Designer.cs">
+      <DependentUpon>CustomerSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     </Compile>
     <Compile Include="EmpLogin.Designer.cs">
       <DependentUpon>EmpLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeSalary.Designer.cs">
+      <DependentUpon>EmployeeSalary.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -172,6 +184,12 @@
     <Compile Include="ViewLeave.Designer.cs">
       <DependentUpon>ViewLeave.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSalary.Designer.cs">
+      <DependentUpon>ViewSalary.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,11 +208,17 @@
     <EmbeddedResource Include="CustomerManagementForm.resx">
       <DependentUpon>CustomerManagementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerSettings.resx">
+      <DependentUpon>CustomerSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmpLogin.resx">
       <DependentUpon>EmpLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSalary.resx">
+      <DependentUpon>EmployeeSalary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -234,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewLeave.resx">
       <DependentUpon>ViewLeave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSalary.resx">
+      <DependentUpon>ViewSalary.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

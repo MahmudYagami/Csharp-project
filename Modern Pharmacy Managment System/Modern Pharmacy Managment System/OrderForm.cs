@@ -257,7 +257,7 @@ namespace Modern_Pharmacy_Managment_System
                 string query = "SELECT cpoints FROM tbCustomer WHERE cphone = @customerPhoneNumber";
 
                 // Create a new instance of SqlConnection
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMSNew;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMS;Integrated Security=True"))
                 {
                     // Open the connection
                     con.Open();
@@ -295,7 +295,7 @@ namespace Modern_Pharmacy_Managment_System
 
             try
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMSNew;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMS;Integrated Security=True"))
                 {
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(query, con))
@@ -369,7 +369,7 @@ namespace Modern_Pharmacy_Managment_System
                     txtCustomerName.Text = "";
                     txtCName.Text = "";
                     txtCPhone.Text = "";
-                    txtRewards.Text = ;
+                   txtRewards.Text = "";
                     txtGrandTotal.Text = "";
                     txtGrandTotal.Text = "";
                     txtTotalAmount.Text = "";

@@ -45,6 +45,7 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnLeave = new Guna.UI2.WinForms.Guna2Button();
             this.mainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel3.SuspendLayout();
@@ -138,6 +139,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
+            this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.btnDashboard);
             this.guna2Panel1.Controls.Add(this.btnLogout);
             this.guna2Panel1.Controls.Add(this.btnSettings);
@@ -148,7 +150,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 65);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(211, 551);
+            this.guna2Panel1.Size = new System.Drawing.Size(211, 652);
             this.guna2Panel1.TabIndex = 2;
             // 
             // btnDashboard
@@ -177,7 +179,7 @@
             // 
             this.btnLogout.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnLogout.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(153)))));
-            this.btnLogout.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnLogout.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -309,14 +311,37 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(211, 65);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(917, 551);
+            this.mainPanel.Size = new System.Drawing.Size(917, 652);
             this.mainPanel.TabIndex = 3;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(153)))));
+            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageOffset = new System.Drawing.Point(10, 0);
+            this.guna2Button1.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2Button1.Location = new System.Drawing.Point(0, 551);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(211, 45);
+            this.guna2Button1.TabIndex = 1;
+            this.guna2Button1.Text = "Salary";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // StaffDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 616);
+            this.ClientSize = new System.Drawing.Size(1128, 717);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
@@ -354,5 +379,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
