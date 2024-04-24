@@ -12,11 +12,12 @@ using System.Data.SqlClient;
 
 namespace Modern_Pharmacy_Managment_System
 {
+    
     public partial class OrderForm : Form
     {
         Functions con;
-
-        private bool CustomerFound = false;
+        private string DataConnection = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMSNew;Integrated Security=True";
+        private bool rewardUsed = false;
         public OrderForm()
         {
             InitializeComponent();
@@ -252,12 +253,13 @@ namespace Modern_Pharmacy_Managment_System
             {
                 // Get the customer phone number from txtCPhone
                 string customerPhoneNumber = txtCPhone.Text.Trim();
+                
 
                 // SQL query to select cpoints for the customer
                 string query = "SELECT cpoints FROM tbCustomer WHERE cphone = @customerPhoneNumber";
 
                 // Create a new instance of SqlConnection
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMS;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(DataConnection))
                 {
                     // Open the connection
                     con.Open();
@@ -278,6 +280,8 @@ namespace Modern_Pharmacy_Managment_System
 
                             // Display rewards in txtRewards
                             txtRewards.Text = rewards.ToString();
+ 
+                        
                         }
                     }
                 }
@@ -295,7 +299,7 @@ namespace Modern_Pharmacy_Managment_System
 
             try
             {
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMS;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(DataConnection))
                 {
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(query, con))
@@ -340,7 +344,8 @@ namespace Modern_Pharmacy_Managment_System
             try
             {
                 // Convert totalAmount to int
-                int totalAmount = Convert.ToInt32(txtTotalAmount.Text);
+                txtGrandTotal.Text = txtTotalAmount.Text;
+                int totalAmount = Convert.ToInt32(txtGrandTotal.Text);
 
                 // Calculate rewards
                 int rewards = totalAmount / 2;
@@ -369,8 +374,7 @@ namespace Modern_Pharmacy_Managment_System
                     txtCustomerName.Text = "";
                     txtCName.Text = "";
                     txtCPhone.Text = "";
-                   txtRewards.Text = "";
-                    txtGrandTotal.Text = "";
+                    txtRewards.Text = "";
                     txtGrandTotal.Text = "";
                     txtTotalAmount.Text = "";
                     
@@ -420,6 +424,124 @@ namespace Modern_Pharmacy_Managment_System
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
             // customer side panel
+        }
+
+        private void btnUseReward_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Get the rewards points from txtRewards
+                int rewards = Convert.ToInt32(txtRewards.Text);
+
+                // Check if rewards points is greater than or equal to 100
+                if (rewards >= 100)
+                {
+                    // Convert txtTotalAmount to double
+                    double totalAmount = Convert.ToDouble(txtTotalAmount.Text);
+
+                    // Calculate the discount amount based on rewards points
+                    double discountAmount = rewards * 0.10;
+
+                    // Check if totalAmount is less than discountAmount
+                    if (totalAmount < discountAmount)
+                    {
+                        // Set txtGrandTotal to 0
+                        txtGrandTotal.Text = "0";
+
+
+                        // Update the rewards points in the database
+                        double newRewards = rewards - (totalAmount * 10);
+                        UpdateRewardsPoints(newRewards);
+                        txtRewards.Text = newRewards.ToString();
+                    }
+                    else if(totalAmount >= discountAmount)
+                    {
+                        // Calculate the grand total after discount
+                        double grandTotal = totalAmount - discountAmount;
+
+                        // Set txtGrandTotal to grandTotal
+                        txtGrandTotal.Text = grandTotal.ToString();
+
+                        // Update the rewards points in the database
+                       
+                        UpdateRewardsPoints(0);
+                        txtRewards.Text = "0.0";
+                    }
+                }
+                else
+                {
+                    // Insufficient rewards points
+                    MessageBox.Show("Insufficient rewards points. Minimum 100 points required to use rewards.", "Insufficient Points", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void UpdateRewardsPoints(double newRewards)
+        {
+            try
+            {
+                /*
+                // Get the customer phone number from txtCPhone
+                string customerPhoneNumber = txtCPhone.Text.Trim();
+
+                // SQL query to update cpoints for the customer
+                string query = "UPDATE tbCustomer SET cpoints = @newRewards WHERE cphone = @customerPhoneNumber";
+
+                // Create a new instance of Functions class
+                Functions functions = new Functions();
+
+                // Create a SqlCommand object and add parameters
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Parameters.AddWithValue("@newRewards", newRewards);
+                cmd.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
+
+                // Call the insertData method to execute the query
+                int rowsAffected = functions.insertData(cmd);
+
+                // Check if the update was successful
+                if (rowsAffected > 0)
+                {
+                    // Update txtRewards with newRewards
+                    txtRewards.Text = newRewards.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update rewards points.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                */
+                string customerPhoneNumber = txtCPhone.Text;
+
+                // SQL query to update cpoints for the customer
+                string query = "UPDATE tbCustomer SET cpoints =  @newRewards WHERE cphone = @customerPhoneNumber";
+
+                // Create a new instance of Functions class
+                Functions functions = new Functions();
+
+                // Create a SqlCommand object and add parameters
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Parameters.AddWithValue("@newRewards", newRewards);
+                cmd.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
+
+                // Call the insertData method to execute the query
+                int rowsAffected = functions.insertData(cmd);
+
+                if(rowsAffected > 0)
+                {
+
+                    MessageBox.Show("Rewards Updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Update rewards.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
