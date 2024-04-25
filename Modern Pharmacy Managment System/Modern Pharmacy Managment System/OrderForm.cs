@@ -16,7 +16,7 @@ namespace Modern_Pharmacy_Managment_System
     public partial class OrderForm : Form
     {
         Functions con;
-        private string DataConnection = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMSNew;Integrated Security=True";
+        private string DataConnection = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMS;Integrated Security=True";
         private bool rewardUsed = false;
         public OrderForm()
         {
