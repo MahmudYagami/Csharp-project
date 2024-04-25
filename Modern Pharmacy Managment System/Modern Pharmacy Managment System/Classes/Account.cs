@@ -6,6 +6,23 @@ namespace Modern_Pharmacy_Managment_System
 {
     class Account
     {
+        // net income calculation
+        // Total expense, total revenue
+        // Graph
+        // 
+
+
+
+
+
+
+
+
+
+
+
+
+        
       
     }
 }
