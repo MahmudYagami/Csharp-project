@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modern_Pharmacy_Managment_System.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +11,13 @@ using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace Modern_Pharmacy_Managment_System
 {
     
     public partial class OrderForm : Form
     {
         Functions con;
-        private string DataConnection = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMSNew;Integrated Security=True";
         private bool rewardUsed = false;
         public OrderForm()
         {
@@ -29,8 +30,6 @@ namespace Modern_Pharmacy_Managment_System
             showProduct();
             showOrder();
             UpdateTotalAmount();
-           
-
         }
 
         private void showProduct()
@@ -51,27 +50,9 @@ namespace Modern_Pharmacy_Managment_System
             moduleForm.btnSave.Enabled = true;
             moduleForm.btnUpdate.Enabled = false;
             moduleForm.ShowDialog();
-
-            // showCustomer();
+           
         }
 
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-            if (dgvOrder.Rows.Count > 0)
-            {/*
-                if (InsertOrderInfo())
-                {
-                  //  txtBoxTotalPurchage.Text = null;
-                 //   cartProducts.Clear();
-                    dgvOrder.Rows.Clear();
-                }
-                */
-            }
-            else
-            {
-                MessageBox.Show("Please add products to the cart first", "No Items in Cart!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
 
         private void UpdateTotalAmount()
         {
@@ -80,6 +61,8 @@ namespace Modern_Pharmacy_Managment_System
 
             // Display the total amount in the txtTotalAmount textbox
             txtTotalAmount.Text = totalAmount.ToString();
+            txtGrandTotal.Text = totalAmount.ToString();
+
         }
 
         private decimal CalculateTotalAmount()
@@ -244,8 +227,6 @@ namespace Modern_Pharmacy_Managment_System
             dgvProduct.DataSource = con.GetData(Query);
         }
 
-
-
         private void getRewards()
         {
 
@@ -259,7 +240,7 @@ namespace Modern_Pharmacy_Managment_System
                 string query = "SELECT cpoints FROM tbCustomer WHERE cphone = @customerPhoneNumber";
 
                 // Create a new instance of SqlConnection
-                using (SqlConnection con = new SqlConnection(DataConnection))
+                using (var con = DatabaseConnection.databaseConnect())
                 {
                     // Open the connection
                     con.Open();
@@ -292,8 +273,9 @@ namespace Modern_Pharmacy_Managment_System
             }
 
         }
+    
         private void txtCustomerName_TextChanged(object sender, EventArgs e)
-        {
+        {/*
             string searchText = txtCustomerName.Text.Trim();
             string query = "SELECT cname FROM tbCustomer WHERE cphone LIKE @searchText";
 
@@ -325,8 +307,39 @@ namespace Modern_Pharmacy_Managment_System
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-        }
+            */
 
+            string searchText = txtCustomerName.Text.Trim();
+            string query = "SELECT cname FROM tbCustomer WHERE cphone LIKE @searchText";
+
+            try
+            {
+                using (var con = DatabaseConnection.databaseConnect())
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        txtCName.Text = result.ToString();
+                        txtCPhone.Text = searchText;
+                        getRewards();
+                    }
+                    else
+                    {
+                        txtCName.Text = "Customer not found!";
+                    }
+                    con.Close();
+                }
+            }     
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+
+        }
 
         private void btnPay_Click_1(object sender, EventArgs e)
         {
@@ -343,42 +356,37 @@ namespace Modern_Pharmacy_Managment_System
 
             try
             {
-                // Convert totalAmount to int
-                txtGrandTotal.Text = txtTotalAmount.Text;
-                int totalAmount = Convert.ToInt32(txtGrandTotal.Text);
+                double totalAmount;
+                if (rewardUsed == false)
+                {
+                     txtGrandTotal.Text = txtTotalAmount.Text;
+                     totalAmount = Convert.ToDouble(txtGrandTotal.Text);
+                }
+                else
+                {
+                    totalAmount = Convert.ToDouble(txtGrandTotal.Text);
+                }
 
                 // Calculate rewards
-                int rewards = totalAmount / 2;
+                int rewards =(int)totalAmount / 2;
 
                 // Get the customer phone number from txtCPhone
                 string customerPhoneNumber = txtCPhone.Text.Trim();
 
                 // SQL query to update cpoints for the customer
                 string query = "UPDATE tbCustomer SET cpoints = cpoints + @rewards WHERE cphone = @customerPhoneNumber";
-
-                // Create a new instance of Functions class
-                Functions functions = new Functions();
-
                 // Create a SqlCommand object and add parameters
                 SqlCommand cmd = new SqlCommand(query);
                 cmd.Parameters.AddWithValue("@rewards", rewards);
                 cmd.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
 
                 // Call the insertData method to execute the query
-                int rowsAffected = functions.insertData(cmd);
+                int rowsAffected = con.insertData(cmd);
 
                 // Check if the update was successful
                 if (rowsAffected > 0)
                 {
                     getRewards();
-                    txtCustomerName.Text = "";
-                    txtCName.Text = "";
-                    txtCPhone.Text = "";
-                    txtRewards.Text = "";
-                    txtGrandTotal.Text = "";
-                    txtTotalAmount.Text = "";
-                    
-
 
                     MessageBox.Show("Rewards added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -393,15 +401,54 @@ namespace Modern_Pharmacy_Managment_System
             }
 
 
+            /////////////////////////////                  PAYMENT METHOD         ///////////////////////////
 
 
 
-            ///////////////////////////// PAYMENT METHOD
+            try
+            {
+                // Convert txtGrandTotal to double
+                double grandTotal;
+
+                // Check if txtGrandTotal is not empty and contains valid data
+                if (double.TryParse(txtGrandTotal.Text, out grandTotal))
+                {
+                    // Get the current date
+                    DateTime currentDate = DateTime.Now;
+
+                    // Insert into the accountTbl
+                    string insertAccountQuery = "INSERT INTO accountTbl (Revenue, Date) VALUES (@Revenue, @Date)";
+                    SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery);
+                    insertAccountCmd.Parameters.AddWithValue("@Revenue", grandTotal);
+                    insertAccountCmd.Parameters.AddWithValue("@Date", currentDate);
+
+                    // Execute the insert query using Functions class
+                    int rowsAffectedInsertAccount = con.insertData(insertAccountCmd);
+
+                    // Check if the insert was successful
+                    if (rowsAffectedInsertAccount > 0)
+                    {
+                        MessageBox.Show("Revenue added to account successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to add revenue to account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show("Total amount is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
+            /////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-            ///////////////////////////
 
             // Clear the order table
             SqlCommand clearOrderCmd = new SqlCommand("DELETE FROM OrderTbl");
@@ -415,10 +462,21 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            // Clear TextBox
+            txtCustomerName.Text = "";
+            txtCName.Text = "";
+            txtCPhone.Text = "";
+            txtRewards.Text = "";
+            txtGrandTotal.Text = "";
+            txtTotalAmount.Text = "";
+
             // Refresh the dgvOrder and product list
             showOrder();
             showProduct();
-            UpdateTotalAmount();
+            //UpdateTotalAmount();
+
+           // update new order form
+            rewardUsed = false;
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
@@ -428,6 +486,7 @@ namespace Modern_Pharmacy_Managment_System
 
         private void btnUseReward_Click(object sender, EventArgs e)
         {
+            rewardUsed = true;
             try
             {
                 // Get the rewards points from txtRewards
@@ -447,6 +506,7 @@ namespace Modern_Pharmacy_Managment_System
                     {
                         // Set txtGrandTotal to 0
                         txtGrandTotal.Text = "0";
+
 
 
                         // Update the rewards points in the database
@@ -479,54 +539,23 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+       
         private void UpdateRewardsPoints(double newRewards)
         {
             try
-            {
-                /*
-                // Get the customer phone number from txtCPhone
-                string customerPhoneNumber = txtCPhone.Text.Trim();
-
-                // SQL query to update cpoints for the customer
-                string query = "UPDATE tbCustomer SET cpoints = @newRewards WHERE cphone = @customerPhoneNumber";
-
-                // Create a new instance of Functions class
-                Functions functions = new Functions();
-
-                // Create a SqlCommand object and add parameters
-                SqlCommand cmd = new SqlCommand(query);
-                cmd.Parameters.AddWithValue("@newRewards", newRewards);
-                cmd.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
-
-                // Call the insertData method to execute the query
-                int rowsAffected = functions.insertData(cmd);
-
-                // Check if the update was successful
-                if (rowsAffected > 0)
-                {
-                    // Update txtRewards with newRewards
-                    txtRewards.Text = newRewards.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Failed to update rewards points.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                */
+            {  
                 string customerPhoneNumber = txtCPhone.Text;
 
                 // SQL query to update cpoints for the customer
                 string query = "UPDATE tbCustomer SET cpoints =  @newRewards WHERE cphone = @customerPhoneNumber";
 
-                // Create a new instance of Functions class
-                Functions functions = new Functions();
-
                 // Create a SqlCommand object and add parameters
                 SqlCommand cmd = new SqlCommand(query);
                 cmd.Parameters.AddWithValue("@newRewards", newRewards);
                 cmd.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
 
                 // Call the insertData method to execute the query
-                int rowsAffected = functions.insertData(cmd);
+                int rowsAffected = con.insertData(cmd);
 
                 if(rowsAffected > 0)
                 {
@@ -535,7 +564,7 @@ namespace Modern_Pharmacy_Managment_System
                 }
                 else
                 {
-                    MessageBox.Show("Failed to Update rewards.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to Update rewards.", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

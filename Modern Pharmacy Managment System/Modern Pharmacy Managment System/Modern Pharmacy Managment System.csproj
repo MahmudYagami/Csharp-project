@@ -79,6 +79,7 @@
     <Compile Include="Category.Designer.cs">
       <DependentUpon>Category.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Customer.cs" />
     <Compile Include="CustomerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +110,7 @@
     <Compile Include="DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\DatabaseConnection.cs" />
     <Compile Include="EmpLogin.cs">
       <SubType>Form</SubType>
     </Compile>
