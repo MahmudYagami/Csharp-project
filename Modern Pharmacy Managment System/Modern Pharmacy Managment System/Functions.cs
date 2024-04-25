@@ -16,11 +16,11 @@ namespace Modern_Pharmacy_Managment_System
         private SqlDataAdapter sda;
         private string ConStr;
 
-
+       
 
         public Functions()
         {
-            ConStr = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMS;Integrated Security=True";
+            ConStr = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMSNew;Integrated Security=True";
             Con = new SqlConnection(ConStr);
             Cmd = new SqlCommand();
             Cmd.Connection = Con;

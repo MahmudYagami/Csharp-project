@@ -404,3 +404,6 @@ C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern P
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.EmployeeSalary.resources
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.ViewSalary.resources
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerSettings.resources
+C:\Users\ishti\OneDrive\Desktop\pro\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerSettings.resources
+C:\Users\ishti\OneDrive\Desktop\pro\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.EmployeeSalary.resources
+C:\Users\ishti\OneDrive\Desktop\pro\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.ViewSalary.resources

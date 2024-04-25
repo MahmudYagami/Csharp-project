@@ -51,6 +51,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnAddToCart = new Guna.UI2.WinForms.Guna2Button();
             this.txtUnit = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnUseReward = new Guna.UI2.WinForms.Guna2Button();
             this.txtCPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCName = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnRemove = new Guna.UI2.WinForms.Guna2Button();
@@ -61,7 +62,6 @@ namespace Modern_Pharmacy_Managment_System
             this.txtTotalAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtRewards = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnUseReward = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.addToCartPanel.SuspendLayout();
@@ -382,6 +382,22 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.TabIndex = 55;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
+            // btnUseReward
+            // 
+            this.btnUseReward.BorderRadius = 3;
+            this.btnUseReward.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUseReward.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUseReward.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUseReward.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUseReward.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUseReward.ForeColor = System.Drawing.Color.White;
+            this.btnUseReward.Location = new System.Drawing.Point(195, 84);
+            this.btnUseReward.Name = "btnUseReward";
+            this.btnUseReward.Size = new System.Drawing.Size(130, 28);
+            this.btnUseReward.TabIndex = 65;
+            this.btnUseReward.Text = "Use Rewards";
+            this.btnUseReward.Click += new System.EventHandler(this.btnUseReward_Click);
+            // 
             // txtCPhone
             // 
             this.txtCPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -568,21 +584,6 @@ namespace Modern_Pharmacy_Managment_System
             this.label2.Size = new System.Drawing.Size(104, 17);
             this.label2.TabIndex = 55;
             this.label2.Text = "Reward Points:";
-            // 
-            // btnUseReward
-            // 
-            this.btnUseReward.BorderRadius = 3;
-            this.btnUseReward.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUseReward.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUseReward.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUseReward.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUseReward.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUseReward.ForeColor = System.Drawing.Color.White;
-            this.btnUseReward.Location = new System.Drawing.Point(195, 84);
-            this.btnUseReward.Name = "btnUseReward";
-            this.btnUseReward.Size = new System.Drawing.Size(130, 28);
-            this.btnUseReward.TabIndex = 65;
-            this.btnUseReward.Text = "Use Rewards";
             // 
             // OrderForm
             // 
