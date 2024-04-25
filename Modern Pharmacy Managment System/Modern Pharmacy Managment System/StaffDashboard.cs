@@ -86,5 +86,12 @@ namespace Modern_Pharmacy_Managment_System
         {
             loadform(new ViewSalary());
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

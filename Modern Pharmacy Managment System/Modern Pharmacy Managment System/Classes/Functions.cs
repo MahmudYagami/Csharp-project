@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modern_Pharmacy_Managment_System.Database;
 namespace Modern_Pharmacy_Managment_System
 {
     class Functions
@@ -20,8 +21,9 @@ namespace Modern_Pharmacy_Managment_System
 
         public Functions()
         {
-            ConStr = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMS;Integrated Security=True";
-            Con = new SqlConnection(ConStr);
+          //  ConStr = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMS;Integrated Security=True";
+          //  Con = new SqlConnection(ConStr);
+            Con = DatabaseConnection.databaseConnect();
             Cmd = new SqlCommand();
             Cmd.Connection = Con;
             

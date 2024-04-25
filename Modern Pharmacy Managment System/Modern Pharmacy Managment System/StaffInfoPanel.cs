@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Modern_Pharmacy_Managment_System.Database;
 
 namespace Modern_Pharmacy_Managment_System
 {
@@ -19,41 +20,44 @@ namespace Modern_Pharmacy_Managment_System
             InitializeComponent();
 
 
-            
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMS;Integrated Security=True");
-            
-            con.Open();
-            SqlCommand cm = new SqlCommand("SELECT Count(*) From tbCustomer", con);
-            var totalCustomer = cm.ExecuteScalar();
-            if (int.Parse(totalCustomer.ToString()) < 10)
+
+            using (var con = DatabaseConnection.databaseConnect()) 
             {
-                totalCustomer = "0" + totalCustomer;
+                con.Open();
+                SqlCommand cm = new SqlCommand("SELECT Count(*) From tbCustomer", con);
+                var totalCustomer = cm.ExecuteScalar();
+                if (int.Parse(totalCustomer.ToString()) < 10)
+                {
+                    totalCustomer = "0" + totalCustomer;
+                }
+                lblCustomerCount.Text = totalCustomer.ToString();
+                con.Close();
+
+
+
+                con.Open();
+                SqlCommand cm2 = new SqlCommand("SELECT Count(*) From InventoryTbl", con);
+                var totalMedicine = cm2.ExecuteScalar();
+                if (int.Parse(totalMedicine.ToString()) < 10)
+                {
+                    totalMedicine = "0" + totalMedicine;
+                }
+                lblMadiniceCount.Text = totalMedicine.ToString();
+                con.Close();
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM InventoryTbl WHERE PStock < 50", con);
+                int count = (int)cmd.ExecuteScalar();
+                if (count < 10)
+                {
+                    lblMadicineShortage.Text = "0" + count.ToString();
+                }
+                else { lblMadicineShortage.Text = count.ToString(); }
             }
-            lblCustomerCount.Text = totalCustomer.ToString();
-            con.Close();
 
-
-
-            con.Open();
-            SqlCommand cm2 = new SqlCommand("SELECT Count(*) From InventoryTbl", con);
-            var totalMedicine = cm2.ExecuteScalar();
-            if( int.Parse(totalMedicine.ToString()) < 10)
-            {
-                totalMedicine = "0" + totalMedicine;
-            }
-            lblMadiniceCount.Text = totalMedicine.ToString();
-            con.Close();
-                  
-
-
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM InventoryTbl WHERE PStock < 50", con);
-            int count = (int)cmd.ExecuteScalar();
-            if (count < 10)
-            {
-                lblMadicineShortage.Text= "0"+ count.ToString();
-            }
-            else { lblMadicineShortage.Text = count.ToString(); }
+               
             
         }
         public void loadform(object Form)

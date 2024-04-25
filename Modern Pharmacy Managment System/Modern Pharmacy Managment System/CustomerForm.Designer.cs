@@ -272,11 +272,11 @@ namespace Modern_Pharmacy_Managment_System
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dgvCustomer);
             this.Controls.Add(this.tbSearchBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.dgvCustomer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CustomerForm";

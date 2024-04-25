@@ -16,8 +16,6 @@ namespace Modern_Pharmacy_Managment_System
     public partial class CustomerForm : Form
     {
        Functions Con;
-        
-
         public CustomerForm()
         {
             InitializeComponent();
@@ -30,12 +28,6 @@ namespace Modern_Pharmacy_Managment_System
         {
             string Query = "select * from tbCustomer";
             dgvCustomer.DataSource = Con.GetData(Query);
-
-           // string Query = "SELECT cid AS 'Customer ID', cname AS 'Customer Name', cphone AS 'Phone Number', cpoints AS 'Reward Points' FROM tbCustomer";
-           //  dgvCustomer.DataSource = Con.GetData(Query);
-           // Hide the Customer ID column if you don't want to display it
-            
-
         }
 
         string Key = "";
@@ -79,11 +71,13 @@ namespace Modern_Pharmacy_Managment_System
                 DataGridViewRow selectedRow = dgvCustomer.SelectedRows[0];
                 string customerName = selectedRow.Cells[1].Value.ToString();
                 string customerPhone = selectedRow.Cells[2].Value.ToString();
-
+                string customerPassword = selectedRow.Cells[3].Value.ToString();
                 CustomerManagementForm cmf = new CustomerManagementForm();
                 cmf.lblCId.Text = dgvCustomer.Rows[0].Cells[0].Value.ToString();
                 cmf.txtCuName.Text = customerName;
                 cmf.txtCPhone.Text = customerPhone;
+                cmf.CustomerPassTxt.Text = customerPassword;
+                cmf.txtCPhone.ReadOnly = true;
                 cmf.btnSave.Enabled = false;
                 cmf.btnUpdate.Enabled = true;
                 cmf.ShowDialog();
