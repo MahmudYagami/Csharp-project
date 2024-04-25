@@ -21,9 +21,9 @@ namespace Modern_Pharmacy_Managment_System
 
         public Functions()
         {
-          //  ConStr = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMS;Integrated Security=True";
-          //  Con = new SqlConnection(ConStr);
-            Con = DatabaseConnection.databaseConnect();
+           // ConStr = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMS;Integrated Security=True";
+            //Con = new SqlConnection(ConStr);
+           Con = DatabaseConnection.databaseConnect();
             Cmd = new SqlCommand();
             Cmd.Connection = Con;
             
