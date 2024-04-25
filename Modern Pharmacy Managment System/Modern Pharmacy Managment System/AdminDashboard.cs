@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modern_Pharmacy_Managment_System.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,19 +17,22 @@ namespace Modern_Pharmacy_Managment_System
         public AdminDashboard()
         {
             InitializeComponent();
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=StaffDb;Integrated Security=True");
-            con.Open();
-            SqlCommand cm = new SqlCommand("SELECT Count(*) From EmployeeTbl", con);
-            var totalEmployee = cm.ExecuteScalar();
-            lblEmployeeCnt.Text = totalEmployee.ToString();
+            using (var con = DatabaseConnection.databaseConnect())
+            {
+                con.Open();
+                SqlCommand cm = new SqlCommand("SELECT Count(*) From EmployeeTbl", con);              
+                var totalEmployee = cm.ExecuteScalar();
+                lblEmployeeCnt.Text = totalEmployee.ToString();
 
 
 
-            
-            SqlCommand cm2 = new SqlCommand("SELECT Count(*) From LeaveTbl  WHERE status = 'Approved'", con);
-            var totalLeave = cm2.ExecuteScalar();
-            lblLeaveCnt.Text = totalLeave.ToString();
-            con.Close();
+
+                SqlCommand cm2 = new SqlCommand("SELECT Count(*) From LeaveTbl  WHERE status = 'Approved'", con);
+                var totalLeave = cm2.ExecuteScalar();
+                lblLeaveCnt.Text = totalLeave.ToString();
+                con.Close();
+            }
+                
 
 
           //  SqlConnection con2 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RAFSAN\Desktop\StaffDb.mdf;Integrated Security=True;Connect Timeout=30");

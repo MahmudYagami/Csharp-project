@@ -36,7 +36,7 @@ namespace Modern_Pharmacy_Managment_System
 
             SalaryPayBtn.MouseEnter += SalaryPayBtn_MouseEnter;
             SalaryPayBtn.MouseLeave += SalaryPayBtn_MouseLeave;
-            loadform(new AdminDashboard());
+           loadform(new AdminDashboard());
         }
 
         private void timer1_Tick(object sender, EventArgs e)
