@@ -20,7 +20,7 @@ namespace Modern_Pharmacy_Managment_System
 
 
             
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMSNew;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMS;Integrated Security=True");
             
             con.Open();
             SqlCommand cm = new SqlCommand("SELECT Count(*) From tbCustomer", con);

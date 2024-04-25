@@ -18,6 +18,7 @@ namespace Modern_Pharmacy_Managment_System
     public partial class OrderForm : Form
     {
         Functions con;
+        
         private bool rewardUsed = false;
         public OrderForm()
         {
