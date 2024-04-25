@@ -11,7 +11,7 @@ namespace Modern_Pharmacy_Managment_System.Database
     public abstract class DatabaseConnection
     {
 
-       const string connectionString = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMS;Integrated Security=True";
+       const string connectionString = @"Data Source=DESKTOP-DIBN94S\SQLEXPRESS;Initial Catalog=PMS;Integrated Security=True";
         public static SqlConnection databaseConnect()
         {
             return new SqlConnection(connectionString);
