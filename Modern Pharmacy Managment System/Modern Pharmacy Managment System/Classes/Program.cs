@@ -16,22 +16,22 @@ namespace Modern_Pharmacy_Managment_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new Form1());
-            //Application.Run(new DashBoard());
-            Application.Run(new Login());
-           
-            //  Application.Run(new StaffForm());
-            //  Application.Run(new Category());
-            //  Application.Run(new LeavesForm());
-          //Application.Run(new StaffDashboard());
-            //  Application.Run(new CustomerForm());
-            //Application.Run(new OrderForm());
-            //  Application.Run(new CustomerDashboard());
-            //Application.Run(new SignupForm());
-            // Application.Run(new EmployeeSalary());
-            //Application.Run(new ViewSalary());
-          // Application.Run(new StaffSettings());
 
+            //Application.Run(new Form1());
+          // Application.Run(new DashBoard());
+           Application.Run(new Login());         
+            //Application.Run(new StaffForm());
+            //Application.Run(new Category());
+            //Application.Run(new LeavesForm());
+          //Application.Run(new StaffDashboard());
+            //Application.Run(new CustomerForm());
+            //Application.Run(new OrderForm());
+            //Application.Run(new CustomerDashboard());
+            //Application.Run(new SignupForm());
+            //Application.Run(new EmployeeSalary());
+            //Application.Run(new ViewSalary());
+          //Application.Run(new StaffSettings());
+         //Application.Run(new AdminDashboard());
 
         }
     }
