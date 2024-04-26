@@ -479,6 +479,8 @@ C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment S
 C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.ViewSalary.resources
 C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
 C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
-C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern P.01785AD0.Up2Date
 C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
 C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.addProduct.resources
+C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
+C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.addproductPha.resources

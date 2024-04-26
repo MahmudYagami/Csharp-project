@@ -93,5 +93,10 @@ namespace Modern_Pharmacy_Managment_System
             login.Show();
             this.Hide();
         }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

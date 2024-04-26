@@ -60,6 +60,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="addProduct.Designer.cs">
+      <DependentUpon>addProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addproductPha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addproductPha.Designer.cs">
+      <DependentUpon>addproductPha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Account.cs" />
     <Compile Include="AdminDashboard.cs">
       <SubType>Form</SubType>
@@ -192,6 +204,12 @@
     <Compile Include="ViewSalary.Designer.cs">
       <DependentUpon>ViewSalary.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addProduct.resx">
+      <DependentUpon>addProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addproductPha.resx">
+      <DependentUpon>addproductPha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
