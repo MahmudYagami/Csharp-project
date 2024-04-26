@@ -484,3 +484,5 @@ C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment S
 C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.addProduct.resources
 C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
 C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.addproductPha.resources
+C:\Users\ishti\OneDrive\Desktop\Project\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.addproductPha.resources
+C:\Users\ishti\OneDrive\Desktop\Project\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Classes.UserControl1.resources

@@ -37,15 +37,6 @@ namespace Modern_Pharmacy_Managment_System
             f.Show();
         }
 
-        
-
-        
-
-        private void lblDashboard_Click(object sender, EventArgs e)
-        {
-            loadform(new StaffInfoPanel());
-        }
-
 
         private void btnLeave_Click_1(object sender, EventArgs e)
         {
@@ -70,11 +61,6 @@ namespace Modern_Pharmacy_Managment_System
         private void lblName_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-            loadform(new StaffInfoPanel());
         }
 
         private void btnDashboard_Click_1(object sender, EventArgs e)
@@ -107,6 +93,11 @@ namespace Modern_Pharmacy_Managment_System
 
         }
 
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            // product button
+            loadform(new addproductPha());
+        }
     }
     
 }
