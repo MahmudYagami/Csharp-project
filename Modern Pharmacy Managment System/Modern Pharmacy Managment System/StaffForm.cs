@@ -175,7 +175,7 @@ namespace Modern_Pharmacy_Managment_System
             try
             {
                 LeavesForm lf = new LeavesForm();
-                Point location = new Point(598, 250); // Adjust the coordinates as needed
+                Point location = new Point(598, 630); // Adjust the coordinates as needed
 
                 // Show the LeavesForm
                 lf.StartPosition = FormStartPosition.Manual;
@@ -214,6 +214,9 @@ namespace Modern_Pharmacy_Managment_System
 
         }
 
+        private void CategoryBtnStaff_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
