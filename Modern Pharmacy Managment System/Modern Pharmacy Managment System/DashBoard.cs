@@ -189,6 +189,7 @@ namespace Modern_Pharmacy_Managment_System
            loadform(new StaffForm());
         }
 
+
         private void TimerPanel_Paint(object sender, PaintEventArgs e)
         {
 
@@ -212,6 +213,11 @@ namespace Modern_Pharmacy_Managment_System
         private void SalaryPayBtn_Click(object sender, EventArgs e)
         {
             loadform(new EmployeeSalary());
+        }
+
+        private void InventoryBtn_Click(object sender, EventArgs e)
+        {
+            loadform(new addproductPha());
         }
     }
 }
