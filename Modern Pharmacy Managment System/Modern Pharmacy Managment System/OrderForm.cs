@@ -1,4 +1,5 @@
 ﻿using Modern_Pharmacy_Managment_System.Database;
+using Modern_Pharmacy_Managment_System.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -572,6 +573,27 @@ namespace Modern_Pharmacy_Managment_System
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+
+        private void btnBkash_Click(object sender, EventArgs e)
+        {          
+            try
+            {
+                // Get the parent form (StaffDashboard)
+                StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
+
+                // Call the LoadBkashFormIntoMainPanel method of the StaffDashboard form
+                staffDashboard.LoadBkashFormIntoMainPanel(new Bkash(txtGrandTotal.Text));
+
+                // Hide the current form (OrderForm)
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
         }
     }
 }

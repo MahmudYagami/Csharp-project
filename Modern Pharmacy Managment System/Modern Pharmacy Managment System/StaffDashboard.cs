@@ -37,15 +37,6 @@ namespace Modern_Pharmacy_Managment_System
             f.Show();
         }
 
-        
-
-        
-
-        private void lblDashboard_Click(object sender, EventArgs e)
-        {
-            loadform(new StaffInfoPanel());
-        }
-
 
         private void btnLeave_Click_1(object sender, EventArgs e)
         {
@@ -72,11 +63,6 @@ namespace Modern_Pharmacy_Managment_System
 
         }
 
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-            loadform(new StaffInfoPanel());
-        }
-
         private void btnDashboard_Click_1(object sender, EventArgs e)
         {
             loadform(new StaffInfoPanel());
@@ -93,5 +79,25 @@ namespace Modern_Pharmacy_Managment_System
             login.Show();
             this.Hide();
         }
+
+        public void LoadBkashFormIntoMainPanel(Object Form)
+        {
+            if (this.mainPanel.Controls.Count > 0)
+                this.mainPanel.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.mainPanel.Controls.Add(f);
+            this.mainPanel.Tag = f;
+            f.Show();
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            // product button
+            loadform(new addproductPha());
+        }
     }
+    
 }

@@ -301,12 +301,13 @@
             this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageOffset = new System.Drawing.Point(10, 0);
-            this.guna2Button2.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2Button2.ImageSize = new System.Drawing.Size(45, 45);
             this.guna2Button2.Location = new System.Drawing.Point(0, 176);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(211, 45);
             this.guna2Button2.TabIndex = 0;
             this.guna2Button2.Text = "Inventory";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // btnLeave
             // 

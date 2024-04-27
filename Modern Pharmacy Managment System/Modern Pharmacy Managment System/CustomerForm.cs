@@ -38,6 +38,7 @@ namespace Modern_Pharmacy_Managment_System
             CustomerManagementForm moduleForm = new CustomerManagementForm();
             moduleForm.btnSave.Enabled = true;
             moduleForm.btnUpdate.Enabled = false;
+            moduleForm.btnUpdate.Visible = false;
             moduleForm.ShowDialog();
 
             showCustomerForm();
@@ -79,6 +80,7 @@ namespace Modern_Pharmacy_Managment_System
                 cmf.CustomerPassTxt.Text = customerPassword;
                 cmf.txtCPhone.ReadOnly = true;
                 cmf.btnSave.Enabled = false;
+                cmf.btnSave.Visible = false;
                 cmf.btnUpdate.Enabled = true;
                 cmf.ShowDialog();
           

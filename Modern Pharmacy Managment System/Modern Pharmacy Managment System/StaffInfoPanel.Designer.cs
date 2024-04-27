@@ -68,7 +68,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label4.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(7, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 44);
+            this.label4.Size = new System.Drawing.Size(174, 36);
             this.label4.TabIndex = 3;
             this.label4.Text = "Dashboard";
             // 
@@ -78,12 +78,14 @@ namespace Modern_Pharmacy_Managment_System
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(9, 50);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(406, 23);
+            this.label5.Size = new System.Drawing.Size(324, 21);
             this.label5.TabIndex = 3;
             this.label5.Text = "A  qucik data overview of the inventory.\r\n";
             // 
             // guna2Panel6
             // 
+            this.guna2Panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
             this.guna2Panel6.Controls.Add(this.btnInventory);
             this.guna2Panel6.Controls.Add(this.guna2Panel7);
@@ -100,7 +102,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnInventory.ForeColor = System.Drawing.Color.Black;
             this.btnInventory.Location = new System.Drawing.Point(64, 124);
             this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(175, 28);
+            this.btnInventory.Size = new System.Drawing.Size(140, 21);
             this.btnInventory.TabIndex = 1;
             this.btnInventory.Text = "Visit Inventory  >>";
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
@@ -124,7 +126,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(42, 85);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 23);
+            this.label6.Size = new System.Drawing.Size(167, 21);
             this.label6.TabIndex = 1;
             this.label6.Text = "Medicines Available";
             // 
@@ -147,12 +149,14 @@ namespace Modern_Pharmacy_Managment_System
             this.lblMadiniceCount.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMadiniceCount.Location = new System.Drawing.Point(102, 43);
             this.lblMadiniceCount.Name = "lblMadiniceCount";
-            this.lblMadiniceCount.Size = new System.Drawing.Size(64, 47);
+            this.lblMadiniceCount.Size = new System.Drawing.Size(53, 38);
             this.lblMadiniceCount.TabIndex = 0;
             this.lblMadiniceCount.Text = "14";
             // 
             // guna2Panel8
             // 
+            this.guna2Panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(221)))), ((int)(((byte)(207)))));
             this.guna2Panel8.Controls.Add(this.btnCustomer);
             this.guna2Panel8.Controls.Add(this.guna2Panel9);
@@ -169,7 +173,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnCustomer.ForeColor = System.Drawing.Color.Black;
             this.btnCustomer.Location = new System.Drawing.Point(64, 124);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(173, 28);
+            this.btnCustomer.Size = new System.Drawing.Size(139, 21);
             this.btnCustomer.TabIndex = 1;
             this.btnCustomer.Text = "Manage Users  >>";
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
@@ -193,7 +197,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(27, 85);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(221, 23);
+            this.label10.Size = new System.Drawing.Size(178, 21);
             this.label10.TabIndex = 1;
             this.label10.Text = "Total no of Customers";
             // 
@@ -216,12 +220,14 @@ namespace Modern_Pharmacy_Managment_System
             this.lblCustomerCount.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerCount.Location = new System.Drawing.Point(102, 43);
             this.lblCustomerCount.Name = "lblCustomerCount";
-            this.lblCustomerCount.Size = new System.Drawing.Size(64, 47);
+            this.lblCustomerCount.Size = new System.Drawing.Size(53, 38);
             this.lblCustomerCount.TabIndex = 0;
             this.lblCustomerCount.Text = "14";
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.guna2Panel1.Controls.Add(this.btnMedicineShortage);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
@@ -238,7 +244,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnMedicineShortage.ForeColor = System.Drawing.Color.Black;
             this.btnMedicineShortage.Location = new System.Drawing.Point(64, 124);
             this.btnMedicineShortage.Name = "btnMedicineShortage";
-            this.btnMedicineShortage.Size = new System.Drawing.Size(162, 28);
+            this.btnMedicineShortage.Size = new System.Drawing.Size(131, 21);
             this.btnMedicineShortage.TabIndex = 1;
             this.btnMedicineShortage.Text = "Resolve Now  >>";
             this.btnMedicineShortage.Click += new System.EventHandler(this.btnMedicineShortage_Click);
@@ -262,7 +268,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(47, 85);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(200, 23);
+            this.label7.Size = new System.Drawing.Size(164, 21);
             this.label7.TabIndex = 1;
             this.label7.Text = "Medicines Shortage";
             // 
@@ -285,12 +291,14 @@ namespace Modern_Pharmacy_Managment_System
             this.lblMadicineShortage.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMadicineShortage.Location = new System.Drawing.Point(102, 43);
             this.lblMadicineShortage.Name = "lblMadicineShortage";
-            this.lblMadicineShortage.Size = new System.Drawing.Size(64, 47);
+            this.lblMadicineShortage.Size = new System.Drawing.Size(53, 38);
             this.lblMadicineShortage.TabIndex = 0;
             this.lblMadicineShortage.Text = "14";
             // 
             // guna2Panel3
             // 
+            this.guna2Panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
             this.guna2Panel3.Location = new System.Drawing.Point(12, 86);
             this.guna2Panel3.Name = "guna2Panel3";
@@ -299,7 +307,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // StaffInfoPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(917, 551);
@@ -312,7 +320,9 @@ namespace Modern_Pharmacy_Managment_System
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinimumSize = new System.Drawing.Size(917, 551);
             this.Name = "StaffInfoPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffInfoPanel";
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();
