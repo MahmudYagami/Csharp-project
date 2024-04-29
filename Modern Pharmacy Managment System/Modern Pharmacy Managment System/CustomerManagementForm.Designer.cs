@@ -43,6 +43,8 @@ namespace Modern_Pharmacy_Managment_System
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.errorMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.informationMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,6 +220,24 @@ namespace Modern_Pharmacy_Managment_System
             this.lblPassword.TabIndex = 30;
             this.lblPassword.Text = "Password : ";
             // 
+            // errorMessage
+            // 
+            this.errorMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.errorMessage.Caption = "One Pharma";
+            this.errorMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+            this.errorMessage.Parent = this;
+            this.errorMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.errorMessage.Text = null;
+            // 
+            // informationMessage
+            // 
+            this.informationMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.informationMessage.Caption = null;
+            this.informationMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.informationMessage.Parent = this;
+            this.informationMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.informationMessage.Text = null;
+            // 
             // CustomerManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,5 +282,7 @@ namespace Modern_Pharmacy_Managment_System
         public Guna.UI2.WinForms.Guna2Button btnClear;
         public Guna.UI2.WinForms.Guna2TextBox txtPassword;
         public System.Windows.Forms.Label lblPassword;
+        private Guna.UI2.WinForms.Guna2MessageDialog errorMessage;
+        private Guna.UI2.WinForms.Guna2MessageDialog informationMessage;
     }
 }

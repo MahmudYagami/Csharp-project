@@ -43,6 +43,45 @@ namespace Modern_Pharmacy_Managment_System.Classes
 
             return true;
         }
+
+        public static bool CheckPhoneNumberExists(string phoneNumber)
+        {
+            using (var con = DatabaseConnection.databaseConnect())
+            {
+                try
+                {
+                    con.Open();
+
+                    // Prepare the SELECT query
+                    string selectQuery = "SELECT COUNT(*) FROM tbCustomer WHERE cphone = @cphone";
+
+                    // Create SqlCommand object and add parameters
+                    SqlCommand cmd = new SqlCommand(selectQuery, con);
+
+                    cmd.Parameters.AddWithValue("@cphone", phoneNumber);
+
+                    // Execute the query and get the count
+                    int count = (int)cmd.ExecuteScalar();
+
+                    // If count is greater than 0, phone number already exists
+                    if(count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
     }
 
     

@@ -31,6 +31,7 @@ namespace Modern_Pharmacy_Managment_System
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignupForm));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblLogin = new System.Windows.Forms.LinkLabel();
             this.checkShowPassword = new Guna.UI2.WinForms.Guna2CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSignup = new Guna.UI2.WinForms.Guna2Button();
@@ -40,7 +41,9 @@ namespace Modern_Pharmacy_Managment_System
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblLogin = new System.Windows.Forms.LinkLabel();
+            this.MessageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.warningMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.errorMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +65,18 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(492, 633);
             this.guna2Panel1.TabIndex = 3;
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Location = new System.Drawing.Point(334, 545);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(46, 20);
+            this.lblLogin.TabIndex = 7;
+            this.lblLogin.TabStop = true;
+            this.lblLogin.Text = "Login";
+            this.lblLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogin_LinkClicked);
             // 
             // checkShowPassword
             // 
@@ -225,17 +240,32 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
-            // lblLogin
+            // MessageDialog
             // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(334, 545);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(46, 20);
-            this.lblLogin.TabIndex = 7;
-            this.lblLogin.TabStop = true;
-            this.lblLogin.Text = "Login";
-            this.lblLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogin_LinkClicked);
+            this.MessageDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MessageDialog.Caption = "One Pharma";
+            this.MessageDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.MessageDialog.Parent = this;
+            this.MessageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.MessageDialog.Text = null;
+            // 
+            // warningMessage
+            // 
+            this.warningMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.warningMessage.Caption = "One Pharma";
+            this.warningMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.warningMessage.Parent = this;
+            this.warningMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.warningMessage.Text = null;
+            // 
+            // errorMessage
+            // 
+            this.errorMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.errorMessage.Caption = "One Pharma";
+            this.errorMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+            this.errorMessage.Parent = this;
+            this.errorMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.errorMessage.Text = null;
             // 
             // SignupForm
             // 
@@ -249,6 +279,7 @@ namespace Modern_Pharmacy_Managment_System
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SignupForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignupForm";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -270,5 +301,8 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.LinkLabel lblLogin;
+        private Guna.UI2.WinForms.Guna2MessageDialog MessageDialog;
+        private Guna.UI2.WinForms.Guna2MessageDialog warningMessage;
+        private Guna.UI2.WinForms.Guna2MessageDialog errorMessage;
     }
 }

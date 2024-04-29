@@ -138,7 +138,8 @@ namespace Modern_Pharmacy_Managment_System
                     }
                     else
                     {
-                        MessageBox.Show("Failed to add product to cart.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        errorMessage.Show("Failed to add product to cart.");
+                        //MessageBox.Show("Failed to add product to cart.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
 
@@ -159,7 +160,8 @@ namespace Modern_Pharmacy_Managment_System
                 }
                 else
                 {
-                    MessageBox.Show("Please select a product to add to cart!", "No Product Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    warningMessage.Show("Please select a product to add to cart!");
+                   // MessageBox.Show("Please select a product to add to cart!", "No Product Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
