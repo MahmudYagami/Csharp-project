@@ -47,21 +47,23 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.CustomerCountPanel.AutoRoundedCorners = true;
             this.CustomerCountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(221)))), ((int)(((byte)(207)))));
-            this.CustomerCountPanel.BorderRadius = 66;
+            this.CustomerCountPanel.BorderRadius = 53;
             this.CustomerCountPanel.Controls.Add(this.label2);
             this.CustomerCountPanel.Controls.Add(this.guna2Panel3);
-            this.CustomerCountPanel.Location = new System.Drawing.Point(12, 21);
+            this.CustomerCountPanel.Location = new System.Drawing.Point(9, 17);
+            this.CustomerCountPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CustomerCountPanel.Name = "CustomerCountPanel";
-            this.CustomerCountPanel.Size = new System.Drawing.Size(224, 134);
+            this.CustomerCountPanel.Size = new System.Drawing.Size(168, 109);
             this.CustomerCountPanel.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 100);
+            this.label2.Location = new System.Drawing.Point(22, 81);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 23);
+            this.label2.Size = new System.Drawing.Size(129, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Total Employee";
             // 
@@ -71,17 +73,19 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel3.Controls.Add(this.lblEmployeeCnt);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(224, 93);
+            this.guna2Panel3.Size = new System.Drawing.Size(168, 76);
             this.guna2Panel3.TabIndex = 0;
             // 
             // lblEmployeeCnt
             // 
             this.lblEmployeeCnt.AutoSize = true;
             this.lblEmployeeCnt.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeCnt.Location = new System.Drawing.Point(79, 23);
+            this.lblEmployeeCnt.Location = new System.Drawing.Point(59, 19);
+            this.lblEmployeeCnt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmployeeCnt.Name = "lblEmployeeCnt";
-            this.lblEmployeeCnt.Size = new System.Drawing.Size(66, 49);
+            this.lblEmployeeCnt.Size = new System.Drawing.Size(53, 39);
             this.lblEmployeeCnt.TabIndex = 0;
             this.lblEmployeeCnt.Text = "14";
             // 
@@ -89,21 +93,23 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.guna2Panel1.AutoRoundedCorners = true;
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(221)))), ((int)(((byte)(207)))));
-            this.guna2Panel1.BorderRadius = 66;
+            this.guna2Panel1.BorderRadius = 53;
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.Location = new System.Drawing.Point(273, 21);
+            this.guna2Panel1.Location = new System.Drawing.Point(205, 17);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(224, 134);
+            this.guna2Panel1.Size = new System.Drawing.Size(168, 109);
             this.guna2Panel1.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 96);
+            this.label1.Location = new System.Drawing.Point(7, 78);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 23);
+            this.label1.Size = new System.Drawing.Size(166, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Employee On Leave";
             // 
@@ -113,28 +119,31 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel2.Controls.Add(this.lblLeaveCnt);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(224, 93);
+            this.guna2Panel2.Size = new System.Drawing.Size(168, 76);
             this.guna2Panel2.TabIndex = 0;
             // 
             // lblLeaveCnt
             // 
             this.lblLeaveCnt.AutoSize = true;
             this.lblLeaveCnt.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeaveCnt.Location = new System.Drawing.Point(79, 23);
+            this.lblLeaveCnt.Location = new System.Drawing.Point(59, 19);
+            this.lblLeaveCnt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLeaveCnt.Name = "lblLeaveCnt";
-            this.lblLeaveCnt.Size = new System.Drawing.Size(66, 49);
+            this.lblLeaveCnt.Size = new System.Drawing.Size(53, 39);
             this.lblLeaveCnt.TabIndex = 0;
             this.lblLeaveCnt.Text = "14";
             // 
             // AdminDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 567);
+            this.ClientSize = new System.Drawing.Size(731, 461);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.CustomerCountPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AdminDashboard";
             this.Text = "AdminDashboard";
             this.CustomerCountPanel.ResumeLayout(false);

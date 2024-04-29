@@ -34,31 +34,41 @@ namespace Modern_Pharmacy_Managment_System
                 con.Close();
 
 
+                // Medicine Count
 
                 con.Open();
-                SqlCommand cm2 = new SqlCommand("SELECT Count(*) From InventoryTbl", con);
-                var totalMedicine = cm2.ExecuteScalar();
-                if (int.Parse(totalMedicine.ToString()) < 10)
+
+                // Check total medicine count
+                SqlCommand cm2 = new SqlCommand("SELECT COUNT(*) FROM InventoryTbl", con);
+                int totalMedicineCount = (int)cm2.ExecuteScalar();
+                string totalMedicineDisplay = totalMedicineCount < 10 ? "0" + totalMedicineCount.ToString() : totalMedicineCount.ToString();
+                lblMadiniceCount.Text = totalMedicineDisplay;
+
+                // Check for medicine shortage
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM InventoryTbl WHERE PStock < 50", con);
+                int shortageCount = (int)cmd.ExecuteScalar();
+                string shortageCountDisplay = shortageCount < 10 ? "0" + shortageCount.ToString() : shortageCount.ToString();
+                lblMadicineShortage.Text = shortageCountDisplay;
+
+                // If shortage, insert details into MedicineShortageTbl if not already there
+                if (shortageCount > 0)
                 {
-                    totalMedicine = "0" + totalMedicine;
+                    SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM MedicineShortageTbl WHERE SId IN (SELECT PId FROM InventoryTbl WHERE PStock < 50)", con);
+                    int existingCount = (int)checkCmd.ExecuteScalar();
+                    if (existingCount == 0)
+                    {
+                        SqlCommand insertCmd = new SqlCommand("INSERT INTO MedicineShortageTbl (SId, SName, SQuantity, SBuyingPrice) SELECT PId, PName, PStock, PBuyingPrice FROM InventoryTbl WHERE PStock < 50", con);
+                        insertCmd.ExecuteNonQuery();
+                    }
                 }
-                lblMadiniceCount.Text = totalMedicine.ToString();
+
                 con.Close();
 
 
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM InventoryTbl WHERE PStock < 50", con);
-                int count = (int)cmd.ExecuteScalar();
-                if (count < 10)
-                {
-                    lblMadicineShortage.Text = "0" + count.ToString();
-                }
-                else { lblMadicineShortage.Text = count.ToString(); }
             }
 
-               
-            
+
+
         }
         public void loadform(object Form)
         {
@@ -77,17 +87,22 @@ namespace Modern_Pharmacy_Managment_System
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-
+            StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
+            staffDashboard.LoadBkashFormIntoMainPanel(new addproductPha());
+            this.Hide();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            loadform(new CustomerForm());
+            StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
+            staffDashboard.LoadBkashFormIntoMainPanel(new CustomerForm());
+            this.Hide();
         }
 
         private void btnMedicineShortage_Click(object sender, EventArgs e)
         {
-            loadform(new CustomerForm());
+            MedicineShortage ms = new MedicineShortage();
+            ms.Show();
         }
     }
 }
