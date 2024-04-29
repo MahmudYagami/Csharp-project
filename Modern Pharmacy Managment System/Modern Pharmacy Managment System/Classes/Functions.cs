@@ -28,6 +28,7 @@ namespace Modern_Pharmacy_Managment_System
             Cmd.Connection = Con;
             
         }
+        public SqlConnection Connection { get; private set; }
 
         public DataTable GetData(string Query)
         {
