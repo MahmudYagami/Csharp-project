@@ -54,23 +54,28 @@ namespace Modern_Pharmacy_Managment_System
                 {              
                     if (!Customer.IsValidPhoneNumber(phoneNumber))
                     {
+                        errorMessage.Show("Invalid Phone Number");
                         return;
                     }
-                    // Continue saving if phone number is valid
-                    if (MessageBox.Show("Are you sure you want to save this customer?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+                    if (Customer.CheckPhoneNumberExists(txtCuName.Text))
                     {
-                        SqlCommand cm = new SqlCommand();
-                        cm = new SqlCommand("INSERT INTO tbCustomer(cname,cphone,cpassword,cpoints)VALUES(@cname, @cphone,@cpassword,@cpoints)", con);
-                        cm.Parameters.AddWithValue("@cname", txtCuName.Text);
-                        cm.Parameters.AddWithValue("@cphone", phoneNumber);
-                        cm.Parameters.AddWithValue("@cpassword", txtPassword.Text);
-                        cm.Parameters.AddWithValue("@cpoints", 0);
-                        con.Open();
-                        cm.ExecuteNonQuery();
-                        con.Close();
-                        MessageBox.Show("User has been successfully saved.");
-                        Clear();
+                        errorMessage.Show("Phone Number already exists!");
+                        return ;
                     }
+
+                    // Continue saving if phone number is valid                   
+                    SqlCommand cm = new SqlCommand();
+                    cm = new SqlCommand("INSERT INTO tbCustomer(cname,cphone,cpassword,cpoints)VALUES(@cname, @cphone,@cpassword,@cpoints)", con);
+                    cm.Parameters.AddWithValue("@cname", txtCuName.Text);
+                    cm.Parameters.AddWithValue("@cphone", phoneNumber);
+                    cm.Parameters.AddWithValue("@cpassword", txtPassword.Text);
+                    cm.Parameters.AddWithValue("@cpoints", 0);
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();                   
+                    informationMessage.Show("Customer has been successfully saved!");
+                    Clear();                 
                 }
                 
             }
@@ -103,7 +108,8 @@ namespace Modern_Pharmacy_Managment_System
                         con.Open();
                         cm.ExecuteNonQuery();
                         con.Close();
-                        MessageBox.Show("Customer has been successfully updated!");
+                       // MessageBox.Show("Customer has been successfully updated!");
+                        informationMessage.Show("Customer has been successfully updated!");
                         this.Dispose();
                     }
                 }             

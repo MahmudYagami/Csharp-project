@@ -1,4 +1,5 @@
-﻿  using System;
+﻿using Modern_Pharmacy_Managment_System.Database;
+    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,12 +48,44 @@ namespace Modern_Pharmacy_Managment_System
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string remove = tbSearchBox.Text;
-            string Query = "delete from tbCustomer WHERE cname = '" + remove + "'";
-            Query = string.Format(Query, Key);
-            Con.SetData(Query);
-            MessageBox.Show("Employee Deleted!!!");
+
+            // Ensure the string is properly sanitized to prevent SQL injection
+            // You should use parameterized queries instead of string concatenation
+            string query = "DELETE FROM tbCustomer WHERE cname = @cname";
+
+            using (var con = DatabaseConnection.databaseConnect())
+            {
+                try
+                {
+                    con.Open();
+
+                    // Create SqlCommand object and add parameters
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@cname", remove);
+
+                        // Execute the query
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            
+                            messageDialog.Show("Customer Removed!");
+                        }
+                        else
+                        {                         
+                            messageDialog.Show("Customer not found!");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
             tbSearchBox.Text = "";
-            showCustomerForm();
+            showCustomerForm();          
         }
 
         private void tbSearchBox_TextChanged(object sender, EventArgs e)
@@ -90,7 +123,7 @@ namespace Modern_Pharmacy_Managment_System
             }
             else
             {
-                MessageBox.Show("Please select a customer to update.", "Select Customer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                warningMessage.Show("Please select a customer to update.");
             }
 
             tbSearchBox.Text = "";         
