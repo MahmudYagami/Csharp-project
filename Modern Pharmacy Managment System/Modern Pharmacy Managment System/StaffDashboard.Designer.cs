@@ -307,6 +307,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(211, 45);
             this.guna2Button2.TabIndex = 0;
             this.guna2Button2.Text = "Inventory";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // btnLeave
             // 
@@ -337,7 +338,6 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(917, 652);
             this.mainPanel.TabIndex = 3;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // StaffDashboard
             // 
