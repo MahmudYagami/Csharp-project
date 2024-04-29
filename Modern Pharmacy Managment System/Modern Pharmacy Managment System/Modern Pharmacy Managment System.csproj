@@ -142,6 +142,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Functions.cs" />
+    <Compile Include="LeaveRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaveRequest.Designer.cs">
+      <DependentUpon>LeaveRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="LeavesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveRequest.resx">
+      <DependentUpon>LeaveRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LeavesForm.resx">
       <DependentUpon>LeavesForm.cs</DependentUpon>

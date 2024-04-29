@@ -7,20 +7,11 @@ namespace Modern_Pharmacy_Managment_System
     public partial class Login : Form
     {
         Functions Con;
+
         public Login()
         {
             InitializeComponent();
             Con = new Functions();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void signupLabel_Click(object sender, EventArgs e)
-        {
-
         }
 
         public static int EmpId;
@@ -52,7 +43,6 @@ namespace Modern_Pharmacy_Managment_System
                         // If found in AdminTbl, login as admin
                         if (adminDt.Rows.Count > 0)
                         {
-                            MessageBox.Show("Admin Login Success!");
                             // Now you can navigate to the AdminDashboard or perform other actions for admins
                             DashBoard ad = new DashBoard();
                             ad.Show();
@@ -68,8 +58,6 @@ namespace Modern_Pharmacy_Managment_System
                             // If found in tbCustomer, login as customer
                             if (customerDt.Rows.Count > 0)
                             {
-                                MessageBox.Show("Customer Login Success!");
-                                // Now you can navigate to the CustomerDashboard or perform other actions for customers
                                 string customerName = customerDt.Rows[0]["cname"].ToString();
                                 CustomerDashboard cd = new CustomerDashboard(customerName);
                                 cd.Show();
@@ -85,7 +73,6 @@ namespace Modern_Pharmacy_Managment_System
                     }
                     else
                     {
-                        MessageBox.Show("Staff Login Success!");
                         // If it's found in EmployeeTbl, it's staff login. Now open the StaffDashboard form.
                         EmpId = Convert.ToInt32(empDt.Rows[0][0].ToString());
                         EmpName = empDt.Rows[0][1].ToString(); // Set the staff name

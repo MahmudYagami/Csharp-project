@@ -8,88 +8,69 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
 namespace Modern_Pharmacy_Managment_System
 {
     public partial class LeavesForm : Form
     {
         Functions Con;
+
         public LeavesForm()
         {
             InitializeComponent();
             Con = new Functions();
             ShowLeaveForm();
             GetEmployees();
-            GetCategories();
         }
 
         private void ShowLeaveForm()
         {
-            string Query = "select * from LeaveTbl";
+            string Query = "SELECT * FROM LeaveTbl";
             LeaveList.DataSource = Con.GetData(Query);
         }
 
         private void FilterLeaves()
         {
-            string Query = "select * from LeaveTbl where Status='{0}'";
+            string Query = "SELECT * FROM LeaveTbl WHERE Status = '{0}'";
             Query = string.Format(Query, SearchCb.SelectedItem.ToString());
             LeaveList.DataSource = Con.GetData(Query);
         }
 
         private void GetEmployees()
         {
-            string Query = "select * from EmployeeTbl";
+            string Query = "SELECT * FROM EmployeeTbl";
             EmployeeCb.DisplayMember = "EmpName";
             EmployeeCb.ValueMember = "EmpId";
             EmployeeCb.DataSource = Con.GetData(Query);
         }
 
-        private void GetCategories()
-        {
-            string Query = "select * from CategoryTbl";
-            CategoriesCb.DisplayMember = "CatName";
-            CategoriesCb.ValueMember = "CatId";
-            CategoriesCb.DataSource = Con.GetData(Query);
-        }
-
         private void EmpSaveBtnLeave_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (CategoriesCb.SelectedIndex == -1 || EmployeeCb.SelectedIndex == -1 || StatusCb.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Missing Details!!!");
-                }
-                else
-                {
-                    int Emp = Convert.ToInt32(EmployeeCb.SelectedValue);
-                    int Category = Convert.ToInt32(CategoriesCb.SelectedValue);
-                    string DateStart = DateStartCalender.Value.Date.ToString("yyyy-MM-dd");
-                    string DateEnd = DateEndCalender.Value.Date.ToString("yyyy-MM-dd");
-                    string DateApplied = DateTime.Today.Date.ToString("yyyy-MM-dd");
-                    // string Status = "Pending";
-                    string Status = StatusCb.SelectedItem.ToString();
-
-                    string Query = "insert into LeaveTbl values({0},{1},'{2}','{3}','{4}','{5}')";
-                    Query = string.Format(Query, Emp, Category, DateStart, DateEnd, DateApplied, Status);
-                    Con.SetData(Query);
-                    ShowLeaveForm();
-                    MessageBox.Show("Leave Added!!!");
-                }
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message);
-            }
+            EmpEditBtnLeave_Click(sender, e);
         }
 
         int Key = 0;
+
         private void LeaveList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            EmployeeCb.Text = LeaveList.SelectedRows[0].Cells[1].Value.ToString();
-            CategoriesCb.Text = LeaveList.SelectedRows[0].Cells[2].Value.ToString();
-            DateStartCalender.Value = Convert.ToDateTime(LeaveList.SelectedRows[0].Cells[3].Value);
-            DateEndCalender.Value = Convert.ToDateTime(LeaveList.SelectedRows[0].Cells[4].Value);
-            StatusCb.Text = LeaveList.SelectedRows[0].Cells[5].Value.ToString();
+            string selectedEmployeeId = LeaveList.SelectedRows[0].Cells[1].Value.ToString(); // Assuming employee ID is in the second column
+
+            // Search for the employee ID in the ComboBox items and set the selected item accordingly
+            foreach (var item in EmployeeCb.Items)
+            {
+                DataRowView rowView = item as DataRowView;
+                if (rowView != null)
+                {
+                    string employeeId = rowView.Row["EmpId"].ToString(); // Assuming employee ID column name is "EmpId"
+                    if (employeeId == selectedEmployeeId)
+                    {
+                        EmployeeCb.SelectedItem = item;
+                        break;
+                    }
+                }
+            }
+
+            StatusCb.Text = LeaveList.SelectedRows[0].Cells[4].Value.ToString();
 
             if (EmployeeCb.SelectedIndex == -1)
             {
@@ -101,32 +82,48 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
+
         private void EmpEditBtnLeave_Click(object sender, EventArgs e)
         {
             try
             {
-                if (CategoriesCb.SelectedIndex == -1 || EmployeeCb.SelectedIndex == -1 || StatusCb.SelectedIndex == -1)
+                if (EmployeeCb.SelectedIndex == -1 || StatusCb.SelectedIndex == -1)
                 {
                     MessageBox.Show("Missing Details!!!");
                 }
                 else
                 {
-                    int Emp = Convert.ToInt32(EmployeeCb.SelectedValue);
-                    int Category = Convert.ToInt32(CategoriesCb.SelectedValue);
-                    string DateStart = DateStartCalender.Value.Date.ToString("yyyy-MM-dd");
-                    string DateEnd = DateEndCalender.Value.Date.ToString("yyyy-MM-dd");
-                    string Status = StatusCb.SelectedItem.ToString();
+                    int empId = Convert.ToInt32(EmployeeCb.SelectedValue);
+                    string dateStart = DateStartCalender.Value.Date.ToString("yyyy-MM-dd");
+                    string dateEnd = DateEndCalender.Value.Date.ToString("yyyy-MM-dd");
+                    string status = StatusCb.SelectedItem.ToString();
 
-                    string Query = "Update LeaveTbl set Employee={0}, Category={1},DateStart='{2}',DateEnd='{3}',Status='{4}' where LId={5}";
-                    Query = string.Format(Query, Emp, Category, DateStart, DateEnd, Status, Key);
-                    Con.SetData(Query);
-                    ShowLeaveForm();
-                    MessageBox.Show("Leave Updated!!!");
+                    string query = "UPDATE LeaveTbl SET Employee = @EmpId, DateStart = @DateStart, " +
+                                   "DateEnd = @DateEnd, Status = @Status WHERE LId = @LeaveId";
+
+                    SqlCommand cmd = new SqlCommand(query, Con.Connection);
+                    cmd.Parameters.AddWithValue("@EmpId", empId);
+                    cmd.Parameters.AddWithValue("@DateStart", dateStart);
+                    cmd.Parameters.AddWithValue("@DateEnd", dateEnd);
+                    cmd.Parameters.AddWithValue("@Status", status);
+                    cmd.Parameters.AddWithValue("@LeaveId", Key); // Key represents the LId of the selected leave request
+
+                    int rowsAffected = Con.insertData(cmd);
+
+                    if (rowsAffected > 0)
+                    {
+                        ShowLeaveForm();
+                        MessageBox.Show("Leave Updated!!!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to update leave.");
+                    }
                 }
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(Ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -140,7 +137,7 @@ namespace Modern_Pharmacy_Managment_System
                 }
                 else
                 {
-                    string Query = "Delete from LeaveTbl where LId={0}";
+                    string Query = "DELETE FROM LeaveTbl WHERE LId = {0}";
                     Query = string.Format(Query, Key);
                     Con.SetData(Query);
                     ShowLeaveForm();
@@ -186,6 +183,7 @@ namespace Modern_Pharmacy_Managment_System
             c.Show();
             this.Hide();
         }
+
         private void DateEndCalender_ValueChanged(object sender, EventArgs e)
         {
 
