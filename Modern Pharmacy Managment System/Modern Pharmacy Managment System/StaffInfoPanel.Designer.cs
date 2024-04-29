@@ -84,8 +84,6 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // guna2Panel6
             // 
-            this.guna2Panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
             this.guna2Panel6.Controls.Add(this.btnInventory);
             this.guna2Panel6.Controls.Add(this.guna2Panel7);
@@ -155,8 +153,6 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // guna2Panel8
             // 
-            this.guna2Panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(221)))), ((int)(((byte)(207)))));
             this.guna2Panel8.Controls.Add(this.btnCustomer);
             this.guna2Panel8.Controls.Add(this.guna2Panel9);
@@ -226,8 +222,6 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.guna2Panel1.Controls.Add(this.btnMedicineShortage);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
@@ -297,8 +291,6 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
             this.guna2Panel3.Location = new System.Drawing.Point(12, 86);
             this.guna2Panel3.Name = "guna2Panel3";
@@ -322,7 +314,6 @@ namespace Modern_Pharmacy_Managment_System
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(917, 551);
             this.Name = "StaffInfoPanel";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffInfoPanel";
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();

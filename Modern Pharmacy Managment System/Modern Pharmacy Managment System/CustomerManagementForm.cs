@@ -31,7 +31,7 @@ namespace Modern_Pharmacy_Managment_System
         {
             txtCuName.Clear();
             txtCPhone.Clear();
-            CustomerPassTxt.Clear();
+            txtPassword.Clear();
         }
     
         private void txtCuName_TextChanged(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace Modern_Pharmacy_Managment_System
                         cm = new SqlCommand("INSERT INTO tbCustomer(cname,cphone,cpassword,cpoints)VALUES(@cname, @cphone,@cpassword,@cpoints)", con);
                         cm.Parameters.AddWithValue("@cname", txtCuName.Text);
                         cm.Parameters.AddWithValue("@cphone", phoneNumber);
-                        cm.Parameters.AddWithValue("@cpassword", CustomerPassTxt.Text);
+                        cm.Parameters.AddWithValue("@cpassword", txtPassword.Text);
                         cm.Parameters.AddWithValue("@cpoints", 0);
                         con.Open();
                         cm.ExecuteNonQuery();
@@ -96,19 +96,17 @@ namespace Modern_Pharmacy_Managment_System
                     {
                         
                         SqlCommand cm = new SqlCommand();
-                        cm = new SqlCommand("UPDATE tbCustomer SET cname = @cname,cpassword=@cpassword WHERE cid LIKE '" + lblCId.Text + "' ", con);
+                        cm = new SqlCommand("UPDATE tbCustomer SET cname = @cname WHERE cid LIKE '" + lblCId.Text + "' ", con);
                         cm.Parameters.AddWithValue("@cname", txtCuName.Text);
                         cm.Parameters.AddWithValue("@cphone", txtCPhone.Text);
-                        cm.Parameters.AddWithValue("@cpassword", CustomerPassTxt.Text);
+                        // cm.Parameters.AddWithValue("@cpassword", CustomerPassTxt.Text);
                         con.Open();
                         cm.ExecuteNonQuery();
                         con.Close();
                         MessageBox.Show("Customer has been successfully updated!");
                         this.Dispose();
                     }
-                }
-               
-
+                }             
             }
             catch (Exception ex)
             {
