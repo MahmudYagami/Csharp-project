@@ -26,7 +26,7 @@ namespace Modern_Pharmacy_Managment_System
 
         private void showCustomerForm()
         {
-            string Query = "select * from tbCustomer";
+            string Query = "select cid, cname, cphone, cpoints from tbCustomer";
             dgvCustomer.DataSource = Con.GetData(Query);
         }
 
@@ -58,7 +58,7 @@ namespace Modern_Pharmacy_Managment_System
         private void tbSearchBox_TextChanged(object sender, EventArgs e)
         {
             string searchText = tbSearchBox.Text.Trim();
-            string Query = "SELECT * FROM tbCustomer WHERE cname LIKE '%" + searchText + "%'";
+            string Query = "SELECT cid,cname, cphone, cpoints FROM tbCustomer WHERE cname LIKE '%" + searchText + "%'";
             dgvCustomer.DataSource = Con.GetData(Query);
             
         }
@@ -72,13 +72,15 @@ namespace Modern_Pharmacy_Managment_System
                 DataGridViewRow selectedRow = dgvCustomer.SelectedRows[0];
                 string customerName = selectedRow.Cells[1].Value.ToString();
                 string customerPhone = selectedRow.Cells[2].Value.ToString();
-                string customerPassword = selectedRow.Cells[3].Value.ToString();
+          //      string customerPassword = selectedRow.Cells[3].Value.ToString();
                 CustomerManagementForm cmf = new CustomerManagementForm();
                 cmf.lblCId.Text = dgvCustomer.Rows[0].Cells[0].Value.ToString();
                 cmf.txtCuName.Text = customerName;
                 cmf.txtCPhone.Text = customerPhone;
-                cmf.CustomerPassTxt.Text = customerPassword;
+                //cmf.txtPassword.Text = customerPassword;
                 cmf.txtCPhone.ReadOnly = true;
+                cmf.txtPassword.Visible = false;
+                cmf.lblPassword.Visible = false;
                 cmf.btnSave.Enabled = false;
                 cmf.btnSave.Visible = false;
                 cmf.btnUpdate.Enabled = true;

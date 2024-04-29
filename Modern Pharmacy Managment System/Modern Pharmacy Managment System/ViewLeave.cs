@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Modern_Pharmacy_Managment_System
@@ -13,31 +8,62 @@ namespace Modern_Pharmacy_Managment_System
     public partial class ViewLeave : Form
     {
         Functions Con;
+
         public ViewLeave()
         {
-            Con = new Functions();
             InitializeComponent();
-            EmpIdLbl.Text = Login.EmpId + "";
+            Con = new Functions();
+            EmpIdLbl.Text = Login.EmpId.ToString();
             EmpNameLbl.Text = Login.EmpName;
             ShowLeaveForm();
-            
         }
+
         private void ShowLeaveForm()
         {
-            string Query = "select * from LeaveTbl where Employee={0}";
-            Query = string.Format(Query, Login.EmpId);
-            LeaveList.DataSource = Con.GetData(Query);
-
+            try
+            {
+                // Assuming Con.GetData is capable of executing the query and returning the DataTable
+                string Query = "SELECT * FROM LeaveTbl WHERE Employee = " + Login.EmpId;
+                DataTable leaveData = Con.GetData(Query);
+                LeaveList.DataSource = leaveData;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
-        private void EmpIdLbl_Click(object sender, EventArgs e)
+        public void loadform(object Form)
         {
-            // emp id 
+            if (this.mainpanel.Controls.Count > 0)
+                this.mainpanel.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.mainpanel.Controls.Add(f);
+            this.mainpanel.Tag = f;
+            f.Show();
         }
 
-        private void LeaveList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void iconButton1_Click(object sender, EventArgs e)
         {
-
+            /*LeaveRequest leaveRequestForm = new LeaveRequest();
+            leaveRequestForm.StartPosition = FormStartPosition.Manual;
+            leaveRequestForm.Location = new Point(598, 550); // Adjust the coordinates as needed
+            leaveRequestForm.Show();*/
+            loadform(new LeaveRequest());
+            
         }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+           
+                ShowLeaveForm(); // Refresh the DataGridView with the latest data
+            
+        }
+
+        
+
+
     }
 }

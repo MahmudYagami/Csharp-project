@@ -29,9 +29,11 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeSalary));
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SalaryAmountTxt = new System.Windows.Forms.TextBox();
@@ -47,8 +49,11 @@ namespace Modern_Pharmacy_Managment_System
             this.label4 = new System.Windows.Forms.Label();
             this.SearchButton = new FontAwesome.Sharp.IconButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.SalaryNotificationTimer = new System.Windows.Forms.Timer(this.components);
+            this.NotificationImage = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryView)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NotificationImage)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -269,7 +274,6 @@ namespace Modern_Pharmacy_Managment_System
             this.SearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SearchButton.UseVisualStyleBackColor = false;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click_1);
             // 
             // guna2Panel1
             // 
@@ -279,12 +283,25 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.Size = new System.Drawing.Size(1113, 10);
             this.guna2Panel1.TabIndex = 20;
             // 
+            // NotificationImage
+            // 
+            this.NotificationImage.Image = ((System.Drawing.Image)(resources.GetObject("NotificationImage.Image")));
+            this.NotificationImage.ImageRotate = 0F;
+            this.NotificationImage.Location = new System.Drawing.Point(1040, 59);
+            this.NotificationImage.Name = "NotificationImage";
+            this.NotificationImage.Size = new System.Drawing.Size(48, 40);
+            this.NotificationImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.NotificationImage.TabIndex = 21;
+            this.NotificationImage.TabStop = false;
+            this.NotificationImage.Click += new System.EventHandler(this.NotificationImage_Click);
+            // 
             // EmployeeSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1113, 570);
+            this.Controls.Add(this.NotificationImage);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.SearchButton);
@@ -306,6 +323,7 @@ namespace Modern_Pharmacy_Managment_System
             ((System.ComponentModel.ISupportInitialize)(this.SalaryView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NotificationImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +345,7 @@ namespace Modern_Pharmacy_Managment_System
         private FontAwesome.Sharp.IconButton SearchButton;
         private System.Windows.Forms.Label Emp_manage_label;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+       // private System.Windows.Forms.Timer SalaryNotificationTimer;
+        private Guna.UI2.WinForms.Guna2PictureBox NotificationImage;
     }
 }

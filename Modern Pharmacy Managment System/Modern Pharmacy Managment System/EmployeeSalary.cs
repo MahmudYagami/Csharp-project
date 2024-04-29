@@ -7,12 +7,14 @@ namespace Modern_Pharmacy_Managment_System
     public partial class EmployeeSalary : Form
     {
         Functions Con;
+        Timer SalaryNotificationTimer;
 
         public EmployeeSalary()
         {
             InitializeComponent();
             Con = new Functions();
             LoadSalaryData();
+            InitializeTimer();
             SalaryView.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Set selection mode to full row select
             SalaryView.MultiSelect = false; // Allow only single row selection
             SalaryView.ReadOnly = true; // Make DataGridView read-only
@@ -43,34 +45,50 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void PaySalaryBtn_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void DeleteSalaryBtn_Click(object sender, EventArgs e)
+        private void SalaryPaidButton_Click(object sender, EventArgs e)
         {
             try
             {
-                if (SalaryView.SelectedRows.Count > 0)
+                int empId = int.Parse(EmpIdTxt.Text);
+                float salaryAmount = float.Parse(SalaryAmountTxt.Text);
+                DateTime payDate = PayDateCalender.Value;
+
+                // Check if it's been more than 30 days since joining
+                DateTime joiningDate = GetJoiningDate(empId);
+                TimeSpan daysSinceJoining = payDate - joiningDate;
+                if (daysSinceJoining.TotalDays < 30)
                 {
-                    DataGridViewRow selectedRow = SalaryView.SelectedRows[0];
-                    int salaryId = Convert.ToInt32(selectedRow.Cells["SalaryId"].Value);
-
-                    string deleteQuery = "DELETE FROM SalaryTbl WHERE SalaryId = " + salaryId;
-                    Con.SetData(deleteQuery);
-
-                    // Delete corresponding entry from AccountTbl
-                    string deleteAccountQuery = "DELETE FROM AccountTbl WHERE SalaryId = " + salaryId;
-                    Con.SetData(deleteAccountQuery);
-
-                    MessageBox.Show("Salary record deleted successfully!");
-                    LoadSalaryData();
+                    MessageBox.Show("Salary can only be paid after 30 days of joining.");
+                    return;
                 }
-                else
+
+                // Check if the employee exists
+                if (!EmployeeExists(empId))
                 {
-                    MessageBox.Show("Please select a row to delete.");
+                    MessageBox.Show("Employee with ID " + empId + " does not exist.");
+                    return;
                 }
+
+                // Check if the salary amount matches the expected amount
+                float expectedSalary = GetExpectedSalary(empId);
+                if (salaryAmount != expectedSalary)
+                {
+                    MessageBox.Show("Salary amount does not match with the expected amount.");
+                    return;
+                }
+
+                // Insert salary payment into SalaryTbl
+                string insertQuery = "INSERT INTO SalaryTbl (EmpId, SalaryPaidAmount, SalaryPaidDate) VALUES ({0}, {1}, '{2}')";
+                insertQuery = string.Format(insertQuery, empId, salaryAmount, payDate.ToString("yyyy-MM-dd"));
+                Con.SetData(insertQuery);
+
+                // Insert salary payment details into AccountTbl
+                string accountInsertQuery = "INSERT INTO AccountTbl (SalaryId, Expense, Date) VALUES ((SELECT SCOPE_IDENTITY()), {0}, '{1}')";
+                accountInsertQuery = string.Format(accountInsertQuery, salaryAmount, payDate.ToString("yyyy-MM-dd"));
+                Con.SetData(accountInsertQuery);
+
+                MessageBox.Show("Salary paid successfully!");
+                LoadSalaryData();
             }
             catch (Exception ex)
             {
@@ -134,102 +152,117 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
+        private void NotificationImage_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void SearchButton_Click_1(object sender, EventArgs e)
-        {
-
             try
             {
-                string searchText = SearchTextBox.Text.Trim();
+                // Query to retrieve unpaid employee IDs and their joining dates
+                string query = "SELECT EmpId, EmpJoiningDate FROM EmployeeTbl WHERE EmpId NOT IN (SELECT DISTINCT EmpId FROM SalaryTbl)";
 
-                // If the search text is empty, reload the original table data
-                if (string.IsNullOrWhiteSpace(searchText))
+                // Retrieve unpaid employees and their joining dates
+                DataTable dtUnpaidEmployees = Con.GetData(query);
+
+                // Check if there are unpaid employees
+                if (dtUnpaidEmployees.Rows.Count > 0)
                 {
-                    LoadSalaryData();
-                    return;
+                    // Generate the message with unpaid employee IDs and months due
+                    string unpaidEmployeeMessage = "Unpaid Employees:\n";
+                    foreach (DataRow row in dtUnpaidEmployees.Rows)
+                    {
+                        // Calculate the number of months due
+                        DateTime joiningDate = Convert.ToDateTime(row["EmpJoiningDate"]);
+                        int monthsDue = ((DateTime.Now.Year - joiningDate.Year) * 12) + DateTime.Now.Month - joiningDate.Month;
+
+                        // Append employee ID and months due to the message
+                        unpaidEmployeeMessage += "Employee ID: " + row["EmpId"].ToString() + " (Months Due: " + monthsDue + ")\n";
+                    }
+
+                    // Show message box with unpaid employee details
+                    MessageBox.Show(unpaidEmployeeMessage, "Unpaid Employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                int empId = int.Parse(searchText);
-
-                // Cast the DataSource of the DataGridView to a DataTable
-                DataTable dataTable = (DataTable)SalaryView.DataSource;
-
-                // Filter the DataTable to select rows where EmpId matches the input empId
-                DataRow[] filteredRows = dataTable.Select($"EmpId = {empId}");
-
-                // Create a new DataTable with the same schema as the original DataTable
-                DataTable filteredDataTable = dataTable.Clone();
-
-                // Add the filtered rows to the new DataTable
-                foreach (DataRow row in filteredRows)
+                else
                 {
-                    filteredDataTable.ImportRow(row);
+                    MessageBox.Show("All employees have been paid.", "No Unpaid Employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                // Set the DataSource of the DataGridView to the filtered DataTable
-                SalaryView.DataSource = filteredDataTable;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error searching employee: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void SalaryPaidButton_Click(object sender, EventArgs e)
+        private void DeleteSalaryBtn_Click(object sender, EventArgs e)
         {
-
             try
             {
-                int empId = int.Parse(EmpIdTxt.Text);
-                float salaryAmount = float.Parse(SalaryAmountTxt.Text);
-                DateTime payDate = PayDateCalender.Value;
-
-                // Check if it's been more than 30 days since joining
-                DateTime joiningDate = GetJoiningDate(empId);
-                TimeSpan daysSinceJoining = payDate - joiningDate;
-                if (daysSinceJoining.TotalDays < 30)
+                if (SalaryView.SelectedRows.Count > 0)
                 {
-                    MessageBox.Show("Salary can only be paid after 30 days of joining.");
-                    return;
-                }
+                    DataGridViewRow selectedRow = SalaryView.SelectedRows[0];
+                    int salaryId = Convert.ToInt32(selectedRow.Cells["SalaryId"].Value);
 
-                // Check if the employee exists
-                if (!EmployeeExists(empId))
+                    string deleteQuery = "DELETE FROM SalaryTbl WHERE SalaryId = " + salaryId;
+                    Con.SetData(deleteQuery);
+
+                    // Delete corresponding entry from AccountTbl
+                    string deleteAccountQuery = "DELETE FROM AccountTbl WHERE SalaryId = " + salaryId;
+                    Con.SetData(deleteAccountQuery);
+
+                    MessageBox.Show("Salary record deleted successfully!");
+                    LoadSalaryData();
+                }
+                else
                 {
-                    MessageBox.Show("Employee with ID " + empId + " does not exist.");
-                    return;
+                    MessageBox.Show("Please select a row to delete.");
                 }
-
-                // Check if the salary amount matches the expected amount
-                float expectedSalary = GetExpectedSalary(empId);
-                if (salaryAmount != expectedSalary)
-                {
-                    MessageBox.Show("Salary amount does not match with the expected amount.");
-                    return;
-                }
-
-                // Insert salary payment into SalaryTbl
-                string insertQuery = "INSERT INTO SalaryTbl (EmpId, SalaryPaidAmount, SalaryPaidDate) VALUES ({0}, {1}, '{2}')";
-                insertQuery = string.Format(insertQuery, empId, salaryAmount, payDate.ToString("yyyy-MM-dd"));
-                Con.SetData(insertQuery);
-
-                // Insert salary payment details into AccountTbl
-                string accountInsertQuery = "INSERT INTO AccountTbl (SalaryId, Expense, Date) VALUES ((SELECT SCOPE_IDENTITY()), {0}, '{1}')";
-                accountInsertQuery = string.Format(accountInsertQuery, salaryAmount, payDate.ToString("yyyy-MM-dd"));
-                Con.SetData(accountInsertQuery);
-
-                MessageBox.Show("Salary paid successfully!");
-                LoadSalaryData();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-
         }
+
+        private void InitializeTimer()
+        {
+            SalaryNotificationTimer = new Timer();
+            SalaryNotificationTimer.Interval = 24 * 60 * 60 * 1000; // 24 hours
+            SalaryNotificationTimer.Tick += SalaryNotificationTimer_Tick;
+            SalaryNotificationTimer.Start();
+        }
+
+        private void SalaryNotificationTimer_Tick(object sender, EventArgs e)
+        {
+            CheckUnpaidSalaries();
+        }
+
+        private void CheckUnpaidSalaries()
+        {
+            try
+            {
+                string query = "SELECT EmpName FROM EmployeeTbl WHERE EmpId NOT IN (SELECT DISTINCT EmpId FROM SalaryTbl)";
+                DataTable dtUnpaidSalaries = Con.GetData(query);
+
+                if (dtUnpaidSalaries.Rows.Count > 0)
+                {
+                    string unpaidEmployees = "";
+                    foreach (DataRow row in dtUnpaidSalaries.Rows)
+                    {
+                        unpaidEmployees += row["EmpName"].ToString() + ", ";
+                    }
+                    unpaidEmployees = unpaidEmployees.TrimEnd(',', ' ');
+
+                    //NotificationTxt.Text = "Unpaid salaries for: " + unpaidEmployees;
+                    //NotificationTxt.Visible = true;
+                }
+                else
+                {
+                    //NotificationTxt.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error checking for unpaid salaries: " + ex.Message);
+            }
+        }
+
     }
 }
