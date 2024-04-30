@@ -29,9 +29,10 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffForm));
             this.Emp_manage_label = new System.Windows.Forms.Label();
             this.EmpLeftPanel = new System.Windows.Forms.Panel();
             this.LeaveBtn = new FontAwesome.Sharp.IconButton();
@@ -57,8 +58,11 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpPassTb = new Guna.UI2.WinForms.Guna2TextBox();
             this.EmpAddressTb = new Guna.UI2.WinForms.Guna2TextBox();
             this.EmpSalaryBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.LeaveNotification = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.LeaveNotify = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.EmpTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeaveNotification)).BeginInit();
             this.SuspendLayout();
             // 
             // Emp_manage_label
@@ -251,27 +255,27 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // EmployeeList
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
-            this.EmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
+            this.EmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.EmployeeList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.EmployeeList.ColumnHeadersHeight = 30;
             this.EmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployeeList.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeeList.DefaultCellStyle = dataGridViewCellStyle3;
             this.EmployeeList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
             this.EmployeeList.Location = new System.Drawing.Point(40, 345);
             this.EmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -340,7 +344,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeJoiningCalender.Location = new System.Drawing.Point(562, 90);
             this.EmployeeJoiningCalender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmployeeJoiningCalender.MaxDate = new System.DateTime(9988, 12, 31, 0, 0, 0, 0);
-            this.EmployeeJoiningCalender.MinDate = new System.DateTime(2023, 3, 1, 0, 0, 0, 0);
+            this.EmployeeJoiningCalender.MinDate = new System.DateTime(2022, 1, 20, 0, 0, 0, 0);
             this.EmployeeJoiningCalender.Name = "EmployeeJoiningCalender";
             this.EmployeeJoiningCalender.Size = new System.Drawing.Size(199, 36);
             this.EmployeeJoiningCalender.TabIndex = 57;
@@ -394,7 +398,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpNameTb.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.EmpNameTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EmpNameTb.Location = new System.Drawing.Point(40, 89);
-            this.EmpNameTb.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.EmpNameTb.Margin = new System.Windows.Forms.Padding(5);
             this.EmpNameTb.Name = "EmpNameTb";
             this.EmpNameTb.PasswordChar = '\0';
             this.EmpNameTb.PlaceholderForeColor = System.Drawing.Color.MediumAquamarine;
@@ -499,12 +503,34 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpSalaryBox.Size = new System.Drawing.Size(151, 37);
             this.EmpSalaryBox.TabIndex = 63;
             // 
+            // LeaveNotification
+            // 
+            this.LeaveNotification.Image = ((System.Drawing.Image)(resources.GetObject("LeaveNotification.Image")));
+            this.LeaveNotification.ImageRotate = 0F;
+            this.LeaveNotification.Location = new System.Drawing.Point(954, 51);
+            this.LeaveNotification.Name = "LeaveNotification";
+            this.LeaveNotification.Size = new System.Drawing.Size(45, 37);
+            this.LeaveNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LeaveNotification.TabIndex = 64;
+            this.LeaveNotification.TabStop = false;
+            this.LeaveNotification.Click += new System.EventHandler(this.LeaveNotification_Click);
+            // 
+            // LeaveNotify
+            // 
+            this.LeaveNotify.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.LeaveNotify.Caption = "Pending Request";
+            this.LeaveNotify.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.LeaveNotify.Parent = null;
+            this.LeaveNotify.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.LeaveNotify.Text = null;
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1309, 614);
+            this.Controls.Add(this.LeaveNotification);
             this.Controls.Add(this.EmpSalaryBox);
             this.Controls.Add(this.EmpAddressTb);
             this.Controls.Add(this.EmpPassTb);
@@ -537,6 +563,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpTopPanel.ResumeLayout(false);
             this.EmpTopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeaveNotification)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,5 +596,7 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2TextBox EmpPassTb;
         private Guna.UI2.WinForms.Guna2TextBox EmpAddressTb;
         private Guna.UI2.WinForms.Guna2TextBox EmpSalaryBox;
+        private Guna.UI2.WinForms.Guna2PictureBox LeaveNotification;
+        private Guna.UI2.WinForms.Guna2MessageDialog LeaveNotify;
     }
 }

@@ -219,5 +219,12 @@ namespace Modern_Pharmacy_Managment_System
         {
             loadform(new addproductPha());
         }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

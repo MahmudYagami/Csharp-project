@@ -223,5 +223,121 @@ namespace Modern_Pharmacy_Managment_System
         {
 
         }
+
+
+
+
+        private void LeaveNotification_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Query to retrieve employees with pending leave requests along with their names and ids
+                string query = @"SELECT EmployeeTbl.EmpId, EmployeeTbl.EmpName, LeaveTbl.Reason 
+             FROM LeaveTbl 
+             INNER JOIN EmployeeTbl ON LeaveTbl.Employee = EmployeeTbl.EmpId
+             WHERE LeaveTbl.Status = 'Pending'";
+
+                // Retrieve employees with pending leave requests and their names
+                DataTable dtPendingLeaves = Con.GetData(query);
+
+                // Check if there are employees with pending leave requests
+                if (dtPendingLeaves.Rows.Count > 0)
+                {
+                    // Generate the message with employees' leave requests
+                    string leaveRequestMessage = "Pending Leave Requests:\n\n";
+                    foreach (DataRow row in dtPendingLeaves.Rows)
+                    {
+                        // Get the employee id, name, and reason for leave
+                        int empId = Convert.ToInt32(row["EmpId"]);
+                        string employeeName = row["EmpName"].ToString();
+                        string reason = row["Reason"].ToString();
+
+                        // Append employee's leave request to the message
+                        leaveRequestMessage += $"Employee ID: {empId}\n  - Name: {employeeName}\n  - Reason: {reason}\n\n";
+                    }
+
+                    // Create a custom form for the message box
+                    Form messageForm = new Form();
+                    messageForm.Text = "Pending Leave Requests";
+                    messageForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+                    messageForm.StartPosition = FormStartPosition.Manual;
+                    messageForm.Location = new Point(100, 100); // Adjust the coordinates as needed
+                    messageForm.Size = new Size(500, 400); // Set the size of the form
+
+                    // Create a label to display the message
+                    Label messageLabel = new Label();
+                    messageLabel.Text = leaveRequestMessage;
+                    messageLabel.AutoSize = false;
+                    messageLabel.Size = new Size(480, 320); // Set the size of the label
+                    messageLabel.Location = new Point(10, 10);
+                    messageLabel.Font = new Font("Arial", 10, FontStyle.Regular); // Set the font style
+                    messageLabel.ForeColor = Color.Black; // Set the font color
+                    messageLabel.BackColor = Color.LightBlue; // Set the background color
+
+                    // Add the label to the form
+                    messageForm.Controls.Add(messageLabel);
+
+                    // Show the custom message box
+                    messageForm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("There are no pending leave requests.", "No Pending Leaves");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+        private void LeaveNotification2_Click(object sender, EventArgs e)
+        {
+           /* try
+            {
+                // Query to retrieve employees with pending leave requests along with their names
+                string query = @"SELECT EmployeeTbl.EmpName, LeaveTbl.Reason 
+                         FROM LeaveTbl 
+                         INNER JOIN EmployeeTbl ON LeaveTbl.Employee = EmployeeTbl.EmpId
+                         WHERE LeaveTbl.Status = 'Pending'";
+
+                // Retrieve employees with pending leave requests and their names
+                DataTable dtPendingLeaves = Con.GetData(query);
+
+                // Check if there are employees with pending leave requests
+                if (dtPendingLeaves.Rows.Count > 0)
+                {
+                    // Generate the message with employees' leave requests
+                    string leaveRequestMessage = "Pending Leave Requests:\n\n";
+                    foreach (DataRow row in dtPendingLeaves.Rows)
+                    {
+                        // Get the employee name and reason for leave
+                        string employeeName = row["EmpName"].ToString();
+                        string reason = row["Reason"].ToString();
+
+                        // Append employee's leave request to the message
+                        leaveRequestMessage += $"Employee: {employeeName}\n  - Reason: {reason}\n\n";
+                    }
+
+                    // Show MessageBox with pending leave requests
+                    MessageBox.Show(leaveRequestMessage, "Pending Leave Requests", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("There are no pending leave requests.", "No Pending Leaves", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+*/
+        }
+       
+
     }
 }
+
