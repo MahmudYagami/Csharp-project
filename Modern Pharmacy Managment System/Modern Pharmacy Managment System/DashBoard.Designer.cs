@@ -109,10 +109,10 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.flowLayoutPanel1.Controls.Add(this.DropdownPanel);
             this.flowLayoutPanel1.Controls.Add(this.flowdropdownpanel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 199);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 207);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(268, 530);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 530);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // DropdownPanel
@@ -209,7 +209,7 @@ namespace Modern_Pharmacy_Managment_System
             this.ManagementBtn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
             this.ManagementBtn.Size = new System.Drawing.Size(268, 60);
             this.ManagementBtn.TabIndex = 3;
-            this.ManagementBtn.Text = "Management";
+            this.ManagementBtn.Text = "   Management";
             this.ManagementBtn.UseVisualStyleBackColor = false;
             this.ManagementBtn.Click += new System.EventHandler(this.ManagementBtn_Click);
             // 
@@ -222,7 +222,7 @@ namespace Modern_Pharmacy_Managment_System
             this.flowdropdownpanel.Location = new System.Drawing.Point(3, 68);
             this.flowdropdownpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowdropdownpanel.Name = "flowdropdownpanel";
-            this.flowdropdownpanel.Size = new System.Drawing.Size(268, 427);
+            this.flowdropdownpanel.Size = new System.Drawing.Size(296, 427);
             this.flowdropdownpanel.TabIndex = 2;
             // 
             // RevenueBtn
@@ -285,6 +285,7 @@ namespace Modern_Pharmacy_Managment_System
             this.logoutBtn.TabIndex = 5;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // DashBoardBtn
             // 
@@ -314,7 +315,7 @@ namespace Modern_Pharmacy_Managment_System
             this.topPanel.Location = new System.Drawing.Point(277, 0);
             this.topPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1230, 59);
+            this.topPanel.Size = new System.Drawing.Size(1205, 59);
             this.topPanel.TabIndex = 1;
             // 
             // TimerPanel
@@ -390,7 +391,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1507, 805);
+            this.ClientSize = new System.Drawing.Size(1482, 805);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.LeftPanel);

@@ -35,11 +35,9 @@ namespace Modern_Pharmacy_Managment_System
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeSalary));
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.SalaryAmountTxt = new System.Windows.Forms.TextBox();
             this.PayDateCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.SalaryPaidButton = new FontAwesome.Sharp.IconButton();
-            this.EmpIdTxt = new System.Windows.Forms.TextBox();
             this.DeleteSalaryBtn = new FontAwesome.Sharp.IconButton();
             this.SalaryView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,6 +47,8 @@ namespace Modern_Pharmacy_Managment_System
             this.SearchButton = new FontAwesome.Sharp.IconButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.NotificationImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.EmpIdTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.SalaryAmountTxt = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NotificationImage)).BeginInit();
@@ -75,14 +75,6 @@ namespace Modern_Pharmacy_Managment_System
             this.label1.Size = new System.Drawing.Size(134, 23);
             this.label1.TabIndex = 9;
             this.label1.Text = "Salary Amount";
-            // 
-            // SalaryAmountTxt
-            // 
-            this.SalaryAmountTxt.Location = new System.Drawing.Point(150, 165);
-            this.SalaryAmountTxt.Multiline = true;
-            this.SalaryAmountTxt.Name = "SalaryAmountTxt";
-            this.SalaryAmountTxt.Size = new System.Drawing.Size(200, 38);
-            this.SalaryAmountTxt.TabIndex = 8;
             // 
             // PayDateCalender
             // 
@@ -126,15 +118,6 @@ namespace Modern_Pharmacy_Managment_System
             this.SalaryPaidButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SalaryPaidButton.UseVisualStyleBackColor = false;
             this.SalaryPaidButton.Click += new System.EventHandler(this.SalaryPaidButton_Click);
-            // 
-            // EmpIdTxt
-            // 
-            this.EmpIdTxt.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.EmpIdTxt.Location = new System.Drawing.Point(150, 85);
-            this.EmpIdTxt.Multiline = true;
-            this.EmpIdTxt.Name = "EmpIdTxt";
-            this.EmpIdTxt.Size = new System.Drawing.Size(200, 37);
-            this.EmpIdTxt.TabIndex = 0;
             // 
             // DeleteSalaryBtn
             // 
@@ -181,7 +164,7 @@ namespace Modern_Pharmacy_Managment_System
             this.SalaryView.RowHeadersVisible = false;
             this.SalaryView.RowHeadersWidth = 51;
             this.SalaryView.RowTemplate.Height = 24;
-            this.SalaryView.Size = new System.Drawing.Size(1065, 161);
+            this.SalaryView.Size = new System.Drawing.Size(1065, 204);
             this.SalaryView.TabIndex = 15;
             this.SalaryView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.SalaryView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -293,12 +276,56 @@ namespace Modern_Pharmacy_Managment_System
             this.NotificationImage.TabStop = false;
             this.NotificationImage.Click += new System.EventHandler(this.NotificationImage_Click);
             // 
+            // EmpIdTxt
+            // 
+            this.EmpIdTxt.BorderRadius = 8;
+            this.EmpIdTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EmpIdTxt.DefaultText = "";
+            this.EmpIdTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EmpIdTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EmpIdTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EmpIdTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EmpIdTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EmpIdTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.EmpIdTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EmpIdTxt.Location = new System.Drawing.Point(150, 86);
+            this.EmpIdTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.EmpIdTxt.Name = "EmpIdTxt";
+            this.EmpIdTxt.PasswordChar = '\0';
+            this.EmpIdTxt.PlaceholderText = "";
+            this.EmpIdTxt.SelectedText = "";
+            this.EmpIdTxt.Size = new System.Drawing.Size(200, 41);
+            this.EmpIdTxt.TabIndex = 22;
+            // 
+            // SalaryAmountTxt
+            // 
+            this.SalaryAmountTxt.BorderRadius = 8;
+            this.SalaryAmountTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SalaryAmountTxt.DefaultText = "";
+            this.SalaryAmountTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SalaryAmountTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SalaryAmountTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SalaryAmountTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SalaryAmountTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SalaryAmountTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SalaryAmountTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SalaryAmountTxt.Location = new System.Drawing.Point(150, 166);
+            this.SalaryAmountTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SalaryAmountTxt.Name = "SalaryAmountTxt";
+            this.SalaryAmountTxt.PasswordChar = '\0';
+            this.SalaryAmountTxt.PlaceholderText = "";
+            this.SalaryAmountTxt.SelectedText = "";
+            this.SalaryAmountTxt.Size = new System.Drawing.Size(200, 41);
+            this.SalaryAmountTxt.TabIndex = 23;
+            // 
             // EmployeeSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1113, 570);
+            this.Controls.Add(this.SalaryAmountTxt);
+            this.Controls.Add(this.EmpIdTxt);
             this.Controls.Add(this.NotificationImage);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label4);
@@ -311,9 +338,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PayDateCalender);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SalaryAmountTxt);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.EmpIdTxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeSalary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -330,11 +355,9 @@ namespace Modern_Pharmacy_Managment_System
         #endregion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox SalaryAmountTxt;
         private Guna.UI2.WinForms.Guna2DateTimePicker PayDateCalender;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton SalaryPaidButton;
-        private System.Windows.Forms.TextBox EmpIdTxt;
         private FontAwesome.Sharp.IconButton DeleteSalaryBtn;
         private Guna.UI2.WinForms.Guna2DataGridView SalaryView;
         private System.Windows.Forms.Panel panel1;
@@ -345,5 +368,7 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
        // private System.Windows.Forms.Timer SalaryNotificationTimer;
         private Guna.UI2.WinForms.Guna2PictureBox NotificationImage;
+        private Guna.UI2.WinForms.Guna2TextBox EmpIdTxt;
+        private Guna.UI2.WinForms.Guna2TextBox SalaryAmountTxt;
     }
 }

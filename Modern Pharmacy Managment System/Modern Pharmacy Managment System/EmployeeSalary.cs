@@ -70,15 +70,68 @@ namespace Modern_Pharmacy_Managment_System
                         }
                     }
 
-                    // Show styled MessageBox with unpaid employee details if there are any
-                    if (unpaidEmployeeMessage != "Unpaid Employees:\n\n")
+                    // Create a custom form for the message box
+                    Form messageForm = new Form();
+                    messageForm.Text = "Unpaid Employees";
+                    messageForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+                    messageForm.StartPosition = FormStartPosition.Manual;
+                    messageForm.Location = new Point(100, 100); // Adjust the coordinates as needed
+                    messageForm.Size = new Size(700, 500); // Set the size of the form
+
+                    // Create a panel to host the buttons and enable scrolling
+                    Panel panel = new Panel();
+                    panel.Dock = DockStyle.Right;
+                    panel.AutoScroll = true;
+                    messageForm.Controls.Add(panel);
+
+                    // Create a rich text box to display the message
+                    RichTextBox messageTextBox = new RichTextBox();
+                    messageTextBox.Text = unpaidEmployeeMessage;
+                    messageTextBox.ReadOnly = true;
+                    messageTextBox.Dock = DockStyle.Fill; // Dock the text box to fill the form
+                    messageTextBox.Font = new Font("Arial", 10, FontStyle.Regular); // Set the font style
+                    messageTextBox.ForeColor = Color.Black; // Set the font color
+                    messageTextBox.BackColor = Color.LightBlue; // Set the background color
+
+                    // Add the text box to the form
+                    messageForm.Controls.Add(messageTextBox);
+
+                    // Generate buttons for each unpaid employee and add them to the panel
+                    int buttonTop = 20; // Initial top position of the buttons
+                    foreach (DataRow row in dtUnpaidEmployees.Rows)
                     {
-                        MessageBox.Show(unpaidEmployeeMessage, "Unpaid Employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Get the employee ID
+                        int empId = Convert.ToInt32(row["EmpId"]);
+
+                        // Get the joining date
+                        DateTime joiningDate = Convert.ToDateTime(row["EmpJoiningDate"]);
+
+                        // Calculate the number of months due
+                        int monthsDue = ((DateTime.Now.Year - joiningDate.Year) * 12) + DateTime.Now.Month - joiningDate.Month;
+
+                        // Exclude employees with no due months
+                        if (monthsDue > 0)
+                        {
+                            // Create a button for the employee
+                            Button employeeButton = new Button();
+                            employeeButton.Text = $"Employee ID: {empId}\nDue Amount: {monthsDue} months";
+                            employeeButton.Tag = empId; // Store employee ID in Tag property for later retrieval
+                            employeeButton.Width = 200;
+                            employeeButton.Height = 60;
+                            employeeButton.Top = buttonTop;
+                            employeeButton.Left = 20;
+                            employeeButton.Click += EmployeeButton_Click; // Attach click event handler
+
+                            // Add the button to the panel
+                            panel.Controls.Add(employeeButton);
+
+                            // Update the top position for the next button
+                            buttonTop += employeeButton.Height + 10;
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("All employees have been paid.", "No Unpaid Employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+
+                    // Show the custom message box
+                    messageForm.ShowDialog();
                 }
                 else
                 {
@@ -90,6 +143,41 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void EmployeeButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Retrieve the clicked button
+                Button clickedButton = (Button)sender;
+
+                // Retrieve the employee ID from the button's Tag property
+                int empId = (int)clickedButton.Tag;
+
+                // Display the employee ID in EmpIdTxt
+                EmpIdTxt.Text = empId.ToString();
+
+                // Parse due amount from the button's text
+                string buttonText = clickedButton.Text;
+                string dueAmountString = buttonText.Split(new string[] { "Due Amount: " }, StringSplitOptions.None)[1].Trim().Split(' ')[0];
+                int dueAmountMonths = int.Parse(dueAmountString);
+
+                // Calculate total due amount
+                float perMonthSalary = GetPerMonthSalary(empId);
+                float totalDue = dueAmountMonths * perMonthSalary;
+
+                // Display due amount in SalaryAmountTxt
+                SalaryAmountTxt.Text = totalDue.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
 
 
 

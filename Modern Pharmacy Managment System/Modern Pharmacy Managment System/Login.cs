@@ -8,11 +8,24 @@ namespace Modern_Pharmacy_Managment_System
     {
         Functions Con;
 
+        
+
         public Login()
         {
             InitializeComponent();
             Con = new Functions();
         }
+        private string customerPhone = "";
+        private static Login instance;
+        public static Login GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Login();
+            }
+            return instance;
+        }
+
 
         public static int EmpId;
         public static string EmpName = "";
@@ -59,6 +72,12 @@ namespace Modern_Pharmacy_Managment_System
                             if (customerDt.Rows.Count > 0)
                             {
                                 string customerName = customerDt.Rows[0]["cname"].ToString();
+
+                                // Passing Phone
+                                string customerPhoneNumber = customerDt.Rows[0]["cphone"].ToString();
+                                Login login = Login.GetInstance();
+                                login.setCustomerPhone(customerPhoneNumber);
+
                                 CustomerDashboard cd = new CustomerDashboard(customerName);
                                 cd.Show();
                                 this.Hide();
@@ -94,5 +113,17 @@ namespace Modern_Pharmacy_Managment_System
             signup.Show();
             this.Hide();
         }
+
+
+        public void setCustomerPhone(string customerPhone)
+        {
+            this.customerPhone = customerPhone;
+        }
+
+        public string getCustomerPhone()
+        {
+            return customerPhone;
+        }
+
     }
 }
