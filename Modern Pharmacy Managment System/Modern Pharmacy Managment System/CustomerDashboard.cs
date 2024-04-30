@@ -20,7 +20,6 @@ namespace Modern_Pharmacy_Managment_System
 
             CustomerNameTxt.Text = "Welcome, " + customerName + "!";
 
-
         }
 
         private void Buy_Medicine_btn_MouseEnter(object sender, EventArgs e)
@@ -57,5 +56,7 @@ namespace Modern_Pharmacy_Managment_System
         {
             loadform(new CustomerSettings());
         }
+
+        
     }
 }

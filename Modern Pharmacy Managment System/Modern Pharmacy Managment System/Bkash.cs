@@ -131,9 +131,9 @@ namespace Modern_Pharmacy_Managment_System
             login.Show();
             this.Hide();
             */
-            StaffDashboard of=  new StaffDashboard();
-            of.Show();
-            this.Close();
+           // StaffDashboard of=  new StaffDashboard();
+         //   of.Show();
+         //   this.Close();
 
         }
     }
