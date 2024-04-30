@@ -32,6 +32,7 @@ namespace Modern_Pharmacy_Managment_System
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffForm));
             this.Emp_manage_label = new System.Windows.Forms.Label();
             this.EmpLeftPanel = new System.Windows.Forms.Panel();
             this.LeaveBtn = new FontAwesome.Sharp.IconButton();
@@ -57,8 +58,11 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpPassTb = new Guna.UI2.WinForms.Guna2TextBox();
             this.EmpAddressTb = new Guna.UI2.WinForms.Guna2TextBox();
             this.EmpSalaryBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.LeaveNotification = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.LeaveNotify = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.EmpTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeaveNotification)).BeginInit();
             this.SuspendLayout();
             // 
             // Emp_manage_label
@@ -394,7 +398,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpNameTb.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.EmpNameTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EmpNameTb.Location = new System.Drawing.Point(40, 89);
-            this.EmpNameTb.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.EmpNameTb.Margin = new System.Windows.Forms.Padding(5);
             this.EmpNameTb.Name = "EmpNameTb";
             this.EmpNameTb.PasswordChar = '\0';
             this.EmpNameTb.PlaceholderForeColor = System.Drawing.Color.MediumAquamarine;
@@ -499,12 +503,34 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpSalaryBox.Size = new System.Drawing.Size(151, 37);
             this.EmpSalaryBox.TabIndex = 63;
             // 
+            // LeaveNotification
+            // 
+            this.LeaveNotification.Image = ((System.Drawing.Image)(resources.GetObject("LeaveNotification.Image")));
+            this.LeaveNotification.ImageRotate = 0F;
+            this.LeaveNotification.Location = new System.Drawing.Point(954, 51);
+            this.LeaveNotification.Name = "LeaveNotification";
+            this.LeaveNotification.Size = new System.Drawing.Size(45, 37);
+            this.LeaveNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LeaveNotification.TabIndex = 64;
+            this.LeaveNotification.TabStop = false;
+            this.LeaveNotification.Click += new System.EventHandler(this.LeaveNotification_Click);
+            // 
+            // LeaveNotify
+            // 
+            this.LeaveNotify.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.LeaveNotify.Caption = "Pending Request";
+            this.LeaveNotify.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.LeaveNotify.Parent = null;
+            this.LeaveNotify.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.LeaveNotify.Text = null;
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1309, 614);
+            this.Controls.Add(this.LeaveNotification);
             this.Controls.Add(this.EmpSalaryBox);
             this.Controls.Add(this.EmpAddressTb);
             this.Controls.Add(this.EmpPassTb);
@@ -537,6 +563,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpTopPanel.ResumeLayout(false);
             this.EmpTopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LeaveNotification)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,5 +596,7 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2TextBox EmpPassTb;
         private Guna.UI2.WinForms.Guna2TextBox EmpAddressTb;
         private Guna.UI2.WinForms.Guna2TextBox EmpSalaryBox;
+        private Guna.UI2.WinForms.Guna2PictureBox LeaveNotification;
+        private Guna.UI2.WinForms.Guna2MessageDialog LeaveNotify;
     }
 }

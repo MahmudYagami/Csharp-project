@@ -29,7 +29,6 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -49,7 +48,6 @@ namespace Modern_Pharmacy_Managment_System
             this.label4 = new System.Windows.Forms.Label();
             this.SearchButton = new FontAwesome.Sharp.IconButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.SalaryNotificationTimer = new System.Windows.Forms.Timer(this.components);
             this.NotificationImage = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -289,7 +287,7 @@ namespace Modern_Pharmacy_Managment_System
             this.NotificationImage.ImageRotate = 0F;
             this.NotificationImage.Location = new System.Drawing.Point(1040, 59);
             this.NotificationImage.Name = "NotificationImage";
-            this.NotificationImage.Size = new System.Drawing.Size(48, 40);
+            this.NotificationImage.Size = new System.Drawing.Size(48, 34);
             this.NotificationImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.NotificationImage.TabIndex = 21;
             this.NotificationImage.TabStop = false;
