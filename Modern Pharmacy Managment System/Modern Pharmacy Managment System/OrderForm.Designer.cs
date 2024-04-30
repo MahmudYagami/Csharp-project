@@ -66,6 +66,11 @@ namespace Modern_Pharmacy_Managment_System
             this.errorMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.warningMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.questionMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.addToCartPanel.SuspendLayout();
@@ -192,6 +197,12 @@ namespace Modern_Pharmacy_Managment_System
             this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOrder.ColumnHeadersHeight = 36;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -626,6 +637,41 @@ namespace Modern_Pharmacy_Managment_System
             this.questionMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.questionMessage.Text = null;
             // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "OId";
+            this.Column5.HeaderText = "ID";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "OName";
+            this.Column6.HeaderText = "Name";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "OUnit";
+            this.Column7.HeaderText = "Unit";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "OPrice";
+            this.Column8.HeaderText = "Price";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "OTotalCost";
+            this.Column9.HeaderText = "Total Price";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -688,5 +734,10 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2MessageDialog errorMessage;
         private Guna.UI2.WinForms.Guna2MessageDialog warningMessage;
         private Guna.UI2.WinForms.Guna2MessageDialog questionMessage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

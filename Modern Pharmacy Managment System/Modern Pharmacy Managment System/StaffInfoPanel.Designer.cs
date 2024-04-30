@@ -51,6 +51,16 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblMadicineShortage = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblTotalInvoices = new System.Windows.Forms.Label();
+            this.lblTodaysMedicineSale = new System.Windows.Forms.Label();
+            this.lblSellingAmount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -60,6 +70,8 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel13.SuspendLayout();
+            this.guna2Panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -297,12 +309,127 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel3.Size = new System.Drawing.Size(891, 187);
             this.guna2Panel3.TabIndex = 5;
             // 
+            // guna2Panel13
+            // 
+            this.guna2Panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(233)))), ((int)(((byte)(172)))));
+            this.guna2Panel13.Controls.Add(this.label3);
+            this.guna2Panel13.Controls.Add(this.label9);
+            this.guna2Panel13.Controls.Add(this.lblSellingAmount);
+            this.guna2Panel13.Controls.Add(this.label2);
+            this.guna2Panel13.Controls.Add(this.guna2Panel14);
+            this.guna2Panel13.Controls.Add(this.lblTotalInvoices);
+            this.guna2Panel13.Controls.Add(this.lblTodaysMedicineSale);
+            this.guna2Panel13.ForeColor = System.Drawing.Color.Black;
+            this.guna2Panel13.Location = new System.Drawing.Point(13, 293);
+            this.guna2Panel13.Name = "guna2Panel13";
+            this.guna2Panel13.Size = new System.Drawing.Size(645, 154);
+            this.guna2Panel13.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(241, 107);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(166, 21);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Invoices Generated";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(12, 107);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 21);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Qty of Medicines Sold";
+            // 
+            // guna2Panel14
+            // 
+            this.guna2Panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
+            this.guna2Panel14.Controls.Add(this.lblDate);
+            this.guna2Panel14.Controls.Add(this.guna2HtmlLabel1);
+            this.guna2Panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel14.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel14.Name = "guna2Panel14";
+            this.guna2Panel14.Size = new System.Drawing.Size(645, 42);
+            this.guna2Panel14.TabIndex = 0;
+            this.guna2Panel14.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel14_Paint);
+            // 
+            // lblDate
+            // 
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(412, 10);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(65, 24);
+            this.lblDate.TabIndex = 0;
+            this.lblDate.Text = "D           A      T          E";
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(12, 11);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(124, 24);
+            this.guna2HtmlLabel1.TabIndex = 0;
+            this.guna2HtmlLabel1.Text = "Quick Report";
+            // 
+            // lblTotalInvoices
+            // 
+            this.lblTotalInvoices.AutoSize = true;
+            this.lblTotalInvoices.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalInvoices.Location = new System.Drawing.Point(299, 56);
+            this.lblTotalInvoices.Name = "lblTotalInvoices";
+            this.lblTotalInvoices.Size = new System.Drawing.Size(53, 38);
+            this.lblTotalInvoices.TabIndex = 0;
+            this.lblTotalInvoices.Text = "14";
+            // 
+            // lblTodaysMedicineSale
+            // 
+            this.lblTodaysMedicineSale.AutoSize = true;
+            this.lblTodaysMedicineSale.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodaysMedicineSale.Location = new System.Drawing.Point(73, 56);
+            this.lblTodaysMedicineSale.Name = "lblTodaysMedicineSale";
+            this.lblTodaysMedicineSale.Size = new System.Drawing.Size(53, 38);
+            this.lblTodaysMedicineSale.TabIndex = 0;
+            this.lblTodaysMedicineSale.Text = "14";
+            // 
+            // lblSellingAmount
+            // 
+            this.lblSellingAmount.AutoSize = true;
+            this.lblSellingAmount.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSellingAmount.Location = new System.Drawing.Point(514, 56);
+            this.lblSellingAmount.Name = "lblSellingAmount";
+            this.lblSellingAmount.Size = new System.Drawing.Size(53, 38);
+            this.lblSellingAmount.TabIndex = 0;
+            this.lblSellingAmount.Text = "14";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(458, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(182, 21);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Total Amount Earned ";
+            // 
             // StaffInfoPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(917, 551);
+            this.Controls.Add(this.guna2Panel13);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel8);
             this.Controls.Add(this.guna2Panel6);
@@ -330,6 +457,10 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2Panel13.ResumeLayout(false);
+            this.guna2Panel13.PerformLayout();
+            this.guna2Panel14.ResumeLayout(false);
+            this.guna2Panel14.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,5 +488,15 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label lblMadicineShortage;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDate;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.Label lblTotalInvoices;
+        private System.Windows.Forms.Label lblTodaysMedicineSale;
+        private System.Windows.Forms.Label lblSellingAmount;
+        private System.Windows.Forms.Label label3;
     }
 }

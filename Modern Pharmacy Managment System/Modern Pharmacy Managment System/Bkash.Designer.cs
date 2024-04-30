@@ -45,6 +45,7 @@ namespace Modern_Pharmacy_Managment_System
             this.txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblUnit = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -102,6 +103,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel3.AutoRoundedCorners = true;
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(27)))), ((int)(((byte)(89)))));
             this.guna2Panel3.BorderRadius = 88;
+            this.guna2Panel3.Controls.Add(this.lblUnit);
             this.guna2Panel3.Controls.Add(this.lblAmount);
             this.guna2Panel3.Controls.Add(this.label5);
             this.guna2Panel3.Controls.Add(this.label4);
@@ -253,6 +255,14 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel4.Size = new System.Drawing.Size(917, 70);
             this.guna2Panel4.TabIndex = 3;
             // 
+            // lblUnit
+            // 
+            this.lblUnit.AutoSize = true;
+            this.lblUnit.Location = new System.Drawing.Point(55, 123);
+            this.lblUnit.Name = "lblUnit";
+            this.lblUnit.Size = new System.Drawing.Size(0, 17);
+            this.lblUnit.TabIndex = 2;
+            // 
             // Bkash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -293,5 +303,6 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2TextBox txtPhone;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private System.Windows.Forms.Label lblUnit;
     }
 }

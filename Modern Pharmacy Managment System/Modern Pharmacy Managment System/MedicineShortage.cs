@@ -29,9 +29,12 @@ namespace Modern_Pharmacy_Managment_System
 
         public void showMedicineList()
         {
-            // string Query = "SELECT SId, SName, SQuantity, SBuyingPrice FROM MedicineShortageTbl";
-            // dgvMedicineShortage.DataSource = Con.GetData(Query);
-            try
+              StaffInfoPanel sif = new StaffInfoPanel();
+              sif.refreshInfo();
+              sif.showInformation();
+            string Query = "SELECT SId, SName, SQuantity, SBuyingPrice FROM MedicineShortageTbl";
+            dgvMedicineShortage.DataSource = Con.GetData(Query);
+          /*  try
             {
                 using (var con = DatabaseConnection.databaseConnect())
                 {
@@ -40,7 +43,7 @@ namespace Modern_Pharmacy_Managment_System
                     // Create a DataTable to hold the data
                     DataTable dt = new DataTable();
 
-                    // Fetch data from the database
+                    // Fetch all data from the database without any condition
                     SqlCommand cmd = new SqlCommand("SELECT SId, SName, SQuantity, SBuyingPrice FROM MedicineShortageTbl", con);
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     adapter.Fill(dt);
@@ -50,12 +53,17 @@ namespace Modern_Pharmacy_Managment_System
 
                     con.Close();
                 }
+               
+                
+              //  StaffInfoPanel sif = new StaffInfoPanel();
+             //   sif.refreshInfo();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-
+          */
         }
 
         private void btnClose_Click(object sender, EventArgs e)

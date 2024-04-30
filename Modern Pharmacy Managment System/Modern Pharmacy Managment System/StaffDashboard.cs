@@ -20,6 +20,7 @@ namespace Modern_Pharmacy_Managment_System
             lblName.Text = Login.EmpName + "";
             //lblId.Text = Login.EmpId + " ";
             loadform(new StaffInfoPanel());
+           
 
         }
 
@@ -108,6 +109,8 @@ namespace Modern_Pharmacy_Managment_System
             // product button
             loadformAkid(new addproductPha());
         }
+
+    
     }
     
 }

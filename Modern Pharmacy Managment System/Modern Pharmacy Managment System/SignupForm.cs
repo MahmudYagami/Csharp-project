@@ -25,8 +25,7 @@ namespace Modern_Pharmacy_Managment_System
         private void btnSignup_Click(object sender, EventArgs e)
         {
             if (ValidateInput())
-            {
-                // Insert data into the database
+            {               
                 InsertCustomerData();
             }
         }
