@@ -371,10 +371,10 @@ namespace Modern_Pharmacy_Managment_System
             // mainpanel
             // 
             this.mainpanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.mainpanel.Location = new System.Drawing.Point(297, 74);
+            this.mainpanel.Location = new System.Drawing.Point(283, 63);
             this.mainpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1173, 720);
+            this.mainpanel.Size = new System.Drawing.Size(1199, 720);
             this.mainpanel.TabIndex = 2;
             this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpanel_Paint);
             // 
