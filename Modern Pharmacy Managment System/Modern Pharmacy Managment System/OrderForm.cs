@@ -21,10 +21,54 @@ namespace Modern_Pharmacy_Managment_System
         Functions con;
         
         private bool rewardUsed = false;
+        private bool isCustomer = false;
         public OrderForm()
         {
             InitializeComponent();
             con = new Functions();
+            Login login = Login.GetInstance();
+            string customerPhone = login.getCustomerPhone();
+            customerPanel.Visible = false;
+            
+            if (!string.IsNullOrEmpty(customerPhone))
+            {
+                // customerPhone is not empty
+                lblCustomerPhone.Text = customerPhone;
+                txtCustomerName.Visible = false;
+                btnAdd.Visible = false;
+                btnPay.Visible = false;
+                customerPanel.Visible = true;
+                txtCPhone.Text = customerPhone;
+                isCustomer = true;
+                using (var con = DatabaseConnection.databaseConnect())
+                {
+                    con.Open();                 
+                    string query = "SELECT cname FROM tbCustomer WHERE cphone = @cphone";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                                            
+                    cmd.Parameters.AddWithValue("@cphone", txtCPhone.Text);
+                    object result = cmd.ExecuteScalar();                 
+                    if (result != null)
+                    {
+                        
+                        txtCName.Text = result.ToString();
+                        
+                    }
+                    else
+                    {
+                        txtCName.Text = "";
+                    }                
+                }
+                
+
+            }
+            else
+            {
+                // customerPhone is empty
+                //lblCustomerPhone.Text = "Employee";
+                customerPanel.Visible = false;
+            }
         }
        
         private void OrderForm_Load(object sender, EventArgs e)
@@ -552,142 +596,32 @@ namespace Modern_Pharmacy_Managment_System
 
         private void btnBkash_Click(object sender, EventArgs e)
         {
-            /////////////////////////////
-            /*
-            if (dgvOrder.Rows.Count == 0)
-            {
-                MessageBox.Show("There are no items in the order to pay for.", "Empty Order", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-
-            ///////////////////////////           Rewards Points add                 ///////////////////////////
-
+                
             try
             {
-                double totalAmount;
-                if (rewardUsed == false)
+                if(isCustomer == false)
                 {
-                    txtGrandTotal.Text = txtTotalAmount.Text;
-                    totalAmount = Convert.ToDouble(txtGrandTotal.Text);
+                    // Get the parent form (StaffDashboard)
+                    StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
+                    int totalUnit = CalculateTotalUnits();
+                    // Call the LoadBkashFormIntoMainPanel method of the StaffDashboard form
+                    staffDashboard.LoadBkashFormIntoMainPanel(new Bkash(txtGrandTotal.Text, totalUnit));
+
+                    // Hide the current form (OrderForm)
+                    this.Hide();
                 }
                 else
                 {
-                    totalAmount = Convert.ToDouble(txtGrandTotal.Text);
+                    // Get the parent form (StaffDashboard)
+                    CustomerDashboard db= (CustomerDashboard)this.ParentForm;
+                    int totalUnit = CalculateTotalUnits();
+                    // Call the LoadBkashFormIntoMainPanel method of the StaffDashboard form
+                   // db.LoadBkashFormIntoMainPanel(new Bkash(txtGrandTotal.Text, totalUnit));
+
+                    // Hide the current form (OrderForm)
+                    this.Hide();
                 }
 
-                // Calculate rewards
-                int rewards = (int)totalAmount / 2;
-
-                // Get the customer phone number from txtCPhone
-                string customerPhoneNumber = txtCPhone.Text.Trim();
-
-                // SQL query to update cpoints for the customer
-                string query = "UPDATE tbCustomer SET cpoints = cpoints + @rewards WHERE cphone = @customerPhoneNumber";
-                // Create a SqlCommand object and add parameters
-                SqlCommand cmd = new SqlCommand(query);
-                cmd.Parameters.AddWithValue("@rewards", rewards);
-                cmd.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
-
-                // Call the insertData method to execute the query
-                int rowsAffected = con.insertData(cmd);
-
-                // Check if the update was successful
-                if (rowsAffected > 0)
-                {
-                    getRewards();
-
-                   // MessageBox.Show("Rewards added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Failed to add rewards.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-            /////////////////////////////                  PAYMENT METHOD         ///////////////////////////
-
-            int totalUnits = CalculateTotalUnits();
-
-            try
-            {
-                // Convert txtGrandTotal to double
-                double grandTotal;
-
-                // Check if txtGrandTotal is not empty and contains valid data
-                if (double.TryParse(txtGrandTotal.Text, out grandTotal))
-                {
-                    // Get the current date
-                    DateTime currentDate = DateTime.Now;
-
-                    // Insert into the accountTbl
-
-                    string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date) VALUES (@TotalOrders, @Revenue, @Date)";
-                    SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery);
-                    insertAccountCmd.Parameters.AddWithValue("@TotalOrders", totalUnits);
-                    insertAccountCmd.Parameters.AddWithValue("@Revenue", grandTotal);
-                    insertAccountCmd.Parameters.AddWithValue("@Date", currentDate);
-
-                    // Execute the insert query using Functions class
-                    int rowsAffectedInsertAccount = con.insertData(insertAccountCmd);
-
-                    // Check if the insert was successful
-                    if (rowsAffectedInsertAccount > 0)
-                    {
-                       // MessageBox.Show("Revenue added to account successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to add revenue to account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-
-                    MessageBox.Show("Total amount is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            */
-            /////////////////////////////////////////////////////////////////////////////////////////////////
-
-/*
-            // Clear the order table
-            SqlCommand clearOrderCmd = new SqlCommand("DELETE FROM OrderTbl");
-            try
-            {
-                con.insertData(clearOrderCmd);
-               // MessageBox.Show("Payment successful! Order cleared.", "Payment Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-      
-            showOrder();
-            showProduct();
-            rewardUsed = false;
-*/
-            /////////////////////////////////////////////////////////////////////////////////////////////
-            try
-            {
-                // Get the parent form (StaffDashboard)
-                StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
-                int totalUnit = CalculateTotalUnits();
-                // Call the LoadBkashFormIntoMainPanel method of the StaffDashboard form
-                staffDashboard.LoadBkashFormIntoMainPanel(new Bkash(txtGrandTotal.Text, totalUnit));
-
-                // Hide the current form (OrderForm)
-                this.Hide();
             }
             catch (Exception ex)
             {

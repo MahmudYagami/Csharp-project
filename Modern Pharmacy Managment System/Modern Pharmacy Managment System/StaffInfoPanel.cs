@@ -45,6 +45,8 @@ namespace Modern_Pharmacy_Managment_System
             using (var con = DatabaseConnection.databaseConnect())
             {
                 con.Open();
+
+                // count total customer.
                 SqlCommand cm = new SqlCommand("SELECT Count(*) From tbCustomer", con);
                 var totalCustomer = cm.ExecuteScalar();
                 if (int.Parse(totalCustomer.ToString()) < 10)
@@ -52,40 +54,14 @@ namespace Modern_Pharmacy_Managment_System
                     totalCustomer = "0" + totalCustomer;
                 }
                 lblCustomerCount.Text = totalCustomer.ToString();
-              // con.Close();
-
-
-                // Medicine Count
-
-              //  con.Open();
-
+            
+    
                 // Check total medicine count
                 SqlCommand cm2 = new SqlCommand("SELECT COUNT(*) FROM InventoryTbl", con);
                 int totalMedicineCount = (int)cm2.ExecuteScalar();
                 string totalMedicineDisplay = totalMedicineCount < 10 ? "0" + totalMedicineCount.ToString() : totalMedicineCount.ToString();
                 lblMadiniceCount.Text = totalMedicineDisplay;
-                con.Close();
-                /*
-                // Check for medicine shortage
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM InventoryTbl WHERE PStock < 50", con);
-                int shortageCount = (int)cmd.ExecuteScalar();
-                string shortageCountDisplay = shortageCount < 10 ? "0" + shortageCount.ToString() : shortageCount.ToString();
-                lblMadicineShortage.Text = shortageCountDisplay;
-
-                // If shortage, insert details into MedicineShortageTbl if not already there
-                if (shortageCount > 0)
-                {
-                    SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM MedicineShortageTbl WHERE SId IN (SELECT PId FROM InventoryTbl WHERE PStock < 50)", con);
-                    int existingCount = (int)checkCmd.ExecuteScalar();
-                    if (existingCount == 0)
-                    {
-                        SqlCommand insertCmd = new SqlCommand("INSERT INTO MedicineShortageTbl (SId, SName, SQuantity, SBuyingPrice) SELECT PId, PName, PStock, PBuyingPrice FROM InventoryTbl WHERE PStock < 50", con);
-                        insertCmd.ExecuteNonQuery();
-                    }
-                }
-
-                con.Close();
-*/
+                con.Close();           
             }
         }
 
