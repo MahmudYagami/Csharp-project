@@ -1,4 +1,6 @@
 ﻿using System;
+using Modern_Pharmacy_Managment_System.Database;
+using Modern_Pharmacy_Managment_System.Classes;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +16,7 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class addproductPha : Form
     {
-        const string connectionString = @"Data Source=AKID\SQLEXPRESS;Initial Catalog=PMS;Integrated Security=True";
+        const string connectionString = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMSnew;Integrated Security=True";
         public addproductPha()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace Modern_Pharmacy_Managment_System
         {
             try
             {
+                
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();

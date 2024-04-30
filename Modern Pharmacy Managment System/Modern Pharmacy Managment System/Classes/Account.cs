@@ -10,19 +10,17 @@ namespace Modern_Pharmacy_Managment_System
         // Total expense, total revenue
         // Graph
         // 
-
-
-
-
-
-
-
-
-
+        //
+        //
+        
+        private float salaryExpense { get; set;}
+        private float medicineExpense { get; set;}
+        private float revenue { get; set;}
+        private float netIncome { get; set;}
 
 
 
         
-      
+   
     }
 }
