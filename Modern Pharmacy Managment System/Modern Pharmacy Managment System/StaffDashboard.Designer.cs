@@ -96,7 +96,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(56, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 37);
+            this.label1.Size = new System.Drawing.Size(134, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "Pharma One";
             // 
@@ -120,7 +120,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(802, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 30);
+            this.label2.Size = new System.Drawing.Size(100, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Welcome:";
             // 
@@ -131,7 +131,7 @@
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(232)))), ((int)(((byte)(166)))));
             this.lblName.Location = new System.Drawing.Point(1019, 20);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(87, 30);
+            this.lblName.Size = new System.Drawing.Size(66, 22);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name";
             this.lblName.Click += new System.EventHandler(this.lblName_Click);
@@ -341,7 +341,7 @@
             // 
             // StaffDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1128, 717);
             this.Controls.Add(this.mainPanel);
