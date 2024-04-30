@@ -52,15 +52,15 @@ namespace Modern_Pharmacy_Managment_System
             this.lblMadicineShortage = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.lblSellingAmount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTotalInvoices = new System.Windows.Forms.Label();
             this.lblTodaysMedicineSale = new System.Windows.Forms.Label();
-            this.lblSellingAmount = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -80,7 +80,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label4.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(7, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 36);
+            this.label4.Size = new System.Drawing.Size(220, 44);
             this.label4.TabIndex = 3;
             this.label4.Text = "Dashboard";
             // 
@@ -90,7 +90,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(9, 50);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(324, 21);
+            this.label5.Size = new System.Drawing.Size(406, 23);
             this.label5.TabIndex = 3;
             this.label5.Text = "A  qucik data overview of the inventory.\r\n";
             // 
@@ -112,7 +112,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnInventory.ForeColor = System.Drawing.Color.Black;
             this.btnInventory.Location = new System.Drawing.Point(64, 124);
             this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(140, 21);
+            this.btnInventory.Size = new System.Drawing.Size(175, 28);
             this.btnInventory.TabIndex = 1;
             this.btnInventory.Text = "Visit Inventory  >>";
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
@@ -136,7 +136,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(42, 85);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 21);
+            this.label6.Size = new System.Drawing.Size(208, 23);
             this.label6.TabIndex = 1;
             this.label6.Text = "Medicines Available";
             // 
@@ -159,7 +159,7 @@ namespace Modern_Pharmacy_Managment_System
             this.lblMadiniceCount.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMadiniceCount.Location = new System.Drawing.Point(102, 43);
             this.lblMadiniceCount.Name = "lblMadiniceCount";
-            this.lblMadiniceCount.Size = new System.Drawing.Size(53, 38);
+            this.lblMadiniceCount.Size = new System.Drawing.Size(64, 47);
             this.lblMadiniceCount.TabIndex = 0;
             this.lblMadiniceCount.Text = "14";
             // 
@@ -181,7 +181,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnCustomer.ForeColor = System.Drawing.Color.Black;
             this.btnCustomer.Location = new System.Drawing.Point(64, 124);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(139, 21);
+            this.btnCustomer.Size = new System.Drawing.Size(173, 28);
             this.btnCustomer.TabIndex = 1;
             this.btnCustomer.Text = "Manage Users  >>";
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
@@ -205,7 +205,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(27, 85);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(178, 21);
+            this.label10.Size = new System.Drawing.Size(221, 23);
             this.label10.TabIndex = 1;
             this.label10.Text = "Total no of Customers";
             // 
@@ -228,7 +228,7 @@ namespace Modern_Pharmacy_Managment_System
             this.lblCustomerCount.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerCount.Location = new System.Drawing.Point(102, 43);
             this.lblCustomerCount.Name = "lblCustomerCount";
-            this.lblCustomerCount.Size = new System.Drawing.Size(53, 38);
+            this.lblCustomerCount.Size = new System.Drawing.Size(64, 47);
             this.lblCustomerCount.TabIndex = 0;
             this.lblCustomerCount.Text = "14";
             // 
@@ -237,7 +237,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.guna2Panel1.Controls.Add(this.btnMedicineShortage);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.Location = new System.Drawing.Point(621, 101);
+            this.guna2Panel1.Location = new System.Drawing.Point(620, 104);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(271, 154);
             this.guna2Panel1.TabIndex = 4;
@@ -250,7 +250,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnMedicineShortage.ForeColor = System.Drawing.Color.Black;
             this.btnMedicineShortage.Location = new System.Drawing.Point(64, 124);
             this.btnMedicineShortage.Name = "btnMedicineShortage";
-            this.btnMedicineShortage.Size = new System.Drawing.Size(131, 21);
+            this.btnMedicineShortage.Size = new System.Drawing.Size(162, 28);
             this.btnMedicineShortage.TabIndex = 1;
             this.btnMedicineShortage.Text = "Resolve Now  >>";
             this.btnMedicineShortage.Click += new System.EventHandler(this.btnMedicineShortage_Click);
@@ -274,7 +274,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(47, 85);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 21);
+            this.label7.Size = new System.Drawing.Size(200, 23);
             this.label7.TabIndex = 1;
             this.label7.Text = "Medicines Shortage";
             // 
@@ -297,14 +297,14 @@ namespace Modern_Pharmacy_Managment_System
             this.lblMadicineShortage.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMadicineShortage.Location = new System.Drawing.Point(102, 43);
             this.lblMadicineShortage.Name = "lblMadicineShortage";
-            this.lblMadicineShortage.Size = new System.Drawing.Size(53, 38);
+            this.lblMadicineShortage.Size = new System.Drawing.Size(64, 47);
             this.lblMadicineShortage.TabIndex = 0;
             this.lblMadicineShortage.Text = "14";
             // 
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
-            this.guna2Panel3.Location = new System.Drawing.Point(12, 86);
+            this.guna2Panel3.Location = new System.Drawing.Point(11, 89);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(891, 187);
             this.guna2Panel3.TabIndex = 5;
@@ -325,6 +325,18 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel13.Size = new System.Drawing.Size(645, 154);
             this.guna2Panel13.TabIndex = 4;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(458, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(223, 23);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Total Amount Earned ";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -333,9 +345,19 @@ namespace Modern_Pharmacy_Managment_System
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(241, 107);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(166, 21);
+            this.label9.Size = new System.Drawing.Size(205, 23);
             this.label9.TabIndex = 1;
             this.label9.Text = "Invoices Generated";
+            // 
+            // lblSellingAmount
+            // 
+            this.lblSellingAmount.AutoSize = true;
+            this.lblSellingAmount.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSellingAmount.Location = new System.Drawing.Point(514, 56);
+            this.lblSellingAmount.Name = "lblSellingAmount";
+            this.lblSellingAmount.Size = new System.Drawing.Size(64, 47);
+            this.lblSellingAmount.TabIndex = 0;
+            this.lblSellingAmount.Text = "14";
             // 
             // label2
             // 
@@ -345,7 +367,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(12, 107);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 21);
+            this.label2.Size = new System.Drawing.Size(220, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Qty of Medicines Sold";
             // 
@@ -367,7 +389,7 @@ namespace Modern_Pharmacy_Managment_System
             this.lblDate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(412, 10);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(65, 24);
+            this.lblDate.Size = new System.Drawing.Size(83, 32);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "D           A      T          E";
             // 
@@ -377,7 +399,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(12, 11);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(124, 24);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(158, 32);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Quick Report";
             // 
@@ -387,7 +409,7 @@ namespace Modern_Pharmacy_Managment_System
             this.lblTotalInvoices.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalInvoices.Location = new System.Drawing.Point(299, 56);
             this.lblTotalInvoices.Name = "lblTotalInvoices";
-            this.lblTotalInvoices.Size = new System.Drawing.Size(53, 38);
+            this.lblTotalInvoices.Size = new System.Drawing.Size(64, 47);
             this.lblTotalInvoices.TabIndex = 0;
             this.lblTotalInvoices.Text = "14";
             // 
@@ -397,35 +419,13 @@ namespace Modern_Pharmacy_Managment_System
             this.lblTodaysMedicineSale.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodaysMedicineSale.Location = new System.Drawing.Point(73, 56);
             this.lblTodaysMedicineSale.Name = "lblTodaysMedicineSale";
-            this.lblTodaysMedicineSale.Size = new System.Drawing.Size(53, 38);
+            this.lblTodaysMedicineSale.Size = new System.Drawing.Size(64, 47);
             this.lblTodaysMedicineSale.TabIndex = 0;
             this.lblTodaysMedicineSale.Text = "14";
             // 
-            // lblSellingAmount
-            // 
-            this.lblSellingAmount.AutoSize = true;
-            this.lblSellingAmount.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSellingAmount.Location = new System.Drawing.Point(514, 56);
-            this.lblSellingAmount.Name = "lblSellingAmount";
-            this.lblSellingAmount.Size = new System.Drawing.Size(53, 38);
-            this.lblSellingAmount.TabIndex = 0;
-            this.lblSellingAmount.Text = "14";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(458, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Total Amount Earned ";
-            // 
             // StaffInfoPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(917, 551);

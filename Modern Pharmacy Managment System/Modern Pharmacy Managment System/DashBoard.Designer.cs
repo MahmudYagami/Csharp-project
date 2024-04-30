@@ -76,7 +76,7 @@ namespace Modern_Pharmacy_Managment_System
             this.LogoPanel.Location = new System.Drawing.Point(0, 0);
             this.LogoPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(299, 59);
+            this.LogoPanel.Size = new System.Drawing.Size(277, 59);
             this.LogoPanel.TabIndex = 0;
             // 
             // AdminPictureBox
@@ -86,7 +86,7 @@ namespace Modern_Pharmacy_Managment_System
             this.AdminPictureBox.Location = new System.Drawing.Point(0, 59);
             this.AdminPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdminPictureBox.Name = "AdminPictureBox";
-            this.AdminPictureBox.Size = new System.Drawing.Size(299, 84);
+            this.AdminPictureBox.Size = new System.Drawing.Size(277, 84);
             this.AdminPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AdminPictureBox.TabIndex = 1;
             this.AdminPictureBox.TabStop = false;
@@ -102,17 +102,17 @@ namespace Modern_Pharmacy_Managment_System
             this.LeftPanel.Location = new System.Drawing.Point(0, 0);
             this.LeftPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LeftPanel.Name = "LeftPanel";
-            this.LeftPanel.Size = new System.Drawing.Size(299, 805);
+            this.LeftPanel.Size = new System.Drawing.Size(277, 805);
             this.LeftPanel.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.DropdownPanel);
             this.flowLayoutPanel1.Controls.Add(this.flowdropdownpanel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 199);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 207);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(268, 530);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 530);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // DropdownPanel
@@ -209,7 +209,7 @@ namespace Modern_Pharmacy_Managment_System
             this.ManagementBtn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
             this.ManagementBtn.Size = new System.Drawing.Size(268, 60);
             this.ManagementBtn.TabIndex = 3;
-            this.ManagementBtn.Text = "Management";
+            this.ManagementBtn.Text = "   Management";
             this.ManagementBtn.UseVisualStyleBackColor = false;
             this.ManagementBtn.Click += new System.EventHandler(this.ManagementBtn_Click);
             // 
@@ -222,7 +222,7 @@ namespace Modern_Pharmacy_Managment_System
             this.flowdropdownpanel.Location = new System.Drawing.Point(3, 68);
             this.flowdropdownpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowdropdownpanel.Name = "flowdropdownpanel";
-            this.flowdropdownpanel.Size = new System.Drawing.Size(268, 427);
+            this.flowdropdownpanel.Size = new System.Drawing.Size(296, 427);
             this.flowdropdownpanel.TabIndex = 2;
             // 
             // RevenueBtn
@@ -285,6 +285,7 @@ namespace Modern_Pharmacy_Managment_System
             this.logoutBtn.TabIndex = 5;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // DashBoardBtn
             // 
@@ -300,7 +301,7 @@ namespace Modern_Pharmacy_Managment_System
             this.DashBoardBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DashBoardBtn.Name = "DashBoardBtn";
             this.DashBoardBtn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.DashBoardBtn.Size = new System.Drawing.Size(299, 60);
+            this.DashBoardBtn.Size = new System.Drawing.Size(277, 60);
             this.DashBoardBtn.TabIndex = 2;
             this.DashBoardBtn.Text = "Dashboard";
             this.DashBoardBtn.UseVisualStyleBackColor = true;
@@ -311,10 +312,10 @@ namespace Modern_Pharmacy_Managment_System
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
             this.topPanel.Controls.Add(this.TimerPanel);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(299, 0);
+            this.topPanel.Location = new System.Drawing.Point(277, 0);
             this.topPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1208, 59);
+            this.topPanel.Size = new System.Drawing.Size(1205, 59);
             this.topPanel.TabIndex = 1;
             // 
             // TimerPanel
@@ -390,7 +391,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1507, 805);
+            this.ClientSize = new System.Drawing.Size(1482, 805);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.LeftPanel);
