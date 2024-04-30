@@ -90,16 +90,6 @@ namespace Modern_Pharmacy_Managment_System
             dgvOrder.DataSource = con.GetData(Query);
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            CustomerManagementForm moduleForm = new CustomerManagementForm();
-            moduleForm.btnSave.Enabled = true;
-            moduleForm.btnUpdate.Enabled = false;
-            moduleForm.ShowDialog();
-           
-        }
-
-
         private void UpdateTotalAmount()
         {
             // Calculate the total amount
@@ -124,9 +114,172 @@ namespace Modern_Pharmacy_Managment_System
             return totalAmount;
         }
 
-        private void btnAddToCart_Click(object sender, EventArgs e)
+        private void getRewards()
         {
 
+            try
+            {
+                // Get the customer phone number from txtCPhone
+                string customerPhoneNumber = txtCPhone.Text.Trim();
+                
+
+                // SQL query to select cpoints for the customer
+                string query = "SELECT cpoints FROM tbCustomer WHERE cphone = @customerPhoneNumber";
+
+                // Create a new instance of SqlConnection
+                using (var con = DatabaseConnection.databaseConnect())
+                {
+                    // Open the connection
+                    con.Open();
+
+                    // Create a new SqlCommand object
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        // Add the customerPhoneNumber parameter
+                        cmd.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
+
+                        // Execute the command to retrieve the cpoints
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            // Get the value of cpoints
+                            int rewards = Convert.ToInt32(result);
+
+                            // Display rewards in txtRewards
+                            txtRewards.Text = rewards.ToString();
+ 
+                        
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+   
+        private void UpdateRewardsPoints(double newRewards)
+        {
+            try
+            {  
+                string customerPhoneNumber = txtCPhone.Text;
+
+                // SQL query to update cpoints for the customer
+                string query = "UPDATE tbCustomer SET cpoints =  @newRewards WHERE cphone = @customerPhoneNumber";
+
+                // Create a SqlCommand object and add parameters
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Parameters.AddWithValue("@newRewards", newRewards);
+                cmd.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
+
+                // Call the insertData method to execute the query
+                int rowsAffected = con.insertData(cmd);
+
+                if(rowsAffected > 0)
+                {
+
+                    MessageBox.Show("Rewards Updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Update rewards.", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private int CalculateTotalUnits()
+        {
+            int totalUnits = 0;
+
+            // Iterate through each row in dgvOrder and sum up the OUnit
+            foreach (DataGridViewRow row in dgvOrder.Rows)
+            {
+                totalUnits += Convert.ToInt32(row.Cells[2].Value); // OUnit
+            }
+
+            return totalUnits;
+        }
+
+        public void RemoveOrder()
+        {
+            try
+            {
+                using (var con = DatabaseConnection.databaseConnect())
+                {
+                    con.Open();
+
+                    // Fetch all rows from OrderTbl
+                    string selectOrdersQuery = "SELECT OName, OUnit FROM OrderTbl";
+                    SqlCommand selectOrdersCmd = new SqlCommand(selectOrdersQuery, con);
+
+                    // Create a list to store the data
+                    List<Tuple<string, int>> orders = new List<Tuple<string, int>>();
+
+                    // Execute the query and store the results
+                    using (SqlDataReader reader = selectOrdersCmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string productName = reader.GetString(0);
+                            int orderUnit = reader.GetInt32(1);
+                            orders.Add(new Tuple<string, int>(productName, orderUnit));
+                        }
+                    }
+
+                    // Close the SqlDataReader before executing the next command
+                    selectOrdersCmd.Dispose();
+
+                    // Restock each medicine in InventoryTbl
+                    foreach (var order in orders)
+                    {
+                        string productName = order.Item1;
+                        int orderUnit = order.Item2;
+
+                        // Restock the medicine in InventoryTbl
+                        string restockQuery = "UPDATE InventoryTbl SET PStock = PStock + @OrderUnit WHERE PName = @ProductName";
+                        SqlCommand restockCmd = new SqlCommand(restockQuery, con);
+                        restockCmd.Parameters.AddWithValue("@OrderUnit", orderUnit);
+                        restockCmd.Parameters.AddWithValue("@ProductName", productName);
+                        restockCmd.ExecuteNonQuery();
+                    }
+
+                    // Remove all records from OrderTbl
+                    string clearOrderQuery = "DELETE FROM OrderTbl";
+                    SqlCommand clearOrderCmd = new SqlCommand(clearOrderQuery, con);
+                    clearOrderCmd.ExecuteNonQuery();
+
+                    MessageBox.Show("All medicines removed from the order and restocked.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Refresh the dgvOrder
+            showOrder();
+            showProduct();
+            UpdateTotalAmount();
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            CustomerManagementForm moduleForm = new CustomerManagementForm();
+            moduleForm.btnSave.Enabled = true;
+            moduleForm.btnUpdate.Enabled = false;
+            moduleForm.ShowDialog();
+        }
+
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
             try
             {
                 if (dgvProduct.SelectedRows.Count > 0)
@@ -205,19 +358,17 @@ namespace Modern_Pharmacy_Managment_System
                 else
                 {
                     warningMessage.Show("Please select a product to add to cart!");
-                   // MessageBox.Show("Please select a product to add to cart!", "No Product Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // MessageBox.Show("Please select a product to add to cart!", "No Product Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
             // Ensure that a row is selected in the dgvOrder
             if (dgvOrder.SelectedRows.Count == 0)
             {
@@ -257,7 +408,6 @@ namespace Modern_Pharmacy_Managment_System
             showOrder();
             showProduct();
             UpdateTotalAmount();
-
         }
 
         private void txtSearchMedicine_TextChanged(object sender, EventArgs e)
@@ -275,53 +425,6 @@ namespace Modern_Pharmacy_Managment_System
             dgvProduct.DataSource = con.GetData(Query);
         }
 
-        private void getRewards()
-        {
-
-            try
-            {
-                // Get the customer phone number from txtCPhone
-                string customerPhoneNumber = txtCPhone.Text.Trim();
-                
-
-                // SQL query to select cpoints for the customer
-                string query = "SELECT cpoints FROM tbCustomer WHERE cphone = @customerPhoneNumber";
-
-                // Create a new instance of SqlConnection
-                using (var con = DatabaseConnection.databaseConnect())
-                {
-                    // Open the connection
-                    con.Open();
-
-                    // Create a new SqlCommand object
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        // Add the customerPhoneNumber parameter
-                        cmd.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
-
-                        // Execute the command to retrieve the cpoints
-                        object result = cmd.ExecuteScalar();
-
-                        if (result != null)
-                        {
-                            // Get the value of cpoints
-                            int rewards = Convert.ToInt32(result);
-
-                            // Display rewards in txtRewards
-                            txtRewards.Text = rewards.ToString();
- 
-                        
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-    
         private void txtCustomerName_TextChanged(object sender, EventArgs e)
         {
             string searchText = txtCustomerName.Text.Trim();
@@ -347,18 +450,15 @@ namespace Modern_Pharmacy_Managment_System
                     }
                     con.Close();
                 }
-            }     
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-
-
         }
 
-        private void btnPay_Click_1(object sender, EventArgs e)
+        private void btnPay_Click(object sender, EventArgs e)
         {
-
             // Check if there are any items in the order
             if (dgvOrder.Rows.Count == 0)
             {
@@ -374,8 +474,8 @@ namespace Modern_Pharmacy_Managment_System
                 double totalAmount;
                 if (rewardUsed == false)
                 {
-                     txtGrandTotal.Text = txtTotalAmount.Text;
-                     totalAmount = Convert.ToDouble(txtGrandTotal.Text);
+                    txtGrandTotal.Text = txtTotalAmount.Text;
+                    totalAmount = Convert.ToDouble(txtGrandTotal.Text);
                 }
                 else
                 {
@@ -383,7 +483,7 @@ namespace Modern_Pharmacy_Managment_System
                 }
 
                 // Calculate rewards
-                int rewards =(int)totalAmount / 2;
+                int rewards = (int)totalAmount / 2;
 
                 // Get the customer phone number from txtCPhone
                 string customerPhoneNumber = txtCPhone.Text.Trim();
@@ -403,11 +503,11 @@ namespace Modern_Pharmacy_Managment_System
                 {
                     getRewards();
 
-                    MessageBox.Show("Rewards added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   // MessageBox.Show("Rewards added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add rewards.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show("Failed to add rewards.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -448,11 +548,11 @@ namespace Modern_Pharmacy_Managment_System
                     // Check if the insert was successful
                     if (rowsAffectedInsertAccount > 0)
                     {
-                        MessageBox.Show("Revenue added to account successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                      //  MessageBox.Show("Revenue added to account successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Failed to add revenue to account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                       // MessageBox.Show("Failed to add revenue to account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -475,7 +575,10 @@ namespace Modern_Pharmacy_Managment_System
             try
             {
                 con.insertData(clearOrderCmd);
-                MessageBox.Show("Payment successful! Order cleared.", "Payment Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               // informationMessage.Show("Payment successful!");
+                ShowCustomMessageBox("Payment successful! Order cleared.", "Neuron Pharma");
+
+                // MessageBox.Show("Payment successful! Order cleared.", "Payment Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -495,16 +598,11 @@ namespace Modern_Pharmacy_Managment_System
             showProduct();
             //UpdateTotalAmount();
 
-           // update new order form
+            // update new order form
             rewardUsed = false;
         }
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            // customer side panel
-        }
-
-        private void btnUseReward_Click(object sender, EventArgs e)
+        private void btnUseReward_Click_1(object sender, EventArgs e)
         {
             rewardUsed = true;
             try
@@ -534,7 +632,7 @@ namespace Modern_Pharmacy_Managment_System
                         UpdateRewardsPoints(newRewards);
                         txtRewards.Text = newRewards.ToString();
                     }
-                    else if(totalAmount >= discountAmount)
+                    else if (totalAmount >= discountAmount)
                     {
                         // Calculate the grand total after discount
                         double grandTotal = totalAmount - discountAmount;
@@ -543,7 +641,7 @@ namespace Modern_Pharmacy_Managment_System
                         txtGrandTotal.Text = grandTotal.ToString();
 
                         // Update the rewards points in the database
-                       
+
                         UpdateRewardsPoints(0);
                         txtRewards.Text = "0.0";
                     }
@@ -559,53 +657,19 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
-        private void UpdateRewardsPoints(double newRewards)
+
+        private void btnBkash_Click_1(object sender, EventArgs e)
         {
             try
-            {  
-                string customerPhoneNumber = txtCPhone.Text;
-
-                // SQL query to update cpoints for the customer
-                string query = "UPDATE tbCustomer SET cpoints =  @newRewards WHERE cphone = @customerPhoneNumber";
-
-                // Create a SqlCommand object and add parameters
-                SqlCommand cmd = new SqlCommand(query);
-                cmd.Parameters.AddWithValue("@newRewards", newRewards);
-                cmd.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
-
-                // Call the insertData method to execute the query
-                int rowsAffected = con.insertData(cmd);
-
-                if(rowsAffected > 0)
-                {
-
-                    MessageBox.Show("Rewards Updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Failed to Update rewards.", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-        private void btnBkash_Click(object sender, EventArgs e)
-        {
-                
-            try
-            {
-                if(isCustomer == false)
+                if (isCustomer == false)
                 {
                     // Get the parent form (StaffDashboard)
                     StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
                     int totalUnit = CalculateTotalUnits();
+
                     // Call the LoadBkashFormIntoMainPanel method of the StaffDashboard form
-                    staffDashboard.LoadBkashFormIntoMainPanel(new Bkash(txtGrandTotal.Text, totalUnit));
+                    staffDashboard.LoadBkashFormIntoMainPanel(new Bkash(txtGrandTotal.Text, totalUnit, "Employee"));
 
                     // Hide the current form (OrderForm)
                     this.Hide();
@@ -613,10 +677,10 @@ namespace Modern_Pharmacy_Managment_System
                 else
                 {
                     // Get the parent form (StaffDashboard)
-                    CustomerDashboard db= (CustomerDashboard)this.ParentForm;
+                    CustomerDashboard db = (CustomerDashboard)this.ParentForm;
                     int totalUnit = CalculateTotalUnits();
                     // Call the LoadBkashFormIntoMainPanel method of the StaffDashboard form
-                   // db.LoadBkashFormIntoMainPanel(new Bkash(txtGrandTotal.Text, totalUnit));
+                    db.LoadBkashFormIntoMainPanel(new Bkash(txtGrandTotal.Text, totalUnit, "Customer"));
 
                     // Hide the current form (OrderForm)
                     this.Hide();
@@ -627,82 +691,47 @@ namespace Modern_Pharmacy_Managment_System
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-
         }
 
-        private int CalculateTotalUnits()
+        private void ShowCustomMessageBox(string message, string title)
         {
-            int totalUnits = 0;
+            Form customMessageBox = new Form();
+            customMessageBox.StartPosition = FormStartPosition.CenterParent;
+            customMessageBox.FormBorderStyle = FormBorderStyle.FixedDialog;
+            customMessageBox.BackColor = Color.DodgerBlue;
 
-            // Iterate through each row in dgvOrder and sum up the OUnit
-            foreach (DataGridViewRow row in dgvOrder.Rows)
+            // Set the size of the custom message box
+            customMessageBox.Size = new Size(300, 150);
+
+            Label label = new Label();
+            label.Text = message;
+            label.AutoSize = true;
+            label.Location = new Point(20, 20);
+            label.Font = new Font("Century Gothic", 10, FontStyle.Bold);
+            customMessageBox.Controls.Add(label);
+
+            Button okButton = new Button();
+            okButton.Text = "OK";
+            okButton.DialogResult = DialogResult.OK;
+            okButton.BackColor = Color.DodgerBlue;
+            okButton.ForeColor = Color.Black;
+            okButton.Location = new Point(140, 60);
+            okButton.Font = new Font("Century Gothic", 10, FontStyle.Bold);
+            customMessageBox.Controls.Add(okButton);
+
+            customMessageBox.Text = title;
+
+            customMessageBox.AcceptButton = okButton;
+
+            DialogResult result = customMessageBox.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                totalUnits += Convert.ToInt32(row.Cells[2].Value); // OUnit
+                customMessageBox.Close();
             }
-
-            return totalUnits;
         }
 
-        public void RemoveOrder()
-        {
-            try
-            {
-                using (var con = DatabaseConnection.databaseConnect())
-                {
-                    con.Open();
 
-                    // Fetch all rows from OrderTbl
-                    string selectOrdersQuery = "SELECT OName, OUnit FROM OrderTbl";
-                    SqlCommand selectOrdersCmd = new SqlCommand(selectOrdersQuery, con);
 
-                    // Create a list to store the data
-                    List<Tuple<string, int>> orders = new List<Tuple<string, int>>();
 
-                    // Execute the query and store the results
-                    using (SqlDataReader reader = selectOrdersCmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string productName = reader.GetString(0);
-                            int orderUnit = reader.GetInt32(1);
-                            orders.Add(new Tuple<string, int>(productName, orderUnit));
-                        }
-                    }
-
-                    // Close the SqlDataReader before executing the next command
-                    selectOrdersCmd.Dispose();
-
-                    // Restock each medicine in InventoryTbl
-                    foreach (var order in orders)
-                    {
-                        string productName = order.Item1;
-                        int orderUnit = order.Item2;
-
-                        // Restock the medicine in InventoryTbl
-                        string restockQuery = "UPDATE InventoryTbl SET PStock = PStock + @OrderUnit WHERE PName = @ProductName";
-                        SqlCommand restockCmd = new SqlCommand(restockQuery, con);
-                        restockCmd.Parameters.AddWithValue("@OrderUnit", orderUnit);
-                        restockCmd.Parameters.AddWithValue("@ProductName", productName);
-                        restockCmd.ExecuteNonQuery();
-                    }
-
-                    // Remove all records from OrderTbl
-                    string clearOrderQuery = "DELETE FROM OrderTbl";
-                    SqlCommand clearOrderCmd = new SqlCommand(clearOrderQuery, con);
-                    clearOrderCmd.ExecuteNonQuery();
-
-                    MessageBox.Show("All medicines removed from the order and restocked.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            // Refresh the dgvOrder
-            showOrder();
-            showProduct();
-            UpdateTotalAmount();
-        }
     }
 }
