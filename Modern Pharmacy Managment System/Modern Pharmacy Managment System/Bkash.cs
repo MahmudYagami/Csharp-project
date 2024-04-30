@@ -15,10 +15,12 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class Bkash : Form
     {
-        public Bkash(string Amount)
+        public Bkash(string Amount, int totalUnit)
         {
             InitializeComponent();       
             lblAmount.Text = Amount;
+            lblUnit.Text = totalUnit.ToString();
+            lblUnit.Visible = false;
         }
 
         private void txtPhone_TextChanged(object sender, EventArgs e)
@@ -44,16 +46,21 @@ namespace Modern_Pharmacy_Managment_System
                         // Open the connection
                         con.Open();
 
+                        int totalUnit = int.Parse(lblUnit.Text);
                         // Insert into the accountTbl
-                        string insertAccountQuery = "INSERT INTO accountTbl (Revenue, Date) VALUES (@Revenue, @Date)";
-                        SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery, con); // Pass connection to the command
+                        int EmployeeID = Login.EmpId;
+
+                        string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date, EmpId) VALUES (@TotalOrders, @Revenue, @Date, @EmpId)";
+                        SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery);
+                        insertAccountCmd.Parameters.AddWithValue("@TotalOrders", totalUnit);
                         insertAccountCmd.Parameters.AddWithValue("@Revenue", grandTotal);
                         insertAccountCmd.Parameters.AddWithValue("@Date", currentDate);
+                        insertAccountCmd.Parameters.AddWithValue("@EmpId", EmployeeID);
 
                         // Execute the insert query
                         insertAccountCmd.ExecuteNonQuery();
                         // Close the connection
-                      //con.Close();
+                        //con.Close();
 
                         // Clear the order table
 
@@ -107,8 +114,14 @@ namespace Modern_Pharmacy_Managment_System
             string phoneNumber = txtPhone.Text;
             string pinNumber = txtPin.Text;
 
+            OrderForm odf = new OrderForm();
+            StaffInfoPanel sif = new StaffInfoPanel();
+
             if (!Customer.IsValidPhoneNumber(phoneNumber))
             {
+                odf.RemoveOrder();
+                sif.refreshInfo();
+
                 return;
             }
 

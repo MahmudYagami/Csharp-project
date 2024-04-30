@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Modern_Pharmacy_Managment_System.Database;
+using Modern_Pharmacy_Managment_System.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,8 +25,7 @@ namespace Modern_Pharmacy_Managment_System
         private void btnSignup_Click(object sender, EventArgs e)
         {
             if (ValidateInput())
-            {
-                // Insert data into the database
+            {               
                 InsertCustomerData();
             }
         }
@@ -37,14 +38,16 @@ namespace Modern_Pharmacy_Managment_System
                 string.IsNullOrWhiteSpace(txtPass.Text) ||
                 string.IsNullOrWhiteSpace(txtRePass.Text))
             {
-                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                warningMessage.Show("Please fill in all fields.");        
                 return false;
             }
 
             // Check if the phone number is 11 digits and starts with '01'
             if (txtPhone.Text.Length != 11 || !txtPhone.Text.StartsWith("01"))
-            {
-                MessageBox.Show("Phone number must be 11 digits and start with '01'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {              
+                errorMessage.Show("Invalid Phone Number!");
+                
                 return false;
             }
 
@@ -53,16 +56,22 @@ namespace Modern_Pharmacy_Managment_System
             foreach (char digit in txtPhone.Text)
             {
                 if (!char.IsDigit(digit) || digit < '0' || digit > '9')
-                {
-                    MessageBox.Show("Phone number can only contain digits.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {                   
+                    errorMessage.Show("Invalid Phone Number!");
                     return false;
                 }
             }
 
             // Check if the password and re-entered password match
             if (txtPass.Text != txtRePass.Text)
+            {            
+                errorMessage.Show("Passwords do not match.");
+                return false;
+            }
+
+            if (Customer.CheckPhoneNumberExists(txtPhone.Text))
             {
-                MessageBox.Show("Passwords do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorMessage.Show("Phone Number already exists!");
                 return false;
             }
 
@@ -91,8 +100,8 @@ namespace Modern_Pharmacy_Managment_System
 
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Signup successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+                    // MessageBox.Show("Signup successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageDialog.Show("Signup successful!");
                     txtName.Clear();
                     txtPhone.Clear();
                     txtPass.Clear();
@@ -100,7 +109,8 @@ namespace Modern_Pharmacy_Managment_System
                 }
                 else
                 {
-                    MessageBox.Show("Signup failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errorMessage.Show("Signup failed. Please try again.");
+                    //MessageBox.Show("Signup failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -132,3 +142,5 @@ namespace Modern_Pharmacy_Managment_System
         }
     }
 }
+
+   

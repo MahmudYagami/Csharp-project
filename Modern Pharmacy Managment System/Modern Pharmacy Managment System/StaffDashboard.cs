@@ -20,6 +20,7 @@ namespace Modern_Pharmacy_Managment_System
             lblName.Text = Login.EmpName + "";
             //lblId.Text = Login.EmpId + " ";
             loadform(new StaffInfoPanel());
+           
 
         }
 
@@ -36,7 +37,17 @@ namespace Modern_Pharmacy_Managment_System
             this.mainPanel.Tag = f;
             f.Show();
         }
-
+        public void loadformAkid(object Form)
+        {
+            if (this.mainPanel.Controls.Count > 0)
+                this.mainPanel.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Bottom;
+            this.mainPanel.Controls.Add(f);
+            this.mainPanel.Tag = f;
+            f.Show();
+        }
 
         private void btnLeave_Click_1(object sender, EventArgs e)
         {
@@ -96,8 +107,10 @@ namespace Modern_Pharmacy_Managment_System
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             // product button
-            loadform(new addproductPha());
+            loadformAkid(new addproductPha());
         }
+
+    
     }
     
 }

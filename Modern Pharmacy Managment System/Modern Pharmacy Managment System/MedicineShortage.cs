@@ -24,13 +24,46 @@ namespace Modern_Pharmacy_Managment_System
             showMedicineList();
         }
 
-        
 
-                
-       public void showMedicineList()
+
+
+        public void showMedicineList()
         {
+              StaffInfoPanel sif = new StaffInfoPanel();
+              sif.refreshInfo();
+              sif.showInformation();
             string Query = "SELECT SId, SName, SQuantity, SBuyingPrice FROM MedicineShortageTbl";
             dgvMedicineShortage.DataSource = Con.GetData(Query);
+          /*  try
+            {
+                using (var con = DatabaseConnection.databaseConnect())
+                {
+                    con.Open();
+
+                    // Create a DataTable to hold the data
+                    DataTable dt = new DataTable();
+
+                    // Fetch all data from the database without any condition
+                    SqlCommand cmd = new SqlCommand("SELECT SId, SName, SQuantity, SBuyingPrice FROM MedicineShortageTbl", con);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+
+                    // Bind the DataTable to the DataGridView
+                    dgvMedicineShortage.DataSource = dt;
+
+                    con.Close();
+                }
+               
+                
+              //  StaffInfoPanel sif = new StaffInfoPanel();
+             //   sif.refreshInfo();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+          */
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -38,29 +71,6 @@ namespace Modern_Pharmacy_Managment_System
             this.Dispose();
         }
 
-        private void DisplayMedicineShortage()
-        {
-            try
-            {
-                using (var con = DatabaseConnection.databaseConnect())
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT SId, SName, SQuantity, SBuyingPrice FROM MedicineShortageTbl", con);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            dgvMedicineShortage.Rows.Add(reader["SId"], reader["SName"], reader["SQuantity"], reader["SBuyingPrice"]);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
-        }
 
         private void dgvMedicineShortage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -95,56 +105,64 @@ namespace Modern_Pharmacy_Managment_System
 
         private void btnRestock_Click(object sender, EventArgs e)
         {
-            try
+            if (txtId.Text == "")
             {
-                using (var con = DatabaseConnection.databaseConnect())
+                warningMessage.Show("Select a Medicine");
+            }
+            else { 
+                try
                 {
-                    con.Open();
-
-                    // Update InventoryTbl PStock
-                    SqlCommand updateCmd = new SqlCommand("UPDATE InventoryTbl SET PStock = PStock + @RestockValue WHERE PId = @Id", con);
-                    updateCmd.Parameters.AddWithValue("@RestockValue", int.Parse(txtRestockValue.Text));
-                    updateCmd.Parameters.AddWithValue("@Id", int.Parse(txtId.Text));
-                    updateCmd.ExecuteNonQuery();
-
-                    // Update MedicineShortageTbl SQuantity
-                    SqlCommand updateShortageCmd = new SqlCommand("UPDATE MedicineShortageTbl SET SQuantity = SQuantity + @RestockValue WHERE SId = @Id", con);
-                    updateShortageCmd.Parameters.AddWithValue("@RestockValue", int.Parse(txtRestockValue.Text));
-                    updateShortageCmd.Parameters.AddWithValue("@Id", int.Parse(txtId.Text));
-                    updateShortageCmd.ExecuteNonQuery();
-
-                    // Check if the item is still in shortage
-                    SqlCommand checkCmd = new SqlCommand("SELECT SQuantity FROM MedicineShortageTbl WHERE SId = @Id", con);
-                    checkCmd.Parameters.AddWithValue("@Id", int.Parse(txtId.Text));
-                    int SQuantity = (int)checkCmd.ExecuteScalar();
-
-                    // If SQuantity is > 50, remove the item from MedicineShortageTbl
-                    if (SQuantity > 50)
+                    using (var con = DatabaseConnection.databaseConnect())
                     {
-                        SqlCommand deleteCmd = new SqlCommand("DELETE FROM MedicineShortageTbl WHERE SId = @Id", con);
-                        deleteCmd.Parameters.AddWithValue("@Id", int.Parse(txtId.Text));
-                        deleteCmd.ExecuteNonQuery();
+                        con.Open();
+
+                        // Update InventoryTbl PStock
+                        SqlCommand updateCmd = new SqlCommand("UPDATE InventoryTbl SET PStock = PStock + @RestockValue WHERE PId = @Id", con);
+                        updateCmd.Parameters.AddWithValue("@RestockValue", int.Parse(txtRestockValue.Text));
+                        updateCmd.Parameters.AddWithValue("@Id", int.Parse(txtId.Text));
+                        updateCmd.ExecuteNonQuery();
+
+                        // Update MedicineShortageTbl SQuantity
+                        SqlCommand updateShortageCmd = new SqlCommand("UPDATE MedicineShortageTbl SET SQuantity = SQuantity + @RestockValue WHERE SId = @Id", con);
+                        updateShortageCmd.Parameters.AddWithValue("@RestockValue", int.Parse(txtRestockValue.Text));
+                        updateShortageCmd.Parameters.AddWithValue("@Id", int.Parse(txtId.Text));
+                        updateShortageCmd.ExecuteNonQuery();
+
+                        // Check if the item is still in shortage
+                        SqlCommand checkCmd = new SqlCommand("SELECT SQuantity FROM MedicineShortageTbl WHERE SId = @Id", con);
+                        checkCmd.Parameters.AddWithValue("@Id", int.Parse(txtId.Text));
+                        int SQuantity = (int)checkCmd.ExecuteScalar();
+
+                        // If SQuantity is > 50, remove the item from MedicineShortageTbl
+                        if (SQuantity > 50)
+                        {
+                            SqlCommand deleteCmd = new SqlCommand("DELETE FROM MedicineShortageTbl WHERE SId = @Id", con);
+                            deleteCmd.Parameters.AddWithValue("@Id", int.Parse(txtId.Text));
+                            deleteCmd.ExecuteNonQuery();
+                        }
+
+                        // Insert expense into AccountTbl
+                        SqlCommand insertCmd = new SqlCommand("INSERT INTO AccountTbl (Expense, Date) VALUES (@Expense, @Date)", con);
+                        insertCmd.Parameters.AddWithValue("@Expense", float.Parse(txtTotalPrice.Text)); // Assuming Expense is float
+                        insertCmd.Parameters.AddWithValue("@Date", DateTime.Now.Date);
+                        insertCmd.ExecuteNonQuery();
+
+                        showMedicineList();
+                        
+                        informationMessage.Show("Restock Successful");
                     }
-
-                    // Insert expense into AccountTbl
-                    SqlCommand insertCmd = new SqlCommand("INSERT INTO AccountTbl (Expense, Date) VALUES (@Expense, @Date)", con);
-                    insertCmd.Parameters.AddWithValue("@Expense", float.Parse(txtTotalPrice.Text)); // Assuming Expense is float
-                    insertCmd.Parameters.AddWithValue("@Date", DateTime.Now.Date);
-                    insertCmd.ExecuteNonQuery();
-
-                    showMedicineList();
-                    MessageBox.Show("Restock successful");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+                finally
+                {
+                    ClearTextBoxes();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
-            finally
-            {
-                ClearTextBoxes();
-            }
         }
+
 
         private void ClearTextBoxes()
         {
@@ -158,7 +176,11 @@ namespace Modern_Pharmacy_Managment_System
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             showMedicineList();
-            // DisplayMedicineShortage();
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

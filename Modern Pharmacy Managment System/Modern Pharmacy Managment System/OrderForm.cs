@@ -74,7 +74,7 @@ namespace Modern_Pharmacy_Managment_System
             // Iterate through each row in dgvOrder and sum up the OTotalCost
             foreach (DataGridViewRow row in dgvOrder.Rows)
             {
-                totalAmount += Convert.ToDecimal(row.Cells["OTotalCost"].Value);
+                totalAmount += Convert.ToDecimal(row.Cells[4].Value); // OTotalCost
             }
 
             return totalAmount;
@@ -138,7 +138,8 @@ namespace Modern_Pharmacy_Managment_System
                     }
                     else
                     {
-                        MessageBox.Show("Failed to add product to cart.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        errorMessage.Show("Failed to add product to cart.");
+                        //MessageBox.Show("Failed to add product to cart.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
 
@@ -159,7 +160,8 @@ namespace Modern_Pharmacy_Managment_System
                 }
                 else
                 {
-                    MessageBox.Show("Please select a product to add to cart!", "No Product Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    warningMessage.Show("Please select a product to add to cart!");
+                   // MessageBox.Show("Please select a product to add to cart!", "No Product Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -277,40 +279,7 @@ namespace Modern_Pharmacy_Managment_System
         }
     
         private void txtCustomerName_TextChanged(object sender, EventArgs e)
-        {/*
-            string searchText = txtCustomerName.Text.Trim();
-            string query = "SELECT cname FROM tbCustomer WHERE cphone LIKE @searchText";
-
-            try
-            {
-                using (SqlConnection con = new SqlConnection(DataConnection))
-                {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        cmd.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
-                        object result = cmd.ExecuteScalar();
-                        if (result != null)
-                        {
-                            txtCName.Text = result.ToString();
-                            txtCPhone.Text = searchText;
-                            getRewards();
-
-                        }
-                        else
-                        {
-                            txtCName.Text = "No matching customer found";
-                        }
-                    }
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            */
-
+        {
             string searchText = txtCustomerName.Text.Trim();
             string query = "SELECT cname FROM tbCustomer WHERE cphone LIKE @searchText";
 
@@ -405,7 +374,7 @@ namespace Modern_Pharmacy_Managment_System
 
             /////////////////////////////                  PAYMENT METHOD         ///////////////////////////
 
-
+            int totalUnits = CalculateTotalUnits();
 
             try
             {
@@ -419,10 +388,15 @@ namespace Modern_Pharmacy_Managment_System
                     DateTime currentDate = DateTime.Now;
 
                     // Insert into the accountTbl
-                    string insertAccountQuery = "INSERT INTO accountTbl (Revenue, Date) VALUES (@Revenue, @Date)";
+
+                    int EmployeeID = Login.EmpId;
+
+                    string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date, EmpId) VALUES (@TotalOrders, @Revenue, @Date, @EmpId)";
                     SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery);
+                    insertAccountCmd.Parameters.AddWithValue("@TotalOrders", totalUnits);
                     insertAccountCmd.Parameters.AddWithValue("@Revenue", grandTotal);
                     insertAccountCmd.Parameters.AddWithValue("@Date", currentDate);
+                    insertAccountCmd.Parameters.AddWithValue("@EmpId", EmployeeID);
 
                     // Execute the insert query using Functions class
                     int rowsAffectedInsertAccount = con.insertData(insertAccountCmd);
@@ -577,14 +551,140 @@ namespace Modern_Pharmacy_Managment_System
 
 
         private void btnBkash_Click(object sender, EventArgs e)
-        {          
+        {
+            /////////////////////////////
+            /*
+            if (dgvOrder.Rows.Count == 0)
+            {
+                MessageBox.Show("There are no items in the order to pay for.", "Empty Order", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            ///////////////////////////           Rewards Points add                 ///////////////////////////
+
+            try
+            {
+                double totalAmount;
+                if (rewardUsed == false)
+                {
+                    txtGrandTotal.Text = txtTotalAmount.Text;
+                    totalAmount = Convert.ToDouble(txtGrandTotal.Text);
+                }
+                else
+                {
+                    totalAmount = Convert.ToDouble(txtGrandTotal.Text);
+                }
+
+                // Calculate rewards
+                int rewards = (int)totalAmount / 2;
+
+                // Get the customer phone number from txtCPhone
+                string customerPhoneNumber = txtCPhone.Text.Trim();
+
+                // SQL query to update cpoints for the customer
+                string query = "UPDATE tbCustomer SET cpoints = cpoints + @rewards WHERE cphone = @customerPhoneNumber";
+                // Create a SqlCommand object and add parameters
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Parameters.AddWithValue("@rewards", rewards);
+                cmd.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber);
+
+                // Call the insertData method to execute the query
+                int rowsAffected = con.insertData(cmd);
+
+                // Check if the update was successful
+                if (rowsAffected > 0)
+                {
+                    getRewards();
+
+                   // MessageBox.Show("Rewards added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add rewards.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            /////////////////////////////                  PAYMENT METHOD         ///////////////////////////
+
+            int totalUnits = CalculateTotalUnits();
+
+            try
+            {
+                // Convert txtGrandTotal to double
+                double grandTotal;
+
+                // Check if txtGrandTotal is not empty and contains valid data
+                if (double.TryParse(txtGrandTotal.Text, out grandTotal))
+                {
+                    // Get the current date
+                    DateTime currentDate = DateTime.Now;
+
+                    // Insert into the accountTbl
+
+                    string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date) VALUES (@TotalOrders, @Revenue, @Date)";
+                    SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery);
+                    insertAccountCmd.Parameters.AddWithValue("@TotalOrders", totalUnits);
+                    insertAccountCmd.Parameters.AddWithValue("@Revenue", grandTotal);
+                    insertAccountCmd.Parameters.AddWithValue("@Date", currentDate);
+
+                    // Execute the insert query using Functions class
+                    int rowsAffectedInsertAccount = con.insertData(insertAccountCmd);
+
+                    // Check if the insert was successful
+                    if (rowsAffectedInsertAccount > 0)
+                    {
+                       // MessageBox.Show("Revenue added to account successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to add revenue to account.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show("Total amount is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            */
+            /////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+            // Clear the order table
+            SqlCommand clearOrderCmd = new SqlCommand("DELETE FROM OrderTbl");
+            try
+            {
+                con.insertData(clearOrderCmd);
+               // MessageBox.Show("Payment successful! Order cleared.", "Payment Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+      
+            showOrder();
+            showProduct();
+            rewardUsed = false;
+*/
+            /////////////////////////////////////////////////////////////////////////////////////////////
             try
             {
                 // Get the parent form (StaffDashboard)
                 StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
-
+                int totalUnit = CalculateTotalUnits();
                 // Call the LoadBkashFormIntoMainPanel method of the StaffDashboard form
-                staffDashboard.LoadBkashFormIntoMainPanel(new Bkash(txtGrandTotal.Text));
+                staffDashboard.LoadBkashFormIntoMainPanel(new Bkash(txtGrandTotal.Text, totalUnit));
 
                 // Hide the current form (OrderForm)
                 this.Hide();
@@ -594,6 +694,81 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message);
             }
 
+        }
+
+        private int CalculateTotalUnits()
+        {
+            int totalUnits = 0;
+
+            // Iterate through each row in dgvOrder and sum up the OUnit
+            foreach (DataGridViewRow row in dgvOrder.Rows)
+            {
+                totalUnits += Convert.ToInt32(row.Cells[2].Value); // OUnit
+            }
+
+            return totalUnits;
+        }
+
+        public void RemoveOrder()
+        {
+            try
+            {
+                using (var con = DatabaseConnection.databaseConnect())
+                {
+                    con.Open();
+
+                    // Fetch all rows from OrderTbl
+                    string selectOrdersQuery = "SELECT OName, OUnit FROM OrderTbl";
+                    SqlCommand selectOrdersCmd = new SqlCommand(selectOrdersQuery, con);
+
+                    // Create a list to store the data
+                    List<Tuple<string, int>> orders = new List<Tuple<string, int>>();
+
+                    // Execute the query and store the results
+                    using (SqlDataReader reader = selectOrdersCmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string productName = reader.GetString(0);
+                            int orderUnit = reader.GetInt32(1);
+                            orders.Add(new Tuple<string, int>(productName, orderUnit));
+                        }
+                    }
+
+                    // Close the SqlDataReader before executing the next command
+                    selectOrdersCmd.Dispose();
+
+                    // Restock each medicine in InventoryTbl
+                    foreach (var order in orders)
+                    {
+                        string productName = order.Item1;
+                        int orderUnit = order.Item2;
+
+                        // Restock the medicine in InventoryTbl
+                        string restockQuery = "UPDATE InventoryTbl SET PStock = PStock + @OrderUnit WHERE PName = @ProductName";
+                        SqlCommand restockCmd = new SqlCommand(restockQuery, con);
+                        restockCmd.Parameters.AddWithValue("@OrderUnit", orderUnit);
+                        restockCmd.Parameters.AddWithValue("@ProductName", productName);
+                        restockCmd.ExecuteNonQuery();
+                    }
+
+                    // Remove all records from OrderTbl
+                    string clearOrderQuery = "DELETE FROM OrderTbl";
+                    SqlCommand clearOrderCmd = new SqlCommand(clearOrderQuery, con);
+                    clearOrderCmd.ExecuteNonQuery();
+
+                    MessageBox.Show("All medicines removed from the order and restocked.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Refresh the dgvOrder
+            showOrder();
+            showProduct();
+            UpdateTotalAmount();
         }
     }
 }
