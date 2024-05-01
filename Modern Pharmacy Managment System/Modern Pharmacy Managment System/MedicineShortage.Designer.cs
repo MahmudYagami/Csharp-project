@@ -40,6 +40,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnClose = new Guna.UI2.WinForms.Guna2ImageButton();
             this.txtId = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@ namespace Modern_Pharmacy_Managment_System
             this.label5 = new System.Windows.Forms.Label();
             this.warningMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.informationMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicineShortage)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +93,7 @@ namespace Modern_Pharmacy_Managment_System
             this.dgvMedicineShortage.Name = "dgvMedicineShortage";
             this.dgvMedicineShortage.ReadOnly = true;
             this.dgvMedicineShortage.RowHeadersVisible = false;
+            this.dgvMedicineShortage.RowTemplate.Height = 30;
             this.dgvMedicineShortage.Size = new System.Drawing.Size(893, 362);
             this.dgvMedicineShortage.TabIndex = 1;
             this.dgvMedicineShortage.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
@@ -114,7 +115,7 @@ namespace Modern_Pharmacy_Managment_System
             this.dgvMedicineShortage.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvMedicineShortage.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvMedicineShortage.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvMedicineShortage.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvMedicineShortage.ThemeStyle.RowsStyle.Height = 30;
             this.dgvMedicineShortage.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
             this.dgvMedicineShortage.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvMedicineShortage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicineShortage_CellContentClick);
@@ -167,6 +168,16 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(917, 78);
             this.guna2Panel2.TabIndex = 3;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(363, 28);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(207, 24);
+            this.guna2HtmlLabel1.TabIndex = 2;
+            this.guna2HtmlLabel1.Text = "Medicine Shortage List";
             // 
             // btnClose
             // 
@@ -371,16 +382,6 @@ namespace Modern_Pharmacy_Managment_System
             this.informationMessage.Parent = this;
             this.informationMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.informationMessage.Text = "Medicine succesfully added to the stock.";
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(363, 28);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(207, 24);
-            this.guna2HtmlLabel1.TabIndex = 2;
-            this.guna2HtmlLabel1.Text = "Medicine Shortage List";
             // 
             // MedicineShortage
             // 
