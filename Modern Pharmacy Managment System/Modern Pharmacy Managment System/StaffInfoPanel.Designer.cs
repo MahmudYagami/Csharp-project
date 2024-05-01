@@ -53,37 +53,35 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblSellingAmount = new System.Windows.Forms.Label();
             this.lblSellingAmount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblTotalInvoices = new System.Windows.Forms.Label();
-            this.lblTodaysMedicineSale = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblTotalInvoices = new System.Windows.Forms.Label();
+            this.lblTodaysMedicineSale = new System.Windows.Forms.Label();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblBkash = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lblCash = new System.Windows.Forms.Label();
-            this.lblBkash = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel6.SuspendLayout();
@@ -366,7 +364,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(400, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 21);
+            this.label3.Size = new System.Drawing.Size(223, 23);
             this.label3.TabIndex = 1;
             this.label3.Text = "Total Amount Earned ";
             // 
@@ -388,7 +386,7 @@ namespace Modern_Pharmacy_Managment_System
             this.lblSellingAmount.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSellingAmount.Location = new System.Drawing.Point(456, 56);
             this.lblSellingAmount.Name = "lblSellingAmount";
-            this.lblSellingAmount.Size = new System.Drawing.Size(53, 38);
+            this.lblSellingAmount.Size = new System.Drawing.Size(64, 47);
             this.lblSellingAmount.TabIndex = 0;
             this.lblSellingAmount.Text = "14";
             // 
@@ -423,7 +421,7 @@ namespace Modern_Pharmacy_Managment_System
             this.lblDate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(324, 10);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(63, 25);
+            this.lblDate.Size = new System.Drawing.Size(81, 30);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "D           A      T          E";
             // 
@@ -436,26 +434,6 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(158, 32);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Quick Report";
-            // 
-            // lblTotalInvoices
-            // 
-            this.lblTotalInvoices.AutoSize = true;
-            this.lblTotalInvoices.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalInvoices.Location = new System.Drawing.Point(268, 56);
-            this.lblTotalInvoices.Name = "lblTotalInvoices";
-            this.lblTotalInvoices.Size = new System.Drawing.Size(64, 47);
-            this.lblTotalInvoices.TabIndex = 0;
-            this.lblTotalInvoices.Text = "14";
-            // 
-            // lblTodaysMedicineSale
-            // 
-            this.lblTodaysMedicineSale.AutoSize = true;
-            this.lblTodaysMedicineSale.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodaysMedicineSale.Location = new System.Drawing.Point(73, 56);
-            this.lblTodaysMedicineSale.Name = "lblTodaysMedicineSale";
-            this.lblTodaysMedicineSale.Size = new System.Drawing.Size(64, 47);
-            this.lblTodaysMedicineSale.TabIndex = 0;
-            this.lblTodaysMedicineSale.Text = "14";
             // 
             // guna2Panel4
             // 
@@ -475,7 +453,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(64, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 21);
+            this.label1.Size = new System.Drawing.Size(175, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Visit Inventory  >>";
             this.label1.Click += new System.EventHandler(this.btnInventory_Click);
@@ -501,7 +479,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(42, 85);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(167, 21);
+            this.label8.Size = new System.Drawing.Size(208, 23);
             this.label8.TabIndex = 1;
             this.label8.Text = "Medicines Available";
             // 
@@ -518,13 +496,23 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2PictureBox4.TabStop = false;
             this.guna2PictureBox4.UseTransparentBackground = true;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(-17, 50);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(64, 47);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "14";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(102, 42);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 38);
+            this.label11.Size = new System.Drawing.Size(64, 47);
             this.label11.TabIndex = 0;
             this.label11.Text = "14";
             // 
@@ -546,7 +534,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(64, 124);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(140, 21);
+            this.label12.Size = new System.Drawing.Size(175, 28);
             this.label12.TabIndex = 1;
             this.label12.Text = "Visit Inventory  >>";
             this.label12.Click += new System.EventHandler(this.btnInventory_Click);
@@ -564,6 +552,22 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel11.Size = new System.Drawing.Size(264, 115);
             this.guna2Panel11.TabIndex = 0;
             // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(-55, 96);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(119, 18);
+            this.guna2HtmlLabel2.TabIndex = 2;
+            this.guna2HtmlLabel2.Text = "Total Sales in Cash";
+            // 
+            // guna2Panel16
+            // 
+            this.guna2Panel16.Location = new System.Drawing.Point(-64, -23);
+            this.guna2Panel16.Name = "guna2Panel16";
+            this.guna2Panel16.Size = new System.Drawing.Size(200, 100);
+            this.guna2Panel16.TabIndex = 5;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -572,7 +576,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(42, 85);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(167, 21);
+            this.label13.Size = new System.Drawing.Size(208, 23);
             this.label13.TabIndex = 1;
             this.label13.Text = "Medicines Available";
             // 
@@ -595,35 +599,29 @@ namespace Modern_Pharmacy_Managment_System
             this.label14.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(102, 42);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 38);
+            this.label14.Size = new System.Drawing.Size(64, 47);
             this.label14.TabIndex = 0;
             this.label14.Text = "14";
             // 
-            // guna2Panel16
+            // lblTotalInvoices
             // 
-            this.guna2Panel16.Location = new System.Drawing.Point(-64, -23);
-            this.guna2Panel16.Name = "guna2Panel16";
-            this.guna2Panel16.Size = new System.Drawing.Size(200, 100);
-            this.guna2Panel16.TabIndex = 5;
+            this.lblTotalInvoices.AutoSize = true;
+            this.lblTotalInvoices.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalInvoices.Location = new System.Drawing.Point(268, 56);
+            this.lblTotalInvoices.Name = "lblTotalInvoices";
+            this.lblTotalInvoices.Size = new System.Drawing.Size(64, 47);
+            this.lblTotalInvoices.TabIndex = 0;
+            this.lblTotalInvoices.Text = "14";
             // 
-            // label15
+            // lblTodaysMedicineSale
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(-17, 50);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 38);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "14";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(-55, 96);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(121, 19);
-            this.guna2HtmlLabel2.TabIndex = 2;
-            this.guna2HtmlLabel2.Text = "Total Sales in Cash";
+            this.lblTodaysMedicineSale.AutoSize = true;
+            this.lblTodaysMedicineSale.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodaysMedicineSale.Location = new System.Drawing.Point(73, 56);
+            this.lblTodaysMedicineSale.Name = "lblTodaysMedicineSale";
+            this.lblTodaysMedicineSale.Size = new System.Drawing.Size(64, 47);
+            this.lblTodaysMedicineSale.TabIndex = 0;
+            this.lblTodaysMedicineSale.Text = "14";
             // 
             // guna2Panel12
             // 
@@ -638,6 +636,46 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel12.Size = new System.Drawing.Size(286, 154);
             this.guna2Panel12.TabIndex = 6;
             // 
+            // lblBkash
+            // 
+            this.lblBkash.AutoSize = true;
+            this.lblBkash.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBkash.Location = new System.Drawing.Point(182, 56);
+            this.lblBkash.Name = "lblBkash";
+            this.lblBkash.Size = new System.Drawing.Size(64, 47);
+            this.lblBkash.TabIndex = 9;
+            this.lblBkash.Text = "18";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(155, 110);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(159, 23);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Bkash Payment";
+            // 
+            // lblCash
+            // 
+            this.lblCash.AutoSize = true;
+            this.lblCash.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCash.Location = new System.Drawing.Point(36, 56);
+            this.lblCash.Name = "lblCash";
+            this.lblCash.Size = new System.Drawing.Size(64, 47);
+            this.lblCash.TabIndex = 8;
+            this.lblCash.Text = "18";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(13, 110);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(154, 23);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Cash Payment";
+            // 
             // guna2Panel15
             // 
             this.guna2Panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
@@ -648,62 +686,22 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel15.Size = new System.Drawing.Size(286, 46);
             this.guna2Panel15.TabIndex = 7;
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(13, 110);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(124, 21);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Cash Payment";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(155, 110);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(128, 21);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Bkash Payment";
-            // 
-            // lblCash
-            // 
-            this.lblCash.AutoSize = true;
-            this.lblCash.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCash.Location = new System.Drawing.Point(36, 56);
-            this.lblCash.Name = "lblCash";
-            this.lblCash.Size = new System.Drawing.Size(53, 38);
-            this.lblCash.TabIndex = 8;
-            this.lblCash.Text = "18";
-            // 
-            // lblBkash
-            // 
-            this.lblBkash.AutoSize = true;
-            this.lblBkash.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBkash.Location = new System.Drawing.Point(182, 56);
-            this.lblBkash.Name = "lblBkash";
-            this.lblBkash.Size = new System.Drawing.Size(53, 38);
-            this.lblBkash.TabIndex = 9;
-            this.lblBkash.Text = "18";
-            // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(63, 11);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(152, 23);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(190, 25);
             this.guna2HtmlLabel3.TabIndex = 0;
             this.guna2HtmlLabel3.Text = "Payment Category ";
             // 
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(445, 632);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(356, 494);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(116, 19);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(108, 18);
             this.guna2HtmlLabel4.TabIndex = 7;
             this.guna2HtmlLabel4.Text = "guna2HtmlLabel4";
             // 

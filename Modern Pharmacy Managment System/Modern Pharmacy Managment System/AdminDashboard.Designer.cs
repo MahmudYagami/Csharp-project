@@ -209,7 +209,7 @@ namespace Modern_Pharmacy_Managment_System
             this.TodayBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.TodayBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TodayBtn.ForeColor = System.Drawing.Color.White;
-            this.TodayBtn.Location = new System.Drawing.Point(680, 278);
+            this.TodayBtn.Location = new System.Drawing.Point(600, 231);
             this.TodayBtn.Name = "TodayBtn";
             this.TodayBtn.Size = new System.Drawing.Size(71, 29);
             this.TodayBtn.TabIndex = 8;
@@ -223,7 +223,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Last7DaysBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.Last7DaysBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Last7DaysBtn.ForeColor = System.Drawing.Color.White;
-            this.Last7DaysBtn.Location = new System.Drawing.Point(757, 279);
+            this.Last7DaysBtn.Location = new System.Drawing.Point(677, 232);
             this.Last7DaysBtn.Name = "Last7DaysBtn";
             this.Last7DaysBtn.Size = new System.Drawing.Size(107, 29);
             this.Last7DaysBtn.TabIndex = 9;
@@ -237,7 +237,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Last30DaysBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.Last30DaysBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Last30DaysBtn.ForeColor = System.Drawing.Color.White;
-            this.Last30DaysBtn.Location = new System.Drawing.Point(870, 279);
+            this.Last30DaysBtn.Location = new System.Drawing.Point(790, 232);
             this.Last30DaysBtn.Name = "Last30DaysBtn";
             this.Last30DaysBtn.Size = new System.Drawing.Size(105, 29);
             this.Last30DaysBtn.TabIndex = 10;
@@ -251,7 +251,7 @@ namespace Modern_Pharmacy_Managment_System
             this.LastYearsBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.LastYearsBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LastYearsBtn.ForeColor = System.Drawing.Color.White;
-            this.LastYearsBtn.Location = new System.Drawing.Point(981, 278);
+            this.LastYearsBtn.Location = new System.Drawing.Point(901, 231);
             this.LastYearsBtn.Name = "LastYearsBtn";
             this.LastYearsBtn.Size = new System.Drawing.Size(93, 29);
             this.LastYearsBtn.TabIndex = 11;
@@ -264,7 +264,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel4.BorderRadius = 64;
             this.guna2Panel4.Controls.Add(this.label4);
             this.guna2Panel4.Controls.Add(this.guna2Panel5);
-            this.guna2Panel4.Location = new System.Drawing.Point(680, 312);
+            this.guna2Panel4.Location = new System.Drawing.Point(600, 265);
             this.guna2Panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(394, 131);
