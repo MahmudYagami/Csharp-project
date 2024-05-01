@@ -282,8 +282,8 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeList.Name = "EmployeeList";
             this.EmployeeList.RowHeadersVisible = false;
             this.EmployeeList.RowHeadersWidth = 51;
-            this.EmployeeList.RowTemplate.Height = 24;
-            this.EmployeeList.Size = new System.Drawing.Size(1159, 238);
+            this.EmployeeList.RowTemplate.Height = 40;
+            this.EmployeeList.Size = new System.Drawing.Size(1215, 238);
             this.EmployeeList.TabIndex = 23;
             this.EmployeeList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.FeterRiver;
             this.EmployeeList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
@@ -304,7 +304,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.EmployeeList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.EmployeeList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.EmployeeList.ThemeStyle.RowsStyle.Height = 24;
+            this.EmployeeList.ThemeStyle.RowsStyle.Height = 40;
             this.EmployeeList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
             this.EmployeeList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.EmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeList_CellContentClick);
