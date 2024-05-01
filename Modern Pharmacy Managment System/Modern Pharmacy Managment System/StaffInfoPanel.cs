@@ -38,6 +38,8 @@ namespace Modern_Pharmacy_Managment_System
 
             MedicineInfo();
 
+            paymentType();
+
         }
 
         public void showInformation()
@@ -215,6 +217,48 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void paymentType()
+        {
+            try
+            {
+                // Get today's date
+                DateTime today = DateTime.Today;
+
+                // Initialize the sums for cash and bkash
+                double cashSum = 0;
+                double bkashSum = 0;
+
+                // Open a connection to the database
+                using (var con = DatabaseConnection.databaseConnect())
+                {
+                    con.Open();
+
+                    // Query for cash sum (where CustomerPhone is null)
+                    SqlCommand cashCmd = new SqlCommand("SELECT ISNULL(SUM(Revenue), 0) FROM AccountTbl WHERE CONVERT(date, Date) = @Today AND CustomerPhone IS NULL AND EmpId = @EmpId", con);
+                    cashCmd.Parameters.AddWithValue("@Today", today);
+                    cashCmd.Parameters.AddWithValue("@EmpId", Login.EmpId);
+                    object cashResult = cashCmd.ExecuteScalar();
+                    cashSum = cashResult != DBNull.Value ? Convert.ToDouble(cashResult) : 0;
+
+                    // Query for bkash sum (where CustomerPhone is not null)
+                    SqlCommand bkashCmd = new SqlCommand("SELECT ISNULL(SUM(Revenue), 0) FROM AccountTbl WHERE CONVERT(date, Date) = @Today AND CustomerPhone IS NOT NULL AND EmpId = @EmpId", con);
+                    bkashCmd.Parameters.AddWithValue("@Today", today);
+                    bkashCmd.Parameters.AddWithValue("@EmpId", Login.EmpId);
+                    object bkashResult = bkashCmd.ExecuteScalar();
+                    bkashSum = bkashResult != DBNull.Value ? Convert.ToDouble(bkashResult) : 0;
+
+                    // Update the labels
+                    lblCash.Text = cashSum.ToString();
+                    lblBkash.Text = bkashSum.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
 
         private void DateTimeLabel()

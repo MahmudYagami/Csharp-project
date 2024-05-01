@@ -15,12 +15,19 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class Bkash : Form
     {
-        public Bkash(string Amount, int totalUnit)
+        private string userType;
+        private string customerPhone;
+        public Bkash(string Amount, int totalUnit, string type)
         {
             InitializeComponent();       
             lblAmount.Text = Amount;
             lblUnit.Text = totalUnit.ToString();
             lblUnit.Visible = false;
+            Login login = Login.GetInstance();
+            customerPhone = login.getCustomerPhone();
+            userType = type;
+             
+
         }
 
         private void txtPhone_TextChanged(object sender, EventArgs e)
@@ -31,77 +38,73 @@ namespace Modern_Pharmacy_Managment_System
         {
             try
             {
-                // Initialize SqlConnection with the connection string
-                using (var con = DatabaseConnection.databaseConnect())
+                // Convert lblAmount text to double
+                double grandTotal;
+
+                // Check if lblAmount text is not empty and contains valid data
+                if (double.TryParse(lblAmount.Text, out grandTotal))
                 {
-                    // Convert lblAmount text to double
-                    double grandTotal;
+                    // Get the current date
+                    DateTime currentDate = DateTime.Now;
 
-                    // Check if lblAmount text is not empty and contains valid data
-                    if (double.TryParse(lblAmount.Text, out grandTotal))
+                    // Initialize SqlConnection with the connection string
+                    using (var con = DatabaseConnection.databaseConnect())
                     {
-                        // Get the current date
-                        DateTime currentDate = DateTime.Now;
-
                         // Open the connection
                         con.Open();
 
                         int totalUnit = int.Parse(lblUnit.Text);
-                        // Insert into the accountTbl
-                        int EmployeeID = Login.EmpId;
 
-                        string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date, EmpId) VALUES (@TotalOrders, @Revenue, @Date, @EmpId)";
-                        SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery);
-                        insertAccountCmd.Parameters.AddWithValue("@TotalOrders", totalUnit);
-                        insertAccountCmd.Parameters.AddWithValue("@Revenue", grandTotal);
-                        insertAccountCmd.Parameters.AddWithValue("@Date", currentDate);
-                        insertAccountCmd.Parameters.AddWithValue("@EmpId", EmployeeID);
+                        if(userType == "Employee")
+                        {
+                            // Insert into the accountTbl
+                            int EmployeeID = Login.EmpId;
+                            string customerPhone = txtPhone.Text;
+                            string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date, EmpId,CustomerPhone) VALUES (@TotalOrders, @Revenue, @Date, @EmpId,@CustomerPhone)";
+                            SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery, con); // Pass the connection to the SqlCommand constructor
+                            insertAccountCmd.Parameters.AddWithValue("@TotalOrders", totalUnit);
+                            insertAccountCmd.Parameters.AddWithValue("@Revenue", grandTotal);
+                            insertAccountCmd.Parameters.AddWithValue("@Date", currentDate);
+                            insertAccountCmd.Parameters.AddWithValue("@EmpId", EmployeeID);
+                            insertAccountCmd.Parameters.AddWithValue("@CustomerPhone", customerPhone);
 
-                        // Execute the insert query
-                        insertAccountCmd.ExecuteNonQuery();
-                        // Close the connection
-                        //con.Close();
+                            // Execute the insert query
+                            insertAccountCmd.ExecuteNonQuery();
+                        }
+                        else
+                        {                          
+                            string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date, CustomerPhone) VALUES (@TotalOrders, @Revenue, @Date, @CustomerPhone)";
+                            SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery, con); // Pass the connection to the SqlCommand constructor
+                            insertAccountCmd.Parameters.AddWithValue("@TotalOrders", totalUnit);
+                            insertAccountCmd.Parameters.AddWithValue("@Revenue", grandTotal);
+                            insertAccountCmd.Parameters.AddWithValue("@Date", currentDate);
+                            insertAccountCmd.Parameters.AddWithValue("@CustomerPhone", customerPhone);
+
+                            // Execute the insert query
+                            insertAccountCmd.ExecuteNonQuery();
+                        }
+                        
 
                         // Clear the order table
+                        SqlCommand clearOrderCmd = new SqlCommand("DELETE FROM OrderTbl", con); // Pass the connection to the SqlCommand constructor
+                        clearOrderCmd.ExecuteNonQuery();
 
-                        try
-                        {
-                            
-                              //con.Open();
-                                SqlCommand clearOrderCmd = new SqlCommand("DELETE FROM OrderTbl", con); // Pass the connection to the SqlCommand constructor
-                                clearOrderCmd.ExecuteNonQuery();
-                                con.Close();
-
-                                MessageBox.Show("Payment successful! Order cleared.", "Payment Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-
-                            con.Close();
-                        }
-
-
-                        // Clear TextBox
-                        OrderForm orderForm = new OrderForm();
-
-                        orderForm.txtCustomerName.Text = "";
-                        orderForm.txtCName.Text = "";
-                        orderForm.txtCPhone.Text = "";
-                        orderForm.txtRewards.Text = "";
-                        orderForm.txtGrandTotal.Text = "";
-                        orderForm.txtTotalAmount.Text = "";
-
-                 
+                        MessageBox.Show("Payment successful! Order cleared.", "Payment Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else
-                    {
-                        MessageBox.Show("Total amount is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+
+                    // Clear TextBox
+                    OrderForm orderForm = new OrderForm();
+
+                    orderForm.txtCustomerName.Text = "";
+                    orderForm.txtCName.Text = "";
+                    orderForm.txtCPhone.Text = "";
+                    orderForm.txtRewards.Text = "";
+                    orderForm.txtGrandTotal.Text = "";
+                    orderForm.txtTotalAmount.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Total amount is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -109,6 +112,7 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             string phoneNumber = txtPhone.Text;
@@ -126,14 +130,17 @@ namespace Modern_Pharmacy_Managment_System
             }
 
             addRevenue();
+            lblAmount.Text = "";
+            txtPhone.Text = "";
+            txtPin.Text = "";
             /*
             Login login = new Login();
             login.Show();
             this.Hide();
             */
-           // StaffDashboard of=  new StaffDashboard();
-         //   of.Show();
-         //   this.Close();
+            // StaffDashboard of=  new StaffDashboard();
+            //   of.Show();
+            //   this.Close();
 
         }
     }
