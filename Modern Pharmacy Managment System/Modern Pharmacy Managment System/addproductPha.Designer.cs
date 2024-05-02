@@ -299,6 +299,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invDeletebtn.Size = new System.Drawing.Size(100, 37);
             this.invDeletebtn.TabIndex = 35;
             this.invDeletebtn.Text = "Delete";
+            this.invDeletebtn.Click += new System.EventHandler(this.invDeletebtn_Click);
             // 
             // invClearbtn
             // 
@@ -314,6 +315,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invClearbtn.Size = new System.Drawing.Size(100, 37);
             this.invClearbtn.TabIndex = 34;
             this.invClearbtn.Text = "Clear";
+            this.invClearbtn.Click += new System.EventHandler(this.invClearbtn_Click);
             // 
             // invAddbtn
             // 
@@ -330,6 +332,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invAddbtn.TabIndex = 33;
             this.invAddbtn.Text = "Add";
             this.invAddbtn.Click += new System.EventHandler(this.invAddbtn_Click_1);
+            this.invAddbtn.Click += new System.EventHandler(this.invAddbtn_Click_1);
             // 
             // invUpdatebtn
             // 
@@ -345,6 +348,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invUpdatebtn.Size = new System.Drawing.Size(100, 37);
             this.invUpdatebtn.TabIndex = 32;
             this.invUpdatebtn.Text = "Update";
+            this.invUpdatebtn.Click += new System.EventHandler(this.invUpdatebtn_Click);
             // 
             // guna2HtmlLabel7
             // 

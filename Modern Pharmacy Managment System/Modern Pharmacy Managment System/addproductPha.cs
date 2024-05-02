@@ -52,11 +52,6 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void invAddbtn_Click(object sender, EventArgs e)
-        {
-           
-
-        }
 
         private void prdtview_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -81,103 +76,6 @@ namespace Modern_Pharmacy_Managment_System
                 invStockplace.Text = stock;
                 invSellingplace.Text = sellingPrice;
                 invBuyingplace.Text = buyingPrice;
-            }
-        }
-
-        private void invUpdatebtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (invprdIdplace.Text == "")
-                {
-                    MessageBox.Show("Please select a product to update", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-                    string updateQuery = @"UPDATE InventoryTbl 
-                                   SET PName = @PName, 
-                                       PCompanyName = @PCompanyName, 
-                                       PGeneric = @PGeneric, 
-                                       PStock = @PStock, 
-                                       PBuyingPrice = @PBuyingPrice, 
-                                       PSellingPrice = @PSellingPrice 
-                                   WHERE PId = @PId";
-
-                    using (SqlCommand cmd = new SqlCommand(updateQuery, con))
-                    {
-                        cmd.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PName", invPdrNameplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PCompanyName", invCompanyplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PGeneric", invGenericplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PStock", invStockplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PBuyingPrice", invSellingplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PSellingPrice", invBuyingplace.Text.Trim());
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Product updated successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Refresh the DataGridView after update
-                            ShowDataOnGrid();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No records updated", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void invDeletebtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (invprdIdplace.Text == "")
-                {
-                    MessageBox.Show("Please select a product to delete", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this product?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    using (SqlConnection con = new SqlConnection(connectionString))
-                    {
-                        con.Open();
-                        string deleteQuery = "DELETE FROM InventoryTbl WHERE PId = @PId";
-
-                        using (SqlCommand cmd = new SqlCommand(deleteQuery, con))
-                        {
-                            cmd.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
-
-                            int rowsAffected = cmd.ExecuteNonQuery();
-                            if (rowsAffected > 0)
-                            {
-                                MessageBox.Show("Product deleted successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                // Refresh the DataGridView after deletion
-                                ShowDataOnGrid();
-                                // Clear the TextBoxes after deletion
-                                ClearTextBoxes();
-                            }
-                            else
-                            {
-                                MessageBox.Show("No records deleted", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -227,6 +125,117 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void searchPrdt_TextChanged(object sender, EventArgs e)
+        {
+            string searchTerm = searchPrdt.Text.Trim();
+            ShowDataOnGrid(searchTerm);
+
+        }
+
+        private void invAddbtn_Click_1(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void invUpdatebtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (invprdIdplace.Text == "")
+                {
+                    MessageBox.Show("Please select a product to update", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string updateQuery = @"UPDATE InventoryTbl 
+                                   SET PName = @PName, 
+                                       PCompanyName = @PCompanyName, 
+                                       PGeneric = @PGeneric, 
+                                       PStock = @PStock, 
+                                       PBuyingPrice = @PBuyingPrice, 
+                                       PSellingPrice = @PSellingPrice 
+                                   WHERE PId = @PId";
+
+                    using (SqlCommand cmd = new SqlCommand(updateQuery, con))
+                    {
+                        cmd.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PName", invPdrNameplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PCompanyName", invCompanyplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PGeneric", invGenericplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PStock", invStockplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PBuyingPrice", invBuyingplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PSellingPrice", invSellingplace.Text.Trim());
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Product updated successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // Refresh the DataGridView after update
+                            ShowDataOnGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No records updated", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void invDeletebtn_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (invprdIdplace.Text == "")
+                {
+                    MessageBox.Show("Please select a product to delete", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this product?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        con.Open();
+                        string deleteQuery = "DELETE FROM InventoryTbl WHERE PId = @PId";
+
+                        using (SqlCommand cmd = new SqlCommand(deleteQuery, con))
+                        {
+                            cmd.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Product deleted successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                // Refresh the DataGridView after deletion
+                                ShowDataOnGrid();
+                                // Clear the TextBoxes after deletion
+                                ClearTextBoxes();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No records deleted", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void invClearbtn_Click(object sender, EventArgs e)
         {
             ClearTextBoxes();
