@@ -29,10 +29,10 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PSellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PBuyingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,8 +117,8 @@ namespace Modern_Pharmacy_Managment_System
             // PId
             // 
             this.PId.DataPropertyName = "PId";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.PId.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.PId.DefaultCellStyle = dataGridViewCellStyle13;
             this.PId.HeaderText = "Product Id";
             this.PId.Name = "PId";
             this.PId.ReadOnly = true;
@@ -169,21 +169,21 @@ namespace Modern_Pharmacy_Managment_System
             this.prdtview.AllowUserToAddRows = false;
             this.prdtview.AllowUserToDeleteRows = false;
             this.prdtview.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.prdtview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            this.prdtview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.prdtview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.prdtview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             this.prdtview.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.prdtview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.prdtview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.prdtview.ColumnHeadersHeight = 45;
             this.prdtview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.prdtview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -194,14 +194,14 @@ namespace Modern_Pharmacy_Managment_System
             this.PStock,
             this.PBuyingPrice,
             this.PSellingPrice});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.prdtview.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.prdtview.DefaultCellStyle = dataGridViewCellStyle16;
             this.prdtview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.prdtview.Location = new System.Drawing.Point(0, 3);
             this.prdtview.Name = "prdtview";
@@ -284,6 +284,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invDeletebtn.Size = new System.Drawing.Size(75, 30);
             this.invDeletebtn.TabIndex = 35;
             this.invDeletebtn.Text = "Delete";
+            this.invDeletebtn.Click += new System.EventHandler(this.invDeletebtn_Click);
             // 
             // invClearbtn
             // 
@@ -298,6 +299,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invClearbtn.Size = new System.Drawing.Size(75, 30);
             this.invClearbtn.TabIndex = 34;
             this.invClearbtn.Text = "Clear";
+            this.invClearbtn.Click += new System.EventHandler(this.invClearbtn_Click);
             // 
             // invAddbtn
             // 
@@ -312,6 +314,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invAddbtn.Size = new System.Drawing.Size(75, 30);
             this.invAddbtn.TabIndex = 33;
             this.invAddbtn.Text = "Add";
+            this.invAddbtn.Click += new System.EventHandler(this.invAddbtn_Click_1);
             // 
             // invUpdatebtn
             // 
@@ -326,6 +329,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invUpdatebtn.Size = new System.Drawing.Size(75, 30);
             this.invUpdatebtn.TabIndex = 32;
             this.invUpdatebtn.Text = "Update";
+            this.invUpdatebtn.Click += new System.EventHandler(this.invUpdatebtn_Click);
             // 
             // guna2HtmlLabel7
             // 
