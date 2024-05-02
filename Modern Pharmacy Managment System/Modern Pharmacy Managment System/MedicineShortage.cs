@@ -22,6 +22,9 @@ namespace Modern_Pharmacy_Managment_System
             // DisplayMedicineShortage();
             Con = new Functions();
             showMedicineList();
+
+            StaffInfoPanel sip = new StaffInfoPanel();
+            sip.refreshInfo();
         }
 
 
@@ -147,8 +150,7 @@ namespace Modern_Pharmacy_Managment_System
                         insertCmd.Parameters.AddWithValue("@Date", DateTime.Now.Date);
                         insertCmd.ExecuteNonQuery();
 
-                        showMedicineList();
-                        
+                        showMedicineList();                      
                         informationMessage.Show("Restock Successful");
                     }
                 }

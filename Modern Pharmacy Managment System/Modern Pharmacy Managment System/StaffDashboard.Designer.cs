@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDashboard));
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDropdown = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnLeave = new Guna.UI2.WinForms.Guna2Button();
             this.mainPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnDropdown = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel3.SuspendLayout();
@@ -67,6 +67,24 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1128, 65);
             this.guna2Panel2.TabIndex = 1;
+            // 
+            // btnDropdown
+            // 
+            this.btnDropdown.BackColor = System.Drawing.Color.Transparent;
+            this.btnDropdown.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnDropdown.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnDropdown.HoverState.ImageSize = new System.Drawing.Size(29, 29);
+            this.btnDropdown.Image = ((System.Drawing.Image)(resources.GetObject("btnDropdown.Image")));
+            this.btnDropdown.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnDropdown.ImageRotate = 0F;
+            this.btnDropdown.ImageSize = new System.Drawing.Size(27, 27);
+            this.btnDropdown.Location = new System.Drawing.Point(1076, 15);
+            this.btnDropdown.Name = "btnDropdown";
+            this.btnDropdown.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnDropdown.PressedState.ImageSize = new System.Drawing.Size(27, 27);
+            this.btnDropdown.Size = new System.Drawing.Size(40, 42);
+            this.btnDropdown.TabIndex = 5;
+            this.btnDropdown.UseTransparentBackground = true;
             // 
             // guna2PictureBox1
             // 
@@ -94,13 +112,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(56, 18);
+            this.label1.Location = new System.Drawing.Point(47, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 30);
+            this.label1.Size = new System.Drawing.Size(154, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Pharma One";
+            this.label1.Text = "Neuron Pharma";
             // 
             // guna2PictureBox2
             // 
@@ -340,25 +358,6 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(917, 652);
             this.mainPanel.TabIndex = 3;
-            // 
-            // btnDropdown
-            // 
-            this.btnDropdown.BackColor = System.Drawing.Color.Transparent;
-            this.btnDropdown.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnDropdown.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnDropdown.HoverState.ImageSize = new System.Drawing.Size(29, 29);
-            this.btnDropdown.Image = ((System.Drawing.Image)(resources.GetObject("btnDropdown.Image")));
-            this.btnDropdown.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnDropdown.ImageRotate = 0F;
-            this.btnDropdown.ImageSize = new System.Drawing.Size(27, 27);
-            this.btnDropdown.Location = new System.Drawing.Point(1076, 15);
-            this.btnDropdown.Name = "btnDropdown";
-            this.btnDropdown.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnDropdown.PressedState.ImageSize = new System.Drawing.Size(27, 27);
-            this.btnDropdown.Size = new System.Drawing.Size(40, 42);
-            this.btnDropdown.TabIndex = 5;
-            this.btnDropdown.UseTransparentBackground = true;
-           
             // 
             // StaffDashboard
             // 

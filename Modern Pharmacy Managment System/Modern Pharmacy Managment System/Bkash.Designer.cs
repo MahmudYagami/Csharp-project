@@ -34,6 +34,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblUnit = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@ namespace Modern_Pharmacy_Managment_System
             this.txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblUnit = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -114,6 +114,14 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel3.Size = new System.Drawing.Size(338, 178);
             this.guna2Panel3.TabIndex = 2;
             // 
+            // lblUnit
+            // 
+            this.lblUnit.AutoSize = true;
+            this.lblUnit.Location = new System.Drawing.Point(55, 123);
+            this.lblUnit.Name = "lblUnit";
+            this.lblUnit.Size = new System.Drawing.Size(0, 17);
+            this.lblUnit.TabIndex = 2;
+            // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
@@ -143,9 +151,9 @@ namespace Modern_Pharmacy_Managment_System
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(144, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 21);
+            this.label4.Size = new System.Drawing.Size(132, 21);
             this.label4.TabIndex = 1;
-            this.label4.Text = "XYZ Pharmacy";
+            this.label4.Text = "Neuron Pharma";
             // 
             // label6
             // 
@@ -254,14 +262,6 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(917, 70);
             this.guna2Panel4.TabIndex = 3;
-            // 
-            // lblUnit
-            // 
-            this.lblUnit.AutoSize = true;
-            this.lblUnit.Location = new System.Drawing.Point(55, 123);
-            this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(0, 17);
-            this.lblUnit.TabIndex = 2;
             // 
             // Bkash
             // 

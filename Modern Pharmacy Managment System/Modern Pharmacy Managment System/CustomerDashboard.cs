@@ -81,5 +81,18 @@ namespace Modern_Pharmacy_Managment_System
         {
             
         }
+
+        public void LoadBkashFormIntoMainPanel(Object Form)
+        {
+            if (this.CustomPanel.Controls.Count > 0)
+                this.CustomPanel.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.CustomPanel.Controls.Add(f);
+            this.CustomPanel.Tag = f;
+            f.Show();
+
+        }
     }
 }
