@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
-
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Modern_Pharmacy_Managment_System
 {
     public partial class AdminDashboard : Form
     {
-
+        // Define enum for time ranges
         enum TimeRange
         {
             All,
@@ -25,45 +25,147 @@ namespace Modern_Pharmacy_Managment_System
             Last30Days,
             LastYear
         }
-        //hello world
-
 
         // Variable to store the current time range
         TimeRange currentTimeRange = TimeRange.All;
+
         public AdminDashboard()
         {
             InitializeComponent();
+            InitializeDashboard();
+            SetupButtonClickHandlers();
+           
+        }
+
+        private void InitializeDashboard()
+        {
+            // Populate initial data
+            PopulateEmployeeCount();
+            PopulateLeaveCount();
+            PopulateUnpaidEmployeeCount();
+            PopulateSalaryExpense();
+            PopulateRevenueChart();
+
+
+
+        }
+
+       
+
+
+        private void PopulateEmployeeCount()
+        {
             using (var con = DatabaseConnection.databaseConnect())
             {
                 con.Open();
-                SqlCommand cm = new SqlCommand("SELECT Count(*) From EmployeeTbl", con);              
+                SqlCommand cm = new SqlCommand("SELECT Count(*) From EmployeeTbl", con);
                 var totalEmployee = cm.ExecuteScalar();
                 lblEmployeeCnt.Text = totalEmployee.ToString();
+                con.Close();
+            }
+        }
 
-
-
-
-                SqlCommand cm2 = new SqlCommand("SELECT Count(*) From LeaveTbl  WHERE status = 'Approved'", con);
-                var totalLeave = cm2.ExecuteScalar();
+        private void PopulateLeaveCount()
+        {
+            using (var con = DatabaseConnection.databaseConnect())
+            {
+                con.Open();
+                SqlCommand cm = new SqlCommand("SELECT Count(*) From LeaveTbl  WHERE status = 'Approved'", con);
+                var totalLeave = cm.ExecuteScalar();
                 lblLeaveCnt.Text = totalLeave.ToString();
                 con.Close();
             }
-            UnpaidEmployee();
-            SalaryExpenseCount();
-            SetupButtonClickHandlers();
-
-
-
-
-
-
-            //  SqlConnection con2 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\RAFSAN\Desktop\StaffDb.mdf;Integrated Security=True;Connect Timeout=30");
-            /*con2.Open();
-            SqlCommand cm2 = new SqlCommand("SELECT Count(*) From LeaveTbl", con);
-            var totalCustomer2 = cm2.ExecuteScalar();
-            lblLeaveCnt.Text = totalCustomer2.ToString();*/
-            // con2.Close();
         }
+
+        private void PopulateUnpaidEmployeeCount()
+        {
+            try
+            {
+                using (var con = DatabaseConnection.databaseConnect())
+                {
+                    con.Open();
+                    SqlCommand cm = new SqlCommand(@"
+                        SELECT 
+                            (SELECT COUNT(DISTINCT EmpId) FROM EmployeeTbl) - 
+                            (SELECT COUNT(DISTINCT EmpId) FROM SalaryTbl) AS UnpaidEmployeeCount;", con);
+                    object unpaidEmployeeCount = cm.ExecuteScalar();
+                    if (unpaidEmployeeCount != null)
+                    {
+                        UnpaidEmpCnt.Text = unpaidEmployeeCount.ToString();
+                    }
+                    else
+                    {
+                        UnpaidEmpCnt.Text = "0";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void PopulateSalaryExpense()
+        {
+            try
+            {
+                SalaryExpenseCount();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+
+
+        private void PopulateRevenueChart()
+        {
+            try
+            {
+                using (var con = DatabaseConnection.databaseConnect())
+                {
+                    con.Open();
+                    SqlCommand cm = new SqlCommand("SELECT Date, SUM(Revenue) AS TotalRevenue FROM AccountTbl GROUP BY Date", con);
+                    SqlDataReader reader = cm.ExecuteReader();
+
+                    // Clear existing data points
+                    RevenueChart.Series["Revenue"].Points.Clear();
+
+                    while (reader.Read())
+                    {
+                        // Check if the Revenue field is not DBNull
+                        if (!reader.IsDBNull(reader.GetOrdinal("TotalRevenue")))
+                        {
+                            DateTime date = Convert.ToDateTime(reader["Date"]);
+                            double revenue = Convert.ToDouble(reader["TotalRevenue"]);
+
+                            // Add data point to the chart
+                            RevenueChart.Series["Revenue"].Points.AddXY(date.ToString("d MMM yyyy"), revenue);
+                        }
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         private void SetupButtonClickHandlers()
@@ -93,37 +195,7 @@ namespace Modern_Pharmacy_Managment_System
             };
         }
 
-
-        public void UnpaidEmployee()
-        {
-            try
-            {
-                using (var con = DatabaseConnection.databaseConnect())
-                {
-                    con.Open();
-                    SqlCommand cm = new SqlCommand(@"
-                SELECT 
-                    (SELECT COUNT(DISTINCT EmpId) FROM EmployeeTbl) - 
-                    (SELECT COUNT(DISTINCT EmpId) FROM SalaryTbl) AS UnpaidEmployeeCount;", con);
-                    object unpaidEmployeeCount = cm.ExecuteScalar();
-                    if (unpaidEmployeeCount != null)
-                    {
-                        UnpaidEmpCnt.Text = unpaidEmployeeCount.ToString();
-                    }
-                    else
-                    {
-                        UnpaidEmpCnt.Text = "0";
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle the exception, e.g., display an error message
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-
-        public void SalaryExpenseCount()
+        private void SalaryExpenseCount()
         {
             try
             {
@@ -160,9 +232,9 @@ namespace Modern_Pharmacy_Managment_System
 
                     // Prepare the SQL command to sum the SalaryPaidAmount within the date range
                     SqlCommand cm = new SqlCommand(@"
-                SELECT SUM(SalaryPaidAmount) 
-                FROM SalaryTbl 
-                WHERE SalaryPaidDate >= @StartDate AND SalaryPaidDate <= @EndDate", con);
+                        SELECT SUM(SalaryPaidAmount) 
+                        FROM SalaryTbl 
+                        WHERE SalaryPaidDate >= @StartDate AND SalaryPaidDate <= @EndDate", con);
                     // Add parameters for start and end dates
                     cm.Parameters.AddWithValue("@StartDate", startDate.Date);
                     cm.Parameters.AddWithValue("@EndDate", endDate.Date);
@@ -182,16 +254,13 @@ namespace Modern_Pharmacy_Managment_System
             }
             catch (Exception ex)
             {
-                // Handle the exception, e.g., display an error message
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
 
+        private void RevenueChart_Click(object sender, EventArgs e)
+        {
 
-
-
-
-
-
+        }
     }
 }

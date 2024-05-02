@@ -59,10 +59,9 @@ namespace Modern_Pharmacy_Managment_System
                         // Exclude employees with no due months
                         if (monthsDue > 0)
                         {
-                            // Get the per month salary
+                            
                             float perMonthSalary = GetPerMonthSalary(empId);
 
-                            // Calculate the total due amount
                             float totalDue = monthsDue * perMonthSalary;
 
                             // Append employee details to the message
@@ -75,10 +74,8 @@ namespace Modern_Pharmacy_Managment_System
                     messageForm.Text = "Unpaid Employees";
                     messageForm.FormBorderStyle = FormBorderStyle.FixedDialog;
                     messageForm.StartPosition = FormStartPosition.Manual;
-                    messageForm.Location = new Point(100, 100); // Adjust the coordinates as needed
-                    messageForm.Size = new Size(700, 500); // Set the size of the form
-
-                    // Create a panel to host the buttons and enable scrolling
+                    messageForm.Location = new Point(100, 100); 
+                    messageForm.Size = new Size(700, 500); 
                     Panel panel = new Panel();
                     panel.Dock = DockStyle.Right;
                     panel.AutoScroll = true;
@@ -96,8 +93,7 @@ namespace Modern_Pharmacy_Managment_System
                     // Add the text box to the form
                     messageForm.Controls.Add(messageTextBox);
 
-                    // Generate buttons for each unpaid employee and add them to the panel
-                    int buttonTop = 20; // Initial top position of the buttons
+                    int buttonTop = 20; 
                     foreach (DataRow row in dtUnpaidEmployees.Rows)
                     {
                         // Get the employee ID
@@ -115,7 +111,7 @@ namespace Modern_Pharmacy_Managment_System
                             // Create a button for the employee
                             Button employeeButton = new Button();
                             employeeButton.Text = $"Employee ID: {empId}\nDue Amount: {monthsDue} months";
-                            employeeButton.Tag = empId; // Store employee ID in Tag property for later retrieval
+                            employeeButton.Tag = empId; 
                             employeeButton.Width = 200;
                             employeeButton.Height = 60;
                             employeeButton.Top = buttonTop;
