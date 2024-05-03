@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modern_Pharmacy_Managment_System.Classes;
 using Modern_Pharmacy_Managment_System.Database;
+using System.Data.SqlClient;
 
 
 namespace Modern_Pharmacy_Managment_System
 {
     public partial class CustomerDashboard : Form
     {
+
+        const string connectionString = @"Data Source=Akid\SQLEXPRESS;Initial Catalog=PMSnew;Integrated Security=True";
         public CustomerDashboard(string customerName)
         {
             InitializeComponent();
@@ -22,9 +25,26 @@ namespace Modern_Pharmacy_Managment_System
             btncstOrder.MouseLeave += Buy_Medicine_btn_MouseLeave;
 
             CustomerNameTxt.Text = customerName;
+            LoadCustomerPoints();
 
+            // Load your images into the array
+            images[0] = Image.FromFile(@"C:\Users\nulln\Desktop\105678631_676414822921535_9096975417093549142_n.jpg"); // Replace Image1 with your actual image
+            images[1] = Image.FromFile(@"C:\Users\nulln\Desktop\105678631_676414822921535_9096975417093549142_n.jpg"); // Replace Image2 with your actual image
+            images[2] = Image.FromFile(@"C:\Users\nulln\Desktop\glucose-product-banner1.jpg"); // Replace Image3 with your actual image
+
+            // Set initial image
+            guna2PictureBox5.Image = images[0];
+
+            // Configure the timer
+            timer1.Interval = 1000; // Interval in milliseconds (e.g., 2000 milliseconds = 2 seconds)
+            timer1.Tick += timer1_Tick;
+
+            // Start the timer
+            timer1.Start();
 
         }
+        private int imageIndex = 0;
+        private Image[] images = new Image[3];
 
         private void Buy_Medicine_btn_MouseEnter(object sender, EventArgs e)
         {
@@ -94,5 +114,77 @@ namespace Modern_Pharmacy_Managment_System
             f.Show();
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnreqMed_Click(object sender, EventArgs e)
+        {
+            reqCustomerProduct rq = new reqCustomerProduct();
+            rq.Show();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void LoadCustomerPoints()
+        {
+            Login login = Login.GetInstance();
+            string customerPhone = login.getCustomerPhone();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL query to select cpoints for the customer with the provided phone number
+                    string query = "SELECT cpoints FROM tbCustomer WHERE cphone = @customerPhone";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Add parameter for customerPhone
+                        command.Parameters.AddWithValue("@customerPhone", customerPhone);
+
+                        // Execute the query and get the result using SqlDataReader
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read()) // Check if there are any rows
+                            {
+                                // Retrieve the value of cpoints and display it in label5
+                                string points = reader.GetString(0);
+                                label5.Text = points;
+                            }
+                            else
+                            {
+                                label5.Text = "0"; // or any default value you want to display if the customer points are not found
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            imageIndex++;
+
+            // Reset to the first image if we've reached the end
+            if (imageIndex >= images.Length)
+            {
+                imageIndex = 0;
+            }
+
+            // Update the PictureBox with the next image
+            guna2PictureBox5.Image = images[imageIndex];
+        }
+
     }
 }

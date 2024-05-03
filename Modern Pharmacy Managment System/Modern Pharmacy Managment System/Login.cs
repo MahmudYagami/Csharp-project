@@ -29,6 +29,7 @@ namespace Modern_Pharmacy_Managment_System
 
         public static int EmpId;
         public static string EmpName = "";
+       
 
         private void signupBtn_Click(object sender, EventArgs e)
         {
