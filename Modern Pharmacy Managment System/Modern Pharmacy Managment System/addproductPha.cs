@@ -241,14 +241,14 @@ namespace Modern_Pharmacy_Managment_System
             ClearTextBoxes();
         }
 
-        private void searchPrdt_TextChanged(object sender, EventArgs e)
+        private void searchPrdt_TextChanged1(object sender, EventArgs e)
         {
             string searchTerm = searchPrdt.Text.Trim();
             ShowDataOnGrid(searchTerm);
 
         }
 
-        private void invAddbtn_Click_1(object sender, EventArgs e)
+        private void invAddbtn_Click_12(object sender, EventArgs e)
         {
 
             try

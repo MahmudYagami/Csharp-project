@@ -66,10 +66,22 @@ namespace Modern_Pharmacy_Managment_System
                 DateTime joiningDate = EmployeeJoiningCalender.Value;
                 float salary = float.Parse(EmpSalaryBox.Text);
 
-                string query = "insert into EmployeeTbl (EmpName, EmpGen, EmpPhone, EmpPass, EmpAdd, EmpJoiningDate, EmpSalary) " +
-                               "values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', {6})";
-                query = string.Format(query, name, gender, phone, pass, add, joiningDate.ToString("yyyy-MM-dd"), salary);
-                Con.SetData(query);
+                // Check if the phone number already exists in the database
+                string checkPhoneQuery = "SELECT COUNT(*) FROM EmployeeTbl WHERE EmpPhone = '{0}'";
+                checkPhoneQuery = string.Format(checkPhoneQuery, phone);
+                int existingPhoneCount = (int)Con.ExecuteScalar(checkPhoneQuery);
+
+                if (existingPhoneCount > 0)
+                {
+                    MessageBox.Show("Phone number already exists. Please enter a different phone number.", "Duplicate Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // If the phone number is unique, proceed with insertion
+                string insertQuery = "INSERT INTO EmployeeTbl (EmpName, EmpGen, EmpPhone, EmpPass, EmpAdd, EmpJoiningDate, EmpSalary) " +
+                                     "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', {6})";
+                insertQuery = string.Format(insertQuery, name, gender, phone, pass, add, joiningDate.ToString("yyyy-MM-dd"), salary);
+                Con.SetData(insertQuery);
 
                 ShowStaffForm();
                 MessageBox.Show("Employee Added!!!");
@@ -80,6 +92,9 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+
+
 
         private void EmpEditBtnStaff_Click(object sender, EventArgs e)
         {
@@ -117,15 +132,20 @@ namespace Modern_Pharmacy_Managment_System
 
         private void EmpDltBtnStaff_Click(object sender, EventArgs e)
         {
-
-
             try
             {
                 if (Key != 0)
                 {
-                    string query = "delete from EmployeeTbl where EmpId={0}";
-                    query = string.Format(query, Key);
-                    Con.SetData(query);
+                    // Delete related rows from SalaryTbl first
+                    string deleteSalaryQuery = "DELETE FROM SalaryTbl WHERE EmpId = {0}";
+                    deleteSalaryQuery = string.Format(deleteSalaryQuery, Key);
+                    Con.SetData(deleteSalaryQuery);
+
+                    // Now delete from EmployeeTbl
+                    string deleteEmployeeQuery = "DELETE FROM EmployeeTbl WHERE EmpId = {0}";
+                    deleteEmployeeQuery = string.Format(deleteEmployeeQuery, Key);
+                    Con.SetData(deleteEmployeeQuery);
+
                     ShowStaffForm();
                     MessageBox.Show("Employee Deleted!!!");
                     ClearFields();
@@ -139,8 +159,8 @@ namespace Modern_Pharmacy_Managment_System
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-
         }
+
 
         private void ClearFields()
         {
@@ -172,21 +192,7 @@ namespace Modern_Pharmacy_Managment_System
 
         private void LeaveBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                LeavesForm lf = new LeavesForm();
-                Point location = new Point(598, 250); // Adjust the coordinates as needed
-
-                // Show the LeavesForm
-                lf.StartPosition = FormStartPosition.Manual;
-                lf.Location = location;
-                lf.Show();
-                this.Hide();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            
         }
 
         private void EmpDltBtnStaff_Click_1(object sender, EventArgs e)
@@ -336,8 +342,68 @@ namespace Modern_Pharmacy_Managment_System
             }
 */
         }
-       
+
+        private void LeaveBtn_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                LeavesForm lf = new LeavesForm();
+                Point location = new Point(598, 250); // Adjust the coordinates as needed
+
+                // Show the LeavesForm
+                lf.StartPosition = FormStartPosition.Manual;
+                lf.Location = location;
+                lf.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+        }
+
+
+        private void SearchButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string searchText = SearchTextBox.Text.Trim();
+
+                // Check if search text is provided
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    string query = "SELECT * FROM EmployeeTbl WHERE EmpPhone LIKE '%" + searchText + "%'";
+
+                    // Call your existing GetData method with the query string
+                    DataTable searchResult = Con.GetData(query);
+
+                    // Check if search result contains any rows
+                    if (searchResult.Rows.Count > 0)
+                    {
+                        EmployeeList.DataSource = searchResult;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No matching records found.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a search term.", "Search", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
 
     }
 }
+    
 

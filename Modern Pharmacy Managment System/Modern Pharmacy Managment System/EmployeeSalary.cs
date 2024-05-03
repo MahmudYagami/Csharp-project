@@ -4,10 +4,14 @@ using System.Windows.Forms;
 using System.Drawing;
 
 
+
 namespace Modern_Pharmacy_Managment_System
+
 {
     public partial class EmployeeSalary : Form
+
     {
+
         Functions Con;
 
         public EmployeeSalary()
@@ -15,6 +19,7 @@ namespace Modern_Pharmacy_Managment_System
             InitializeComponent();
             Con = new Functions();
             LoadSalaryData();
+            PayDateCalender.Value = DateTime.Today;
         }
 
         private void LoadSalaryData()
@@ -303,6 +308,7 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message, "Deletion Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
     }
 }

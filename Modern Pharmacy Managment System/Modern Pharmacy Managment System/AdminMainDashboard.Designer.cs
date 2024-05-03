@@ -29,10 +29,10 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMainDashboard));
             this.RevenueChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.LastYearBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -53,20 +53,21 @@ namespace Modern_Pharmacy_Managment_System
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.ExpenseLbl = new System.Windows.Forms.Label();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.DateStartCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DateEndCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblEmployeeCnt = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblLeaveCnt = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.UnpaidEmpCnt = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblLeaveCnt = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.CustomerCountPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblEmployeeCnt = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.RevenueChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -77,6 +78,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.guna2Panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.CustomerCountPanel.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.SuspendLayout();
@@ -85,62 +87,62 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.RevenueChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(252)))));
             this.RevenueChart.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisX.IsMarginVisible = false;
-            chartArea5.AxisX.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
-            chartArea5.AxisX.LineColor = System.Drawing.Color.White;
-            chartArea5.AxisX.LineWidth = 0;
-            chartArea5.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea5.AxisX.MajorGrid.LineWidth = 0;
-            chartArea5.AxisX.MajorTickMark.LineColor = System.Drawing.Color.MediumPurple;
-            chartArea5.AxisY.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
-            chartArea5.AxisY.LabelStyle.Format = "${0}";
-            chartArea5.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisY.LineWidth = 0;
-            chartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea5.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver;
-            chartArea5.AxisY.MajorTickMark.LineWidth = 0;
-            chartArea5.BackColor = System.Drawing.Color.LightCyan;
-            chartArea5.BorderColor = System.Drawing.Color.Maroon;
-            chartArea5.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea5.Name = "ChartArea1";
-            this.RevenueChart.ChartAreas.Add(chartArea5);
-            legend5.BackColor = System.Drawing.Color.White;
-            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend5.Font = new System.Drawing.Font("Verdana", 8F);
-            legend5.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            legend5.IsTextAutoFit = false;
-            legend5.Name = "Revenue";
-            this.RevenueChart.Legends.Add(legend5);
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.LineWidth = 0;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX.MajorGrid.LineWidth = 0;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.MediumPurple;
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
+            chartArea1.AxisY.LabelStyle.Format = "${0}";
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisY.LineWidth = 0;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.MajorTickMark.LineWidth = 0;
+            chartArea1.BackColor = System.Drawing.Color.LightCyan;
+            chartArea1.BorderColor = System.Drawing.Color.Maroon;
+            chartArea1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.Name = "ChartArea1";
+            this.RevenueChart.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.White;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Font = new System.Drawing.Font("Verdana", 8F);
+            legend1.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Revenue";
+            this.RevenueChart.Legends.Add(legend1);
             this.RevenueChart.Location = new System.Drawing.Point(18, 145);
             this.RevenueChart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RevenueChart.Name = "RevenueChart";
-            series5.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series5.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series5.BackSecondaryColor = System.Drawing.Color.RoyalBlue;
-            series5.BorderColor = System.Drawing.Color.DarkRed;
-            series5.BorderWidth = 0;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
-            series5.Color = System.Drawing.Color.Cyan;
-            series5.Legend = "Revenue";
-            series5.MarkerColor = System.Drawing.Color.Cyan;
-            series5.MarkerSize = 2;
-            series5.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series5.Name = "Revenue";
-            series5.ShadowColor = System.Drawing.Color.LightGreen;
-            series5.YValuesPerPoint = 2;
-            this.RevenueChart.Series.Add(series5);
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series1.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series1.BackSecondaryColor = System.Drawing.Color.RoyalBlue;
+            series1.BorderColor = System.Drawing.Color.DarkRed;
+            series1.BorderWidth = 0;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series1.Color = System.Drawing.Color.Cyan;
+            series1.Legend = "Revenue";
+            series1.MarkerColor = System.Drawing.Color.Cyan;
+            series1.MarkerSize = 2;
+            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series1.Name = "Revenue";
+            series1.ShadowColor = System.Drawing.Color.LightGreen;
+            series1.YValuesPerPoint = 2;
+            this.RevenueChart.Series.Add(series1);
             this.RevenueChart.Size = new System.Drawing.Size(1229, 392);
             this.RevenueChart.TabIndex = 33;
             this.RevenueChart.Text = "chart1";
-            title5.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title5.BackColor = System.Drawing.Color.White;
-            title5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title5.ForeColor = System.Drawing.Color.SaddleBrown;
-            title5.Name = "Title1";
-            title5.ShadowColor = System.Drawing.Color.Red;
-            title5.Text = "Gross Revenue";
-            this.RevenueChart.Titles.Add(title5);
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.BackColor = System.Drawing.Color.White;
+            title1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.ForeColor = System.Drawing.Color.SaddleBrown;
+            title1.Name = "Title1";
+            title1.ShadowColor = System.Drawing.Color.Red;
+            title1.Text = "Gross Revenue";
+            this.RevenueChart.Titles.Add(title1);
             // 
             // LastYearBtn
             // 
@@ -184,7 +186,7 @@ namespace Modern_Pharmacy_Managment_System
             this.TodayBtn.Size = new System.Drawing.Size(122, 34);
             this.TodayBtn.TabIndex = 41;
             this.TodayBtn.Text = "Today";
-            this.TodayBtn.Click += new System.EventHandler(this.TodayBtn_Click_1);
+            this.TodayBtn.Click += new System.EventHandler(this.TodayBtn_Click);
             // 
             // Last30Btn
             // 
@@ -206,6 +208,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Last30Btn.Size = new System.Drawing.Size(185, 34);
             this.Last30Btn.TabIndex = 40;
             this.Last30Btn.Text = "Last 30 days";
+            this.Last30Btn.Click += new System.EventHandler(this.Last30Btn_Click_1);
             // 
             // Last7Btn
             // 
@@ -394,7 +397,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel4.BorderRadius = 15;
             this.guna2Panel4.BorderThickness = 5;
             this.guna2Panel4.Controls.Add(this.label6);
-            this.guna2Panel4.Controls.Add(this.label7);
+            this.guna2Panel4.Controls.Add(this.ExpenseLbl);
             this.guna2Panel4.Controls.Add(this.guna2PictureBox4);
             this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.guna2Panel4.Location = new System.Drawing.Point(998, 65);
@@ -416,15 +419,15 @@ namespace Modern_Pharmacy_Managment_System
             this.label6.Text = "Total Expense";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // ExpenseLbl
             // 
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(57, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 25);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "100000.76";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ExpenseLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseLbl.Location = new System.Drawing.Point(57, 32);
+            this.ExpenseLbl.Name = "ExpenseLbl";
+            this.ExpenseLbl.Size = new System.Drawing.Size(151, 25);
+            this.ExpenseLbl.TabIndex = 2;
+            this.ExpenseLbl.Text = "100000.76";
+            this.ExpenseLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2PictureBox4
             // 
@@ -475,9 +478,9 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // guna2Panel5
             // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.LightCyan;
+            this.guna2Panel5.BackColor = System.Drawing.Color.Indigo;
+            this.guna2Panel5.Controls.Add(this.guna2PictureBox5);
             this.guna2Panel5.Controls.Add(this.UnpaidEmpCnt);
-            this.guna2Panel5.Controls.Add(this.CustomerCountPanel);
             this.guna2Panel5.Controls.Add(this.label10);
             this.guna2Panel5.Controls.Add(this.lblLeaveCnt);
             this.guna2Panel5.Controls.Add(this.label8);
@@ -487,72 +490,75 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel5.Size = new System.Drawing.Size(260, 232);
             this.guna2Panel5.TabIndex = 51;
             // 
-            // label3
+            // guna2PictureBox5
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(246, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Employee Management";
+            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(32, 123);
+            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(50, 38);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox5.TabIndex = 53;
+            this.guna2PictureBox5.TabStop = false;
+            this.guna2PictureBox5.UseTransparentBackground = true;
             // 
-            // lblEmployeeCnt
+            // UnpaidEmpCnt
             // 
-            this.lblEmployeeCnt.AutoSize = true;
-            this.lblEmployeeCnt.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeCnt.ForeColor = System.Drawing.Color.Black;
-            this.lblEmployeeCnt.Location = new System.Drawing.Point(59, 8);
-            this.lblEmployeeCnt.Name = "lblEmployeeCnt";
-            this.lblEmployeeCnt.Size = new System.Drawing.Size(41, 29);
-            this.lblEmployeeCnt.TabIndex = 3;
-            this.lblEmployeeCnt.Text = "14";
-            this.lblEmployeeCnt.Click += new System.EventHandler(this.lblEmployeeCnt_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label8.Location = new System.Drawing.Point(0, 104);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(176, 17);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "        Employee On Leave";
-            // 
-            // lblLeaveCnt
-            // 
-            this.lblLeaveCnt.AutoSize = true;
-            this.lblLeaveCnt.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeaveCnt.ForeColor = System.Drawing.Color.Black;
-            this.lblLeaveCnt.Location = new System.Drawing.Point(88, 121);
-            this.lblLeaveCnt.Name = "lblLeaveCnt";
-            this.lblLeaveCnt.Size = new System.Drawing.Size(55, 40);
-            this.lblLeaveCnt.TabIndex = 5;
-            this.lblLeaveCnt.Text = "14";
+            this.UnpaidEmpCnt.AutoSize = true;
+            this.UnpaidEmpCnt.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnpaidEmpCnt.ForeColor = System.Drawing.Color.White;
+            this.UnpaidEmpCnt.Location = new System.Drawing.Point(88, 180);
+            this.UnpaidEmpCnt.Name = "UnpaidEmpCnt";
+            this.UnpaidEmpCnt.Size = new System.Drawing.Size(55, 40);
+            this.UnpaidEmpCnt.TabIndex = 7;
+            this.UnpaidEmpCnt.Text = "14";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label10.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label10.Location = new System.Drawing.Point(-3, 161);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(164, 17);
             this.label10.TabIndex = 6;
             this.label10.Text = "         Unpaid Employee";
             // 
-            // UnpaidEmpCnt
+            // lblLeaveCnt
             // 
-            this.UnpaidEmpCnt.AutoSize = true;
-            this.UnpaidEmpCnt.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnpaidEmpCnt.ForeColor = System.Drawing.Color.Black;
-            this.UnpaidEmpCnt.Location = new System.Drawing.Point(88, 180);
-            this.UnpaidEmpCnt.Name = "UnpaidEmpCnt";
-            this.UnpaidEmpCnt.Size = new System.Drawing.Size(55, 40);
-            this.UnpaidEmpCnt.TabIndex = 7;
-            this.UnpaidEmpCnt.Text = "14";
+            this.lblLeaveCnt.AutoSize = true;
+            this.lblLeaveCnt.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeaveCnt.ForeColor = System.Drawing.Color.White;
+            this.lblLeaveCnt.Location = new System.Drawing.Point(88, 121);
+            this.lblLeaveCnt.Name = "lblLeaveCnt";
+            this.lblLeaveCnt.Size = new System.Drawing.Size(55, 40);
+            this.lblLeaveCnt.TabIndex = 5;
+            this.lblLeaveCnt.Text = "14";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label8.Location = new System.Drawing.Point(0, 104);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(176, 17);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "        Employee On Leave";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(246, 23);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Employee Management";
             // 
             // CustomerCountPanel
             // 
@@ -561,21 +567,11 @@ namespace Modern_Pharmacy_Managment_System
             this.CustomerCountPanel.BorderRadius = 36;
             this.CustomerCountPanel.Controls.Add(this.guna2Panel6);
             this.CustomerCountPanel.Controls.Add(this.label9);
-            this.CustomerCountPanel.Location = new System.Drawing.Point(35, 28);
+            this.CustomerCountPanel.Location = new System.Drawing.Point(414, 629);
             this.CustomerCountPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CustomerCountPanel.Name = "CustomerCountPanel";
             this.CustomerCountPanel.Size = new System.Drawing.Size(197, 74);
             this.CustomerCountPanel.TabIndex = 52;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, 51);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(162, 23);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Total Employee";
             // 
             // guna2Panel6
             // 
@@ -587,6 +583,27 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel6.Size = new System.Drawing.Size(155, 47);
             this.guna2Panel6.TabIndex = 0;
             // 
+            // lblEmployeeCnt
+            // 
+            this.lblEmployeeCnt.AutoSize = true;
+            this.lblEmployeeCnt.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeCnt.ForeColor = System.Drawing.Color.Black;
+            this.lblEmployeeCnt.Location = new System.Drawing.Point(59, 8);
+            this.lblEmployeeCnt.Name = "lblEmployeeCnt";
+            this.lblEmployeeCnt.Size = new System.Drawing.Size(41, 29);
+            this.lblEmployeeCnt.TabIndex = 3;
+            this.lblEmployeeCnt.Text = "14";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(14, 51);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(162, 23);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Total Employee";
+            // 
             // AdminMainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -594,6 +611,7 @@ namespace Modern_Pharmacy_Managment_System
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1280, 828);
             this.Controls.Add(this.guna2Panel5);
+            this.Controls.Add(this.CustomerCountPanel);
             this.Controls.Add(this.DateEndCalender);
             this.Controls.Add(this.DateStartCalender);
             this.Controls.Add(this.guna2Panel4);
@@ -624,6 +642,7 @@ namespace Modern_Pharmacy_Managment_System
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.CustomerCountPanel.ResumeLayout(false);
             this.CustomerCountPanel.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
@@ -653,7 +672,7 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label ExpenseLbl;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateStartCalender;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateEndCalender;
@@ -667,5 +686,6 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2Panel CustomerCountPanel;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
     }
 }

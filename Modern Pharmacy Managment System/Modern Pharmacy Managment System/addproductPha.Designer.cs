@@ -332,7 +332,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invAddbtn.TabIndex = 33;
             this.invAddbtn.Text = "Add";
             this.invAddbtn.Click += new System.EventHandler(this.invAddbtn_Click_1);
-            this.invAddbtn.Click += new System.EventHandler(this.invAddbtn_Click_1);
+            
             // 
             // invUpdatebtn
             // 

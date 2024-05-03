@@ -88,7 +88,7 @@ namespace Modern_Pharmacy_Managment_System
             this.PayDateCalender.Name = "PayDateCalender";
             this.PayDateCalender.Size = new System.Drawing.Size(221, 54);
             this.PayDateCalender.TabIndex = 10;
-            this.PayDateCalender.Value = new System.DateTime(2024, 4, 21, 21, 9, 19, 426);
+            this.PayDateCalender.Value = new System.DateTime(2024, 5, 3, 0, 0, 0, 0);
             // 
             // label2
             // 

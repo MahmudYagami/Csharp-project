@@ -51,6 +51,24 @@ namespace Modern_Pharmacy_Managment_System
             return Cnt;
         }
 
+
+        public object ExecuteScalar(string query)
+        {
+            try
+            {
+                Con.Open();
+                SqlCommand cmd = new SqlCommand(query, Con);
+                return cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Con.Close();
+            }
+        }
         public int insertData(SqlCommand cmd)
         {
             int rowsAffected = 0;
@@ -72,6 +90,7 @@ namespace Modern_Pharmacy_Managment_System
                 Con.Close();
             }
             return rowsAffected;
+
         }
     }
 }

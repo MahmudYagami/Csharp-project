@@ -29,14 +29,12 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffForm));
             this.Emp_manage_label = new System.Windows.Forms.Label();
             this.EmpLeftPanel = new System.Windows.Forms.Panel();
-            this.LeaveBtn = new FontAwesome.Sharp.IconButton();
-            this.CategoryBtnStaff = new FontAwesome.Sharp.IconButton();
             this.EmpTopPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,6 +58,10 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpSalaryBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.LeaveNotification = new Guna.UI2.WinForms.Guna2PictureBox();
             this.LeaveNotify = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.LeaveBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.SearchButton = new FontAwesome.Sharp.IconButton();
+            this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.EmpTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeaveNotification)).BeginInit();
@@ -85,44 +87,6 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpLeftPanel.Name = "EmpLeftPanel";
             this.EmpLeftPanel.Size = new System.Drawing.Size(15, 614);
             this.EmpLeftPanel.TabIndex = 1;
-            // 
-            // LeaveBtn
-            // 
-            this.LeaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(100)))));
-            this.LeaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LeaveBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LeaveBtn.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            this.LeaveBtn.IconColor = System.Drawing.Color.White;
-            this.LeaveBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.LeaveBtn.IconSize = 35;
-            this.LeaveBtn.Location = new System.Drawing.Point(931, 112);
-            this.LeaveBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LeaveBtn.Name = "LeaveBtn";
-            this.LeaveBtn.Size = new System.Drawing.Size(133, 42);
-            this.LeaveBtn.TabIndex = 2;
-            this.LeaveBtn.Text = "Leaves";
-            this.LeaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.LeaveBtn.UseVisualStyleBackColor = false;
-            this.LeaveBtn.Click += new System.EventHandler(this.LeaveBtn_Click);
-            // 
-            // CategoryBtnStaff
-            // 
-            this.CategoryBtnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))));
-            this.CategoryBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CategoryBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.CategoryBtnStaff.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
-            this.CategoryBtnStaff.IconColor = System.Drawing.Color.White;
-            this.CategoryBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.CategoryBtnStaff.IconSize = 35;
-            this.CategoryBtnStaff.Location = new System.Drawing.Point(931, 160);
-            this.CategoryBtnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CategoryBtnStaff.Name = "CategoryBtnStaff";
-            this.CategoryBtnStaff.Size = new System.Drawing.Size(133, 42);
-            this.CategoryBtnStaff.TabIndex = 1;
-            this.CategoryBtnStaff.Text = "Categories";
-            this.CategoryBtnStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.CategoryBtnStaff.UseVisualStyleBackColor = false;
-            this.CategoryBtnStaff.Click += new System.EventHandler(this.CategoryBtnStaff_Click);
             // 
             // EmpTopPanel
             // 
@@ -199,7 +163,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpEditBtnStaff.IconChar = FontAwesome.Sharp.IconChar.None;
             this.EmpEditBtnStaff.IconColor = System.Drawing.Color.Black;
             this.EmpEditBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EmpEditBtnStaff.Location = new System.Drawing.Point(778, 84);
+            this.EmpEditBtnStaff.Location = new System.Drawing.Point(781, 54);
             this.EmpEditBtnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmpEditBtnStaff.Name = "EmpEditBtnStaff";
             this.EmpEditBtnStaff.Size = new System.Drawing.Size(133, 42);
@@ -217,7 +181,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpSaveBtnStaff.IconChar = FontAwesome.Sharp.IconChar.None;
             this.EmpSaveBtnStaff.IconColor = System.Drawing.Color.Black;
             this.EmpSaveBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EmpSaveBtnStaff.Location = new System.Drawing.Point(778, 137);
+            this.EmpSaveBtnStaff.Location = new System.Drawing.Point(781, 100);
             this.EmpSaveBtnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmpSaveBtnStaff.Name = "EmpSaveBtnStaff";
             this.EmpSaveBtnStaff.Size = new System.Drawing.Size(133, 42);
@@ -235,7 +199,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpDltBtnStaff.IconChar = FontAwesome.Sharp.IconChar.None;
             this.EmpDltBtnStaff.IconColor = System.Drawing.Color.Black;
             this.EmpDltBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EmpDltBtnStaff.Location = new System.Drawing.Point(778, 189);
+            this.EmpDltBtnStaff.Location = new System.Drawing.Point(781, 146);
             this.EmpDltBtnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmpDltBtnStaff.Name = "EmpDltBtnStaff";
             this.EmpDltBtnStaff.Size = new System.Drawing.Size(133, 42);
@@ -255,35 +219,35 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // EmployeeList
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
-            this.EmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
+            this.EmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.EmployeeList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.EmployeeList.ColumnHeadersHeight = 30;
             this.EmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployeeList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeeList.DefaultCellStyle = dataGridViewCellStyle6;
             this.EmployeeList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
-            this.EmployeeList.Location = new System.Drawing.Point(40, 345);
+            this.EmployeeList.Location = new System.Drawing.Point(54, 329);
             this.EmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmployeeList.Name = "EmployeeList";
             this.EmployeeList.RowHeadersVisible = false;
             this.EmployeeList.RowHeadersWidth = 51;
             this.EmployeeList.RowTemplate.Height = 40;
-            this.EmployeeList.Size = new System.Drawing.Size(1215, 238);
+            this.EmployeeList.Size = new System.Drawing.Size(1215, 274);
             this.EmployeeList.TabIndex = 23;
             this.EmployeeList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.FeterRiver;
             this.EmployeeList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
@@ -333,14 +297,15 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // EmployeeJoiningCalender
             // 
-            this.EmployeeJoiningCalender.BackColor = System.Drawing.Color.DarkGreen;
-            this.EmployeeJoiningCalender.BorderColor = System.Drawing.Color.DimGray;
+            this.EmployeeJoiningCalender.BackColor = System.Drawing.Color.White;
+            this.EmployeeJoiningCalender.BorderColor = System.Drawing.Color.Firebrick;
             this.EmployeeJoiningCalender.BorderRadius = 8;
             this.EmployeeJoiningCalender.Checked = true;
-            this.EmployeeJoiningCalender.FillColor = System.Drawing.Color.DodgerBlue;
+            this.EmployeeJoiningCalender.FillColor = System.Drawing.Color.DarkTurquoise;
             this.EmployeeJoiningCalender.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.EmployeeJoiningCalender.ForeColor = System.Drawing.Color.White;
             this.EmployeeJoiningCalender.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.EmployeeJoiningCalender.HoverState.FillColor = System.Drawing.Color.RoyalBlue;
             this.EmployeeJoiningCalender.Location = new System.Drawing.Point(562, 90);
             this.EmployeeJoiningCalender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmployeeJoiningCalender.MaxDate = new System.DateTime(9988, 12, 31, 0, 0, 0, 0);
@@ -507,7 +472,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.LeaveNotification.Image = ((System.Drawing.Image)(resources.GetObject("LeaveNotification.Image")));
             this.LeaveNotification.ImageRotate = 0F;
-            this.LeaveNotification.Location = new System.Drawing.Point(954, 51);
+            this.LeaveNotification.Location = new System.Drawing.Point(1127, 35);
             this.LeaveNotification.Name = "LeaveNotification";
             this.LeaveNotification.Size = new System.Drawing.Size(45, 37);
             this.LeaveNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -524,12 +489,80 @@ namespace Modern_Pharmacy_Managment_System
             this.LeaveNotify.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.LeaveNotify.Text = null;
             // 
+            // LeaveBtn
+            // 
+            this.LeaveBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LeaveBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LeaveBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LeaveBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LeaveBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LeaveBtn.ForeColor = System.Drawing.Color.White;
+            this.LeaveBtn.HoverState.FillColor = System.Drawing.Color.Aqua;
+            this.LeaveBtn.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LeaveBtn.Location = new System.Drawing.Point(781, 193);
+            this.LeaveBtn.Name = "LeaveBtn";
+            this.LeaveBtn.Size = new System.Drawing.Size(133, 45);
+            this.LeaveBtn.TabIndex = 65;
+            this.LeaveBtn.Text = "Leave";
+            this.LeaveBtn.Click += new System.EventHandler(this.LeaveBtn_Click_1);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
+            this.label8.Location = new System.Drawing.Point(935, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(156, 23);
+            this.label8.TabIndex = 68;
+            this.label8.Text = "Search Employee";
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.SearchButton.IconChar = FontAwesome.Sharp.IconChar.SteamSymbol;
+            this.SearchButton.IconColor = System.Drawing.Color.Black;
+            this.SearchButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SearchButton.Location = new System.Drawing.Point(939, 170);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(188, 53);
+            this.SearchButton.TabIndex = 67;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click_1);
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SearchTextBox.DefaultText = " Enter Phone Number";
+            this.SearchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SearchTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SearchTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SearchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SearchTextBox.Location = new System.Drawing.Point(939, 111);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.PasswordChar = '\0';
+            this.SearchTextBox.PlaceholderText = "";
+            this.SearchTextBox.SelectedText = "";
+            this.SearchTextBox.Size = new System.Drawing.Size(229, 44);
+            this.SearchTextBox.TabIndex = 66;
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1309, 614);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.SearchTextBox);
+            this.Controls.Add(this.LeaveBtn);
             this.Controls.Add(this.LeaveNotification);
             this.Controls.Add(this.EmpSalaryBox);
             this.Controls.Add(this.EmpAddressTb);
@@ -540,8 +573,6 @@ namespace Modern_Pharmacy_Managment_System
             this.Controls.Add(this.EmployeeJoiningCalender);
             this.Controls.Add(this.EmployeeJoiningDate);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.CategoryBtnStaff);
-            this.Controls.Add(this.LeaveBtn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.EmployeeList);
             this.Controls.Add(this.panel3);
@@ -583,8 +614,6 @@ namespace Modern_Pharmacy_Managment_System
         private FontAwesome.Sharp.IconButton EmpSaveBtnStaff;
         private FontAwesome.Sharp.IconButton EmpDltBtnStaff;
         private System.Windows.Forms.Panel panel3;
-        private FontAwesome.Sharp.IconButton LeaveBtn;
-        private FontAwesome.Sharp.IconButton CategoryBtnStaff;
         private Guna.UI2.WinForms.Guna2DataGridView EmployeeList;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
@@ -598,5 +627,9 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2TextBox EmpSalaryBox;
         private Guna.UI2.WinForms.Guna2PictureBox LeaveNotification;
         private Guna.UI2.WinForms.Guna2MessageDialog LeaveNotify;
+        private Guna.UI2.WinForms.Guna2Button LeaveBtn;
+        private System.Windows.Forms.Label label8;
+        private FontAwesome.Sharp.IconButton SearchButton;
+        private Guna.UI2.WinForms.Guna2TextBox SearchTextBox;
     }
 }
