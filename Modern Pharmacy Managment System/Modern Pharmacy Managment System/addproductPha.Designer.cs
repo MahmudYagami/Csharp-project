@@ -29,10 +29,10 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PSellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PBuyingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +74,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.PSellingPrice.DataPropertyName = "PSellingPrice";
             this.PSellingPrice.HeaderText = "Selling Price";
+            this.PSellingPrice.MinimumWidth = 6;
             this.PSellingPrice.Name = "PSellingPrice";
             this.PSellingPrice.ReadOnly = true;
             // 
@@ -81,6 +82,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.PBuyingPrice.DataPropertyName = "PBuyingPrice";
             this.PBuyingPrice.HeaderText = "Buying Price";
+            this.PBuyingPrice.MinimumWidth = 6;
             this.PBuyingPrice.Name = "PBuyingPrice";
             this.PBuyingPrice.ReadOnly = true;
             // 
@@ -88,6 +90,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.PStock.DataPropertyName = "PStock";
             this.PStock.HeaderText = "Stock";
+            this.PStock.MinimumWidth = 6;
             this.PStock.Name = "PStock";
             this.PStock.ReadOnly = true;
             // 
@@ -95,6 +98,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.PGeneric.DataPropertyName = "PGeneric";
             this.PGeneric.HeaderText = "Generic";
+            this.PGeneric.MinimumWidth = 6;
             this.PGeneric.Name = "PGeneric";
             this.PGeneric.ReadOnly = true;
             // 
@@ -102,6 +106,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.PCompanyName.DataPropertyName = "PCompanyName";
             this.PCompanyName.HeaderText = "Company";
+            this.PCompanyName.MinimumWidth = 6;
             this.PCompanyName.Name = "PCompanyName";
             this.PCompanyName.ReadOnly = true;
             // 
@@ -110,6 +115,7 @@ namespace Modern_Pharmacy_Managment_System
             this.PName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.PName.DataPropertyName = "PName";
             this.PName.HeaderText = "Product Name";
+            this.PName.MinimumWidth = 6;
             this.PName.Name = "PName";
             this.PName.ReadOnly = true;
             this.PName.Width = 79;
@@ -117,9 +123,10 @@ namespace Modern_Pharmacy_Managment_System
             // PId
             // 
             this.PId.DataPropertyName = "PId";
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.PId.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.PId.DefaultCellStyle = dataGridViewCellStyle1;
             this.PId.HeaderText = "Product Id";
+            this.PId.MinimumWidth = 6;
             this.PId.Name = "PId";
             this.PId.ReadOnly = true;
             // 
@@ -128,9 +135,10 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(6, 19);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(8, 23);
+            this.guna2HtmlLabel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(108, 31);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(135, 38);
             this.guna2HtmlLabel8.TabIndex = 18;
             this.guna2HtmlLabel8.Text = "Inventory";
             // 
@@ -147,21 +155,23 @@ namespace Modern_Pharmacy_Managment_System
             this.searchPrdt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchPrdt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.searchPrdt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchPrdt.Location = new System.Drawing.Point(25, 154);
+            this.searchPrdt.Location = new System.Drawing.Point(33, 190);
+            this.searchPrdt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchPrdt.Name = "searchPrdt";
             this.searchPrdt.PasswordChar = '\0';
             this.searchPrdt.PlaceholderText = "Search Here";
             this.searchPrdt.SelectedText = "";
-            this.searchPrdt.Size = new System.Drawing.Size(241, 32);
+            this.searchPrdt.Size = new System.Drawing.Size(321, 39);
             this.searchPrdt.TabIndex = 2;
             this.searchPrdt.TextChanged += new System.EventHandler(this.searchPrdt_TextChanged);
             // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.Controls.Add(this.prdtview);
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(3, 56);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(4, 69);
+            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(886, 278);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1181, 342);
             this.guna2GradientPanel1.TabIndex = 1;
             // 
             // prdtview
@@ -169,21 +179,21 @@ namespace Modern_Pharmacy_Managment_System
             this.prdtview.AllowUserToAddRows = false;
             this.prdtview.AllowUserToDeleteRows = false;
             this.prdtview.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            this.prdtview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.prdtview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.prdtview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.prdtview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             this.prdtview.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.prdtview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.prdtview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.prdtview.ColumnHeadersHeight = 45;
             this.prdtview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.prdtview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -194,20 +204,22 @@ namespace Modern_Pharmacy_Managment_System
             this.PStock,
             this.PBuyingPrice,
             this.PSellingPrice});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.prdtview.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.prdtview.DefaultCellStyle = dataGridViewCellStyle4;
             this.prdtview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.prdtview.Location = new System.Drawing.Point(0, 3);
+            this.prdtview.Location = new System.Drawing.Point(0, 4);
+            this.prdtview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.prdtview.Name = "prdtview";
             this.prdtview.ReadOnly = true;
             this.prdtview.RowHeadersVisible = false;
-            this.prdtview.Size = new System.Drawing.Size(818, 272);
+            this.prdtview.RowHeadersWidth = 51;
+            this.prdtview.Size = new System.Drawing.Size(1091, 335);
             this.prdtview.TabIndex = 0;
             this.prdtview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.prdtview.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -240,8 +252,9 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(829, 548);
+            this.guna2Panel1.Size = new System.Drawing.Size(1105, 674);
             this.guna2Panel1.TabIndex = 1;
             // 
             // guna2Panel2
@@ -266,9 +279,10 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel2.Controls.Add(this.invCompanyplace);
             this.guna2Panel2.Controls.Add(this.invPdrNameplace);
             this.guna2Panel2.Controls.Add(this.invprdIdplace);
-            this.guna2Panel2.Location = new System.Drawing.Point(3, 340);
+            this.guna2Panel2.Location = new System.Drawing.Point(4, 418);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(818, 201);
+            this.guna2Panel2.Size = new System.Drawing.Size(1091, 247);
             this.guna2Panel2.TabIndex = 0;
             // 
             // invDeletebtn
@@ -279,9 +293,10 @@ namespace Modern_Pharmacy_Managment_System
             this.invDeletebtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.invDeletebtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invDeletebtn.ForeColor = System.Drawing.Color.White;
-            this.invDeletebtn.Location = new System.Drawing.Point(667, 106);
+            this.invDeletebtn.Location = new System.Drawing.Point(889, 130);
+            this.invDeletebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.invDeletebtn.Name = "invDeletebtn";
-            this.invDeletebtn.Size = new System.Drawing.Size(75, 30);
+            this.invDeletebtn.Size = new System.Drawing.Size(100, 37);
             this.invDeletebtn.TabIndex = 35;
             this.invDeletebtn.Text = "Delete";
             this.invDeletebtn.Click += new System.EventHandler(this.invDeletebtn_Click);
@@ -294,9 +309,10 @@ namespace Modern_Pharmacy_Managment_System
             this.invClearbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.invClearbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invClearbtn.ForeColor = System.Drawing.Color.White;
-            this.invClearbtn.Location = new System.Drawing.Point(667, 147);
+            this.invClearbtn.Location = new System.Drawing.Point(889, 181);
+            this.invClearbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.invClearbtn.Name = "invClearbtn";
-            this.invClearbtn.Size = new System.Drawing.Size(75, 30);
+            this.invClearbtn.Size = new System.Drawing.Size(100, 37);
             this.invClearbtn.TabIndex = 34;
             this.invClearbtn.Text = "Clear";
             this.invClearbtn.Click += new System.EventHandler(this.invClearbtn_Click);
@@ -309,11 +325,13 @@ namespace Modern_Pharmacy_Managment_System
             this.invAddbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.invAddbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invAddbtn.ForeColor = System.Drawing.Color.White;
-            this.invAddbtn.Location = new System.Drawing.Point(667, 18);
+            this.invAddbtn.Location = new System.Drawing.Point(889, 22);
+            this.invAddbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.invAddbtn.Name = "invAddbtn";
-            this.invAddbtn.Size = new System.Drawing.Size(75, 30);
+            this.invAddbtn.Size = new System.Drawing.Size(100, 37);
             this.invAddbtn.TabIndex = 33;
             this.invAddbtn.Text = "Add";
+            this.invAddbtn.Click += new System.EventHandler(this.invAddbtn_Click_1);
             this.invAddbtn.Click += new System.EventHandler(this.invAddbtn_Click_1);
             // 
             // invUpdatebtn
@@ -324,9 +342,10 @@ namespace Modern_Pharmacy_Managment_System
             this.invUpdatebtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.invUpdatebtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invUpdatebtn.ForeColor = System.Drawing.Color.White;
-            this.invUpdatebtn.Location = new System.Drawing.Point(667, 62);
+            this.invUpdatebtn.Location = new System.Drawing.Point(889, 76);
+            this.invUpdatebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.invUpdatebtn.Name = "invUpdatebtn";
-            this.invUpdatebtn.Size = new System.Drawing.Size(75, 30);
+            this.invUpdatebtn.Size = new System.Drawing.Size(100, 37);
             this.invUpdatebtn.TabIndex = 32;
             this.invUpdatebtn.Text = "Update";
             this.invUpdatebtn.Click += new System.EventHandler(this.invUpdatebtn_Click);
@@ -335,9 +354,10 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(315, 154);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(420, 190);
+            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(78, 18);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(89, 22);
             this.guna2HtmlLabel7.TabIndex = 31;
             this.guna2HtmlLabel7.Text = "Selling Price";
             // 
@@ -345,9 +365,10 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(315, 121);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(420, 149);
+            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(78, 18);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(90, 22);
             this.guna2HtmlLabel6.TabIndex = 30;
             this.guna2HtmlLabel6.Text = "Buying Price";
             // 
@@ -355,9 +376,10 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(343, 74);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(457, 91);
+            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(37, 18);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(44, 22);
             this.guna2HtmlLabel5.TabIndex = 29;
             this.guna2HtmlLabel5.Text = "Stock";
             // 
@@ -365,9 +387,10 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(343, 29);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(457, 36);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(50, 18);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(59, 22);
             this.guna2HtmlLabel4.TabIndex = 28;
             this.guna2HtmlLabel4.Text = "Generic";
             // 
@@ -375,9 +398,10 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(22, 119);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(29, 146);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(61, 18);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(70, 22);
             this.guna2HtmlLabel3.TabIndex = 27;
             this.guna2HtmlLabel3.Text = "Company";
             // 
@@ -385,9 +409,10 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(22, 74);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(29, 91);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(89, 18);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(104, 22);
             this.guna2HtmlLabel2.TabIndex = 26;
             this.guna2HtmlLabel2.Text = "Product Name";
             // 
@@ -395,9 +420,10 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(25, 29);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(33, 36);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(63, 18);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(76, 22);
             this.guna2HtmlLabel1.TabIndex = 25;
             this.guna2HtmlLabel1.Text = "Product Id";
             // 
@@ -412,12 +438,13 @@ namespace Modern_Pharmacy_Managment_System
             this.invSellingplace.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.invSellingplace.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invSellingplace.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.invSellingplace.Location = new System.Drawing.Point(399, 154);
+            this.invSellingplace.Location = new System.Drawing.Point(532, 190);
+            this.invSellingplace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.invSellingplace.Name = "invSellingplace";
             this.invSellingplace.PasswordChar = '\0';
             this.invSellingplace.PlaceholderText = "";
             this.invSellingplace.SelectedText = "";
-            this.invSellingplace.Size = new System.Drawing.Size(186, 22);
+            this.invSellingplace.Size = new System.Drawing.Size(248, 27);
             this.invSellingplace.TabIndex = 24;
             // 
             // invBuyingplace
@@ -431,12 +458,13 @@ namespace Modern_Pharmacy_Managment_System
             this.invBuyingplace.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.invBuyingplace.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invBuyingplace.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.invBuyingplace.Location = new System.Drawing.Point(399, 107);
+            this.invBuyingplace.Location = new System.Drawing.Point(532, 132);
+            this.invBuyingplace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.invBuyingplace.Name = "invBuyingplace";
             this.invBuyingplace.PasswordChar = '\0';
             this.invBuyingplace.PlaceholderText = "";
             this.invBuyingplace.SelectedText = "";
-            this.invBuyingplace.Size = new System.Drawing.Size(186, 22);
+            this.invBuyingplace.Size = new System.Drawing.Size(248, 27);
             this.invBuyingplace.TabIndex = 23;
             // 
             // invStockplace
@@ -450,12 +478,13 @@ namespace Modern_Pharmacy_Managment_System
             this.invStockplace.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.invStockplace.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invStockplace.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.invStockplace.Location = new System.Drawing.Point(399, 63);
+            this.invStockplace.Location = new System.Drawing.Point(532, 78);
+            this.invStockplace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.invStockplace.Name = "invStockplace";
             this.invStockplace.PasswordChar = '\0';
             this.invStockplace.PlaceholderText = "";
             this.invStockplace.SelectedText = "";
-            this.invStockplace.Size = new System.Drawing.Size(186, 22);
+            this.invStockplace.Size = new System.Drawing.Size(248, 27);
             this.invStockplace.TabIndex = 22;
             // 
             // invGenericplace
@@ -469,12 +498,13 @@ namespace Modern_Pharmacy_Managment_System
             this.invGenericplace.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.invGenericplace.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invGenericplace.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.invGenericplace.Location = new System.Drawing.Point(399, 15);
+            this.invGenericplace.Location = new System.Drawing.Point(532, 18);
+            this.invGenericplace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.invGenericplace.Name = "invGenericplace";
             this.invGenericplace.PasswordChar = '\0';
             this.invGenericplace.PlaceholderText = "";
             this.invGenericplace.SelectedText = "";
-            this.invGenericplace.Size = new System.Drawing.Size(186, 22);
+            this.invGenericplace.Size = new System.Drawing.Size(248, 27);
             this.invGenericplace.TabIndex = 21;
             // 
             // invCompanyplace
@@ -488,12 +518,13 @@ namespace Modern_Pharmacy_Managment_System
             this.invCompanyplace.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.invCompanyplace.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invCompanyplace.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.invCompanyplace.Location = new System.Drawing.Point(117, 105);
+            this.invCompanyplace.Location = new System.Drawing.Point(156, 129);
+            this.invCompanyplace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.invCompanyplace.Name = "invCompanyplace";
             this.invCompanyplace.PasswordChar = '\0';
             this.invCompanyplace.PlaceholderText = "";
             this.invCompanyplace.SelectedText = "";
-            this.invCompanyplace.Size = new System.Drawing.Size(198, 22);
+            this.invCompanyplace.Size = new System.Drawing.Size(264, 27);
             this.invCompanyplace.TabIndex = 20;
             // 
             // invPdrNameplace
@@ -507,12 +538,13 @@ namespace Modern_Pharmacy_Managment_System
             this.invPdrNameplace.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.invPdrNameplace.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invPdrNameplace.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.invPdrNameplace.Location = new System.Drawing.Point(117, 63);
+            this.invPdrNameplace.Location = new System.Drawing.Point(156, 78);
+            this.invPdrNameplace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.invPdrNameplace.Name = "invPdrNameplace";
             this.invPdrNameplace.PasswordChar = '\0';
             this.invPdrNameplace.PlaceholderText = "";
             this.invPdrNameplace.SelectedText = "";
-            this.invPdrNameplace.Size = new System.Drawing.Size(198, 22);
+            this.invPdrNameplace.Size = new System.Drawing.Size(264, 27);
             this.invPdrNameplace.TabIndex = 19;
             // 
             // invprdIdplace
@@ -526,21 +558,23 @@ namespace Modern_Pharmacy_Managment_System
             this.invprdIdplace.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.invprdIdplace.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invprdIdplace.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.invprdIdplace.Location = new System.Drawing.Point(117, 15);
+            this.invprdIdplace.Location = new System.Drawing.Point(156, 18);
+            this.invprdIdplace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.invprdIdplace.Name = "invprdIdplace";
             this.invprdIdplace.PasswordChar = '\0';
             this.invprdIdplace.PlaceholderText = "";
             this.invprdIdplace.SelectedText = "";
-            this.invprdIdplace.Size = new System.Drawing.Size(198, 22);
+            this.invprdIdplace.Size = new System.Drawing.Size(264, 27);
             this.invprdIdplace.TabIndex = 18;
             // 
             // addproductPha
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 548);
+            this.ClientSize = new System.Drawing.Size(1105, 674);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "addproductPha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addproductPha";

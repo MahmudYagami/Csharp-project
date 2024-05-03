@@ -29,6 +29,10 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.UnpaidEmpCnt = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.CustomerCountPanel = new Guna.UI2.WinForms.Guna2Panel();
@@ -50,6 +54,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.SalaryExpenseCnt = new System.Windows.Forms.Label();
+            this.RevenueChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.CustomerCountPanel.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -58,6 +63,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel7.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RevenueChart)).BeginInit();
             this.SuspendLayout();
             // 
             // UnpaidEmpCnt
@@ -209,7 +215,7 @@ namespace Modern_Pharmacy_Managment_System
             this.TodayBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.TodayBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TodayBtn.ForeColor = System.Drawing.Color.White;
-            this.TodayBtn.Location = new System.Drawing.Point(180, 229);
+            this.TodayBtn.Location = new System.Drawing.Point(889, -3);
             this.TodayBtn.Name = "TodayBtn";
             this.TodayBtn.Size = new System.Drawing.Size(71, 29);
             this.TodayBtn.TabIndex = 8;
@@ -223,7 +229,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Last7DaysBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.Last7DaysBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Last7DaysBtn.ForeColor = System.Drawing.Color.White;
-            this.Last7DaysBtn.Location = new System.Drawing.Point(257, 230);
+            this.Last7DaysBtn.Location = new System.Drawing.Point(966, -2);
             this.Last7DaysBtn.Name = "Last7DaysBtn";
             this.Last7DaysBtn.Size = new System.Drawing.Size(107, 29);
             this.Last7DaysBtn.TabIndex = 9;
@@ -237,7 +243,7 @@ namespace Modern_Pharmacy_Managment_System
             this.Last30DaysBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.Last30DaysBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Last30DaysBtn.ForeColor = System.Drawing.Color.White;
-            this.Last30DaysBtn.Location = new System.Drawing.Point(370, 230);
+            this.Last30DaysBtn.Location = new System.Drawing.Point(1079, -2);
             this.Last30DaysBtn.Name = "Last30DaysBtn";
             this.Last30DaysBtn.Size = new System.Drawing.Size(105, 29);
             this.Last30DaysBtn.TabIndex = 10;
@@ -251,7 +257,7 @@ namespace Modern_Pharmacy_Managment_System
             this.LastYearsBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.LastYearsBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LastYearsBtn.ForeColor = System.Drawing.Color.White;
-            this.LastYearsBtn.Location = new System.Drawing.Point(481, 229);
+            this.LastYearsBtn.Location = new System.Drawing.Point(1190, -3);
             this.LastYearsBtn.Name = "LastYearsBtn";
             this.LastYearsBtn.Size = new System.Drawing.Size(93, 29);
             this.LastYearsBtn.TabIndex = 11;
@@ -264,7 +270,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel4.BorderRadius = 64;
             this.guna2Panel4.Controls.Add(this.label4);
             this.guna2Panel4.Controls.Add(this.guna2Panel5);
-            this.guna2Panel4.Location = new System.Drawing.Point(180, 263);
+            this.guna2Panel4.Location = new System.Drawing.Point(889, 31);
             this.guna2Panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(394, 131);
@@ -301,11 +307,71 @@ namespace Modern_Pharmacy_Managment_System
             this.SalaryExpenseCnt.TabIndex = 0;
             this.SalaryExpenseCnt.Text = "14";
             // 
+            // RevenueChart
+            // 
+            this.RevenueChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(252)))));
+            this.RevenueChart.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.LineWidth = 0;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX.MajorGrid.LineWidth = 0;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.MediumPurple;
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
+            chartArea1.AxisY.LabelStyle.Format = "${0}";
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisY.LineWidth = 0;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.MajorTickMark.LineWidth = 0;
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(252)))));
+            chartArea1.BorderColor = System.Drawing.Color.Maroon;
+            chartArea1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.Name = "ChartArea1";
+            this.RevenueChart.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(252)))));
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Font = new System.Drawing.Font("Verdana", 8F);
+            legend1.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Revenue";
+            this.RevenueChart.Legends.Add(legend1);
+            this.RevenueChart.Location = new System.Drawing.Point(44, 196);
+            this.RevenueChart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RevenueChart.Name = "RevenueChart";
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series1.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series1.BackSecondaryColor = System.Drawing.Color.CornflowerBlue;
+            series1.BorderColor = System.Drawing.Color.DarkRed;
+            series1.BorderWidth = 0;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series1.Color = System.Drawing.Color.Cyan;
+            series1.Legend = "Revenue";
+            series1.MarkerColor = System.Drawing.Color.Cyan;
+            series1.MarkerSize = 2;
+            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series1.Name = "Revenue";
+            series1.ShadowColor = System.Drawing.Color.LightGreen;
+            series1.YValuesPerPoint = 2;
+            this.RevenueChart.Series.Add(series1);
+            this.RevenueChart.Size = new System.Drawing.Size(818, 338);
+            this.RevenueChart.TabIndex = 32;
+            this.RevenueChart.Text = "chart1";
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Gross Revenue";
+            this.RevenueChart.Titles.Add(title1);
+            this.RevenueChart.Click += new System.EventHandler(this.RevenueChart_Click);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1241, 567);
+            this.Controls.Add(this.RevenueChart);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.LastYearsBtn);
             this.Controls.Add(this.Last30DaysBtn);
@@ -335,6 +401,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel4.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RevenueChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -361,5 +428,6 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label SalaryExpenseCnt;
+        private System.Windows.Forms.DataVisualization.Charting.Chart RevenueChart;
     }
 }

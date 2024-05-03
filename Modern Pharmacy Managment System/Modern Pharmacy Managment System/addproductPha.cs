@@ -16,12 +16,13 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class addproductPha : Form
     {
-        const string connectionString = @"Data Source=Akid\SQLEXPRESS;Initial Catalog=PMSnew;Integrated Security=True";
+        const string connectionString = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMSnew;Integrated Security=True";
         public addproductPha()
         {
             InitializeComponent();
             ShowDataOnGrid();
             prdtview.CellClick += prdtview_CellClick;
+
             
         }
         private void ShowDataOnGrid()
@@ -133,60 +134,7 @@ namespace Modern_Pharmacy_Managment_System
 
         private void invAddbtn_Click_1(object sender, EventArgs e)
         {
-
-            try
-            {
-                if (invprdIdplace.Text == "" || invPdrNameplace.Text == "" || invCompanyplace.Text == "" || invGenericplace.Text == "" || invStockplace.Text == "" || invSellingplace.Text == "" || invBuyingplace.Text == "")
-                {
-                    MessageBox.Show("Empty field", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    using (SqlConnection con = new SqlConnection(connectionString))
-                    {
-                        con.Open();
-                        string checkProdId = "SELECT * FROM InventoryTbl WHERE PId = @PId";
-
-                        using (SqlCommand checkPID = new SqlCommand(checkProdId, con))
-                        {
-                            checkPID.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
-
-                            SqlDataAdapter adp = new SqlDataAdapter(checkPID);
-                            DataTable table = new DataTable();
-                            adp.Fill(table);
-
-                            if (table.Rows.Count > 0)
-                            {
-                                MessageBox.Show(invprdIdplace.Text.Trim() + " is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
-                            {
-                                string insertData = "INSERT INTO InventoryTbl (PId, PName, PCompanyName, PGeneric, PStock, PBuyingPrice, PSellingPrice) VALUES (@PId, @PName, @PCompanyName, @PGeneric, @PStock, @PBuyingPrice, @PSellingPrice)";
-                                using (SqlCommand cmd = new SqlCommand(insertData, con))
-                                {
-                                    cmd.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PName", invPdrNameplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PCompanyName", invCompanyplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PGeneric", invGenericplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PStock", invStockplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PBuyingPrice", invBuyingplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PSellingPrice", invSellingplace.Text.Trim());
-                                    cmd.ExecuteNonQuery();
-                                    //ClearF();
-                                    //displayproduct();
-                                    ShowDataOnGrid();
-
-                                    MessageBox.Show("Added successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
 
         }
 
@@ -291,6 +239,71 @@ namespace Modern_Pharmacy_Managment_System
         private void invClearbtn_Click(object sender, EventArgs e)
         {
             ClearTextBoxes();
+        }
+
+        private void searchPrdt_TextChanged(object sender, EventArgs e)
+        {
+            string searchTerm = searchPrdt.Text.Trim();
+            ShowDataOnGrid(searchTerm);
+
+        }
+
+        private void invAddbtn_Click_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (invprdIdplace.Text == "" || invPdrNameplace.Text == "" || invCompanyplace.Text == "" || invGenericplace.Text == "" || invStockplace.Text == "" || invSellingplace.Text == "" || invBuyingplace.Text == "")
+                {
+                    MessageBox.Show("Empty field", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        con.Open();
+                        string checkProdId = "SELECT * FROM InventoryTbl WHERE PId = @PId";
+
+                        using (SqlCommand checkPID = new SqlCommand(checkProdId, con))
+                        {
+                            checkPID.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
+
+                            SqlDataAdapter adp = new SqlDataAdapter(checkPID);
+                            DataTable table = new DataTable();
+                            adp.Fill(table);
+
+                            if (table.Rows.Count > 0)
+                            {
+                                MessageBox.Show(invprdIdplace.Text.Trim() + " is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                string insertData = "INSERT INTO InventoryTbl (PId, PName, PCompanyName, PGeneric, PStock, PBuyingPrice, PSellingPrice) VALUES (@PId, @PName, @PCompanyName, @PGeneric, @PStock, @PBuyingPrice, @PSellingPrice)";
+                                using (SqlCommand cmd = new SqlCommand(insertData, con))
+                                {
+                                    cmd.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PName", invPdrNameplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PCompanyName", invCompanyplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PGeneric", invGenericplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PStock", invStockplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PBuyingPrice", invSellingplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PSellingPrice", invBuyingplace.Text.Trim());
+                                    cmd.ExecuteNonQuery();
+                                    //ClearF();
+                                    //displayproduct();
+
+                                    MessageBox.Show("Added successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }
