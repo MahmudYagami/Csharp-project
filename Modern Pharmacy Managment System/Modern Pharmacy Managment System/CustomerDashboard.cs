@@ -17,7 +17,7 @@ namespace Modern_Pharmacy_Managment_System
     public partial class CustomerDashboard : Form
     {
 
-        const string connectionString = @"Data Source=Akid\SQLEXPRESS;Initial Catalog=PMSnew;Integrated Security=True";
+        const string connectionString = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMSnew;Integrated Security=True";
         public CustomerDashboard(string customerName)
         {
             InitializeComponent();
@@ -28,9 +28,9 @@ namespace Modern_Pharmacy_Managment_System
             LoadCustomerPoints();
 
             // Load your images into the array
-            images[0] = Image.FromFile(@"C:\Users\nulln\Desktop\105678631_676414822921535_9096975417093549142_n.jpg"); // Replace Image1 with your actual image
+            /*images[0] = Image.FromFile(@"C:\Users\nulln\Desktop\105678631_676414822921535_9096975417093549142_n.jpg"); // Replace Image1 with your actual image
             images[1] = Image.FromFile(@"C:\Users\nulln\Desktop\105678631_676414822921535_9096975417093549142_n.jpg"); // Replace Image2 with your actual image
-            images[2] = Image.FromFile(@"C:\Users\nulln\Desktop\glucose-product-banner1.jpg"); // Replace Image3 with your actual image
+            images[2] = Image.FromFile(@"C:\Users\nulln\Desktop\glucose-product-banner1.jpg");*/ // Replace Image3 with your actual image
 
             // Set initial image
             guna2PictureBox5.Image = images[0];

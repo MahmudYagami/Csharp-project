@@ -2,6 +2,8 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Data.SqlClient;
+using Modern_Pharmacy_Managment_System.Database;
 
 
 
@@ -39,6 +41,7 @@ namespace Modern_Pharmacy_Managment_System
         {
             try
             {
+
                 // Query to retrieve unpaid employee IDs and their joining dates
                 string query = "SELECT EmpId, EmpJoiningDate FROM EmployeeTbl WHERE EmpId NOT IN (SELECT DISTINCT EmpId FROM SalaryTbl)";
 
@@ -58,13 +61,17 @@ namespace Modern_Pharmacy_Managment_System
                         // Get the joining date
                         DateTime joiningDate = Convert.ToDateTime(row["EmpJoiningDate"]);
 
-                        // Calculate the number of months due
-                        int monthsDue = ((DateTime.Now.Year - joiningDate.Year) * 12) + DateTime.Now.Month - joiningDate.Month;
+                        // Calculate the number of days since joining
+                        DateTime currentDate = DateTime.Now;
+                        TimeSpan timeSinceJoining = currentDate - joiningDate;
+                        int daysSinceJoining = (int)timeSinceJoining.TotalDays;
+
+                        // Calculate the number of months due (if more than 30 days since joining)
+                        int monthsDue = daysSinceJoining > 30 ? ((currentDate.Year - joiningDate.Year) * 12) + currentDate.Month - joiningDate.Month : 0;
 
                         // Exclude employees with no due months
                         if (monthsDue > 0)
                         {
-                            
                             float perMonthSalary = GetPerMonthSalary(empId);
 
                             float totalDue = monthsDue * perMonthSalary;
@@ -79,8 +86,8 @@ namespace Modern_Pharmacy_Managment_System
                     messageForm.Text = "Unpaid Employees";
                     messageForm.FormBorderStyle = FormBorderStyle.FixedDialog;
                     messageForm.StartPosition = FormStartPosition.Manual;
-                    messageForm.Location = new Point(100, 100); 
-                    messageForm.Size = new Size(700, 500); 
+                    messageForm.Location = new Point(100, 100);
+                    messageForm.Size = new Size(700, 500);
                     Panel panel = new Panel();
                     panel.Dock = DockStyle.Right;
                     panel.AutoScroll = true;
@@ -95,10 +102,11 @@ namespace Modern_Pharmacy_Managment_System
                     messageTextBox.ForeColor = Color.Black; // Set the font color
                     messageTextBox.BackColor = Color.LightBlue; // Set the background color
 
+
                     // Add the text box to the form
                     messageForm.Controls.Add(messageTextBox);
 
-                    int buttonTop = 20; 
+                    int buttonTop = 20;
                     foreach (DataRow row in dtUnpaidEmployees.Rows)
                     {
                         // Get the employee ID
@@ -107,8 +115,13 @@ namespace Modern_Pharmacy_Managment_System
                         // Get the joining date
                         DateTime joiningDate = Convert.ToDateTime(row["EmpJoiningDate"]);
 
-                        // Calculate the number of months due
-                        int monthsDue = ((DateTime.Now.Year - joiningDate.Year) * 12) + DateTime.Now.Month - joiningDate.Month;
+                        // Calculate the number of days since joining
+                        DateTime currentDate = DateTime.Now;
+                        TimeSpan timeSinceJoining = currentDate - joiningDate;
+                        int daysSinceJoining = (int)timeSinceJoining.TotalDays;
+
+                        // Calculate the number of months due (if more than 30 days since joining)
+                        int monthsDue = daysSinceJoining > 30 ? ((currentDate.Year - joiningDate.Year) * 12) + currentDate.Month - joiningDate.Month : 0;
 
                         // Exclude employees with no due months
                         if (monthsDue > 0)
@@ -116,7 +129,7 @@ namespace Modern_Pharmacy_Managment_System
                             // Create a button for the employee
                             Button employeeButton = new Button();
                             employeeButton.Text = $"Employee ID: {empId}\nDue Amount: {monthsDue} months";
-                            employeeButton.Tag = empId; 
+                            employeeButton.Tag = empId;
                             employeeButton.Width = 200;
                             employeeButton.Height = 60;
                             employeeButton.Top = buttonTop;
@@ -144,6 +157,7 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void EmployeeButton_Click(object sender, EventArgs e)
         {
@@ -218,6 +232,13 @@ namespace Modern_Pharmacy_Managment_System
                 float salaryAmount = float.Parse(SalaryAmountTxt.Text);
                 DateTime payDate = PayDateCalender.Value;
 
+                // Check if the employee has already been paid on the same day
+                if (IsEmployeePaidOnSameDay(empId, payDate))
+                {
+                    MessageBox.Show($"Employee ID: {empId} has already been paid on {payDate.ToShortDateString()}.", "Duplicate Payment", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 // Get the joining date of the employee
                 DateTime joiningDate = GetJoiningDate(empId);
 
@@ -229,6 +250,13 @@ namespace Modern_Pharmacy_Managment_System
 
                 // Calculate the total due amount
                 float totalDue = monthsDue * perMonthSalary;
+
+                // Check if the total due amount is greater than 0 or if the due months are less than 1
+                if (totalDue <= 0 || monthsDue < 1)
+                {
+                    MessageBox.Show($"Employee ID: {empId} - Due is clear", "No Due", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
                 // Check if the paid amount matches the total due amount
                 if (salaryAmount != totalDue)
@@ -257,6 +285,43 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message, "Payment Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private bool IsEmployeePaidOnSameDay(int empId, DateTime payDate)
+        {
+            // Query the database to check if the employee has already been paid on the same day
+            string query = "SELECT COUNT(*) FROM SalaryTbl WHERE EmpId = @EmpId AND SalaryPaidDate = @PayDate";
+
+            int count = 0;
+
+            try
+            {
+                using (var connection=DatabaseConnection.databaseConnect())
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@EmpId", empId);
+                        command.Parameters.AddWithValue("@PayDate", payDate);
+
+                        // Execute the command and get the count
+                        count = (int)command.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exception, e.g., log or display an error message
+                MessageBox.Show("Error while checking duplicate payment: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // If count is greater than 0, it means the employee has already been paid on the same day
+            return count > 0;
+        }
+
+
+
+
+
 
         private DateTime GetJoiningDate(int empId)
         {

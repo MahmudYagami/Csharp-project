@@ -19,6 +19,7 @@ namespace Modern_Pharmacy_Managment_System
 
        
 
+
         public Functions()
         {
            // ConStr = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMS;Integrated Security=True";
@@ -28,6 +29,8 @@ namespace Modern_Pharmacy_Managment_System
             Cmd.Connection = Con;
             
         }
+
+
         public SqlConnection Connection { get; private set; }
 
         public DataTable GetData(string Query)
