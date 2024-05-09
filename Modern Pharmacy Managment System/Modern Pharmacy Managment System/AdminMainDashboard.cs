@@ -15,10 +15,10 @@ namespace Modern_Pharmacy_Managment_System
             PopulateRevenueChart();
             PopulateLeaveCount();
             PopulateEmployeeCount();
-            PopulateUnpaidEmployeeCount();
+            //PopulateUnpaidEmployeeCount();
         }
 
-        private void PopulateRevenueChart(bool filterToday = false, bool filterLast7Days = false, bool filterLast30Days = false)
+        private void PopulateRevenueChart(bool filterToday = false, bool filterLast7Days = false, bool filterLast30Days = false, bool filterLastYear = false)
         {
             try
             {
@@ -27,22 +27,22 @@ namespace Modern_Pharmacy_Managment_System
                     con.Open();
                     string query = "SELECT Date, SUM(Revenue) AS TotalRevenue FROM [PMSnew].[dbo].[AccountTbl] WHERE 1 = 1";
 
-                    // If filtering for today, add WHERE clause to filter data for today's date
+                    // Add date filters if required
                     if (filterToday)
                     {
                         query += " AND CONVERT(date, Date) = CONVERT(date, GETDATE())";
                     }
-
-                    // If filtering for last 7 days, add WHERE clause to filter data for the last 7 days
-                    if (filterLast7Days)
+                    else if (filterLast7Days)
                     {
                         query += " AND Date >= DATEADD(day, -6, CONVERT(date, GETDATE())) AND Date <= CONVERT(date, GETDATE())";
                     }
-
-                    // If filtering for last 30 days, add WHERE clause to filter data for the last 30 days
-                    if (filterLast30Days)
+                    else if (filterLast30Days)
                     {
                         query += " AND Date >= DATEADD(day, -29, CONVERT(date, GETDATE())) AND Date <= CONVERT(date, GETDATE())";
+                    }
+                    else if (filterLastYear)
+                    {
+                        query += " AND Date >= DATEADD(year, -1, CONVERT(date, GETDATE())) AND Date <= CONVERT(date, GETDATE())";
                     }
 
                     query += " GROUP BY Date ORDER BY Date";
@@ -97,7 +97,7 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void DisplayTotalRevenueOrdersAndExpense(bool filterToday = false, bool filterLast7Days = false, bool filterLast30Days = false)
+        private void DisplayTotalRevenueOrdersAndExpense(bool filterToday = false, bool filterLast7Days = false, bool filterLast30Days = false, bool filterLastYear = false)
         {
             try
             {
@@ -119,6 +119,10 @@ namespace Modern_Pharmacy_Managment_System
                     {
                         query += " AND Date >= DATEADD(day, -29, CONVERT(date, GETDATE())) AND Date <= CONVERT(date, GETDATE())";
                     }
+                    else if (filterLastYear)
+                    {
+                        query += " AND Date >= DATEADD(year, -1, CONVERT(date, GETDATE())) AND Date <= CONVERT(date, GETDATE())";
+                    }
 
                     SqlCommand cm = new SqlCommand(query, con);
                     SqlDataReader reader = cm.ExecuteReader();
@@ -132,7 +136,7 @@ namespace Modern_Pharmacy_Managment_System
                         double totalExpense = reader.IsDBNull(reader.GetOrdinal("TotalExpense")) ? 0 : reader.GetDouble(reader.GetOrdinal("TotalExpense"));
 
                         // Update the labels with the formatted values
-                        TotalRevenue.Text =  totalRevenue.ToString("C");
+                        TotalRevenue.Text = totalRevenue.ToString("C");
                         TotalOrders.Text = totalOrders.ToString();
                         ExpenseLbl.Text = totalExpense.ToString("C");
                     }
@@ -172,17 +176,10 @@ namespace Modern_Pharmacy_Managment_System
             DisplayTotalRevenueOrdersAndExpense(filterLast7Days: true);
         }
 
-        private void Last30Btn_Click(object sender, EventArgs e)
-        {
-            // Call PopulateRevenueChart with filterLast30Days parameter set to true
-            
-        }
-
+       
         private void Last30Btn_Click_1(object sender, EventArgs e)
         {
             PopulateRevenueChart(filterLast30Days: true);
-
-            // Call DisplayTotalRevenueAndOrders with filterLast30Days parameter set to true to update total revenue and orders label
             DisplayTotalRevenueOrdersAndExpense(filterLast30Days: true);
 
         }
@@ -211,7 +208,7 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void PopulateUnpaidEmployeeCount()
+        /*private void PopulateUnpaidEmployeeCount()
         {
             try
             {
@@ -238,7 +235,13 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+*/
+        private void LastYearBtn_Click(object sender, EventArgs e)
+        {
+            PopulateRevenueChart(filterLastYear: true);
 
-        
+            // Call DisplayTotalRevenueOrdersAndExpense with filterLastYear parameter set to true
+            DisplayTotalRevenueOrdersAndExpense(filterLastYear: true);
+        }
     }
 }

@@ -41,6 +41,14 @@ namespace Modern_Pharmacy_Managment_System
             return dt;
         }
 
+        public void CloseConnection()
+        {
+            if (Con.State != ConnectionState.Closed)
+            {
+                Con.Close();
+            }
+        }
+
         public int SetData(string Query)
         {
             int Cnt = 0;

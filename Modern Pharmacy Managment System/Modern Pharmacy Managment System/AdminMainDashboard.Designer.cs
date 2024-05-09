@@ -39,8 +39,6 @@ namespace Modern_Pharmacy_Managment_System
             this.TodayBtn = new Guna.UI2.WinForms.Guna2Button();
             this.Last30Btn = new Guna.UI2.WinForms.Guna2Button();
             this.Last7Btn = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,39 +46,41 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.TotalRevenue = new System.Windows.Forms.Label();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.ExpenseLbl = new System.Windows.Forms.Label();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.DateStartCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DateEndCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.UnpaidEmpCnt = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblLeaveCnt = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.CustomerCountPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblEmployeeCnt = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblLeaveCnt = new System.Windows.Forms.Label();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.RevenueChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            this.guna2Panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.CustomerCountPanel.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
+            this.guna2Panel5.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // RevenueChart
@@ -122,7 +122,6 @@ namespace Modern_Pharmacy_Managment_System
             series1.BorderColor = System.Drawing.Color.DarkRed;
             series1.BorderWidth = 0;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
             series1.Color = System.Drawing.Color.Cyan;
             series1.Legend = "Revenue";
             series1.MarkerColor = System.Drawing.Color.Cyan;
@@ -165,6 +164,7 @@ namespace Modern_Pharmacy_Managment_System
             this.LastYearBtn.Size = new System.Drawing.Size(190, 34);
             this.LastYearBtn.TabIndex = 39;
             this.LastYearBtn.Text = "Last Year";
+            this.LastYearBtn.Click += new System.EventHandler(this.LastYearBtn_Click);
             // 
             // TodayBtn
             // 
@@ -231,36 +231,6 @@ namespace Modern_Pharmacy_Managment_System
             this.Last7Btn.TabIndex = 42;
             this.Last7Btn.Text = "Last 7 days";
             this.Last7Btn.Click += new System.EventHandler(this.Last7Btn_Click);
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(0, 7);
-            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(57, 57);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 6;
-            this.guna2PictureBox3.TabStop = false;
-            this.guna2PictureBox3.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(0, 7);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(51, 50);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 6;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.UseTransparentBackground = true;
             // 
             // guna2Panel1
             // 
@@ -353,6 +323,21 @@ namespace Modern_Pharmacy_Managment_System
             this.TotalRevenue.Text = "100000.76";
             this.TotalRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(0, 7);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(51, 50);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 6;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.UseTransparentBackground = true;
+            // 
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
@@ -362,7 +347,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel3.Controls.Add(this.label5);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox3);
             this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2Panel3.Location = new System.Drawing.Point(673, 65);
+            this.guna2Panel3.Location = new System.Drawing.Point(965, 65);
             this.guna2Panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(227, 70);
@@ -391,6 +376,21 @@ namespace Modern_Pharmacy_Managment_System
             this.label5.Text = "100000.76";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(0, 7);
+            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(57, 57);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox3.TabIndex = 6;
+            this.guna2PictureBox3.TabStop = false;
+            this.guna2PictureBox3.UseTransparentBackground = true;
+            // 
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
@@ -400,7 +400,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel4.Controls.Add(this.ExpenseLbl);
             this.guna2Panel4.Controls.Add(this.guna2PictureBox4);
             this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(998, 65);
+            this.guna2Panel4.Location = new System.Drawing.Point(648, 65);
             this.guna2Panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(236, 70);
@@ -476,101 +476,17 @@ namespace Modern_Pharmacy_Managment_System
             this.DateEndCalender.TabIndex = 50;
             this.DateEndCalender.Value = new System.DateTime(2024, 4, 5, 17, 31, 20, 106);
             // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.Indigo;
-            this.guna2Panel5.Controls.Add(this.guna2PictureBox5);
-            this.guna2Panel5.Controls.Add(this.UnpaidEmpCnt);
-            this.guna2Panel5.Controls.Add(this.label10);
-            this.guna2Panel5.Controls.Add(this.lblLeaveCnt);
-            this.guna2Panel5.Controls.Add(this.label8);
-            this.guna2Panel5.Controls.Add(this.label3);
-            this.guna2Panel5.Location = new System.Drawing.Point(12, 542);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(260, 232);
-            this.guna2Panel5.TabIndex = 51;
-            // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(32, 123);
-            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(50, 38);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox5.TabIndex = 53;
-            this.guna2PictureBox5.TabStop = false;
-            this.guna2PictureBox5.UseTransparentBackground = true;
-            // 
-            // UnpaidEmpCnt
-            // 
-            this.UnpaidEmpCnt.AutoSize = true;
-            this.UnpaidEmpCnt.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnpaidEmpCnt.ForeColor = System.Drawing.Color.White;
-            this.UnpaidEmpCnt.Location = new System.Drawing.Point(88, 180);
-            this.UnpaidEmpCnt.Name = "UnpaidEmpCnt";
-            this.UnpaidEmpCnt.Size = new System.Drawing.Size(55, 40);
-            this.UnpaidEmpCnt.TabIndex = 7;
-            this.UnpaidEmpCnt.Text = "14";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label10.Location = new System.Drawing.Point(-3, 161);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(164, 17);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "         Unpaid Employee";
-            // 
-            // lblLeaveCnt
-            // 
-            this.lblLeaveCnt.AutoSize = true;
-            this.lblLeaveCnt.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeaveCnt.ForeColor = System.Drawing.Color.White;
-            this.lblLeaveCnt.Location = new System.Drawing.Point(88, 121);
-            this.lblLeaveCnt.Name = "lblLeaveCnt";
-            this.lblLeaveCnt.Size = new System.Drawing.Size(55, 40);
-            this.lblLeaveCnt.TabIndex = 5;
-            this.lblLeaveCnt.Text = "14";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label8.Location = new System.Drawing.Point(0, 104);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(176, 17);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "        Employee On Leave";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(246, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Employee Management";
-            // 
             // CustomerCountPanel
             // 
             this.CustomerCountPanel.AutoRoundedCorners = true;
             this.CustomerCountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(221)))), ((int)(((byte)(207)))));
-            this.CustomerCountPanel.BorderRadius = 36;
+            this.CustomerCountPanel.BorderRadius = 38;
             this.CustomerCountPanel.Controls.Add(this.guna2Panel6);
             this.CustomerCountPanel.Controls.Add(this.label9);
-            this.CustomerCountPanel.Location = new System.Drawing.Point(414, 629);
+            this.CustomerCountPanel.Location = new System.Drawing.Point(24, 36);
             this.CustomerCountPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CustomerCountPanel.Name = "CustomerCountPanel";
-            this.CustomerCountPanel.Size = new System.Drawing.Size(197, 74);
+            this.CustomerCountPanel.Size = new System.Drawing.Size(208, 78);
             this.CustomerCountPanel.TabIndex = 52;
             // 
             // guna2Panel6
@@ -604,6 +520,72 @@ namespace Modern_Pharmacy_Managment_System
             this.label9.TabIndex = 1;
             this.label9.Text = "Total Employee";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(11, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(225, 23);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Employee Information";
+            // 
+            // lblLeaveCnt
+            // 
+            this.lblLeaveCnt.AutoSize = true;
+            this.lblLeaveCnt.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeaveCnt.ForeColor = System.Drawing.Color.Black;
+            this.lblLeaveCnt.Location = new System.Drawing.Point(54, 7);
+            this.lblLeaveCnt.Name = "lblLeaveCnt";
+            this.lblLeaveCnt.Size = new System.Drawing.Size(41, 29);
+            this.lblLeaveCnt.TabIndex = 5;
+            this.lblLeaveCnt.Text = "14";
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BackColor = System.Drawing.Color.SteelBlue;
+            this.guna2Panel5.Controls.Add(this.guna2Panel7);
+            this.guna2Panel5.Controls.Add(this.label3);
+            this.guna2Panel5.Controls.Add(this.CustomerCountPanel);
+            this.guna2Panel5.Location = new System.Drawing.Point(12, 557);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(260, 232);
+            this.guna2Panel5.TabIndex = 51;
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.AutoRoundedCorners = true;
+            this.guna2Panel7.BackColor = System.Drawing.Color.Aqua;
+            this.guna2Panel7.BorderRadius = 38;
+            this.guna2Panel7.Controls.Add(this.guna2Panel8);
+            this.guna2Panel7.Controls.Add(this.label8);
+            this.guna2Panel7.Location = new System.Drawing.Point(24, 130);
+            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(208, 78);
+            this.guna2Panel7.TabIndex = 53;
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.BackColor = System.Drawing.Color.White;
+            this.guna2Panel8.Controls.Add(this.lblLeaveCnt);
+            this.guna2Panel8.Location = new System.Drawing.Point(21, 2);
+            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(155, 47);
+            this.guna2Panel8.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(14, 51);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(178, 21);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Employee On Leave";
+            // 
             // AdminMainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -611,7 +593,6 @@ namespace Modern_Pharmacy_Managment_System
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1280, 828);
             this.Controls.Add(this.guna2Panel5);
-            this.Controls.Add(this.CustomerCountPanel);
             this.Controls.Add(this.DateEndCalender);
             this.Controls.Add(this.DateStartCalender);
             this.Controls.Add(this.guna2Panel4);
@@ -628,25 +609,28 @@ namespace Modern_Pharmacy_Managment_System
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminMainDashboard";
             ((System.ComponentModel.ISupportInitialize)(this.RevenueChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            this.guna2Panel5.ResumeLayout(false);
-            this.guna2Panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.CustomerCountPanel.ResumeLayout(false);
             this.CustomerCountPanel.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();
+            this.guna2Panel5.ResumeLayout(false);
+            this.guna2Panel5.PerformLayout();
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -676,16 +660,15 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateStartCalender;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateEndCalender;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblEmployeeCnt;
-        private System.Windows.Forms.Label lblLeaveCnt;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label UnpaidEmpCnt;
-        private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Panel CustomerCountPanel;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblLeaveCnt;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private System.Windows.Forms.Label label8;
     }
 }

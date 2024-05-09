@@ -36,7 +36,6 @@ namespace Modern_Pharmacy_Managment_System
             this.DateStartCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.StatusCb = new System.Windows.Forms.ComboBox();
             this.EmployeeCb = new System.Windows.Forms.ComboBox();
-            this.LeaveCategoriesLabel = new System.Windows.Forms.Label();
             this.Emp_manage_label = new System.Windows.Forms.Label();
             this.EmpTopPanel = new System.Windows.Forms.Panel();
             this.LeaveEmpLabel = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@ namespace Modern_Pharmacy_Managment_System
             this.panel3 = new System.Windows.Forms.Panel();
             this.LeaveList = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.CategoriesCb = new System.Windows.Forms.ComboBox();
             this.SearchCb = new System.Windows.Forms.ComboBox();
             this.RefreshBtn = new FontAwesome.Sharp.IconButton();
             this.EmployeesBtn = new FontAwesome.Sharp.IconButton();
@@ -81,7 +79,7 @@ namespace Modern_Pharmacy_Managment_System
             this.DateStartCalender.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateStartCalender.ForeColor = System.Drawing.Color.White;
             this.DateStartCalender.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateStartCalender.Location = new System.Drawing.Point(390, 82);
+            this.DateStartCalender.Location = new System.Drawing.Point(170, 82);
             this.DateStartCalender.MaxDate = new System.DateTime(9988, 12, 31, 0, 0, 0, 0);
             this.DateStartCalender.MinDate = new System.DateTime(2024, 4, 6, 0, 0, 0, 0);
             this.DateStartCalender.Name = "DateStartCalender";
@@ -115,17 +113,6 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeCb.Size = new System.Drawing.Size(121, 33);
             this.EmployeeCb.TabIndex = 45;
             this.EmployeeCb.SelectedIndexChanged += new System.EventHandler(this.EmployeeCb_SelectedIndexChanged);
-            // 
-            // LeaveCategoriesLabel
-            // 
-            this.LeaveCategoriesLabel.AutoSize = true;
-            this.LeaveCategoriesLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LeaveCategoriesLabel.ForeColor = System.Drawing.Color.Black;
-            this.LeaveCategoriesLabel.Location = new System.Drawing.Point(207, 59);
-            this.LeaveCategoriesLabel.Name = "LeaveCategoriesLabel";
-            this.LeaveCategoriesLabel.Size = new System.Drawing.Size(102, 23);
-            this.LeaveCategoriesLabel.TabIndex = 31;
-            this.LeaveCategoriesLabel.Text = "Categories";
             // 
             // Emp_manage_label
             // 
@@ -164,7 +151,7 @@ namespace Modern_Pharmacy_Managment_System
             this.DateStartLabel.AutoSize = true;
             this.DateStartLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateStartLabel.ForeColor = System.Drawing.Color.Black;
-            this.DateStartLabel.Location = new System.Drawing.Point(387, 59);
+            this.DateStartLabel.Location = new System.Drawing.Point(167, 59);
             this.DateStartLabel.Name = "DateStartLabel";
             this.DateStartLabel.Size = new System.Drawing.Size(99, 23);
             this.DateStartLabel.TabIndex = 32;
@@ -279,7 +266,7 @@ namespace Modern_Pharmacy_Managment_System
             this.LeaveList.RowHeadersVisible = false;
             this.LeaveList.RowHeadersWidth = 51;
             this.LeaveList.RowTemplate.Height = 24;
-            this.LeaveList.Size = new System.Drawing.Size(939, 210);
+            this.LeaveList.Size = new System.Drawing.Size(1147, 210);
             this.LeaveList.TabIndex = 42;
             this.LeaveList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.LeaveList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -315,19 +302,6 @@ namespace Modern_Pharmacy_Managment_System
             this.label5.Size = new System.Drawing.Size(151, 32);
             this.label5.TabIndex = 43;
             this.label5.Text = "Leaves List";
-            // 
-            // CategoriesCb
-            // 
-            this.CategoriesCb.BackColor = System.Drawing.Color.White;
-            this.CategoriesCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoriesCb.FormattingEnabled = true;
-            this.CategoriesCb.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.CategoriesCb.Location = new System.Drawing.Point(211, 85);
-            this.CategoriesCb.Name = "CategoriesCb";
-            this.CategoriesCb.Size = new System.Drawing.Size(123, 33);
-            this.CategoriesCb.TabIndex = 44;
             // 
             // SearchCb
             // 
@@ -409,7 +383,6 @@ namespace Modern_Pharmacy_Managment_System
             this.Controls.Add(this.DateStartCalender);
             this.Controls.Add(this.StatusCb);
             this.Controls.Add(this.EmployeeCb);
-            this.Controls.Add(this.CategoriesCb);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.LeaveList);
             this.Controls.Add(this.panel3);
@@ -421,7 +394,6 @@ namespace Modern_Pharmacy_Managment_System
             this.Controls.Add(this.DateStartLabel);
             this.Controls.Add(this.LeaveEmpLabel);
             this.Controls.Add(this.EmpTopPanel);
-            this.Controls.Add(this.LeaveCategoriesLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LeavesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -440,7 +412,6 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2DateTimePicker DateStartCalender;
         private System.Windows.Forms.ComboBox StatusCb;
         private System.Windows.Forms.ComboBox EmployeeCb;
-        private System.Windows.Forms.Label LeaveCategoriesLabel;
         private System.Windows.Forms.Label Emp_manage_label;
         private System.Windows.Forms.Panel EmpTopPanel;
         private System.Windows.Forms.Label LeaveEmpLabel;
@@ -453,7 +424,6 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2DataGridView LeaveList;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox CategoriesCb;
         private System.Windows.Forms.ComboBox SearchCb;
         private FontAwesome.Sharp.IconButton RefreshBtn;
         private FontAwesome.Sharp.IconButton EmployeesBtn;
