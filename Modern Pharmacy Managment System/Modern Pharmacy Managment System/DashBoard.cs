@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Modern_Pharmacy_Managment_System.Database;
 
 namespace Modern_Pharmacy_Managment_System
 {
@@ -225,6 +226,11 @@ namespace Modern_Pharmacy_Managment_System
             Login login = new Login();
             login.Show();
             this.Hide();
+            LeavesForm lf = new LeavesForm();
+            lf.Hide();
+            StaffForm sf = new StaffForm();
+            sf.Hide();
+           
         }
     }
 }

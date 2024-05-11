@@ -29,10 +29,10 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMainDashboard));
             this.RevenueChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.LastYearBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -55,8 +55,8 @@ namespace Modern_Pharmacy_Managment_System
             this.label6 = new System.Windows.Forms.Label();
             this.ExpenseLbl = new System.Windows.Forms.Label();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.DateStartCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.DateEndCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.Calender1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.Calender2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.CustomerCountPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblEmployeeCnt = new System.Windows.Forms.Label();
@@ -67,6 +67,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.UseBtn = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.RevenueChart)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -87,61 +88,61 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.RevenueChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(252)))));
             this.RevenueChart.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.IsMarginVisible = false;
-            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
-            chartArea1.AxisX.LineColor = System.Drawing.Color.White;
-            chartArea1.AxisX.LineWidth = 0;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX.MajorGrid.LineWidth = 0;
-            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.MediumPurple;
-            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
-            chartArea1.AxisY.LabelStyle.Format = "${0}";
-            chartArea1.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisY.LineWidth = 0;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.MajorTickMark.LineWidth = 0;
-            chartArea1.BackColor = System.Drawing.Color.LightCyan;
-            chartArea1.BorderColor = System.Drawing.Color.Maroon;
-            chartArea1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea1.Name = "ChartArea1";
-            this.RevenueChart.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.White;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend1.Font = new System.Drawing.Font("Verdana", 8F);
-            legend1.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Revenue";
-            this.RevenueChart.Legends.Add(legend1);
+            chartArea4.AxisX.IsMarginVisible = false;
+            chartArea4.AxisX.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
+            chartArea4.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea4.AxisX.LineWidth = 0;
+            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea4.AxisX.MajorGrid.LineWidth = 0;
+            chartArea4.AxisX.MajorTickMark.LineColor = System.Drawing.Color.MediumPurple;
+            chartArea4.AxisY.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
+            chartArea4.AxisY.LabelStyle.Format = "${0}";
+            chartArea4.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea4.AxisY.LineWidth = 0;
+            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea4.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver;
+            chartArea4.AxisY.MajorTickMark.LineWidth = 0;
+            chartArea4.BackColor = System.Drawing.Color.LightCyan;
+            chartArea4.BorderColor = System.Drawing.Color.Maroon;
+            chartArea4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea4.Name = "ChartArea1";
+            this.RevenueChart.ChartAreas.Add(chartArea4);
+            legend4.BackColor = System.Drawing.Color.White;
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend4.Font = new System.Drawing.Font("Verdana", 8F);
+            legend4.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            legend4.IsTextAutoFit = false;
+            legend4.Name = "Revenue";
+            this.RevenueChart.Legends.Add(legend4);
             this.RevenueChart.Location = new System.Drawing.Point(18, 145);
             this.RevenueChart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RevenueChart.Name = "RevenueChart";
-            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series1.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series1.BackSecondaryColor = System.Drawing.Color.RoyalBlue;
-            series1.BorderColor = System.Drawing.Color.DarkRed;
-            series1.BorderWidth = 0;
-            series1.ChartArea = "ChartArea1";
-            series1.Color = System.Drawing.Color.Cyan;
-            series1.Legend = "Revenue";
-            series1.MarkerColor = System.Drawing.Color.Cyan;
-            series1.MarkerSize = 2;
-            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series1.Name = "Revenue";
-            series1.ShadowColor = System.Drawing.Color.LightGreen;
-            series1.YValuesPerPoint = 2;
-            this.RevenueChart.Series.Add(series1);
+            series4.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series4.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series4.BackSecondaryColor = System.Drawing.Color.RoyalBlue;
+            series4.BorderColor = System.Drawing.Color.DarkRed;
+            series4.BorderWidth = 0;
+            series4.ChartArea = "ChartArea1";
+            series4.Color = System.Drawing.Color.Cyan;
+            series4.Legend = "Revenue";
+            series4.MarkerColor = System.Drawing.Color.Cyan;
+            series4.MarkerSize = 2;
+            series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series4.Name = "Revenue";
+            series4.ShadowColor = System.Drawing.Color.LightGreen;
+            series4.YValuesPerPoint = 2;
+            this.RevenueChart.Series.Add(series4);
             this.RevenueChart.Size = new System.Drawing.Size(1229, 392);
             this.RevenueChart.TabIndex = 33;
             this.RevenueChart.Text = "chart1";
-            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title1.BackColor = System.Drawing.Color.White;
-            title1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.ForeColor = System.Drawing.Color.SaddleBrown;
-            title1.Name = "Title1";
-            title1.ShadowColor = System.Drawing.Color.Red;
-            title1.Text = "Gross Revenue";
-            this.RevenueChart.Titles.Add(title1);
+            title4.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title4.BackColor = System.Drawing.Color.White;
+            title4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title4.ForeColor = System.Drawing.Color.SaddleBrown;
+            title4.Name = "Title1";
+            title4.ShadowColor = System.Drawing.Color.Red;
+            title4.Text = "Gross Revenue";
+            this.RevenueChart.Titles.Add(title4);
             // 
             // LastYearBtn
             // 
@@ -306,7 +307,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(48, 4);
+            this.label2.Location = new System.Drawing.Point(57, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 2;
@@ -444,37 +445,37 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2PictureBox4.TabStop = false;
             this.guna2PictureBox4.UseTransparentBackground = true;
             // 
-            // DateStartCalender
+            // Calender1
             // 
-            this.DateStartCalender.BorderRadius = 8;
-            this.DateStartCalender.Checked = true;
-            this.DateStartCalender.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.DateStartCalender.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DateStartCalender.ForeColor = System.Drawing.Color.White;
-            this.DateStartCalender.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateStartCalender.Location = new System.Drawing.Point(15, 9);
-            this.DateStartCalender.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DateStartCalender.MinDate = new System.DateTime(2024, 4, 5, 0, 0, 0, 0);
-            this.DateStartCalender.Name = "DateStartCalender";
-            this.DateStartCalender.Size = new System.Drawing.Size(193, 36);
-            this.DateStartCalender.TabIndex = 49;
-            this.DateStartCalender.Value = new System.DateTime(2024, 4, 5, 17, 31, 20, 106);
+            this.Calender1.BorderRadius = 8;
+            this.Calender1.Checked = true;
+            this.Calender1.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.Calender1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Calender1.ForeColor = System.Drawing.Color.White;
+            this.Calender1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.Calender1.Location = new System.Drawing.Point(15, 9);
+            this.Calender1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.Calender1.MinDate = new System.DateTime(2023, 10, 30, 0, 0, 0, 0);
+            this.Calender1.Name = "Calender1";
+            this.Calender1.Size = new System.Drawing.Size(165, 36);
+            this.Calender1.TabIndex = 49;
+            this.Calender1.Value = new System.DateTime(2024, 4, 5, 17, 31, 20, 106);
             // 
-            // DateEndCalender
+            // Calender2
             // 
-            this.DateEndCalender.BorderRadius = 8;
-            this.DateEndCalender.Checked = true;
-            this.DateEndCalender.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.DateEndCalender.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DateEndCalender.ForeColor = System.Drawing.Color.White;
-            this.DateEndCalender.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateEndCalender.Location = new System.Drawing.Point(275, 9);
-            this.DateEndCalender.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DateEndCalender.MinDate = new System.DateTime(2024, 4, 5, 0, 0, 0, 0);
-            this.DateEndCalender.Name = "DateEndCalender";
-            this.DateEndCalender.Size = new System.Drawing.Size(193, 36);
-            this.DateEndCalender.TabIndex = 50;
-            this.DateEndCalender.Value = new System.DateTime(2024, 4, 5, 17, 31, 20, 106);
+            this.Calender2.BorderRadius = 8;
+            this.Calender2.Checked = true;
+            this.Calender2.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.Calender2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Calender2.ForeColor = System.Drawing.Color.White;
+            this.Calender2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.Calender2.Location = new System.Drawing.Point(186, 9);
+            this.Calender2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.Calender2.MinDate = new System.DateTime(2023, 11, 27, 0, 0, 0, 0);
+            this.Calender2.Name = "Calender2";
+            this.Calender2.Size = new System.Drawing.Size(152, 36);
+            this.Calender2.TabIndex = 50;
+            this.Calender2.Value = new System.DateTime(2024, 4, 5, 17, 31, 20, 106);
             // 
             // CustomerCountPanel
             // 
@@ -586,15 +587,31 @@ namespace Modern_Pharmacy_Managment_System
             this.label8.TabIndex = 1;
             this.label8.Text = "Employee On Leave";
             // 
+            // UseBtn
+            // 
+            this.UseBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UseBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UseBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UseBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UseBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UseBtn.ForeColor = System.Drawing.Color.White;
+            this.UseBtn.Location = new System.Drawing.Point(353, 9);
+            this.UseBtn.Name = "UseBtn";
+            this.UseBtn.Size = new System.Drawing.Size(84, 36);
+            this.UseBtn.TabIndex = 52;
+            this.UseBtn.Text = "Use";
+            this.UseBtn.Click += new System.EventHandler(this.UseBtn_Click);
+            // 
             // AdminMainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1280, 828);
+            this.Controls.Add(this.UseBtn);
             this.Controls.Add(this.guna2Panel5);
-            this.Controls.Add(this.DateEndCalender);
-            this.Controls.Add(this.DateStartCalender);
+            this.Controls.Add(this.Calender2);
+            this.Controls.Add(this.Calender1);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
@@ -658,8 +675,8 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label ExpenseLbl;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DateStartCalender;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DateEndCalender;
+        private Guna.UI2.WinForms.Guna2DateTimePicker Calender1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker Calender2;
         private System.Windows.Forms.Label lblEmployeeCnt;
         private Guna.UI2.WinForms.Guna2Panel CustomerCountPanel;
         private System.Windows.Forms.Label label9;
@@ -670,5 +687,6 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2Button UseBtn;
     }
 }

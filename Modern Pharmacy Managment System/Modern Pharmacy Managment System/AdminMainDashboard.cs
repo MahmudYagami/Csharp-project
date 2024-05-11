@@ -18,7 +18,9 @@ namespace Modern_Pharmacy_Managment_System
             //PopulateUnpaidEmployeeCount();
         }
 
-        private void PopulateRevenueChart(bool filterToday = false, bool filterLast7Days = false, bool filterLast30Days = false, bool filterLastYear = false)
+        
+
+        private void PopulateRevenueChart(bool filterToday = false, bool filterLast7Days = false, bool filterLast30Days = false, bool filterLastYear = false, DateTime? startDate = null, DateTime? endDate = null)
         {
             try
             {
@@ -44,10 +46,21 @@ namespace Modern_Pharmacy_Managment_System
                     {
                         query += " AND Date >= DATEADD(year, -1, CONVERT(date, GETDATE())) AND Date <= CONVERT(date, GETDATE())";
                     }
+                    else if (startDate != null && endDate != null)
+                    {
+                        query += $" AND Date >= @StartDate AND Date <= @EndDate";
+                    }
 
                     query += " GROUP BY Date ORDER BY Date";
 
                     SqlCommand cm = new SqlCommand(query, con);
+
+                    if (startDate != null && endDate != null)
+                    {
+                        cm.Parameters.AddWithValue("@StartDate", startDate.Value.Date);
+                        cm.Parameters.AddWithValue("@EndDate", endDate.Value.Date);
+                    }
+
                     SqlDataReader reader = cm.ExecuteReader();
 
                     // Clear existing data points
@@ -97,7 +110,8 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void DisplayTotalRevenueOrdersAndExpense(bool filterToday = false, bool filterLast7Days = false, bool filterLast30Days = false, bool filterLastYear = false)
+
+        private void DisplayTotalRevenueOrdersAndExpense(bool filterToday = false, bool filterLast7Days = false, bool filterLast30Days = false, bool filterLastYear = false, DateTime? startDate = null, DateTime? endDate = null)
         {
             try
             {
@@ -106,7 +120,7 @@ namespace Modern_Pharmacy_Managment_System
                     con.Open();
                     string query = "SELECT SUM(Revenue) AS TotalRevenue, SUM(TotalOrders) AS TotalOrders, SUM(Expense) AS TotalExpense FROM [PMSnew].[dbo].[AccountTbl] WHERE 1 = 1";
 
-                    // Add date filters if required
+                    // Add date filters based on the filter options
                     if (filterToday)
                     {
                         query += " AND CONVERT(date, Date) = CONVERT(date, GETDATE())";
@@ -123,8 +137,19 @@ namespace Modern_Pharmacy_Managment_System
                     {
                         query += " AND Date >= DATEADD(year, -1, CONVERT(date, GETDATE())) AND Date <= CONVERT(date, GETDATE())";
                     }
+                    else if (startDate != null && endDate != null)
+                    {
+                        query += $" AND Date >= @StartDate AND Date <= @EndDate";
+                    }
 
                     SqlCommand cm = new SqlCommand(query, con);
+
+                    if (startDate != null && endDate != null)
+                    {
+                        cm.Parameters.AddWithValue("@StartDate", startDate.Value.Date);
+                        cm.Parameters.AddWithValue("@EndDate", endDate.Value.Date);
+                    }
+
                     SqlDataReader reader = cm.ExecuteReader();
 
                     // Read the result set
@@ -156,6 +181,7 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
 
         private void TodayBtn_Click(object sender, EventArgs e)
@@ -243,5 +269,19 @@ namespace Modern_Pharmacy_Managment_System
             // Call DisplayTotalRevenueOrdersAndExpense with filterLastYear parameter set to true
             DisplayTotalRevenueOrdersAndExpense(filterLastYear: true);
         }
+
+        private void UseBtn_Click(object sender, EventArgs e)
+        {
+            // Get the selected start and end dates from Calender1 and Calender2
+            DateTime startDate = Calender1.Value.Date;
+            DateTime endDate = Calender2.Value.Date;
+
+            // Call method to display total revenue, orders, and expense for the selected date range
+            DisplayTotalRevenueOrdersAndExpense(startDate: startDate, endDate: endDate);
+
+            // Call method to populate revenue chart for the selected date range
+            PopulateRevenueChart(startDate: startDate, endDate: endDate);
+        }
+
     }
 }
