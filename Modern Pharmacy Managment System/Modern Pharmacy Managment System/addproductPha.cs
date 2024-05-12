@@ -16,7 +16,7 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class addproductPha : Form
     {
-        const string connectionString = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMSnew;Integrated Security=True";
+        const string connectionString = @"Data Source=Akid\SQLEXPRESS;Initial Catalog=PMSnew;Integrated Security=True";
         public addproductPha()
         {
             InitializeComponent();
@@ -131,13 +131,6 @@ namespace Modern_Pharmacy_Managment_System
             ShowDataOnGrid(searchTerm);
 
         }
-
-        private void invAddbtn_Click_1(object sender, EventArgs e)
-        {
-           
-
-        }
-
         private void invUpdatebtn_Click(object sender, EventArgs e)
         {
             try
@@ -241,13 +234,6 @@ namespace Modern_Pharmacy_Managment_System
             ClearTextBoxes();
         }
 
-        private void searchPrdt_TextChanged(object sender, EventArgs e)
-        {
-            string searchTerm = searchPrdt.Text.Trim();
-            ShowDataOnGrid(searchTerm);
-
-        }
-
         private void invAddbtn_Click_1(object sender, EventArgs e)
         {
 
@@ -286,11 +272,12 @@ namespace Modern_Pharmacy_Managment_System
                                     cmd.Parameters.AddWithValue("@PCompanyName", invCompanyplace.Text.Trim());
                                     cmd.Parameters.AddWithValue("@PGeneric", invGenericplace.Text.Trim());
                                     cmd.Parameters.AddWithValue("@PStock", invStockplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PBuyingPrice", invSellingplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PSellingPrice", invBuyingplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PBuyingPrice", invBuyingplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PSellingPrice", invSellingplace.Text.Trim());
                                     cmd.ExecuteNonQuery();
                                     //ClearF();
                                     //displayproduct();
+                                    ShowDataOnGrid();
 
                                     MessageBox.Show("Added successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
