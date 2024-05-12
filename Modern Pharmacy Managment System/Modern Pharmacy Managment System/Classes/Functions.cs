@@ -19,6 +19,7 @@ namespace Modern_Pharmacy_Managment_System
 
        
 
+
         public Functions()
         {
            // ConStr = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMS;Integrated Security=True";
@@ -28,6 +29,8 @@ namespace Modern_Pharmacy_Managment_System
             Cmd.Connection = Con;
             
         }
+
+
         public SqlConnection Connection { get; private set; }
 
         public DataTable GetData(string Query)
@@ -36,6 +39,14 @@ namespace Modern_Pharmacy_Managment_System
             sda = new SqlDataAdapter(Query, Con);
             sda.Fill(dt);
             return dt;
+        }
+
+        public void CloseConnection()
+        {
+            if (Con.State != ConnectionState.Closed)
+            {
+                Con.Close();
+            }
         }
 
         public int SetData(string Query)
@@ -51,6 +62,24 @@ namespace Modern_Pharmacy_Managment_System
             return Cnt;
         }
 
+
+        public object ExecuteScalar(string query)
+        {
+            try
+            {
+                Con.Open();
+                SqlCommand cmd = new SqlCommand(query, Con);
+                return cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Con.Close();
+            }
+        }
         public int insertData(SqlCommand cmd)
         {
             int rowsAffected = 0;
@@ -72,6 +101,7 @@ namespace Modern_Pharmacy_Managment_System
                 Con.Close();
             }
             return rowsAffected;
+
         }
     }
 }

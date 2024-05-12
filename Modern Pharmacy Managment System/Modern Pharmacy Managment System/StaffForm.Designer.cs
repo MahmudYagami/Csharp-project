@@ -35,19 +35,22 @@ namespace Modern_Pharmacy_Managment_System
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffForm));
             this.Emp_manage_label = new System.Windows.Forms.Label();
             this.EmpLeftPanel = new System.Windows.Forms.Panel();
-            this.LeaveBtn = new FontAwesome.Sharp.IconButton();
-            this.CategoryBtnStaff = new FontAwesome.Sharp.IconButton();
             this.EmpTopPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.EmpEditBtnStaff = new FontAwesome.Sharp.IconButton();
-            this.EmpSaveBtnStaff = new FontAwesome.Sharp.IconButton();
-            this.EmpDltBtnStaff = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.EmployeeList = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.EmployeeJoiningCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -58,11 +61,35 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpPassTb = new Guna.UI2.WinForms.Guna2TextBox();
             this.EmpAddressTb = new Guna.UI2.WinForms.Guna2TextBox();
             this.EmpSalaryBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.LeaveNotification = new Guna.UI2.WinForms.Guna2PictureBox();
             this.LeaveNotify = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.LeaveBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.EmpDltBtnStaff = new FontAwesome.Sharp.IconButton();
+            this.EmpSaveBtnStaff = new FontAwesome.Sharp.IconButton();
+            this.SearchButton = new FontAwesome.Sharp.IconButton();
+            this.EmpEditBtnStaff = new FontAwesome.Sharp.IconButton();
+            this.LeaveNotification = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.LeaveButton = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBoxGif1 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.SearchTextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.SearchButton2 = new FontAwesome.Sharp.IconButton();
+            this.Notification2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Addpanel = new System.Windows.Forms.Panel();
             this.EmpTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeaveNotification)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGif1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Notification2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Addpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Emp_manage_label
@@ -83,46 +110,8 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpLeftPanel.Location = new System.Drawing.Point(0, 0);
             this.EmpLeftPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmpLeftPanel.Name = "EmpLeftPanel";
-            this.EmpLeftPanel.Size = new System.Drawing.Size(15, 614);
+            this.EmpLeftPanel.Size = new System.Drawing.Size(15, 803);
             this.EmpLeftPanel.TabIndex = 1;
-            // 
-            // LeaveBtn
-            // 
-            this.LeaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(100)))));
-            this.LeaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LeaveBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LeaveBtn.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            this.LeaveBtn.IconColor = System.Drawing.Color.White;
-            this.LeaveBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.LeaveBtn.IconSize = 35;
-            this.LeaveBtn.Location = new System.Drawing.Point(931, 112);
-            this.LeaveBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LeaveBtn.Name = "LeaveBtn";
-            this.LeaveBtn.Size = new System.Drawing.Size(133, 42);
-            this.LeaveBtn.TabIndex = 2;
-            this.LeaveBtn.Text = "Leaves";
-            this.LeaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.LeaveBtn.UseVisualStyleBackColor = false;
-            this.LeaveBtn.Click += new System.EventHandler(this.LeaveBtn_Click);
-            // 
-            // CategoryBtnStaff
-            // 
-            this.CategoryBtnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(150)))));
-            this.CategoryBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CategoryBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.CategoryBtnStaff.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
-            this.CategoryBtnStaff.IconColor = System.Drawing.Color.White;
-            this.CategoryBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.CategoryBtnStaff.IconSize = 35;
-            this.CategoryBtnStaff.Location = new System.Drawing.Point(931, 160);
-            this.CategoryBtnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CategoryBtnStaff.Name = "CategoryBtnStaff";
-            this.CategoryBtnStaff.Size = new System.Drawing.Size(133, 42);
-            this.CategoryBtnStaff.TabIndex = 1;
-            this.CategoryBtnStaff.Text = "Categories";
-            this.CategoryBtnStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.CategoryBtnStaff.UseVisualStyleBackColor = false;
-            this.CategoryBtnStaff.Click += new System.EventHandler(this.CategoryBtnStaff_Click);
             // 
             // EmpTopPanel
             // 
@@ -132,7 +121,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpTopPanel.Location = new System.Drawing.Point(15, 0);
             this.EmpTopPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmpTopPanel.Name = "EmpTopPanel";
-            this.EmpTopPanel.Size = new System.Drawing.Size(1294, 30);
+            this.EmpTopPanel.Size = new System.Drawing.Size(1338, 30);
             this.EmpTopPanel.TabIndex = 2;
             // 
             // label2
@@ -140,18 +129,19 @@ namespace Modern_Pharmacy_Managment_System
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.label2.Location = new System.Drawing.Point(36, 63);
+            this.label2.Location = new System.Drawing.Point(14, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 23);
+            this.label2.Size = new System.Drawing.Size(59, 28);
             this.label2.TabIndex = 4;
             this.label2.Text = "Name";
+            this.label2.UseCompatibleTextRendering = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.label3.Location = new System.Drawing.Point(211, 63);
+            this.label3.Location = new System.Drawing.Point(185, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 23);
             this.label3.TabIndex = 6;
@@ -162,7 +152,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.label4.Location = new System.Drawing.Point(383, 62);
+            this.label4.Location = new System.Drawing.Point(357, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 23);
             this.label4.TabIndex = 8;
@@ -173,7 +163,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.label6.Location = new System.Drawing.Point(41, 150);
+            this.label6.Location = new System.Drawing.Point(15, 108);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 23);
             this.label6.TabIndex = 12;
@@ -184,65 +174,11 @@ namespace Modern_Pharmacy_Managment_System
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.label7.Location = new System.Drawing.Point(221, 150);
+            this.label7.Location = new System.Drawing.Point(195, 108);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 23);
             this.label7.TabIndex = 14;
             this.label7.Text = "Address";
-            // 
-            // EmpEditBtnStaff
-            // 
-            this.EmpEditBtnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.EmpEditBtnStaff.FlatAppearance.BorderSize = 0;
-            this.EmpEditBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EmpEditBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.EmpEditBtnStaff.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.EmpEditBtnStaff.IconColor = System.Drawing.Color.Black;
-            this.EmpEditBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EmpEditBtnStaff.Location = new System.Drawing.Point(778, 84);
-            this.EmpEditBtnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.EmpEditBtnStaff.Name = "EmpEditBtnStaff";
-            this.EmpEditBtnStaff.Size = new System.Drawing.Size(133, 42);
-            this.EmpEditBtnStaff.TabIndex = 15;
-            this.EmpEditBtnStaff.Text = "Edit";
-            this.EmpEditBtnStaff.UseVisualStyleBackColor = false;
-            this.EmpEditBtnStaff.Click += new System.EventHandler(this.EmpEditBtnStaff_Click);
-            // 
-            // EmpSaveBtnStaff
-            // 
-            this.EmpSaveBtnStaff.BackColor = System.Drawing.Color.Black;
-            this.EmpSaveBtnStaff.FlatAppearance.BorderSize = 0;
-            this.EmpSaveBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EmpSaveBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.EmpSaveBtnStaff.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.EmpSaveBtnStaff.IconColor = System.Drawing.Color.Black;
-            this.EmpSaveBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EmpSaveBtnStaff.Location = new System.Drawing.Point(778, 137);
-            this.EmpSaveBtnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.EmpSaveBtnStaff.Name = "EmpSaveBtnStaff";
-            this.EmpSaveBtnStaff.Size = new System.Drawing.Size(133, 42);
-            this.EmpSaveBtnStaff.TabIndex = 16;
-            this.EmpSaveBtnStaff.Text = "Save";
-            this.EmpSaveBtnStaff.UseVisualStyleBackColor = false;
-            this.EmpSaveBtnStaff.Click += new System.EventHandler(this.EmpSaveBtnStaff_Click);
-            // 
-            // EmpDltBtnStaff
-            // 
-            this.EmpDltBtnStaff.BackColor = System.Drawing.Color.Gray;
-            this.EmpDltBtnStaff.FlatAppearance.BorderSize = 0;
-            this.EmpDltBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EmpDltBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.EmpDltBtnStaff.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.EmpDltBtnStaff.IconColor = System.Drawing.Color.Black;
-            this.EmpDltBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EmpDltBtnStaff.Location = new System.Drawing.Point(778, 189);
-            this.EmpDltBtnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.EmpDltBtnStaff.Name = "EmpDltBtnStaff";
-            this.EmpDltBtnStaff.Size = new System.Drawing.Size(133, 42);
-            this.EmpDltBtnStaff.TabIndex = 17;
-            this.EmpDltBtnStaff.Text = "Delete";
-            this.EmpDltBtnStaff.UseVisualStyleBackColor = false;
-            this.EmpDltBtnStaff.Click += new System.EventHandler(this.EmpDltBtnStaff_Click);
             // 
             // panel3
             // 
@@ -268,6 +204,15 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.EmployeeList.ColumnHeadersHeight = 30;
             this.EmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.EmployeeList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -277,13 +222,13 @@ namespace Modern_Pharmacy_Managment_System
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.EmployeeList.DefaultCellStyle = dataGridViewCellStyle3;
             this.EmployeeList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
-            this.EmployeeList.Location = new System.Drawing.Point(40, 345);
+            this.EmployeeList.Location = new System.Drawing.Point(71, 329);
             this.EmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmployeeList.Name = "EmployeeList";
             this.EmployeeList.RowHeadersVisible = false;
             this.EmployeeList.RowHeadersWidth = 51;
             this.EmployeeList.RowTemplate.Height = 40;
-            this.EmployeeList.Size = new System.Drawing.Size(1215, 238);
+            this.EmployeeList.Size = new System.Drawing.Size(1215, 433);
             this.EmployeeList.TabIndex = 23;
             this.EmployeeList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.FeterRiver;
             this.EmployeeList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
@@ -309,6 +254,62 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.EmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeList_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "EmpId";
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "EmpName";
+            this.Column2.HeaderText = "NAME";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "EmpGen";
+            this.Column3.HeaderText = "GENDER";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "EmpPhone";
+            this.Column4.HeaderText = "PHONE";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "EmpPass";
+            this.Column5.HeaderText = "PASSWORD";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "EmpAdd";
+            this.Column6.HeaderText = "ADDRESS";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "EmpJoiningDate";
+            this.Column7.HeaderText = "JOINING DATE";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "EmpSalary";
+            this.Column8.HeaderText = "SALARY";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -325,7 +326,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.label1.Location = new System.Drawing.Point(393, 150);
+            this.label1.Location = new System.Drawing.Point(367, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 23);
             this.label1.TabIndex = 54;
@@ -333,15 +334,16 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // EmployeeJoiningCalender
             // 
-            this.EmployeeJoiningCalender.BackColor = System.Drawing.Color.DarkGreen;
-            this.EmployeeJoiningCalender.BorderColor = System.Drawing.Color.DimGray;
+            this.EmployeeJoiningCalender.BackColor = System.Drawing.Color.White;
+            this.EmployeeJoiningCalender.BorderColor = System.Drawing.Color.Firebrick;
             this.EmployeeJoiningCalender.BorderRadius = 8;
             this.EmployeeJoiningCalender.Checked = true;
-            this.EmployeeJoiningCalender.FillColor = System.Drawing.Color.DodgerBlue;
+            this.EmployeeJoiningCalender.FillColor = System.Drawing.Color.DarkTurquoise;
             this.EmployeeJoiningCalender.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.EmployeeJoiningCalender.ForeColor = System.Drawing.Color.White;
             this.EmployeeJoiningCalender.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.EmployeeJoiningCalender.Location = new System.Drawing.Point(562, 90);
+            this.EmployeeJoiningCalender.HoverState.FillColor = System.Drawing.Color.RoyalBlue;
+            this.EmployeeJoiningCalender.Location = new System.Drawing.Point(536, 48);
             this.EmployeeJoiningCalender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmployeeJoiningCalender.MaxDate = new System.DateTime(9988, 12, 31, 0, 0, 0, 0);
             this.EmployeeJoiningCalender.MinDate = new System.DateTime(2022, 1, 20, 0, 0, 0, 0);
@@ -355,7 +357,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeJoiningDate.AutoSize = true;
             this.EmployeeJoiningDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeJoiningDate.ForeColor = System.Drawing.Color.Black;
-            this.EmployeeJoiningDate.Location = new System.Drawing.Point(558, 65);
+            this.EmployeeJoiningDate.Location = new System.Drawing.Point(532, 19);
             this.EmployeeJoiningDate.Name = "EmployeeJoiningDate";
             this.EmployeeJoiningDate.Size = new System.Drawing.Size(116, 23);
             this.EmployeeJoiningDate.TabIndex = 56;
@@ -377,7 +379,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpGenderCb.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.EmpGenderCb.Location = new System.Drawing.Point(215, 90);
+            this.EmpGenderCb.Location = new System.Drawing.Point(189, 48);
             this.EmpGenderCb.Name = "EmpGenderCb";
             this.EmpGenderCb.Size = new System.Drawing.Size(151, 36);
             this.EmpGenderCb.TabIndex = 58;
@@ -397,7 +399,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpNameTb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EmpNameTb.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.EmpNameTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.EmpNameTb.Location = new System.Drawing.Point(40, 89);
+            this.EmpNameTb.Location = new System.Drawing.Point(14, 47);
             this.EmpNameTb.Margin = new System.Windows.Forms.Padding(5);
             this.EmpNameTb.Name = "EmpNameTb";
             this.EmpNameTb.PasswordChar = '\0';
@@ -421,7 +423,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpPhoneTb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EmpPhoneTb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.EmpPhoneTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.EmpPhoneTb.Location = new System.Drawing.Point(387, 89);
+            this.EmpPhoneTb.Location = new System.Drawing.Point(361, 47);
             this.EmpPhoneTb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EmpPhoneTb.Name = "EmpPhoneTb";
             this.EmpPhoneTb.PasswordChar = '\0';
@@ -445,7 +447,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpPassTb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EmpPassTb.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.EmpPassTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.EmpPassTb.Location = new System.Drawing.Point(40, 178);
+            this.EmpPassTb.Location = new System.Drawing.Point(14, 136);
             this.EmpPassTb.Margin = new System.Windows.Forms.Padding(5);
             this.EmpPassTb.Name = "EmpPassTb";
             this.EmpPassTb.PasswordChar = '\0';
@@ -469,7 +471,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpAddressTb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EmpAddressTb.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.EmpAddressTb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.EmpAddressTb.Location = new System.Drawing.Point(215, 178);
+            this.EmpAddressTb.Location = new System.Drawing.Point(189, 136);
             this.EmpAddressTb.Margin = new System.Windows.Forms.Padding(5);
             this.EmpAddressTb.Name = "EmpAddressTb";
             this.EmpAddressTb.PasswordChar = '\0';
@@ -493,7 +495,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpSalaryBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EmpSalaryBox.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.EmpSalaryBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.EmpSalaryBox.Location = new System.Drawing.Point(387, 178);
+            this.EmpSalaryBox.Location = new System.Drawing.Point(361, 136);
             this.EmpSalaryBox.Margin = new System.Windows.Forms.Padding(5);
             this.EmpSalaryBox.Name = "EmpSalaryBox";
             this.EmpSalaryBox.PasswordChar = '\0';
@@ -502,18 +504,6 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpSalaryBox.SelectedText = "";
             this.EmpSalaryBox.Size = new System.Drawing.Size(151, 37);
             this.EmpSalaryBox.TabIndex = 63;
-            // 
-            // LeaveNotification
-            // 
-            this.LeaveNotification.Image = ((System.Drawing.Image)(resources.GetObject("LeaveNotification.Image")));
-            this.LeaveNotification.ImageRotate = 0F;
-            this.LeaveNotification.Location = new System.Drawing.Point(954, 51);
-            this.LeaveNotification.Name = "LeaveNotification";
-            this.LeaveNotification.Size = new System.Drawing.Size(45, 37);
-            this.LeaveNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LeaveNotification.TabIndex = 64;
-            this.LeaveNotification.TabStop = false;
-            this.LeaveNotification.Click += new System.EventHandler(this.LeaveNotification_Click);
             // 
             // LeaveNotify
             // 
@@ -524,35 +514,329 @@ namespace Modern_Pharmacy_Managment_System
             this.LeaveNotify.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.LeaveNotify.Text = null;
             // 
+            // LeaveBtn
+            // 
+            this.LeaveBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LeaveBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LeaveBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LeaveBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LeaveBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LeaveBtn.ForeColor = System.Drawing.Color.White;
+            this.LeaveBtn.HoverState.FillColor = System.Drawing.Color.Aqua;
+            this.LeaveBtn.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LeaveBtn.Location = new System.Drawing.Point(759, 162);
+            this.LeaveBtn.Name = "LeaveBtn";
+            this.LeaveBtn.Size = new System.Drawing.Size(133, 45);
+            this.LeaveBtn.TabIndex = 65;
+            this.LeaveBtn.Text = "Leave";
+            this.LeaveBtn.Click += new System.EventHandler(this.LeaveBtn_Click_1);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
+            this.label8.Location = new System.Drawing.Point(913, 53);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(156, 23);
+            this.label8.TabIndex = 68;
+            this.label8.Text = "Search Employee";
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SearchTextBox.DefaultText = "";
+            this.SearchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SearchTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SearchTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SearchTextBox.ForeColor = System.Drawing.Color.Black;
+            this.SearchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SearchTextBox.Location = new System.Drawing.Point(917, 80);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.PasswordChar = '\0';
+            this.SearchTextBox.PlaceholderText = "Enter Your Phone";
+            this.SearchTextBox.SelectedText = "";
+            this.SearchTextBox.Size = new System.Drawing.Size(229, 44);
+            this.SearchTextBox.TabIndex = 66;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.Image = global::Modern_Pharmacy_Managment_System.Properties.Resources.icons8_employee_48;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(219, 74);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(61, 55);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 75;
+            this.guna2PictureBox3.TabStop = false;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::Modern_Pharmacy_Managment_System.Properties.Resources.icons8_leave_94;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(219, 142);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(60, 45);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 74;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // EmpDltBtnStaff
+            // 
+            this.EmpDltBtnStaff.BackColor = System.Drawing.Color.Gray;
+            this.EmpDltBtnStaff.FlatAppearance.BorderSize = 0;
+            this.EmpDltBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EmpDltBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.EmpDltBtnStaff.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.EmpDltBtnStaff.IconColor = System.Drawing.Color.Black;
+            this.EmpDltBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.EmpDltBtnStaff.Location = new System.Drawing.Point(759, 115);
+            this.EmpDltBtnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EmpDltBtnStaff.Name = "EmpDltBtnStaff";
+            this.EmpDltBtnStaff.Size = new System.Drawing.Size(133, 42);
+            this.EmpDltBtnStaff.TabIndex = 17;
+            this.EmpDltBtnStaff.Text = "Delete";
+            this.EmpDltBtnStaff.UseVisualStyleBackColor = false;
+            this.EmpDltBtnStaff.Click += new System.EventHandler(this.EmpDltBtnStaff_Click);
+            // 
+            // EmpSaveBtnStaff
+            // 
+            this.EmpSaveBtnStaff.BackColor = System.Drawing.Color.Black;
+            this.EmpSaveBtnStaff.FlatAppearance.BorderSize = 0;
+            this.EmpSaveBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EmpSaveBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.EmpSaveBtnStaff.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.EmpSaveBtnStaff.IconColor = System.Drawing.Color.Black;
+            this.EmpSaveBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.EmpSaveBtnStaff.Location = new System.Drawing.Point(759, 69);
+            this.EmpSaveBtnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EmpSaveBtnStaff.Name = "EmpSaveBtnStaff";
+            this.EmpSaveBtnStaff.Size = new System.Drawing.Size(133, 42);
+            this.EmpSaveBtnStaff.TabIndex = 16;
+            this.EmpSaveBtnStaff.Text = "Save";
+            this.EmpSaveBtnStaff.UseVisualStyleBackColor = false;
+            this.EmpSaveBtnStaff.Click += new System.EventHandler(this.EmpSaveBtnStaff_Click);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.SearchButton.IconChar = FontAwesome.Sharp.IconChar.SteamSymbol;
+            this.SearchButton.IconColor = System.Drawing.Color.Black;
+            this.SearchButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SearchButton.Location = new System.Drawing.Point(917, 139);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(188, 53);
+            this.SearchButton.TabIndex = 67;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // EmpEditBtnStaff
+            // 
+            this.EmpEditBtnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
+            this.EmpEditBtnStaff.FlatAppearance.BorderSize = 0;
+            this.EmpEditBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EmpEditBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.EmpEditBtnStaff.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.EmpEditBtnStaff.IconColor = System.Drawing.Color.Black;
+            this.EmpEditBtnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.EmpEditBtnStaff.Location = new System.Drawing.Point(759, 23);
+            this.EmpEditBtnStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EmpEditBtnStaff.Name = "EmpEditBtnStaff";
+            this.EmpEditBtnStaff.Size = new System.Drawing.Size(133, 42);
+            this.EmpEditBtnStaff.TabIndex = 15;
+            this.EmpEditBtnStaff.Text = "Edit";
+            this.EmpEditBtnStaff.UseVisualStyleBackColor = false;
+            this.EmpEditBtnStaff.Click += new System.EventHandler(this.EmpEditBtnStaff_Click);
+            // 
+            // LeaveNotification
+            // 
+            this.LeaveNotification.Image = ((System.Drawing.Image)(resources.GetObject("LeaveNotification.Image")));
+            this.LeaveNotification.ImageRotate = 0F;
+            this.LeaveNotification.Location = new System.Drawing.Point(1241, 34);
+            this.LeaveNotification.Name = "LeaveNotification";
+            this.LeaveNotification.Size = new System.Drawing.Size(45, 37);
+            this.LeaveNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LeaveNotification.TabIndex = 64;
+            this.LeaveNotification.TabStop = false;
+            this.LeaveNotification.Click += new System.EventHandler(this.LeaveNotification_Click);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.guna2Button1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(283, 74);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(200, 45);
+            this.guna2Button1.TabIndex = 79;
+            this.guna2Button1.Text = "Administer Staff";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // LeaveButton
+            // 
+            this.LeaveButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LeaveButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LeaveButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LeaveButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LeaveButton.FillColor = System.Drawing.Color.RoyalBlue;
+            this.LeaveButton.FocusedColor = System.Drawing.Color.Fuchsia;
+            this.LeaveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LeaveButton.ForeColor = System.Drawing.Color.White;
+            this.LeaveButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.LeaveButton.Location = new System.Drawing.Point(283, 142);
+            this.LeaveButton.Name = "LeaveButton";
+            this.LeaveButton.PressedColor = System.Drawing.Color.DarkTurquoise;
+            this.LeaveButton.Size = new System.Drawing.Size(200, 45);
+            this.LeaveButton.TabIndex = 80;
+            this.LeaveButton.Text = "Supervise Leave";
+            this.LeaveButton.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // pictureBoxGif1
+            // 
+            this.pictureBoxGif1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGif1.Image")));
+            this.pictureBoxGif1.Location = new System.Drawing.Point(954, 33);
+            this.pictureBoxGif1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxGif1.Name = "pictureBoxGif1";
+            this.pictureBoxGif1.Size = new System.Drawing.Size(251, 225);
+            this.pictureBoxGif1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxGif1.TabIndex = 81;
+            this.pictureBoxGif1.TabStop = false;
+            this.pictureBoxGif1.Click += new System.EventHandler(this.pictureBoxGif1_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
+            this.label9.Location = new System.Drawing.Point(616, 47);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(156, 23);
+            this.label9.TabIndex = 84;
+            this.label9.Text = "Search Employee";
+            // 
+            // SearchTextBox2
+            // 
+            this.SearchTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SearchTextBox2.DefaultText = "";
+            this.SearchTextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SearchTextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SearchTextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchTextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchTextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SearchTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SearchTextBox2.ForeColor = System.Drawing.Color.Black;
+            this.SearchTextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SearchTextBox2.Location = new System.Drawing.Point(620, 74);
+            this.SearchTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SearchTextBox2.Name = "SearchTextBox2";
+            this.SearchTextBox2.PasswordChar = '\0';
+            this.SearchTextBox2.PlaceholderText = "Enter Your Phone";
+            this.SearchTextBox2.SelectedText = "";
+            this.SearchTextBox2.Size = new System.Drawing.Size(229, 44);
+            this.SearchTextBox2.TabIndex = 82;
+            this.SearchTextBox2.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            // 
+            // SearchButton2
+            // 
+            this.SearchButton2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.SearchButton2.IconChar = FontAwesome.Sharp.IconChar.SteamSymbol;
+            this.SearchButton2.IconColor = System.Drawing.Color.Black;
+            this.SearchButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SearchButton2.Location = new System.Drawing.Point(620, 133);
+            this.SearchButton2.Name = "SearchButton2";
+            this.SearchButton2.Size = new System.Drawing.Size(188, 61);
+            this.SearchButton2.TabIndex = 83;
+            this.SearchButton2.Text = "Search";
+            this.SearchButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SearchButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SearchButton2.UseVisualStyleBackColor = false;
+            this.SearchButton2.Click += new System.EventHandler(this.SearchButton2_Click);
+            // 
+            // Notification2
+            // 
+            this.Notification2.Image = ((System.Drawing.Image)(resources.GetObject("Notification2.Image")));
+            this.Notification2.ImageRotate = 0F;
+            this.Notification2.Location = new System.Drawing.Point(1188, 9);
+            this.Notification2.Name = "Notification2";
+            this.Notification2.Size = new System.Drawing.Size(45, 37);
+            this.Notification2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Notification2.TabIndex = 69;
+            this.Notification2.TabStop = false;
+            this.Notification2.Click += new System.EventHandler(this.Notification2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(126, 172);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 86;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Addpanel
+            // 
+            this.Addpanel.Controls.Add(this.label2);
+            this.Addpanel.Controls.Add(this.label1);
+            this.Addpanel.Controls.Add(this.Notification2);
+            this.Addpanel.Controls.Add(this.EmpNameTb);
+            this.Addpanel.Controls.Add(this.EmpSaveBtnStaff);
+            this.Addpanel.Controls.Add(this.EmployeeJoiningDate);
+            this.Addpanel.Controls.Add(this.label8);
+            this.Addpanel.Controls.Add(this.EmpAddressTb);
+            this.Addpanel.Controls.Add(this.SearchTextBox);
+            this.Addpanel.Controls.Add(this.EmpDltBtnStaff);
+            this.Addpanel.Controls.Add(this.SearchButton);
+            this.Addpanel.Controls.Add(this.EmployeeJoiningCalender);
+            this.Addpanel.Controls.Add(this.label7);
+            this.Addpanel.Controls.Add(this.EmpPassTb);
+            this.Addpanel.Controls.Add(this.EmpSalaryBox);
+            this.Addpanel.Controls.Add(this.label4);
+            this.Addpanel.Controls.Add(this.label6);
+            this.Addpanel.Controls.Add(this.label3);
+            this.Addpanel.Controls.Add(this.EmpPhoneTb);
+            this.Addpanel.Controls.Add(this.EmpEditBtnStaff);
+            this.Addpanel.Controls.Add(this.EmpGenderCb);
+            this.Addpanel.Controls.Add(this.LeaveBtn);
+            this.Addpanel.Location = new System.Drawing.Point(15, 33);
+            this.Addpanel.Name = "Addpanel";
+            this.Addpanel.Size = new System.Drawing.Size(1326, 225);
+            this.Addpanel.TabIndex = 87;
+            this.Addpanel.Visible = false;
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1309, 614);
-            this.Controls.Add(this.LeaveNotification);
-            this.Controls.Add(this.EmpSalaryBox);
-            this.Controls.Add(this.EmpAddressTb);
-            this.Controls.Add(this.EmpPassTb);
-            this.Controls.Add(this.EmpPhoneTb);
-            this.Controls.Add(this.EmpNameTb);
-            this.Controls.Add(this.EmpGenderCb);
-            this.Controls.Add(this.EmployeeJoiningCalender);
-            this.Controls.Add(this.EmployeeJoiningDate);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.CategoryBtnStaff);
-            this.Controls.Add(this.LeaveBtn);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(1353, 803);
+            this.Controls.Add(this.Addpanel);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.SearchTextBox2);
+            this.Controls.Add(this.SearchButton2);
+            this.Controls.Add(this.pictureBoxGif1);
+            this.Controls.Add(this.LeaveButton);
+            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.guna2PictureBox3);
+            this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.LeaveNotification);
             this.Controls.Add(this.EmployeeList);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.EmpDltBtnStaff);
-            this.Controls.Add(this.EmpSaveBtnStaff);
-            this.Controls.Add(this.EmpEditBtnStaff);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.EmpTopPanel);
             this.Controls.Add(this.EmpLeftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -563,7 +847,14 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpTopPanel.ResumeLayout(false);
             this.EmpTopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeaveNotification)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGif1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Notification2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Addpanel.ResumeLayout(false);
+            this.Addpanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,8 +874,6 @@ namespace Modern_Pharmacy_Managment_System
         private FontAwesome.Sharp.IconButton EmpSaveBtnStaff;
         private FontAwesome.Sharp.IconButton EmpDltBtnStaff;
         private System.Windows.Forms.Panel panel3;
-        private FontAwesome.Sharp.IconButton LeaveBtn;
-        private FontAwesome.Sharp.IconButton CategoryBtnStaff;
         private Guna.UI2.WinForms.Guna2DataGridView EmployeeList;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
@@ -598,5 +887,28 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2TextBox EmpSalaryBox;
         private Guna.UI2.WinForms.Guna2PictureBox LeaveNotification;
         private Guna.UI2.WinForms.Guna2MessageDialog LeaveNotify;
+        private Guna.UI2.WinForms.Guna2Button LeaveBtn;
+        private System.Windows.Forms.Label label8;
+        private FontAwesome.Sharp.IconButton SearchButton;
+        private Guna.UI2.WinForms.Guna2TextBox SearchTextBox;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button LeaveButton;
+        private System.Windows.Forms.PictureBox pictureBoxGif1;
+        private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2TextBox SearchTextBox2;
+        private FontAwesome.Sharp.IconButton SearchButton2;
+        private Guna.UI2.WinForms.Guna2PictureBox Notification2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel Addpanel;
     }
 }

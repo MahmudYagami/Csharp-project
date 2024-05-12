@@ -297,6 +297,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="reqCustomerProduct.resx">
       <DependentUpon>reqCustomerProduct.cs</DependentUpon>
@@ -336,6 +337,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2024-05-07 211014.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2024-05-07 211837.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2024-05-07 2110141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\icons8-leave-94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\icons8-employee-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

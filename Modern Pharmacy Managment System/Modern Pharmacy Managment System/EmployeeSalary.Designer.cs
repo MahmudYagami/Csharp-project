@@ -88,7 +88,7 @@ namespace Modern_Pharmacy_Managment_System
             this.PayDateCalender.Name = "PayDateCalender";
             this.PayDateCalender.Size = new System.Drawing.Size(221, 54);
             this.PayDateCalender.TabIndex = 10;
-            this.PayDateCalender.Value = new System.DateTime(2024, 4, 21, 21, 9, 19, 426);
+            this.PayDateCalender.Value = new System.DateTime(2024, 5, 3, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -159,12 +159,12 @@ namespace Modern_Pharmacy_Managment_System
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.SalaryView.DefaultCellStyle = dataGridViewCellStyle3;
             this.SalaryView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.SalaryView.Location = new System.Drawing.Point(23, 370);
+            this.SalaryView.Location = new System.Drawing.Point(28, 381);
             this.SalaryView.Name = "SalaryView";
             this.SalaryView.RowHeadersVisible = false;
             this.SalaryView.RowHeadersWidth = 51;
             this.SalaryView.RowTemplate.Height = 24;
-            this.SalaryView.Size = new System.Drawing.Size(1065, 204);
+            this.SalaryView.Size = new System.Drawing.Size(1254, 342);
             this.SalaryView.TabIndex = 15;
             this.SalaryView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.SalaryView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -196,7 +196,7 @@ namespace Modern_Pharmacy_Managment_System
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1113, 36);
+            this.panel1.Size = new System.Drawing.Size(1311, 36);
             this.panel1.TabIndex = 16;
             // 
             // Emp_manage_label
@@ -261,7 +261,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 339);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1113, 10);
+            this.guna2Panel1.Size = new System.Drawing.Size(1299, 10);
             this.guna2Panel1.TabIndex = 20;
             // 
             // NotificationImage
@@ -323,7 +323,7 @@ namespace Modern_Pharmacy_Managment_System
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1113, 570);
+            this.ClientSize = new System.Drawing.Size(1311, 754);
             this.Controls.Add(this.SalaryAmountTxt);
             this.Controls.Add(this.EmpIdTxt);
             this.Controls.Add(this.NotificationImage);
