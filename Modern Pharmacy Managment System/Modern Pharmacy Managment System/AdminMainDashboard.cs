@@ -118,7 +118,7 @@ namespace Modern_Pharmacy_Managment_System
                 using (var con = DatabaseConnection.databaseConnect())
                 {
                     con.Open();
-                    string query = "SELECT SUM(Revenue) AS TotalRevenue, SUM(TotalOrders) AS TotalOrders, SUM(Expense) AS TotalExpense FROM [PMSnew].[dbo].[AccountTbl] WHERE 1 = 1";
+                    string query = "SELECT SUM(Revenue) AS TotalRevenue, SUM(TotalOrders) AS TotalOrders, SUM(Expense) AS TotalExpense, SUM(NetIncome) AS TotalNetIncome FROM [PMSnew].[dbo].[AccountTbl] WHERE 1 = 1";
 
                     // Add date filters based on the filter options
                     if (filterToday)
@@ -155,15 +155,20 @@ namespace Modern_Pharmacy_Managment_System
                     // Read the result set
                     if (reader.Read())
                     {
-                        // Retrieve total revenue, total orders, and total expense from the result set
+                        // Retrieve total revenue, total orders, total expense, and total net income from the result set
                         double totalRevenue = reader.IsDBNull(reader.GetOrdinal("TotalRevenue")) ? 0 : reader.GetDouble(reader.GetOrdinal("TotalRevenue"));
                         int totalOrders = reader.IsDBNull(reader.GetOrdinal("TotalOrders")) ? 0 : reader.GetInt32(reader.GetOrdinal("TotalOrders"));
                         double totalExpense = reader.IsDBNull(reader.GetOrdinal("TotalExpense")) ? 0 : reader.GetDouble(reader.GetOrdinal("TotalExpense"));
+                        double totalNetIncome = reader.IsDBNull(reader.GetOrdinal("TotalNetIncome")) ? 0 : reader.GetDouble(reader.GetOrdinal("TotalNetIncome"));
+
+                        // Calculate net profit
+                        double netProfit = totalRevenue - totalExpense + totalNetIncome;
 
                         // Update the labels with the formatted values
                         TotalRevenue.Text = totalRevenue.ToString("C");
                         TotalOrders.Text = totalOrders.ToString();
                         ExpenseLbl.Text = totalExpense.ToString("C");
+                        ProfitLbl.Text = netProfit.ToString("C");
                     }
                     else
                     {
@@ -171,6 +176,7 @@ namespace Modern_Pharmacy_Managment_System
                         TotalRevenue.Text = "Total Revenue: $0.00";
                         TotalOrders.Text = "Total Orders: 0";
                         ExpenseLbl.Text = "Total Expense: $0.00";
+                        ProfitLbl.Text = "Net Profit: $0.00";
                     }
 
                     reader.Close();
@@ -181,6 +187,7 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
 
 

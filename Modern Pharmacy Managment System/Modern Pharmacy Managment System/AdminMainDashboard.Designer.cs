@@ -29,10 +29,10 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMainDashboard));
             this.RevenueChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.LastYearBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -49,7 +49,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.ProfitLbl = new System.Windows.Forms.Label();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -86,63 +86,66 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // RevenueChart
             // 
-            this.RevenueChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(252)))));
+            this.RevenueChart.BackColor = System.Drawing.Color.Black;
             this.RevenueChart.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea4.AxisX.IsMarginVisible = false;
-            chartArea4.AxisX.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
-            chartArea4.AxisX.LineColor = System.Drawing.Color.White;
-            chartArea4.AxisX.LineWidth = 0;
-            chartArea4.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisX.MajorGrid.LineWidth = 0;
-            chartArea4.AxisX.MajorTickMark.LineColor = System.Drawing.Color.MediumPurple;
-            chartArea4.AxisY.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
-            chartArea4.AxisY.LabelStyle.Format = "${0}";
-            chartArea4.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea4.AxisY.LineWidth = 0;
-            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver;
-            chartArea4.AxisY.MajorTickMark.LineWidth = 0;
-            chartArea4.BackColor = System.Drawing.Color.LightCyan;
-            chartArea4.BorderColor = System.Drawing.Color.Maroon;
-            chartArea4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea4.Name = "ChartArea1";
-            this.RevenueChart.ChartAreas.Add(chartArea4);
-            legend4.BackColor = System.Drawing.Color.White;
-            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend4.Font = new System.Drawing.Font("Verdana", 8F);
-            legend4.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            legend4.IsTextAutoFit = false;
-            legend4.Name = "Revenue";
-            this.RevenueChart.Legends.Add(legend4);
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.LineWidth = 0;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX.MajorGrid.LineWidth = 0;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.MediumPurple;
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.BlueViolet;
+            chartArea1.AxisY.LabelStyle.Format = "${0}";
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisY.LineWidth = 0;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.MajorTickMark.LineWidth = 0;
+            chartArea1.BackColor = System.Drawing.Color.Black;
+            chartArea1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Unscaled;
+            chartArea1.BorderWidth = 0;
+            chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.Aqua;
+            this.RevenueChart.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.White;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Font = new System.Drawing.Font("Verdana", 8F);
+            legend1.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Revenue";
+            this.RevenueChart.Legends.Add(legend1);
             this.RevenueChart.Location = new System.Drawing.Point(18, 145);
             this.RevenueChart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RevenueChart.Name = "RevenueChart";
-            series4.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series4.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            series4.BackSecondaryColor = System.Drawing.Color.RoyalBlue;
-            series4.BorderColor = System.Drawing.Color.DarkRed;
-            series4.BorderWidth = 0;
-            series4.ChartArea = "ChartArea1";
-            series4.Color = System.Drawing.Color.Cyan;
-            series4.Legend = "Revenue";
-            series4.MarkerColor = System.Drawing.Color.Cyan;
-            series4.MarkerSize = 2;
-            series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series4.Name = "Revenue";
-            series4.ShadowColor = System.Drawing.Color.LightGreen;
-            series4.YValuesPerPoint = 2;
-            this.RevenueChart.Series.Add(series4);
-            this.RevenueChart.Size = new System.Drawing.Size(1229, 392);
+            this.RevenueChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series1.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            series1.BackSecondaryColor = System.Drawing.Color.Orchid;
+            series1.BorderColor = System.Drawing.Color.Magenta;
+            series1.BorderWidth = 0;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series1.Color = System.Drawing.Color.DarkSlateBlue;
+            series1.Legend = "Revenue";
+            series1.MarkerColor = System.Drawing.Color.Cyan;
+            series1.MarkerSize = 2;
+            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series1.Name = "Revenue";
+            series1.ShadowColor = System.Drawing.Color.LightGreen;
+            series1.YValuesPerPoint = 2;
+            this.RevenueChart.Series.Add(series1);
+            this.RevenueChart.Size = new System.Drawing.Size(1317, 434);
             this.RevenueChart.TabIndex = 33;
             this.RevenueChart.Text = "chart1";
-            title4.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title4.BackColor = System.Drawing.Color.White;
-            title4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title4.ForeColor = System.Drawing.Color.SaddleBrown;
-            title4.Name = "Title1";
-            title4.ShadowColor = System.Drawing.Color.Red;
-            title4.Text = "Gross Revenue";
-            this.RevenueChart.Titles.Add(title4);
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.BackColor = System.Drawing.Color.Black;
+            title1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.ForeColor = System.Drawing.Color.SaddleBrown;
+            title1.Name = "Title1";
+            title1.ShadowColor = System.Drawing.Color.Red;
+            title1.Text = "Gross Revenue";
+            this.RevenueChart.Titles.Add(title1);
             // 
             // LastYearBtn
             // 
@@ -155,11 +158,11 @@ namespace Modern_Pharmacy_Managment_System
             this.LastYearBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.LastYearBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.LastYearBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.LastYearBtn.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.LastYearBtn.FillColor = System.Drawing.Color.Navy;
             this.LastYearBtn.FocusedColor = System.Drawing.Color.Red;
             this.LastYearBtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LastYearBtn.ForeColor = System.Drawing.Color.White;
-            this.LastYearBtn.Location = new System.Drawing.Point(1032, 11);
+            this.LastYearBtn.Location = new System.Drawing.Point(1151, 11);
             this.LastYearBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LastYearBtn.Name = "LastYearBtn";
             this.LastYearBtn.Size = new System.Drawing.Size(190, 34);
@@ -177,11 +180,11 @@ namespace Modern_Pharmacy_Managment_System
             this.TodayBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.TodayBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.TodayBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.TodayBtn.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.TodayBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.TodayBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(66)))), ((int)(((byte)(252)))));
             this.TodayBtn.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TodayBtn.ForeColor = System.Drawing.Color.White;
-            this.TodayBtn.Location = new System.Drawing.Point(545, 11);
+            this.TodayBtn.Location = new System.Drawing.Point(664, 11);
             this.TodayBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TodayBtn.Name = "TodayBtn";
             this.TodayBtn.Size = new System.Drawing.Size(122, 34);
@@ -199,11 +202,11 @@ namespace Modern_Pharmacy_Managment_System
             this.Last30Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Last30Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Last30Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Last30Btn.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.Last30Btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.Last30Btn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(66)))), ((int)(((byte)(252)))));
             this.Last30Btn.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Last30Btn.ForeColor = System.Drawing.Color.White;
-            this.Last30Btn.Location = new System.Drawing.Point(841, 11);
+            this.Last30Btn.Location = new System.Drawing.Point(960, 11);
             this.Last30Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Last30Btn.Name = "Last30Btn";
             this.Last30Btn.Size = new System.Drawing.Size(185, 34);
@@ -221,11 +224,11 @@ namespace Modern_Pharmacy_Managment_System
             this.Last7Btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Last7Btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Last7Btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Last7Btn.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.Last7Btn.FillColor = System.Drawing.Color.Blue;
             this.Last7Btn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(66)))), ((int)(((byte)(252)))));
             this.Last7Btn.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Last7Btn.ForeColor = System.Drawing.Color.White;
-            this.Last7Btn.Location = new System.Drawing.Point(673, 11);
+            this.Last7Btn.Location = new System.Drawing.Point(792, 11);
             this.Last7Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Last7Btn.Name = "Last7Btn";
             this.Last7Btn.Size = new System.Drawing.Size(162, 34);
@@ -241,8 +244,8 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.TotalOrders);
-            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(36, 65);
+            this.guna2Panel1.FillColor = System.Drawing.Color.MediumOrchid;
+            this.guna2Panel1.Location = new System.Drawing.Point(82, 59);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(227, 70);
@@ -294,8 +297,8 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Controls.Add(this.TotalRevenue);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(353, 65);
+            this.guna2Panel2.FillColor = System.Drawing.Color.MediumOrchid;
+            this.guna2Panel2.Location = new System.Drawing.Point(399, 59);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(229, 70);
@@ -345,10 +348,10 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel3.BorderRadius = 15;
             this.guna2Panel3.BorderThickness = 5;
             this.guna2Panel3.Controls.Add(this.label4);
-            this.guna2Panel3.Controls.Add(this.label5);
+            this.guna2Panel3.Controls.Add(this.ProfitLbl);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox3);
-            this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2Panel3.Location = new System.Drawing.Point(965, 65);
+            this.guna2Panel3.FillColor = System.Drawing.Color.MediumOrchid;
+            this.guna2Panel3.Location = new System.Drawing.Point(1064, 65);
             this.guna2Panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(227, 70);
@@ -367,15 +370,15 @@ namespace Modern_Pharmacy_Managment_System
             this.label4.Text = "Total Profit";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // ProfitLbl
             // 
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(57, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 25);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "100000.76";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ProfitLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfitLbl.Location = new System.Drawing.Point(57, 32);
+            this.ProfitLbl.Name = "ProfitLbl";
+            this.ProfitLbl.Size = new System.Drawing.Size(151, 25);
+            this.ProfitLbl.TabIndex = 2;
+            this.ProfitLbl.Text = "100000.76";
+            this.ProfitLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2PictureBox3
             // 
@@ -400,8 +403,8 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel4.Controls.Add(this.label6);
             this.guna2Panel4.Controls.Add(this.ExpenseLbl);
             this.guna2Panel4.Controls.Add(this.guna2PictureBox4);
-            this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(648, 65);
+            this.guna2Panel4.FillColor = System.Drawing.Color.MediumOrchid;
+            this.guna2Panel4.Location = new System.Drawing.Point(747, 65);
             this.guna2Panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(236, 70);
@@ -412,6 +415,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label6.Location = new System.Drawing.Point(48, 4);
             this.label6.Name = "label6";
@@ -423,6 +427,7 @@ namespace Modern_Pharmacy_Managment_System
             // ExpenseLbl
             // 
             this.ExpenseLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpenseLbl.ForeColor = System.Drawing.Color.Black;
             this.ExpenseLbl.Location = new System.Drawing.Point(57, 32);
             this.ExpenseLbl.Name = "ExpenseLbl";
             this.ExpenseLbl.Size = new System.Drawing.Size(151, 25);
@@ -449,15 +454,15 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.Calender1.BorderRadius = 8;
             this.Calender1.Checked = true;
-            this.Calender1.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.Calender1.FillColor = System.Drawing.Color.RoyalBlue;
             this.Calender1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Calender1.ForeColor = System.Drawing.Color.White;
             this.Calender1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.Calender1.Location = new System.Drawing.Point(15, 9);
+            this.Calender1.Location = new System.Drawing.Point(27, 9);
             this.Calender1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.Calender1.MinDate = new System.DateTime(2023, 10, 30, 0, 0, 0, 0);
             this.Calender1.Name = "Calender1";
-            this.Calender1.Size = new System.Drawing.Size(165, 36);
+            this.Calender1.Size = new System.Drawing.Size(185, 36);
             this.Calender1.TabIndex = 49;
             this.Calender1.Value = new System.DateTime(2024, 4, 5, 17, 31, 20, 106);
             // 
@@ -469,25 +474,25 @@ namespace Modern_Pharmacy_Managment_System
             this.Calender2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Calender2.ForeColor = System.Drawing.Color.White;
             this.Calender2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.Calender2.Location = new System.Drawing.Point(186, 9);
+            this.Calender2.Location = new System.Drawing.Point(242, 9);
             this.Calender2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.Calender2.MinDate = new System.DateTime(2023, 11, 27, 0, 0, 0, 0);
             this.Calender2.Name = "Calender2";
-            this.Calender2.Size = new System.Drawing.Size(152, 36);
+            this.Calender2.Size = new System.Drawing.Size(186, 36);
             this.Calender2.TabIndex = 50;
             this.Calender2.Value = new System.DateTime(2024, 4, 5, 17, 31, 20, 106);
             // 
             // CustomerCountPanel
             // 
             this.CustomerCountPanel.AutoRoundedCorners = true;
-            this.CustomerCountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(221)))), ((int)(((byte)(207)))));
+            this.CustomerCountPanel.BackColor = System.Drawing.Color.MediumOrchid;
             this.CustomerCountPanel.BorderRadius = 38;
             this.CustomerCountPanel.Controls.Add(this.guna2Panel6);
             this.CustomerCountPanel.Controls.Add(this.label9);
-            this.CustomerCountPanel.Location = new System.Drawing.Point(24, 36);
+            this.CustomerCountPanel.Location = new System.Drawing.Point(101, 601);
             this.CustomerCountPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CustomerCountPanel.Name = "CustomerCountPanel";
-            this.CustomerCountPanel.Size = new System.Drawing.Size(208, 78);
+            this.CustomerCountPanel.Size = new System.Drawing.Size(231, 78);
             this.CustomerCountPanel.TabIndex = 52;
             // 
             // guna2Panel6
@@ -497,7 +502,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel6.Location = new System.Drawing.Point(21, 2);
             this.guna2Panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(155, 47);
+            this.guna2Panel6.Size = new System.Drawing.Size(187, 47);
             this.guna2Panel6.TabIndex = 0;
             // 
             // lblEmployeeCnt
@@ -526,7 +531,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(11, 0);
+            this.label3.Location = new System.Drawing.Point(16, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(225, 23);
             this.label3.TabIndex = 2;
@@ -546,10 +551,8 @@ namespace Modern_Pharmacy_Managment_System
             // guna2Panel5
             // 
             this.guna2Panel5.BackColor = System.Drawing.Color.SteelBlue;
-            this.guna2Panel5.Controls.Add(this.guna2Panel7);
             this.guna2Panel5.Controls.Add(this.label3);
-            this.guna2Panel5.Controls.Add(this.CustomerCountPanel);
-            this.guna2Panel5.Location = new System.Drawing.Point(12, 557);
+            this.guna2Panel5.Location = new System.Drawing.Point(819, 584);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(260, 232);
             this.guna2Panel5.TabIndex = 51;
@@ -557,14 +560,14 @@ namespace Modern_Pharmacy_Managment_System
             // guna2Panel7
             // 
             this.guna2Panel7.AutoRoundedCorners = true;
-            this.guna2Panel7.BackColor = System.Drawing.Color.Aqua;
+            this.guna2Panel7.BackColor = System.Drawing.Color.MediumOrchid;
             this.guna2Panel7.BorderRadius = 38;
             this.guna2Panel7.Controls.Add(this.guna2Panel8);
             this.guna2Panel7.Controls.Add(this.label8);
-            this.guna2Panel7.Location = new System.Drawing.Point(24, 130);
+            this.guna2Panel7.Location = new System.Drawing.Point(101, 695);
             this.guna2Panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(208, 78);
+            this.guna2Panel7.Size = new System.Drawing.Size(231, 78);
             this.guna2Panel7.TabIndex = 53;
             // 
             // guna2Panel8
@@ -574,7 +577,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel8.Location = new System.Drawing.Point(21, 2);
             this.guna2Panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(155, 47);
+            this.guna2Panel8.Size = new System.Drawing.Size(187, 47);
             this.guna2Panel8.TabIndex = 0;
             // 
             // label8
@@ -589,13 +592,16 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // UseBtn
             // 
+            this.UseBtn.BorderRadius = 8;
             this.UseBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.UseBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.UseBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.UseBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UseBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.UseBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.UseBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UseBtn.ForeColor = System.Drawing.Color.White;
-            this.UseBtn.Location = new System.Drawing.Point(353, 9);
+            this.UseBtn.Location = new System.Drawing.Point(460, 9);
             this.UseBtn.Name = "UseBtn";
             this.UseBtn.Size = new System.Drawing.Size(84, 36);
             this.UseBtn.TabIndex = 52;
@@ -606,10 +612,12 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1280, 828);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
+            this.ClientSize = new System.Drawing.Size(1347, 828);
+            this.Controls.Add(this.guna2Panel7);
             this.Controls.Add(this.UseBtn);
             this.Controls.Add(this.guna2Panel5);
+            this.Controls.Add(this.CustomerCountPanel);
             this.Controls.Add(this.Calender2);
             this.Controls.Add(this.Calender1);
             this.Controls.Add(this.guna2Panel4);
@@ -670,7 +678,7 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label TotalRevenue;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label ProfitLbl;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label ExpenseLbl;

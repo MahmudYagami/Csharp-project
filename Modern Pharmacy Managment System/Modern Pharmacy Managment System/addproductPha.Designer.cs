@@ -136,7 +136,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel8.Location = new System.Drawing.Point(8, 23);
-            this.guna2HtmlLabel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel8.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(135, 38);
             this.guna2HtmlLabel8.TabIndex = 18;
@@ -169,7 +169,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.guna2GradientPanel1.Controls.Add(this.prdtview);
             this.guna2GradientPanel1.Location = new System.Drawing.Point(4, 69);
-            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1181, 342);
             this.guna2GradientPanel1.TabIndex = 1;
@@ -214,7 +214,7 @@ namespace Modern_Pharmacy_Managment_System
             this.prdtview.DefaultCellStyle = dataGridViewCellStyle4;
             this.prdtview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.prdtview.Location = new System.Drawing.Point(0, 4);
-            this.prdtview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.prdtview.Margin = new System.Windows.Forms.Padding(4);
             this.prdtview.Name = "prdtview";
             this.prdtview.ReadOnly = true;
             this.prdtview.RowHeadersVisible = false;
@@ -252,7 +252,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1105, 674);
             this.guna2Panel1.TabIndex = 1;
@@ -280,9 +280,9 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel2.Controls.Add(this.invPdrNameplace);
             this.guna2Panel2.Controls.Add(this.invprdIdplace);
             this.guna2Panel2.Location = new System.Drawing.Point(4, 418);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1091, 247);
+            this.guna2Panel2.Size = new System.Drawing.Size(1160, 275);
             this.guna2Panel2.TabIndex = 0;
             // 
             // invDeletebtn
@@ -294,7 +294,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invDeletebtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invDeletebtn.ForeColor = System.Drawing.Color.White;
             this.invDeletebtn.Location = new System.Drawing.Point(889, 130);
-            this.invDeletebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.invDeletebtn.Margin = new System.Windows.Forms.Padding(4);
             this.invDeletebtn.Name = "invDeletebtn";
             this.invDeletebtn.Size = new System.Drawing.Size(100, 37);
             this.invDeletebtn.TabIndex = 35;
@@ -310,7 +310,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invClearbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invClearbtn.ForeColor = System.Drawing.Color.White;
             this.invClearbtn.Location = new System.Drawing.Point(889, 181);
-            this.invClearbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.invClearbtn.Margin = new System.Windows.Forms.Padding(4);
             this.invClearbtn.Name = "invClearbtn";
             this.invClearbtn.Size = new System.Drawing.Size(100, 37);
             this.invClearbtn.TabIndex = 34;
@@ -326,13 +326,12 @@ namespace Modern_Pharmacy_Managment_System
             this.invAddbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invAddbtn.ForeColor = System.Drawing.Color.White;
             this.invAddbtn.Location = new System.Drawing.Point(889, 22);
-            this.invAddbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.invAddbtn.Margin = new System.Windows.Forms.Padding(4);
             this.invAddbtn.Name = "invAddbtn";
             this.invAddbtn.Size = new System.Drawing.Size(100, 37);
             this.invAddbtn.TabIndex = 33;
             this.invAddbtn.Text = "Add";
             this.invAddbtn.Click += new System.EventHandler(this.invAddbtn_Click_1);
-            
             // 
             // invUpdatebtn
             // 
@@ -343,7 +342,7 @@ namespace Modern_Pharmacy_Managment_System
             this.invUpdatebtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.invUpdatebtn.ForeColor = System.Drawing.Color.White;
             this.invUpdatebtn.Location = new System.Drawing.Point(889, 76);
-            this.invUpdatebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.invUpdatebtn.Margin = new System.Windows.Forms.Padding(4);
             this.invUpdatebtn.Name = "invUpdatebtn";
             this.invUpdatebtn.Size = new System.Drawing.Size(100, 37);
             this.invUpdatebtn.TabIndex = 32;
@@ -355,7 +354,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel7.Location = new System.Drawing.Point(420, 190);
-            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(89, 22);
             this.guna2HtmlLabel7.TabIndex = 31;
@@ -366,7 +365,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(420, 149);
-            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(90, 22);
             this.guna2HtmlLabel6.TabIndex = 30;
@@ -377,7 +376,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(457, 91);
-            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(44, 22);
             this.guna2HtmlLabel5.TabIndex = 29;
@@ -388,7 +387,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(457, 36);
-            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(59, 22);
             this.guna2HtmlLabel4.TabIndex = 28;
@@ -399,7 +398,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(29, 146);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(70, 22);
             this.guna2HtmlLabel3.TabIndex = 27;
@@ -410,7 +409,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(29, 91);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(104, 22);
             this.guna2HtmlLabel2.TabIndex = 26;
@@ -421,7 +420,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(33, 36);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(76, 22);
             this.guna2HtmlLabel1.TabIndex = 25;
@@ -574,7 +573,7 @@ namespace Modern_Pharmacy_Managment_System
             this.ClientSize = new System.Drawing.Size(1105, 674);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "addproductPha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addproductPha";

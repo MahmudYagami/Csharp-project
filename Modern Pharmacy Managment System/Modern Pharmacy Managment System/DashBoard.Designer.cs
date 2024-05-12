@@ -112,7 +112,7 @@ namespace Modern_Pharmacy_Managment_System
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 207);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 530);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(277, 530);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // DropdownPanel
@@ -315,7 +315,7 @@ namespace Modern_Pharmacy_Managment_System
             this.topPanel.Location = new System.Drawing.Point(277, 0);
             this.topPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1284, 59);
+            this.topPanel.Size = new System.Drawing.Size(1365, 59);
             this.topPanel.TabIndex = 1;
             // 
             // TimerPanel
@@ -324,7 +324,7 @@ namespace Modern_Pharmacy_Managment_System
             this.TimerPanel.Controls.Add(this.pictureBox1);
             this.TimerPanel.Controls.Add(this.DateLabel);
             this.TimerPanel.Controls.Add(this.TimeLabel);
-            this.TimerPanel.Location = new System.Drawing.Point(781, 2);
+            this.TimerPanel.Location = new System.Drawing.Point(1151, 2);
             this.TimerPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TimerPanel.Name = "TimerPanel";
             this.TimerPanel.Size = new System.Drawing.Size(211, 57);
@@ -371,10 +371,10 @@ namespace Modern_Pharmacy_Managment_System
             // mainpanel
             // 
             this.mainpanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.mainpanel.Location = new System.Drawing.Point(283, 63);
+            this.mainpanel.Location = new System.Drawing.Point(277, 63);
             this.mainpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1266, 813);
+            this.mainpanel.Size = new System.Drawing.Size(1353, 813);
             this.mainpanel.TabIndex = 2;
             this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpanel_Paint);
             // 
@@ -391,7 +391,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1561, 887);
+            this.ClientSize = new System.Drawing.Size(1642, 887);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.LeftPanel);

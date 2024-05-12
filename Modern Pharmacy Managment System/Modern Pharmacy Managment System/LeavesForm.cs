@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Modern_Pharmacy_Managment_System.Properties;
 
 namespace Modern_Pharmacy_Managment_System
 {
@@ -53,34 +54,66 @@ namespace Modern_Pharmacy_Managment_System
 
         private void LeaveList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string selectedEmployeeId = LeaveList.SelectedRows[0].Cells[1].Value.ToString(); // Assuming employee ID is in the second column
-
-            // Search for the employee ID in the ComboBox items and set the selected item accordingly
-            foreach (var item in EmployeeCb.Items)
+            try
             {
-                DataRowView rowView = item as DataRowView;
-                if (rowView != null)
+                if (e.RowIndex >= 0)
                 {
-                    string employeeId = rowView.Row["EmpId"].ToString(); // Assuming employee ID column name is "EmpId"
-                    if (employeeId == selectedEmployeeId)
+                    DataGridViewRow row = LeaveList.Rows[e.RowIndex];
+
+                    // Get the value of the Reason column from the selected row
+                    string reason = row.Cells["Reason"].Value.ToString();
+
+                    // Populate the ReasonBox textbox with the reason
+                    ReasonBox.Text = reason;
+
+                    // Get the DateStart and DateEnd values from the selected row
+                    DateTime dateStart = Convert.ToDateTime(row.Cells["DateStart"].Value);
+                    DateTime dateEnd = Convert.ToDateTime(row.Cells["DateEnd"].Value);
+
+                    // Set the values of the DateStartCalender and DateEndCalender controls
+                    DateStartCalender.Value = dateStart;
+                    DateEndCalender.Value = dateEnd;
+                }
+
+                // Get the selected employee ID from the LeaveList
+                string selectedEmployeeId = LeaveList.SelectedRows[0].Cells[1].Value.ToString(); // Assuming employee ID is in the second column
+
+                // Search for the employee ID in the ComboBox items and set the selected item accordingly
+                foreach (var item in EmployeeCb.Items)
+                {
+                    DataRowView rowView = item as DataRowView;
+                    if (rowView != null)
                     {
-                        EmployeeCb.SelectedItem = item;
-                        break;
+                        string employeeId = rowView.Row["EmpId"].ToString(); // Assuming employee ID column name is "EmpId"
+                        if (employeeId == selectedEmployeeId)
+                        {
+                            EmployeeCb.SelectedItem = item;
+                            break;
+                        }
                     }
                 }
-            }
 
-            StatusCb.Text = LeaveList.SelectedRows[0].Cells[4].Value.ToString();
+                // Set the status ComboBox with the value from the LeaveList
+                StatusCb.Text = LeaveList.SelectedRows[0].Cells[4].Value.ToString();
 
-            if (EmployeeCb.SelectedIndex == -1)
-            {
-                Key = 0;
+                // Set the Key for the selected row
+                if (EmployeeCb.SelectedIndex == -1)
+                {
+                    Key = 0;
+                }
+                else
+                {
+                    Key = Convert.ToInt32(LeaveList.SelectedRows[0].Cells[0].Value);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Key = Convert.ToInt32(LeaveList.SelectedRows[0].Cells[0].Value);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+
+
 
 
         private void EmpEditBtnLeave_Click(object sender, EventArgs e)
@@ -137,11 +170,18 @@ namespace Modern_Pharmacy_Managment_System
                 }
                 else
                 {
-                    string Query = "DELETE FROM LeaveTbl WHERE LId = {0}";
-                    Query = string.Format(Query, Key);
-                    Con.SetData(Query);
-                    ShowLeaveForm();
-                    MessageBox.Show("Leave Deleted!!!");
+                    // Display a confirmation dialog
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this leave?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    // If the user confirms deletion, proceed with deletion
+                    if (result == DialogResult.Yes)
+                    {
+                        string Query = "DELETE FROM LeaveTbl WHERE LId = {0}";
+                        Query = string.Format(Query, Key);
+                        Con.SetData(Query);
+                        ShowLeaveForm();
+                        MessageBox.Show("Leave Deleted!!!");
+                    }
                 }
             }
             catch (Exception Ex)
@@ -149,6 +189,7 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show(Ex.Message);
             }
         }
+
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
@@ -162,8 +203,9 @@ namespace Modern_Pharmacy_Managment_System
 
         private void EmployeesBtn_Click(object sender, EventArgs e)
         {
+            
             StaffForm sf = new StaffForm();
-            Point location = new Point(598, 250); // Adjust the coordinates as needed
+            Point location = new Point(553, 220); // Adjust the coordinates as needed
 
             // Show the Category form
             sf.StartPosition = FormStartPosition.Manual;

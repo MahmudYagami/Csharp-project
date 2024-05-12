@@ -29,9 +29,9 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DateEndCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DateStartCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.StatusCb = new System.Windows.Forms.ComboBox();
@@ -42,7 +42,6 @@ namespace Modern_Pharmacy_Managment_System
             this.DateStartLabel = new System.Windows.Forms.Label();
             this.DateEndLabel = new System.Windows.Forms.Label();
             this.LeaveStatusLabel = new System.Windows.Forms.Label();
-            this.EmpEditBtnLeave = new FontAwesome.Sharp.IconButton();
             this.EmpSaveBtnLeave = new FontAwesome.Sharp.IconButton();
             this.EmpDltBtnLeave = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,7 +50,9 @@ namespace Modern_Pharmacy_Managment_System
             this.SearchCb = new System.Windows.Forms.ComboBox();
             this.RefreshBtn = new FontAwesome.Sharp.IconButton();
             this.EmployeesBtn = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.ReasonBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.EmpTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LeaveList)).BeginInit();
             this.SuspendLayout();
@@ -63,11 +64,11 @@ namespace Modern_Pharmacy_Managment_System
             this.DateEndCalender.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateEndCalender.ForeColor = System.Drawing.Color.White;
             this.DateEndCalender.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateEndCalender.Location = new System.Drawing.Point(181, 156);
+            this.DateEndCalender.Location = new System.Drawing.Point(493, 74);
             this.DateEndCalender.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateEndCalender.MinDate = new System.DateTime(2024, 4, 5, 0, 0, 0, 0);
             this.DateEndCalender.Name = "DateEndCalender";
-            this.DateEndCalender.Size = new System.Drawing.Size(193, 36);
+            this.DateEndCalender.Size = new System.Drawing.Size(193, 40);
             this.DateEndCalender.TabIndex = 48;
             this.DateEndCalender.Value = new System.DateTime(2024, 4, 5, 17, 31, 20, 106);
             this.DateEndCalender.ValueChanged += new System.EventHandler(this.DateEndCalender_ValueChanged);
@@ -79,11 +80,11 @@ namespace Modern_Pharmacy_Managment_System
             this.DateStartCalender.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateStartCalender.ForeColor = System.Drawing.Color.White;
             this.DateStartCalender.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateStartCalender.Location = new System.Drawing.Point(170, 82);
+            this.DateStartCalender.Location = new System.Drawing.Point(216, 71);
             this.DateStartCalender.MaxDate = new System.DateTime(9988, 12, 31, 0, 0, 0, 0);
             this.DateStartCalender.MinDate = new System.DateTime(2024, 4, 6, 0, 0, 0, 0);
             this.DateStartCalender.Name = "DateStartCalender";
-            this.DateStartCalender.Size = new System.Drawing.Size(211, 36);
+            this.DateStartCalender.Size = new System.Drawing.Size(211, 38);
             this.DateStartCalender.TabIndex = 47;
             this.DateStartCalender.Value = new System.DateTime(2024, 4, 6, 0, 0, 0, 0);
             // 
@@ -96,7 +97,7 @@ namespace Modern_Pharmacy_Managment_System
             "Pending",
             "Approved",
             "Rejected"});
-            this.StatusCb.Location = new System.Drawing.Point(391, 159);
+            this.StatusCb.Location = new System.Drawing.Point(739, 77);
             this.StatusCb.Name = "StatusCb";
             this.StatusCb.Size = new System.Drawing.Size(168, 33);
             this.StatusCb.TabIndex = 46;
@@ -108,7 +109,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeCb.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.EmployeeCb.Location = new System.Drawing.Point(30, 82);
+            this.EmployeeCb.Location = new System.Drawing.Point(30, 71);
             this.EmployeeCb.Name = "EmployeeCb";
             this.EmployeeCb.Size = new System.Drawing.Size(121, 33);
             this.EmployeeCb.TabIndex = 45;
@@ -132,7 +133,7 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.EmpTopPanel.Location = new System.Drawing.Point(0, 0);
             this.EmpTopPanel.Name = "EmpTopPanel";
-            this.EmpTopPanel.Size = new System.Drawing.Size(1212, 32);
+            this.EmpTopPanel.Size = new System.Drawing.Size(1363, 32);
             this.EmpTopPanel.TabIndex = 28;
             // 
             // LeaveEmpLabel
@@ -140,7 +141,7 @@ namespace Modern_Pharmacy_Managment_System
             this.LeaveEmpLabel.AutoSize = true;
             this.LeaveEmpLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LeaveEmpLabel.ForeColor = System.Drawing.Color.Black;
-            this.LeaveEmpLabel.Location = new System.Drawing.Point(26, 59);
+            this.LeaveEmpLabel.Location = new System.Drawing.Point(26, 48);
             this.LeaveEmpLabel.Name = "LeaveEmpLabel";
             this.LeaveEmpLabel.Size = new System.Drawing.Size(101, 23);
             this.LeaveEmpLabel.TabIndex = 30;
@@ -151,7 +152,7 @@ namespace Modern_Pharmacy_Managment_System
             this.DateStartLabel.AutoSize = true;
             this.DateStartLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateStartLabel.ForeColor = System.Drawing.Color.Black;
-            this.DateStartLabel.Location = new System.Drawing.Point(167, 59);
+            this.DateStartLabel.Location = new System.Drawing.Point(213, 48);
             this.DateStartLabel.Name = "DateStartLabel";
             this.DateStartLabel.Size = new System.Drawing.Size(99, 23);
             this.DateStartLabel.TabIndex = 32;
@@ -162,7 +163,7 @@ namespace Modern_Pharmacy_Managment_System
             this.DateEndLabel.AutoSize = true;
             this.DateEndLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateEndLabel.ForeColor = System.Drawing.Color.Black;
-            this.DateEndLabel.Location = new System.Drawing.Point(177, 130);
+            this.DateEndLabel.Location = new System.Drawing.Point(489, 48);
             this.DateEndLabel.Name = "DateEndLabel";
             this.DateEndLabel.Size = new System.Drawing.Size(89, 23);
             this.DateEndLabel.TabIndex = 33;
@@ -173,28 +174,11 @@ namespace Modern_Pharmacy_Managment_System
             this.LeaveStatusLabel.AutoSize = true;
             this.LeaveStatusLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LeaveStatusLabel.ForeColor = System.Drawing.Color.Black;
-            this.LeaveStatusLabel.Location = new System.Drawing.Point(386, 130);
+            this.LeaveStatusLabel.Location = new System.Drawing.Point(739, 48);
             this.LeaveStatusLabel.Name = "LeaveStatusLabel";
             this.LeaveStatusLabel.Size = new System.Drawing.Size(63, 23);
             this.LeaveStatusLabel.TabIndex = 34;
             this.LeaveStatusLabel.Text = "Status";
-            // 
-            // EmpEditBtnLeave
-            // 
-            this.EmpEditBtnLeave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.EmpEditBtnLeave.FlatAppearance.BorderSize = 0;
-            this.EmpEditBtnLeave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EmpEditBtnLeave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.EmpEditBtnLeave.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.EmpEditBtnLeave.IconColor = System.Drawing.Color.Black;
-            this.EmpEditBtnLeave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EmpEditBtnLeave.Location = new System.Drawing.Point(623, 76);
-            this.EmpEditBtnLeave.Name = "EmpEditBtnLeave";
-            this.EmpEditBtnLeave.Size = new System.Drawing.Size(133, 42);
-            this.EmpEditBtnLeave.TabIndex = 35;
-            this.EmpEditBtnLeave.Text = "Edit";
-            this.EmpEditBtnLeave.UseVisualStyleBackColor = false;
-            this.EmpEditBtnLeave.Click += new System.EventHandler(this.EmpEditBtnLeave_Click);
             // 
             // EmpSaveBtnLeave
             // 
@@ -205,9 +189,9 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpSaveBtnLeave.IconChar = FontAwesome.Sharp.IconChar.None;
             this.EmpSaveBtnLeave.IconColor = System.Drawing.Color.Black;
             this.EmpSaveBtnLeave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EmpSaveBtnLeave.Location = new System.Drawing.Point(623, 124);
+            this.EmpSaveBtnLeave.Location = new System.Drawing.Point(988, 74);
             this.EmpSaveBtnLeave.Name = "EmpSaveBtnLeave";
-            this.EmpSaveBtnLeave.Size = new System.Drawing.Size(133, 42);
+            this.EmpSaveBtnLeave.Size = new System.Drawing.Size(157, 42);
             this.EmpSaveBtnLeave.TabIndex = 36;
             this.EmpSaveBtnLeave.Text = "Save";
             this.EmpSaveBtnLeave.UseVisualStyleBackColor = false;
@@ -222,9 +206,9 @@ namespace Modern_Pharmacy_Managment_System
             this.EmpDltBtnLeave.IconChar = FontAwesome.Sharp.IconChar.None;
             this.EmpDltBtnLeave.IconColor = System.Drawing.Color.Black;
             this.EmpDltBtnLeave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EmpDltBtnLeave.Location = new System.Drawing.Point(623, 172);
+            this.EmpDltBtnLeave.Location = new System.Drawing.Point(988, 121);
             this.EmpDltBtnLeave.Name = "EmpDltBtnLeave";
-            this.EmpDltBtnLeave.Size = new System.Drawing.Size(133, 42);
+            this.EmpDltBtnLeave.Size = new System.Drawing.Size(157, 42);
             this.EmpDltBtnLeave.TabIndex = 37;
             this.EmpDltBtnLeave.Text = "Delete";
             this.EmpDltBtnLeave.UseVisualStyleBackColor = false;
@@ -235,38 +219,38 @@ namespace Modern_Pharmacy_Managment_System
             this.panel3.BackColor = System.Drawing.Color.Gray;
             this.panel3.Location = new System.Drawing.Point(12, 246);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(973, 10);
+            this.panel3.Size = new System.Drawing.Size(1272, 10);
             this.panel3.TabIndex = 41;
             // 
             // LeaveList
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.LeaveList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.LeaveList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.LeaveList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.LeaveList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.LeaveList.ColumnHeadersHeight = 28;
             this.LeaveList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.LeaveList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.LeaveList.DefaultCellStyle = dataGridViewCellStyle6;
             this.LeaveList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
             this.LeaveList.Location = new System.Drawing.Point(30, 374);
             this.LeaveList.Name = "LeaveList";
             this.LeaveList.RowHeadersVisible = false;
             this.LeaveList.RowHeadersWidth = 51;
             this.LeaveList.RowTemplate.Height = 24;
-            this.LeaveList.Size = new System.Drawing.Size(1147, 210);
+            this.LeaveList.Size = new System.Drawing.Size(1254, 310);
             this.LeaveList.TabIndex = 42;
             this.LeaveList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.LeaveList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -297,7 +281,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(385, 269);
+            this.label5.Location = new System.Drawing.Point(546, 271);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(151, 32);
             this.label5.TabIndex = 43;
@@ -311,7 +295,7 @@ namespace Modern_Pharmacy_Managment_System
             "Pending",
             "Approved",
             "Rejected"});
-            this.SearchCb.Location = new System.Drawing.Point(381, 317);
+            this.SearchCb.Location = new System.Drawing.Point(542, 319);
             this.SearchCb.Name = "SearchCb";
             this.SearchCb.Size = new System.Drawing.Size(168, 33);
             this.SearchCb.TabIndex = 49;
@@ -326,7 +310,7 @@ namespace Modern_Pharmacy_Managment_System
             this.RefreshBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.RefreshBtn.IconColor = System.Drawing.Color.Black;
             this.RefreshBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.RefreshBtn.Location = new System.Drawing.Point(555, 317);
+            this.RefreshBtn.Location = new System.Drawing.Point(716, 319);
             this.RefreshBtn.Name = "RefreshBtn";
             this.RefreshBtn.Size = new System.Drawing.Size(133, 33);
             this.RefreshBtn.TabIndex = 50;
@@ -343,40 +327,53 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeesBtn.IconColor = System.Drawing.Color.White;
             this.EmployeesBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.EmployeesBtn.IconSize = 30;
-            this.EmployeesBtn.Location = new System.Drawing.Point(777, 143);
+            this.EmployeesBtn.Location = new System.Drawing.Point(988, 169);
             this.EmployeesBtn.Name = "EmployeesBtn";
-            this.EmployeesBtn.Size = new System.Drawing.Size(133, 42);
+            this.EmployeesBtn.Size = new System.Drawing.Size(157, 49);
             this.EmployeesBtn.TabIndex = 0;
             this.EmployeesBtn.Text = "Employees";
             this.EmployeesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.EmployeesBtn.UseVisualStyleBackColor = false;
             this.EmployeesBtn.Click += new System.EventHandler(this.EmployeesBtn_Click);
             // 
-            // iconButton5
+            // ReasonBox
             // 
-            this.iconButton5.BackColor = System.Drawing.Color.Black;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 35;
-            this.iconButton5.Location = new System.Drawing.Point(777, 95);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(133, 42);
-            this.iconButton5.TabIndex = 1;
-            this.iconButton5.Text = "Categories";
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = false;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            this.ReasonBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ReasonBox.Location = new System.Drawing.Point(493, 127);
+            this.ReasonBox.Multiline = true;
+            this.ReasonBox.Name = "ReasonBox";
+            this.ReasonBox.Size = new System.Drawing.Size(328, 103);
+            this.ReasonBox.TabIndex = 51;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(388, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 23);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "Reason";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 32);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 774);
+            this.panel1.TabIndex = 53;
             // 
             // LeavesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1212, 722);
+            this.ClientSize = new System.Drawing.Size(1363, 806);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ReasonBox);
             this.Controls.Add(this.RefreshBtn);
-            this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.SearchCb);
             this.Controls.Add(this.DateEndCalender);
             this.Controls.Add(this.EmployeesBtn);
@@ -388,7 +385,6 @@ namespace Modern_Pharmacy_Managment_System
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.EmpDltBtnLeave);
             this.Controls.Add(this.EmpSaveBtnLeave);
-            this.Controls.Add(this.EmpEditBtnLeave);
             this.Controls.Add(this.LeaveStatusLabel);
             this.Controls.Add(this.DateEndLabel);
             this.Controls.Add(this.DateStartLabel);
@@ -418,7 +414,6 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label DateStartLabel;
         private System.Windows.Forms.Label DateEndLabel;
         private System.Windows.Forms.Label LeaveStatusLabel;
-        private FontAwesome.Sharp.IconButton EmpEditBtnLeave;
         private FontAwesome.Sharp.IconButton EmpSaveBtnLeave;
         private FontAwesome.Sharp.IconButton EmpDltBtnLeave;
         private System.Windows.Forms.Panel panel3;
@@ -427,6 +422,8 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.ComboBox SearchCb;
         private FontAwesome.Sharp.IconButton RefreshBtn;
         private FontAwesome.Sharp.IconButton EmployeesBtn;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        private System.Windows.Forms.TextBox ReasonBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
