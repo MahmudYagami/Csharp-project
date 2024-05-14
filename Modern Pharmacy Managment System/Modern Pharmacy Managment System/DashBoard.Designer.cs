@@ -33,19 +33,18 @@ namespace Modern_Pharmacy_Managment_System
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.LogoPanel = new System.Windows.Forms.Panel();
-            this.AdminPictureBox = new System.Windows.Forms.PictureBox();
             this.LeftPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.DropdownPanel = new System.Windows.Forms.Panel();
             this.SalaryPayBtn = new FontAwesome.Sharp.IconButton();
             this.StaffBtn = new FontAwesome.Sharp.IconButton();
-            this.CustomerBtn = new FontAwesome.Sharp.IconButton();
             this.ManagementBtn = new FontAwesome.Sharp.IconButton();
             this.flowdropdownpanel = new System.Windows.Forms.FlowLayoutPanel();
             this.RevenueBtn = new FontAwesome.Sharp.IconButton();
             this.InventoryBtn = new FontAwesome.Sharp.IconButton();
-            this.logoutBtn = new FontAwesome.Sharp.IconButton();
+            this.Settings = new FontAwesome.Sharp.IconButton();
             this.DashBoardBtn = new FontAwesome.Sharp.IconButton();
+            this.AdminPictureBox = new System.Windows.Forms.PictureBox();
             this.topPanel = new System.Windows.Forms.Panel();
             this.TimerPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -54,11 +53,12 @@ namespace Modern_Pharmacy_Managment_System
             this.DateTimeShow = new System.Windows.Forms.Timer(this.components);
             this.mainpanel = new System.Windows.Forms.Panel();
             this.iconDropDownButton1 = new FontAwesome.Sharp.IconDropDownButton();
-            ((System.ComponentModel.ISupportInitialize)(this.AdminPictureBox)).BeginInit();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.LeftPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.DropdownPanel.SuspendLayout();
             this.flowdropdownpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AdminPictureBox)).BeginInit();
             this.topPanel.SuspendLayout();
             this.TimerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,18 +78,6 @@ namespace Modern_Pharmacy_Managment_System
             this.LogoPanel.Name = "LogoPanel";
             this.LogoPanel.Size = new System.Drawing.Size(277, 59);
             this.LogoPanel.TabIndex = 0;
-            // 
-            // AdminPictureBox
-            // 
-            this.AdminPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AdminPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AdminPictureBox.Image")));
-            this.AdminPictureBox.Location = new System.Drawing.Point(0, 59);
-            this.AdminPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminPictureBox.Name = "AdminPictureBox";
-            this.AdminPictureBox.Size = new System.Drawing.Size(277, 84);
-            this.AdminPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.AdminPictureBox.TabIndex = 1;
-            this.AdminPictureBox.TabStop = false;
             // 
             // LeftPanel
             // 
@@ -119,11 +107,10 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.DropdownPanel.Controls.Add(this.SalaryPayBtn);
             this.DropdownPanel.Controls.Add(this.StaffBtn);
-            this.DropdownPanel.Controls.Add(this.CustomerBtn);
             this.DropdownPanel.Controls.Add(this.ManagementBtn);
             this.DropdownPanel.Location = new System.Drawing.Point(3, 2);
             this.DropdownPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DropdownPanel.MaximumSize = new System.Drawing.Size(268, 250);
+            this.DropdownPanel.MaximumSize = new System.Drawing.Size(268, 190);
             this.DropdownPanel.MinimumSize = new System.Drawing.Size(268, 62);
             this.DropdownPanel.Name = "DropdownPanel";
             this.DropdownPanel.Size = new System.Drawing.Size(268, 62);
@@ -140,11 +127,11 @@ namespace Modern_Pharmacy_Managment_System
             this.SalaryPayBtn.IconColor = System.Drawing.Color.White;
             this.SalaryPayBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SalaryPayBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SalaryPayBtn.Location = new System.Drawing.Point(0, 182);
+            this.SalaryPayBtn.Location = new System.Drawing.Point(0, 124);
             this.SalaryPayBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SalaryPayBtn.Name = "SalaryPayBtn";
             this.SalaryPayBtn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.SalaryPayBtn.Size = new System.Drawing.Size(268, 68);
+            this.SalaryPayBtn.Size = new System.Drawing.Size(268, 65);
             this.SalaryPayBtn.TabIndex = 6;
             this.SalaryPayBtn.Text = "Salary";
             this.SalaryPayBtn.UseVisualStyleBackColor = false;
@@ -161,7 +148,7 @@ namespace Modern_Pharmacy_Managment_System
             this.StaffBtn.IconColor = System.Drawing.Color.White;
             this.StaffBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.StaffBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.StaffBtn.Location = new System.Drawing.Point(0, 120);
+            this.StaffBtn.Location = new System.Drawing.Point(0, 62);
             this.StaffBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StaffBtn.Name = "StaffBtn";
             this.StaffBtn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
@@ -170,27 +157,6 @@ namespace Modern_Pharmacy_Managment_System
             this.StaffBtn.Text = "Staff";
             this.StaffBtn.UseVisualStyleBackColor = false;
             this.StaffBtn.Click += new System.EventHandler(this.StaffBtn_Click);
-            // 
-            // CustomerBtn
-            // 
-            this.CustomerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.CustomerBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CustomerBtn.FlatAppearance.BorderSize = 0;
-            this.CustomerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CustomerBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.CustomerBtn.IconChar = FontAwesome.Sharp.IconChar.Children;
-            this.CustomerBtn.IconColor = System.Drawing.Color.White;
-            this.CustomerBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.CustomerBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CustomerBtn.Location = new System.Drawing.Point(0, 60);
-            this.CustomerBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CustomerBtn.Name = "CustomerBtn";
-            this.CustomerBtn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.CustomerBtn.Size = new System.Drawing.Size(268, 60);
-            this.CustomerBtn.TabIndex = 4;
-            this.CustomerBtn.Text = "Customer";
-            this.CustomerBtn.UseVisualStyleBackColor = false;
-            this.CustomerBtn.Click += new System.EventHandler(this.CustomerBtn_Click);
             // 
             // ManagementBtn
             // 
@@ -207,7 +173,7 @@ namespace Modern_Pharmacy_Managment_System
             this.ManagementBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ManagementBtn.Name = "ManagementBtn";
             this.ManagementBtn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.ManagementBtn.Size = new System.Drawing.Size(268, 60);
+            this.ManagementBtn.Size = new System.Drawing.Size(268, 62);
             this.ManagementBtn.TabIndex = 3;
             this.ManagementBtn.Text = "   Management";
             this.ManagementBtn.UseVisualStyleBackColor = false;
@@ -218,7 +184,8 @@ namespace Modern_Pharmacy_Managment_System
             this.flowdropdownpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
             this.flowdropdownpanel.Controls.Add(this.RevenueBtn);
             this.flowdropdownpanel.Controls.Add(this.InventoryBtn);
-            this.flowdropdownpanel.Controls.Add(this.logoutBtn);
+            this.flowdropdownpanel.Controls.Add(this.Settings);
+            this.flowdropdownpanel.Controls.Add(this.iconButton1);
             this.flowdropdownpanel.Location = new System.Drawing.Point(3, 68);
             this.flowdropdownpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowdropdownpanel.Name = "flowdropdownpanel";
@@ -244,6 +211,7 @@ namespace Modern_Pharmacy_Managment_System
             this.RevenueBtn.TabIndex = 2;
             this.RevenueBtn.Text = "Revenue";
             this.RevenueBtn.UseVisualStyleBackColor = false;
+            this.RevenueBtn.Click += new System.EventHandler(this.RevenueBtn_Click);
             // 
             // InventoryBtn
             // 
@@ -266,26 +234,26 @@ namespace Modern_Pharmacy_Managment_System
             this.InventoryBtn.UseVisualStyleBackColor = false;
             this.InventoryBtn.Click += new System.EventHandler(this.InventoryBtn_Click);
             // 
-            // logoutBtn
+            // Settings
             // 
-            this.logoutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
-            this.logoutBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.logoutBtn.FlatAppearance.BorderSize = 0;
-            this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logoutBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.logoutBtn.IconChar = FontAwesome.Sharp.IconChar.ClockRotateLeft;
-            this.logoutBtn.IconColor = System.Drawing.Color.White;
-            this.logoutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.logoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logoutBtn.Location = new System.Drawing.Point(3, 134);
-            this.logoutBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.logoutBtn.Size = new System.Drawing.Size(268, 62);
-            this.logoutBtn.TabIndex = 5;
-            this.logoutBtn.Text = "Logout";
-            this.logoutBtn.UseVisualStyleBackColor = false;
-            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            this.Settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
+            this.Settings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Settings.FlatAppearance.BorderSize = 0;
+            this.Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Settings.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Settings.IconChar = FontAwesome.Sharp.IconChar.CloudSun;
+            this.Settings.IconColor = System.Drawing.Color.White;
+            this.Settings.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Settings.Location = new System.Drawing.Point(3, 134);
+            this.Settings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Settings.Name = "Settings";
+            this.Settings.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.Settings.Size = new System.Drawing.Size(268, 62);
+            this.Settings.TabIndex = 5;
+            this.Settings.Text = "Settings";
+            this.Settings.UseVisualStyleBackColor = false;
+            this.Settings.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // DashBoardBtn
             // 
@@ -306,6 +274,18 @@ namespace Modern_Pharmacy_Managment_System
             this.DashBoardBtn.Text = "Dashboard";
             this.DashBoardBtn.UseVisualStyleBackColor = true;
             this.DashBoardBtn.Click += new System.EventHandler(this.DashBoardBtn_Click);
+            // 
+            // AdminPictureBox
+            // 
+            this.AdminPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AdminPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AdminPictureBox.Image")));
+            this.AdminPictureBox.Location = new System.Drawing.Point(0, 59);
+            this.AdminPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AdminPictureBox.Name = "AdminPictureBox";
+            this.AdminPictureBox.Size = new System.Drawing.Size(277, 84);
+            this.AdminPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AdminPictureBox.TabIndex = 1;
+            this.AdminPictureBox.TabStop = false;
             // 
             // topPanel
             // 
@@ -387,6 +367,27 @@ namespace Modern_Pharmacy_Managment_System
             this.iconDropDownButton1.Size = new System.Drawing.Size(23, 23);
             this.iconDropDownButton1.Text = "iconDropDownButton1";
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ClockRotateLeft;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(3, 200);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.iconButton1.Size = new System.Drawing.Size(268, 62);
+            this.iconButton1.TabIndex = 6;
+            this.iconButton1.Text = "Logout";
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -399,11 +400,11 @@ namespace Modern_Pharmacy_Managment_System
             this.Name = "DashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashBoard";
-            ((System.ComponentModel.ISupportInitialize)(this.AdminPictureBox)).EndInit();
             this.LeftPanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.DropdownPanel.ResumeLayout(false);
             this.flowdropdownpanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AdminPictureBox)).EndInit();
             this.topPanel.ResumeLayout(false);
             this.TimerPanel.ResumeLayout(false);
             this.TimerPanel.PerformLayout();
@@ -420,12 +421,11 @@ namespace Modern_Pharmacy_Managment_System
         private FontAwesome.Sharp.IconButton DashBoardBtn;
         private System.Windows.Forms.Panel DropdownPanel;
         private FontAwesome.Sharp.IconButton StaffBtn;
-        private FontAwesome.Sharp.IconButton CustomerBtn;
         private FontAwesome.Sharp.IconButton ManagementBtn;
         private System.Windows.Forms.FlowLayoutPanel flowdropdownpanel;
         private FontAwesome.Sharp.IconButton RevenueBtn;
         private FontAwesome.Sharp.IconButton InventoryBtn;
-        private FontAwesome.Sharp.IconButton logoutBtn;
+        private FontAwesome.Sharp.IconButton Settings;
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label DateLabel;
@@ -438,5 +438,6 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private FontAwesome.Sharp.IconButton SalaryPayBtn;
         private FontAwesome.Sharp.IconDropDownButton iconDropDownButton1;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

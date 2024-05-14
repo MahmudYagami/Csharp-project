@@ -84,7 +84,20 @@ namespace Modern_Pharmacy_Managment_System
                 string pass = EmpPassTb.Text;
                 string add = EmpAddressTb.Text;
                 DateTime joiningDate = EmployeeJoiningCalender.Value;
-                float salary = float.Parse(EmpSalaryBox.Text);
+
+                // Check if salary is a valid numerical value
+                if (!float.TryParse(EmpSalaryBox.Text, out float parsedSalary))
+                {
+                    MessageBox.Show("Please enter a valid numerical value for salary.", "Invalid Salary", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Check if the joining date is greater than today's date
+                if (joiningDate > DateTime.Today)
+                {
+                    MessageBox.Show("Joining date cannot be in the future.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
                 // Continue with the save operation
                 // Check if the phone number already exists in the database
@@ -98,10 +111,10 @@ namespace Modern_Pharmacy_Managment_System
                     return;
                 }
 
-                // If the phone number is unique, proceed with insertion
+                // If the phone number is unique, salary is numerical, and joining date is valid, proceed with insertion
                 string insertQuery = "INSERT INTO EmployeeTbl (EmpName, EmpGen, EmpPhone, EmpPass, EmpAdd, EmpJoiningDate, EmpSalary) " +
                                      "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', {6})";
-                insertQuery = string.Format(insertQuery, name, gender, phone, pass, add, joiningDate.ToString("yyyy-MM-dd"), salary);
+                insertQuery = string.Format(insertQuery, name, gender, phone, pass, add, joiningDate.ToString("yyyy-MM-dd"), parsedSalary);
                 Con.SetData(insertQuery);
 
                 ShowStaffForm();
@@ -113,6 +126,8 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+
 
 
 
@@ -142,7 +157,13 @@ namespace Modern_Pharmacy_Managment_System
                     string pass = EmpPassTb.Text;
                     string add = EmpAddressTb.Text;
                     DateTime joiningDate = EmployeeJoiningCalender.Value;
-                    float salary = float.Parse(EmpSalaryBox.Text);
+
+                    // Check if salary is a valid numerical value
+                    if (!float.TryParse(EmpSalaryBox.Text, out float parsedSalary))
+                    {
+                        MessageBox.Show("Please enter a valid numerical value for salary.", "Invalid Salary", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
                     // Check if the phone number is being changed to an existing number
                     string checkPhoneQuery = "SELECT COUNT(*) FROM EmployeeTbl WHERE EmpPhone = '{0}' AND EmpId != {1}";
@@ -155,10 +176,10 @@ namespace Modern_Pharmacy_Managment_System
                         return;
                     }
 
-                    // If the phone number is unique, proceed with update
+                    // If the phone number is unique, salary is numerical, and all other fields are valid, proceed with update
                     string query = "UPDATE EmployeeTbl SET EmpName='{0}', EmpGen='{1}', EmpPhone='{2}', EmpPass='{3}', " +
                                    "EmpAdd='{4}', EmpJoiningDate='{5}', EmpSalary={6} WHERE EmpId={7}";
-                    query = string.Format(query, name, gender, phone, pass, add, joiningDate.ToString("yyyy-MM-dd"), salary, Key);
+                    query = string.Format(query, name, gender, phone, pass, add, joiningDate.ToString("yyyy-MM-dd"), parsedSalary, Key);
                     Con.SetData(query);
 
                     ShowStaffForm();
@@ -175,6 +196,7 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
 
         private void EmpDltBtnStaff_Click(object sender, EventArgs e)

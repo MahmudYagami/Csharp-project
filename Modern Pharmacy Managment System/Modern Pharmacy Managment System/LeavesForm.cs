@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Modern_Pharmacy_Managment_System.Properties;
+using System.Drawing;
 
 namespace Modern_Pharmacy_Managment_System
 {
     public partial class LeavesForm : Form
     {
         Functions Con;
+        DateTime originalDateStart;
+        DateTime originalDateEnd;
+        int Key = 0;
 
         public LeavesForm()
         {
@@ -22,6 +18,10 @@ namespace Modern_Pharmacy_Managment_System
             Con = new Functions();
             ShowLeaveForm();
             GetEmployees();
+
+            // Disable DateStart and DateEnd controls initially
+            DateStartCalender.Enabled = false;
+            DateEndCalender.Enabled = false;
         }
 
         private void ShowLeaveForm()
@@ -45,13 +45,6 @@ namespace Modern_Pharmacy_Managment_System
             EmployeeCb.DataSource = Con.GetData(Query);
         }
 
-        private void EmpSaveBtnLeave_Click(object sender, EventArgs e)
-        {
-            EmpEditBtnLeave_Click(sender, e);
-        }
-
-        int Key = 0;
-
         private void LeaveList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -66,44 +59,20 @@ namespace Modern_Pharmacy_Managment_System
                     // Populate the ReasonBox textbox with the reason
                     ReasonBox.Text = reason;
 
-                    // Get the DateStart and DateEnd values from the selected row
-                    DateTime dateStart = Convert.ToDateTime(row.Cells["DateStart"].Value);
-                    DateTime dateEnd = Convert.ToDateTime(row.Cells["DateEnd"].Value);
+                    // Enable the DateStart and DateEnd controls
+                    DateStartCalender.Enabled = true;
+                    DateEndCalender.Enabled = true;
+
+                    // Get the original DateStart and DateEnd values
+                    originalDateStart = Convert.ToDateTime(row.Cells["DateStart"].Value);
+                    originalDateEnd = Convert.ToDateTime(row.Cells["DateEnd"].Value);
 
                     // Set the values of the DateStartCalender and DateEndCalender controls
-                    DateStartCalender.Value = dateStart;
-                    DateEndCalender.Value = dateEnd;
-                }
+                    DateStartCalender.Value = originalDateStart;
+                    DateEndCalender.Value = originalDateEnd;
 
-                // Get the selected employee ID from the LeaveList
-                string selectedEmployeeId = LeaveList.SelectedRows[0].Cells[1].Value.ToString(); // Assuming employee ID is in the second column
-
-                // Search for the employee ID in the ComboBox items and set the selected item accordingly
-                foreach (var item in EmployeeCb.Items)
-                {
-                    DataRowView rowView = item as DataRowView;
-                    if (rowView != null)
-                    {
-                        string employeeId = rowView.Row["EmpId"].ToString(); // Assuming employee ID column name is "EmpId"
-                        if (employeeId == selectedEmployeeId)
-                        {
-                            EmployeeCb.SelectedItem = item;
-                            break;
-                        }
-                    }
-                }
-
-                // Set the status ComboBox with the value from the LeaveList
-                StatusCb.Text = LeaveList.SelectedRows[0].Cells[4].Value.ToString();
-
-                // Set the Key for the selected row
-                if (EmployeeCb.SelectedIndex == -1)
-                {
-                    Key = 0;
-                }
-                else
-                {
-                    Key = Convert.ToInt32(LeaveList.SelectedRows[0].Cells[0].Value);
+                    // Set the Key for the selected row
+                    Key = Convert.ToInt32(row.Cells["LId"].Value);
                 }
             }
             catch (Exception ex)
@@ -111,9 +80,6 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-
-
-
 
 
         private void EmpEditBtnLeave_Click(object sender, EventArgs e)
@@ -176,11 +142,20 @@ namespace Modern_Pharmacy_Managment_System
                     // If the user confirms deletion, proceed with deletion
                     if (result == DialogResult.Yes)
                     {
-                        string Query = "DELETE FROM LeaveTbl WHERE LId = {0}";
-                        Query = string.Format(Query, Key);
-                        Con.SetData(Query);
-                        ShowLeaveForm();
-                        MessageBox.Show("Leave Deleted!!!");
+                        string Query = "DELETE FROM LeaveTbl WHERE LId = @LeaveId";
+                        SqlCommand cmd = new SqlCommand(Query, Con.Connection);
+                        cmd.Parameters.AddWithValue("@LeaveId", Key);
+                        int rowsAffected = Con.insertData(cmd);
+
+                        if (rowsAffected > 0)
+                        {
+                            ShowLeaveForm();
+                            MessageBox.Show("Leave Deleted!!!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to delete leave.");
+                        }
                     }
                 }
             }
@@ -190,6 +165,18 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
+        private void EmpSaveBtnLeave_Click(object sender, EventArgs e)
+        {
+            // Check if DateStart or DateEnd values are changed
+            if (DateStartCalender.Enabled && DateStartCalender.Value != originalDateStart ||
+                DateEndCalender.Enabled && DateEndCalender.Value != originalDateEnd)
+            {
+                MessageBox.Show("You cannot change any value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            EmpEditBtnLeave_Click(sender, e);
+            // Your existing save logic here
+        }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
@@ -203,7 +190,6 @@ namespace Modern_Pharmacy_Managment_System
 
         private void EmployeesBtn_Click(object sender, EventArgs e)
         {
-            
             StaffForm sf = new StaffForm();
             Point location = new Point(553, 220); // Adjust the coordinates as needed
 

@@ -14,10 +14,7 @@ namespace Modern_Pharmacy_Managment_System
             Con = new Functions();
         }
 
-        private void UpdateBtn_Click(object sender, EventArgs e)
-        {
-            
-        }
+       
 
         private void UpdatePasswordBtn_Click(object sender, EventArgs e)
         {

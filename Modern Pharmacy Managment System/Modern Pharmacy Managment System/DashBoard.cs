@@ -23,8 +23,8 @@ namespace Modern_Pharmacy_Managment_System
             //initializing events
             ManagementBtn.MouseEnter += ManagementBtn_MouseEnter;
             ManagementBtn.MouseLeave += ManagementBtn_MouseLeave;
-            logoutBtn.MouseEnter += logoutBtn_MouseEnter;
-            logoutBtn.MouseLeave += logoutBtn_MouseLeave;
+            Settings.MouseEnter += logoutBtn_MouseEnter;
+            Settings.MouseLeave += logoutBtn_MouseLeave;
             InventoryBtn.MouseEnter += InventoryBtn_MouseEnter;
             InventoryBtn.MouseLeave += InventoryBtn_MouseLeave;
             RevenueBtn.MouseEnter += RevenueBtn_MouseEnter;
@@ -103,12 +103,12 @@ namespace Modern_Pharmacy_Managment_System
         private void logoutBtn_MouseEnter(object sender, EventArgs e)
         {
             // Change button background color when mouse enters
-            logoutBtn.BackColor = Color.Cyan; // Change to desired color
+            Settings.BackColor = Color.Cyan; // Change to desired color
         }
         private void logoutBtn_MouseLeave(object sender, EventArgs e)
         {
             // Change button background color back to normal when mouse leaves
-            logoutBtn.BackColor = Color.FromArgb(40, 51, 66); // Change to the default background color of your form
+            Settings.BackColor = Color.FromArgb(40, 51, 66); // Change to the default background color of your form
         }
         private void InventoryBtn_MouseEnter(object sender, EventArgs e)
         {
@@ -223,14 +223,39 @@ namespace Modern_Pharmacy_Managment_System
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
+            loadform(new AdminForgotPass());
+           
+        }
+
+        private void RevenueBtn_Click(object sender, EventArgs e)
+        {
+            loadform(new Revenue());
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
             Login login = new Login();
             login.Show();
             this.Hide();
-            LeavesForm lf = new LeavesForm();
-            lf.Hide();
-            StaffForm sf = new StaffForm();
-            sf.Hide();
-           
+
+            // Collect references to forms to close
+            List<Form> formsToClose = new List<Form>();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is LeavesForm || form is StaffForm)
+                {
+                    formsToClose.Add(form);
+                }
+            }
+
+            // Close collected forms
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
         }
+
+
     }
 }
