@@ -78,12 +78,21 @@ namespace Modern_Pharmacy_Managment_System
 
         private void btncstOrder_Click(object sender, EventArgs e)
         {
+
             loadform(new OrderForm());
+            this.guna2Panel3.Hide();
+            this.guna2Panel2.Hide();
+            this.guna2Panel6.Hide();
+            this.guna2Panel7.Hide();
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
             loadform(new CustomerSettings());
+            this.guna2Panel3.Hide();
+            this.guna2Panel2.Hide();
+            this.guna2Panel6.Hide();
+            this.guna2Panel7.Hide();
         }
 
         private void btncstLogout_Click(object sender, EventArgs e)

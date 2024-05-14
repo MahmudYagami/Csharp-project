@@ -58,7 +58,7 @@ namespace Modern_Pharmacy_Managment_System
             this.IdTxt.PasswordChar = '\0';
             this.IdTxt.PlaceholderText = "";
             this.IdTxt.SelectedText = "";
-            this.IdTxt.Size = new System.Drawing.Size(199, 36);
+            this.IdTxt.Size = new System.Drawing.Size(102, 36);
             this.IdTxt.TabIndex = 0;
             // 
             // label2
@@ -77,7 +77,7 @@ namespace Modern_Pharmacy_Managment_System
             this.LeaveCategoriesLabel.AutoSize = true;
             this.LeaveCategoriesLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LeaveCategoriesLabel.ForeColor = System.Drawing.Color.Black;
-            this.LeaveCategoriesLabel.Location = new System.Drawing.Point(264, 31);
+            this.LeaveCategoriesLabel.Location = new System.Drawing.Point(259, 22);
             this.LeaveCategoriesLabel.Name = "LeaveCategoriesLabel";
             this.LeaveCategoriesLabel.Size = new System.Drawing.Size(72, 23);
             this.LeaveCategoriesLabel.TabIndex = 46;
@@ -149,7 +149,7 @@ namespace Modern_Pharmacy_Managment_System
             this.RequestLeaveBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.RequestLeaveBtn.IconColor = System.Drawing.Color.Beige;
             this.RequestLeaveBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.RequestLeaveBtn.Location = new System.Drawing.Point(375, 101);
+            this.RequestLeaveBtn.Location = new System.Drawing.Point(418, 97);
             this.RequestLeaveBtn.Name = "RequestLeaveBtn";
             this.RequestLeaveBtn.Size = new System.Drawing.Size(179, 49);
             this.RequestLeaveBtn.TabIndex = 52;
@@ -169,13 +169,13 @@ namespace Modern_Pharmacy_Managment_System
             this.ReasonTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ReasonTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ReasonTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ReasonTxt.Location = new System.Drawing.Point(268, 59);
+            this.ReasonTxt.Location = new System.Drawing.Point(200, 49);
             this.ReasonTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ReasonTxt.Name = "ReasonTxt";
             this.ReasonTxt.PasswordChar = '\0';
             this.ReasonTxt.PlaceholderText = "";
             this.ReasonTxt.SelectedText = "";
-            this.ReasonTxt.Size = new System.Drawing.Size(126, 35);
+            this.ReasonTxt.Size = new System.Drawing.Size(197, 91);
             this.ReasonTxt.TabIndex = 53;
             // 
             // LeaveRequest

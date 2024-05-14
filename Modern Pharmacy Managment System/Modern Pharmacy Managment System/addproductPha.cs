@@ -16,7 +16,7 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class addproductPha : Form
     {
-        const string connectionString = @"Data Source=Akid\SQLEXPRESS;Initial Catalog=PMSnew;Integrated Security=True";
+        const string connectionString = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMSnew;Integrated Security=True";
         public addproductPha()
         {
             InitializeComponent();

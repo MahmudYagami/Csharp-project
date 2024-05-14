@@ -34,10 +34,17 @@ namespace Modern_Pharmacy_Managment_System
                 DateTime dateEnd = DateEndCalender.Value.Date;
                 DateTime appliedDate = DateTime.Today;
 
-                string leaveQuery = @"INSERT INTO LeaveTbl (Employee, Reason, DateStart, DateEnd, AppliedDate, Status) 
-                                      VALUES (@EmployeeId, @Reason, @DateStart, @DateEnd, @AppliedDate, 'Pending')";
+                // Check if end date is earlier than start date
+                if (dateEnd < dateStart)
+                {
+                    MessageBox.Show("Invalid date range. End date cannot be earlier than start date.");
+                    return;
+                }
 
-                using (var connection=DatabaseConnection.databaseConnect())
+                string leaveQuery = @"INSERT INTO LeaveTbl (Employee, Reason, DateStart, DateEnd, AppliedDate, Status) 
+                              VALUES (@EmployeeId, @Reason, @DateStart, @DateEnd, @AppliedDate, 'Pending')";
+
+                using (var connection = DatabaseConnection.databaseConnect())
                 {
                     SqlCommand leaveCmd = new SqlCommand(leaveQuery, connection);
                     leaveCmd.Parameters.AddWithValue("@EmployeeId", employeeId);
@@ -71,5 +78,6 @@ namespace Modern_Pharmacy_Managment_System
             }
             this.Hide();
         }
+
     }
 }

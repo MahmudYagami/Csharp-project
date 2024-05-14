@@ -30,7 +30,7 @@ namespace Modern_Pharmacy_Managment_System
                     con.Open();
                     string query = "SELECT Date, SUM(Revenue) AS TotalRevenue FROM [PMSnew].[dbo].[AccountTbl] WHERE 1 = 1";
 
-                    // Add date filters if required
+                    
                     if (filterToday)
                     {
                         query += " AND CONVERT(date, Date) = CONVERT(date, GETDATE())";
@@ -263,17 +263,18 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void PopulateLeaveCount()
-        {
-            using (var con = DatabaseConnection.databaseConnect())
-            {
-                con.Open();
-                SqlCommand cm = new SqlCommand("SELECT Count(*) From LeaveTbl  WHERE status = 'Approved'", con);
-                var totalLeave = cm.ExecuteScalar();
-                lblLeaveCnt.Text = totalLeave.ToString();
-                con.Close();
-            }
-        }
+       private void PopulateLeaveCount()
+{
+    using (var con = DatabaseConnection.databaseConnect())
+    {
+        con.Open();
+        SqlCommand cm = new SqlCommand("SELECT COUNT(DISTINCT Employee) FROM LeaveTbl WHERE status = 'Approved'", con);
+        var totalLeave = cm.ExecuteScalar();
+        lblLeaveCnt.Text = totalLeave.ToString();
+        con.Close();
+    }
+}
+
 
         /*private void PopulateUnpaidEmployeeCount()
         {
