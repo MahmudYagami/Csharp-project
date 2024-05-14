@@ -142,6 +142,18 @@ namespace Modern_Pharmacy_Managment_System
             //   of.Show();
             //   this.Close();
 
+            if (userType == "Employee")
+            {
+                StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
+                staffDashboard.LoadBkashFormIntoMainPanel(new StaffInfoPanel());
+                this.Hide();
+            }
+            else
+            {
+                CustomerDashboard cd = (CustomerDashboard)this.ParentForm;
+                cd.LoadBkashFormIntoMainPanel(new OrderForm());
+                this.Hide();
+            }
         }
     }
 }

@@ -190,6 +190,12 @@
     <Compile Include="reqCustomerProduct.Designer.cs">
       <DependentUpon>reqCustomerProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="RequestedMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestedMedicine.Designer.cs">
+      <DependentUpon>RequestedMedicine.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +307,9 @@
     </Compile>
     <EmbeddedResource Include="reqCustomerProduct.resx">
       <DependentUpon>reqCustomerProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestedMedicine.resx">
+      <DependentUpon>RequestedMedicine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignupForm.resx">
       <DependentUpon>SignupForm.cs</DependentUpon>

@@ -19,7 +19,9 @@ namespace Modern_Pharmacy_Managment_System
     public partial class OrderForm : Form
     {
         Functions con;
-        
+
+      
+
         private bool rewardUsed = false;
         private bool isCustomer = false;
         public OrderForm()
@@ -605,6 +607,13 @@ namespace Modern_Pharmacy_Managment_System
         private void btnUseReward_Click_1(object sender, EventArgs e)
         {
             rewardUsed = true;
+               
+            if (txtRewards.Text == "")
+            {
+                //MessageBox.Show("Choose a ")
+                //informationMessage.Show("Invalid Phone Number");
+                MessageBox.Show("Invalid Phone Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             try
             {
                 // Get the rewards points from txtRewards
@@ -654,7 +663,7 @@ namespace Modern_Pharmacy_Managment_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              //  MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

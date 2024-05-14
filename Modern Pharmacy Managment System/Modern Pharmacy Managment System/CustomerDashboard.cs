@@ -17,7 +17,7 @@ namespace Modern_Pharmacy_Managment_System
     public partial class CustomerDashboard : Form
     {
 
-        const string connectionString = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMSnew;Integrated Security=True";
+        const string connectionString = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMSnew;Integrated Security=True";
         public CustomerDashboard(string customerName)
         {
             InitializeComponent();
