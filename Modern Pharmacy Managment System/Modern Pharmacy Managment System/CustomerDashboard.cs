@@ -28,9 +28,9 @@ namespace Modern_Pharmacy_Managment_System
             LoadCustomerPoints();
 
             // Load your images into the array
-            /*images[0] = Image.FromFile(@"C:\Users\nulln\Desktop\105678631_676414822921535_9096975417093549142_n.jpg"); // Replace Image1 with your actual image
-            images[1] = Image.FromFile(@"C:\Users\nulln\Desktop\105678631_676414822921535_9096975417093549142_n.jpg"); // Replace Image2 with your actual image
-            images[2] = Image.FromFile(@"C:\Users\nulln\Desktop\glucose-product-banner1.jpg");*/ // Replace Image3 with your actual image
+            images[0] = Image.FromFile(@"C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\ors.jpg"); // Replace Image1 with your actual image
+            images[1] = Image.FromFile(@"C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\smc plus 2.jpg"); // Replace Image2 with your actual image
+            images[2] = Image.FromFile(@"C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\glucose-product-banner1.jpg"); // Replace Image3 with your actual image
 
             // Set initial image
             guna2PictureBox5.Image = images[0];
@@ -79,16 +79,27 @@ namespace Modern_Pharmacy_Managment_System
         private void btncstOrder_Click(object sender, EventArgs e)
         {
             loadform(new OrderForm());
+            this.guna2Panel3.Hide();
+            this.guna2Panel2.Hide();
+            this.guna2Panel6.Hide();
+            this.guna2Panel7.Hide();
+
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
             loadform(new CustomerSettings());
+            this.guna2Panel3.Hide();
+            this.guna2Panel2.Hide();
+            this.guna2Panel6.Hide();
+            this.guna2Panel7.Hide();
         }
 
         private void btncstLogout_Click(object sender, EventArgs e)
         {
-            
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

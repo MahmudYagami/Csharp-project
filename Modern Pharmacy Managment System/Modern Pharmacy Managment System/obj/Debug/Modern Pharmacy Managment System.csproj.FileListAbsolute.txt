@@ -500,44 +500,50 @@ C:\Users\nulln\Desktop\New folder (3)\Csharp-project\Modern Pharmacy Managment S
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.AdminMainDashboard.resources
 C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.reqCustomerProduct.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe.config
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.pdb
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\FontAwesome.Sharp.dll
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Guna.UI2.dll
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.AssemblyReference.cache
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.addproductPha.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.AdminDashboard.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.AdminMainDashboard.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Bkash.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Category.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Classes.UserControl1.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerDashboard.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerForm.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerManagementForm.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerSettings.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.DashBoard.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.EmpLogin.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.EmployeeSalary.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.LeaveRequest.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.LeavesForm.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Login.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.MedicineShortage.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.OrderForm.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.reqCustomerProduct.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignupForm.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffDashboard.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffForm.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffInfoPanel.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffSettings.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.ViewLeave.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.ViewSalary.resources
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
-C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.RequestedMedicine.resources
+<<<<<<< HEAD
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe.config
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.exe
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Modern Pharmacy Managment System.pdb
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Guna.UI2.dll
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.AssemblyReference.cache
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.addproductPha.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.AdminDashboard.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.AdminMainDashboard.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Bkash.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Category.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Classes.UserControl1.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerDashboard.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerForm.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerManagementForm.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.CustomerSettings.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.DashBoard.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.EmpLogin.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.EmployeeSalary.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Form1.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.LeaveRequest.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.LeavesForm.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Login.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.MedicineShortage.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.OrderForm.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Properties.Resources.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.reqCustomerProduct.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.SignupForm.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffDashboard.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffForm.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffInfoPanel.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.StaffSettings.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.ViewLeave.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.ViewSalary.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.GenerateResource.cache
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CoreCompileInputs.cache
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.exe
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.pdb
+=======
+C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Revenue.resources
+C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.AdminForgotPass.resources
+>>>>>>> e3667a836fb28aec1a77c0f3cc92b1d1193f1fe8
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.AdminForgotPass.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Revenue.resources

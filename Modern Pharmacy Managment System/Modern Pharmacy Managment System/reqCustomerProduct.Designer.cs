@@ -29,8 +29,8 @@ namespace Modern_Pharmacy_Managment_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.reqQuantity = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -41,12 +41,7 @@ namespace Modern_Pharmacy_Managment_System
             this.reqCustomerNum = new Guna.UI2.WinForms.Guna2TextBox();
             this.sendReqbtn = new Guna.UI2.WinForms.Guna2Button();
             this.reqQuantityprd = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.databaseConnectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseConnectionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseConnectionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseConnectionBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -58,6 +53,17 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(730, 100);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(700, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 29);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "X";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -204,25 +210,6 @@ namespace Modern_Pharmacy_Managment_System
             this.reqQuantityprd.Size = new System.Drawing.Size(202, 32);
             this.reqQuantityprd.TabIndex = 50;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(700, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "X";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // databaseConnectionBindingSource
-            // 
-            this.databaseConnectionBindingSource.DataSource = typeof(Modern_Pharmacy_Managment_System.Database.DatabaseConnection);
-            // 
-            // databaseConnectionBindingSource1
-            // 
-            this.databaseConnectionBindingSource1.DataSource = typeof(Modern_Pharmacy_Managment_System.Database.DatabaseConnection);
-            // 
             // reqCustomerProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,17 +232,12 @@ namespace Modern_Pharmacy_Managment_System
             this.Text = "reqCustomerProduct";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseConnectionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseConnectionBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.BindingSource databaseConnectionBindingSource;
-        private System.Windows.Forms.BindingSource databaseConnectionBindingSource1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2HtmlLabel reqQuantity;

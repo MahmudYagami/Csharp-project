@@ -15,6 +15,7 @@ namespace Modern_Pharmacy_Managment_System
             PopulateRevenueChart();
             PopulateLeaveCount();
             PopulateEmployeeCount();
+            CountshowInformation();
             //PopulateUnpaidEmployeeCount();
         }
 
@@ -185,6 +186,39 @@ namespace Modern_Pharmacy_Managment_System
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+
+        public void CountshowInformation()
+        {
+            using (var con = DatabaseConnection.databaseConnect())
+            {
+                con.Open();
+
+                // count total customer.
+                SqlCommand cm = new SqlCommand("SELECT Count(*) From tbCustomer", con);
+                var totalCustomer = cm.ExecuteScalar();
+                if (int.Parse(totalCustomer.ToString()) < 10)
+                {
+                    totalCustomer = "0" + totalCustomer;
+                }
+                lblCustomerCount.Text = totalCustomer.ToString();
+
+
+                // Check total medicine count
+                SqlCommand cm2 = new SqlCommand("SELECT COUNT(*) FROM InventoryTbl", con);
+                int totalMedicineCount = (int)cm2.ExecuteScalar();
+                string totalMedicineDisplay = totalMedicineCount < 10 ? "0" + totalMedicineCount.ToString() : totalMedicineCount.ToString();
+                lblMadiniceCount.Text = totalMedicineDisplay;
+                
+
+                SqlCommand cmd3 = new SqlCommand("SELECT COUNT(*) FROM InventoryTbl WHERE PStock < 50", con);
+                int shortageCount = (int)cmd3.ExecuteScalar();
+                string shortageCountDisplay = shortageCount < 10 ? "0" + shortageCount.ToString() : shortageCount.ToString();
+                lblMadicineShortage.Text = shortageCountDisplay;
+
+                con.Close();
             }
         }
 

@@ -81,6 +81,13 @@ namespace Modern_Pharmacy_Managment_System
             this.Notification2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Addpanel = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.EmpTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
@@ -186,16 +193,17 @@ namespace Modern_Pharmacy_Managment_System
             this.panel3.Location = new System.Drawing.Point(15, 263);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1295, 10);
+            this.panel3.Size = new System.Drawing.Size(1338, 10);
             this.panel3.TabIndex = 22;
             // 
             // EmployeeList
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(196)))), ((int)(((byte)(233)))));
             this.EmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.EmployeeList.BackgroundColor = System.Drawing.Color.Black;
             this.EmployeeList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -214,43 +222,43 @@ namespace Modern_Pharmacy_Managment_System
             this.Column7,
             this.Column8});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(215)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(123)))), ((int)(((byte)(207)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.EmployeeList.DefaultCellStyle = dataGridViewCellStyle3;
-            this.EmployeeList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
-            this.EmployeeList.Location = new System.Drawing.Point(71, 329);
+            this.EmployeeList.GridColor = System.Drawing.Color.White;
+            this.EmployeeList.Location = new System.Drawing.Point(15, 329);
             this.EmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmployeeList.Name = "EmployeeList";
             this.EmployeeList.RowHeadersVisible = false;
             this.EmployeeList.RowHeadersWidth = 51;
             this.EmployeeList.RowTemplate.Height = 40;
-            this.EmployeeList.Size = new System.Drawing.Size(1215, 433);
+            this.EmployeeList.Size = new System.Drawing.Size(1338, 433);
             this.EmployeeList.TabIndex = 23;
-            this.EmployeeList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.FeterRiver;
-            this.EmployeeList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(224)))), ((int)(((byte)(244)))));
+            this.EmployeeList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.DeepPurple;
+            this.EmployeeList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(196)))), ((int)(((byte)(233)))));
             this.EmployeeList.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.EmployeeList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.EmployeeList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.EmployeeList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.EmployeeList.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.EmployeeList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(220)))), ((int)(((byte)(242)))));
-            this.EmployeeList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.EmployeeList.ThemeStyle.BackColor = System.Drawing.Color.Black;
+            this.EmployeeList.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.EmployeeList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
             this.EmployeeList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.EmployeeList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.EmployeeList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.EmployeeList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.EmployeeList.ThemeStyle.HeaderStyle.Height = 30;
             this.EmployeeList.ThemeStyle.ReadOnly = false;
-            this.EmployeeList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(247)))));
+            this.EmployeeList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(215)))), ((int)(((byte)(240)))));
             this.EmployeeList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.EmployeeList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.EmployeeList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.EmployeeList.ThemeStyle.RowsStyle.Height = 40;
-            this.EmployeeList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(186)))), ((int)(((byte)(231)))));
+            this.EmployeeList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(123)))), ((int)(((byte)(207)))));
             this.EmployeeList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.EmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeList_CellContentClick);
             // 
@@ -314,7 +322,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(575, 277);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(186, 32);
@@ -334,7 +342,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // EmployeeJoiningCalender
             // 
-            this.EmployeeJoiningCalender.BackColor = System.Drawing.Color.White;
+            this.EmployeeJoiningCalender.BackColor = System.Drawing.Color.Transparent;
             this.EmployeeJoiningCalender.BorderColor = System.Drawing.Color.Firebrick;
             this.EmployeeJoiningCalender.BorderRadius = 8;
             this.EmployeeJoiningCalender.Checked = true;
@@ -535,7 +543,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(913, 53);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(156, 23);
@@ -605,7 +613,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // EmpSaveBtnStaff
             // 
-            this.EmpSaveBtnStaff.BackColor = System.Drawing.Color.Black;
+            this.EmpSaveBtnStaff.BackColor = System.Drawing.Color.Turquoise;
             this.EmpSaveBtnStaff.FlatAppearance.BorderSize = 0;
             this.EmpSaveBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EmpSaveBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -639,7 +647,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // EmpEditBtnStaff
             // 
-            this.EmpEditBtnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
+            this.EmpEditBtnStaff.BackColor = System.Drawing.Color.OliveDrab;
             this.EmpEditBtnStaff.FlatAppearance.BorderSize = 0;
             this.EmpEditBtnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EmpEditBtnStaff.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -720,7 +728,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(616, 47);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(156, 23);
@@ -789,10 +797,14 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // Addpanel
             // 
+            this.Addpanel.BackColor = System.Drawing.Color.Transparent;
+            this.Addpanel.Controls.Add(this.label16);
+            this.Addpanel.Controls.Add(this.label15);
             this.Addpanel.Controls.Add(this.label2);
             this.Addpanel.Controls.Add(this.label1);
             this.Addpanel.Controls.Add(this.Notification2);
             this.Addpanel.Controls.Add(this.EmpNameTb);
+            this.Addpanel.Controls.Add(this.label14);
             this.Addpanel.Controls.Add(this.EmpSaveBtnStaff);
             this.Addpanel.Controls.Add(this.EmployeeJoiningDate);
             this.Addpanel.Controls.Add(this.label8);
@@ -800,28 +812,111 @@ namespace Modern_Pharmacy_Managment_System
             this.Addpanel.Controls.Add(this.SearchTextBox);
             this.Addpanel.Controls.Add(this.EmpDltBtnStaff);
             this.Addpanel.Controls.Add(this.SearchButton);
+            this.Addpanel.Controls.Add(this.label13);
             this.Addpanel.Controls.Add(this.EmployeeJoiningCalender);
             this.Addpanel.Controls.Add(this.label7);
             this.Addpanel.Controls.Add(this.EmpPassTb);
+            this.Addpanel.Controls.Add(this.label12);
             this.Addpanel.Controls.Add(this.EmpSalaryBox);
+            this.Addpanel.Controls.Add(this.label11);
             this.Addpanel.Controls.Add(this.label4);
+            this.Addpanel.Controls.Add(this.label10);
             this.Addpanel.Controls.Add(this.label6);
             this.Addpanel.Controls.Add(this.label3);
             this.Addpanel.Controls.Add(this.EmpPhoneTb);
             this.Addpanel.Controls.Add(this.EmpEditBtnStaff);
             this.Addpanel.Controls.Add(this.EmpGenderCb);
             this.Addpanel.Controls.Add(this.LeaveBtn);
-            this.Addpanel.Location = new System.Drawing.Point(15, 33);
+            this.Addpanel.ForeColor = System.Drawing.Color.White;
+            this.Addpanel.Location = new System.Drawing.Point(15, 35);
             this.Addpanel.Name = "Addpanel";
-            this.Addpanel.Size = new System.Drawing.Size(1326, 225);
+            this.Addpanel.Size = new System.Drawing.Size(1363, 211);
             this.Addpanel.TabIndex = 87;
             this.Addpanel.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(190, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 23);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Gender";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(20, 108);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(90, 23);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Password";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(362, 20);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 23);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Phone";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(200, 108);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 23);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Address";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(537, 19);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(116, 23);
+            this.label14.TabIndex = 56;
+            this.label14.Text = "Joining Date";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(372, 108);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(64, 23);
+            this.label15.TabIndex = 54;
+            this.label15.Text = "Salary";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(19, 14);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(59, 28);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Name";
+            this.label16.UseCompatibleTextRendering = true;
             // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Lavender;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1353, 803);
             this.Controls.Add(this.Addpanel);
             this.Controls.Add(this.pictureBox1);
@@ -910,5 +1005,12 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2PictureBox Notification2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel Addpanel;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }
