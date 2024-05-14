@@ -97,7 +97,9 @@ namespace Modern_Pharmacy_Managment_System
 
         private void btncstLogout_Click(object sender, EventArgs e)
         {
-            
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
