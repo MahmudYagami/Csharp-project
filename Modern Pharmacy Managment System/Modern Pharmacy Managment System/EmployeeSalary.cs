@@ -15,6 +15,7 @@ namespace Modern_Pharmacy_Managment_System
     {
 
         Functions Con;
+        int Key = 0;
 
         public EmployeeSalary()
         {
@@ -349,20 +350,28 @@ namespace Modern_Pharmacy_Managment_System
         {
             try
             {
-                if (SalaryView.SelectedRows.Count > 0)
+                if (string.IsNullOrEmpty(EmpIdTxt.Text) || string.IsNullOrEmpty(SalaryAmountTxt.Text))
+                {
+                    MessageBox.Show("Please select a record to delete.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if(SalaryView.SelectedRows.Count > 0)
                 {
                     DataGridViewRow selectedRow = SalaryView.SelectedRows[0];
-                    int salaryId = Convert.ToInt32(selectedRow.Cells["SalaryId"].Value);
+                    int salaryId = Convert.ToInt32(selectedRow.Cells[0].Value);
 
                     string deleteQuery = "DELETE FROM SalaryTbl WHERE SalaryId = " + salaryId;
                     Con.SetData(deleteQuery);
 
-                    // Delete corresponding entry from AccountTbl
-                    string deleteAccountQuery = "DELETE FROM AccountTbl WHERE SalaryId = " + salaryId;
-                    Con.SetData(deleteAccountQuery);
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete the record " +"?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        // Delete corresponding entry from AccountTbl
+                        string deleteAccountQuery = "DELETE FROM AccountTbl WHERE SalaryId = " + salaryId;
+                        Con.SetData(deleteAccountQuery);
 
-                    MessageBox.Show("Salary record deleted successfully!", "Deletion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadSalaryData();
+                        MessageBox.Show("Salary record deleted successfully!", "Deletion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadSalaryData();
+                    }
                 }
                 else
                 {
@@ -375,6 +384,69 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
+        private void SalaryView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = SalaryView.Rows[e.RowIndex];
+                    EmpIdTxt.Text = row.Cells[1].Value.ToString();
 
+
+                   
+                    SalaryAmountTxt.Text = row.Cells[2].Value.ToString();
+                    
+
+                    Key = Convert.ToInt32(row.Cells[0].Value);
+                }
+            }
+
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string searchText = SearchTextBox.Text.Trim();
+
+                // Check if search text is provided
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    // Construct the SQL query with a parameter
+                    string query = "SELECT SalaryId, EmpId, SalaryPaidAmount, SalaryPaidDate " +
+                                   $"FROM SalaryTbl WHERE EmpId LIKE '%{searchText}%'";
+
+                    // Create an instance of the Functions class
+                    Functions functions = new Functions();
+
+                    // Call the GetData method from the Functions instance with the query string
+                    DataTable searchResult = functions.GetData(query);
+
+                    // Check if any employees were found
+                    if (searchResult.Rows.Count > 0)
+                    {
+                        // Update the DataGridView with the search results
+                        SalaryView.DataSource = searchResult;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No employees found with the provided Id.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    // If search text is empty, display a message asking for input
+                    MessageBox.Show("Please provide a Employee Id number to search.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void SearchButton_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    }
+

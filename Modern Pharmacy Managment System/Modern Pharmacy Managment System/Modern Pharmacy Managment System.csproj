@@ -70,6 +70,12 @@
     <Compile Include="addproductPha.Designer.cs">
       <DependentUpon>addproductPha.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForgotPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForgotPass.Designer.cs">
+      <DependentUpon>AdminForgotPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminMainDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,12 @@
     <Compile Include="reqCustomerProduct.Designer.cs">
       <DependentUpon>reqCustomerProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Revenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Revenue.Designer.cs">
+      <DependentUpon>Revenue.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForgotPass.resx">
+      <DependentUpon>AdminForgotPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMainDashboard.resx">
       <DependentUpon>AdminMainDashboard.cs</DependentUpon>
@@ -301,6 +316,9 @@
     </Compile>
     <EmbeddedResource Include="reqCustomerProduct.resx">
       <DependentUpon>reqCustomerProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Revenue.resx">
+      <DependentUpon>Revenue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignupForm.resx">
       <DependentUpon>SignupForm.cs</DependentUpon>

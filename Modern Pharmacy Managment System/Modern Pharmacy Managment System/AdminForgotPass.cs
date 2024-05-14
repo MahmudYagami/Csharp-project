@@ -4,17 +4,15 @@ using System.Windows.Forms;
 
 namespace Modern_Pharmacy_Managment_System
 {
-    public partial class CustomerSettings : Form
+    public partial class AdminForgotPass : Form
     {
-        Functions Con;
+        Functions Con; // Assuming you have a Functions class for database operations
 
-        public CustomerSettings()
+        public AdminForgotPass()
         {
             InitializeComponent();
-            Con = new Functions();
+            Con = new Functions(); // Initialize the Functions object
         }
-
-       
 
         private void UpdatePasswordBtn_Click(object sender, EventArgs e)
         {
@@ -31,19 +29,19 @@ namespace Modern_Pharmacy_Managment_System
                     return;
                 }
 
-                // Retrieve the customer ID based on the current password
-                string customerIdQuery = "SELECT cID FROM tbCustomer WHERE cpassword = '{0}'";
-                customerIdQuery = string.Format(customerIdQuery, currentPassword);
-                DataTable customerIdDt = Con.GetData(customerIdQuery);
+                // Retrieve the admin ID based on the current password
+                string adminIdQuery = "SELECT AdminId FROM AdminTbl WHERE AdminPassword = '{0}'";
+                adminIdQuery = string.Format(adminIdQuery, currentPassword);
+                DataTable adminIdDt = Con.GetData(adminIdQuery);
 
-                // Check if customer exists and retrieve the customer ID
-                if (customerIdDt.Rows.Count > 0)
+                // Check if admin exists and retrieve the admin ID
+                if (adminIdDt.Rows.Count > 0)
                 {
-                    int customerId = Convert.ToInt32(customerIdDt.Rows[0]["cID"]);
+                    int adminId = Convert.ToInt32(adminIdDt.Rows[0]["AdminId"]);
 
-                    // Update the customer's password
-                    string updatePasswordQuery = "UPDATE tbCustomer SET cpassword = '{0}' WHERE cID = {1}";
-                    updatePasswordQuery = string.Format(updatePasswordQuery, newPassword, customerId);
+                    // Update the admin's password
+                    string updatePasswordQuery = "UPDATE AdminTbl SET AdminPassword = '{0}' WHERE AdminId = {1}";
+                    updatePasswordQuery = string.Format(updatePasswordQuery, newPassword, adminId);
                     Con.SetData(updatePasswordQuery);
 
                     MessageBox.Show("Password updated successfully!");
@@ -57,7 +55,6 @@ namespace Modern_Pharmacy_Managment_System
             {
                 MessageBox.Show("Error updating password: " + ex.Message);
             }
-
         }
     }
 }

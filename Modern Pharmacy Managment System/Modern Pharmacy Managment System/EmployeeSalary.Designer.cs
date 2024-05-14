@@ -37,18 +37,22 @@ namespace Modern_Pharmacy_Managment_System
             this.label1 = new System.Windows.Forms.Label();
             this.PayDateCalender = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.SalaryPaidButton = new FontAwesome.Sharp.IconButton();
-            this.DeleteSalaryBtn = new FontAwesome.Sharp.IconButton();
             this.SalaryView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Emp_manage_label = new System.Windows.Forms.Label();
             this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.SearchButton = new FontAwesome.Sharp.IconButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.NotificationImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.EmpIdTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.SalaryAmountTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.NotificationImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.SearchButton = new FontAwesome.Sharp.IconButton();
+            this.DeleteSalaryBtn = new FontAwesome.Sharp.IconButton();
+            this.SalaryPaidButton = new FontAwesome.Sharp.IconButton();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NotificationImage)).BeginInit();
@@ -101,41 +105,6 @@ namespace Modern_Pharmacy_Managment_System
             this.label2.TabIndex = 11;
             this.label2.Text = "Pay Date";
             // 
-            // SalaryPaidButton
-            // 
-            this.SalaryPaidButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.SalaryPaidButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SalaryPaidButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SalaryPaidButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.SalaryPaidButton.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.SalaryPaidButton.IconColor = System.Drawing.Color.White;
-            this.SalaryPaidButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SalaryPaidButton.Location = new System.Drawing.Point(455, 183);
-            this.SalaryPaidButton.Name = "SalaryPaidButton";
-            this.SalaryPaidButton.Size = new System.Drawing.Size(202, 67);
-            this.SalaryPaidButton.TabIndex = 13;
-            this.SalaryPaidButton.Text = "Pay ";
-            this.SalaryPaidButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SalaryPaidButton.UseVisualStyleBackColor = false;
-            this.SalaryPaidButton.Click += new System.EventHandler(this.SalaryPaidButton_Click);
-            // 
-            // DeleteSalaryBtn
-            // 
-            this.DeleteSalaryBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.DeleteSalaryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteSalaryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteSalaryBtn.IconChar = FontAwesome.Sharp.IconChar.MoneyBill1Wave;
-            this.DeleteSalaryBtn.IconColor = System.Drawing.Color.Black;
-            this.DeleteSalaryBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DeleteSalaryBtn.Location = new System.Drawing.Point(455, 256);
-            this.DeleteSalaryBtn.Name = "DeleteSalaryBtn";
-            this.DeleteSalaryBtn.Size = new System.Drawing.Size(202, 61);
-            this.DeleteSalaryBtn.TabIndex = 14;
-            this.DeleteSalaryBtn.Text = "Delete";
-            this.DeleteSalaryBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DeleteSalaryBtn.UseVisualStyleBackColor = false;
-            this.DeleteSalaryBtn.Click += new System.EventHandler(this.DeleteSalaryBtn_Click);
-            // 
             // SalaryView
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -150,6 +119,11 @@ namespace Modern_Pharmacy_Managment_System
             this.SalaryView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.SalaryView.ColumnHeadersHeight = 19;
             this.SalaryView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.SalaryView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -188,6 +162,7 @@ namespace Modern_Pharmacy_Managment_System
             this.SalaryView.ThemeStyle.RowsStyle.Height = 24;
             this.SalaryView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
             this.SalaryView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.SalaryView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SalaryView_CellContentClick);
             // 
             // panel1
             // 
@@ -221,11 +196,11 @@ namespace Modern_Pharmacy_Managment_System
             this.SearchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SearchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SearchTextBox.Location = new System.Drawing.Point(741, 119);
+            this.SearchTextBox.Location = new System.Drawing.Point(978, 113);
             this.SearchTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.PasswordChar = '\0';
-            this.SearchTextBox.PlaceholderText = "";
+            this.SearchTextBox.PlaceholderText = "Enter Employee Id";
             this.SearchTextBox.SelectedText = "";
             this.SearchTextBox.Size = new System.Drawing.Size(229, 44);
             this.SearchTextBox.TabIndex = 17;
@@ -235,26 +210,11 @@ namespace Modern_Pharmacy_Managment_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
-            this.label4.Location = new System.Drawing.Point(737, 92);
+            this.label4.Location = new System.Drawing.Point(974, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(156, 23);
             this.label4.TabIndex = 19;
             this.label4.Text = "Search Employee";
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.SearchButton.IconChar = FontAwesome.Sharp.IconChar.SteamSymbol;
-            this.SearchButton.IconColor = System.Drawing.Color.Black;
-            this.SearchButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SearchButton.Location = new System.Drawing.Point(741, 183);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(188, 67);
-            this.SearchButton.TabIndex = 18;
-            this.SearchButton.Text = "Search";
-            this.SearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SearchButton.UseVisualStyleBackColor = false;
             // 
             // guna2Panel1
             // 
@@ -263,18 +223,6 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1299, 10);
             this.guna2Panel1.TabIndex = 20;
-            // 
-            // NotificationImage
-            // 
-            this.NotificationImage.Image = ((System.Drawing.Image)(resources.GetObject("NotificationImage.Image")));
-            this.NotificationImage.ImageRotate = 0F;
-            this.NotificationImage.Location = new System.Drawing.Point(1040, 59);
-            this.NotificationImage.Name = "NotificationImage";
-            this.NotificationImage.Size = new System.Drawing.Size(48, 34);
-            this.NotificationImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.NotificationImage.TabIndex = 21;
-            this.NotificationImage.TabStop = false;
-            this.NotificationImage.Click += new System.EventHandler(this.NotificationImage_Click);
             // 
             // EmpIdTxt
             // 
@@ -317,6 +265,97 @@ namespace Modern_Pharmacy_Managment_System
             this.SalaryAmountTxt.SelectedText = "";
             this.SalaryAmountTxt.Size = new System.Drawing.Size(200, 41);
             this.SalaryAmountTxt.TabIndex = 23;
+            // 
+            // NotificationImage
+            // 
+            this.NotificationImage.Image = ((System.Drawing.Image)(resources.GetObject("NotificationImage.Image")));
+            this.NotificationImage.ImageRotate = 0F;
+            this.NotificationImage.Location = new System.Drawing.Point(1251, 42);
+            this.NotificationImage.Name = "NotificationImage";
+            this.NotificationImage.Size = new System.Drawing.Size(48, 34);
+            this.NotificationImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.NotificationImage.TabIndex = 21;
+            this.NotificationImage.TabStop = false;
+            this.NotificationImage.Click += new System.EventHandler(this.NotificationImage_Click);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.SearchButton.IconChar = FontAwesome.Sharp.IconChar.SteamSymbol;
+            this.SearchButton.IconColor = System.Drawing.Color.Black;
+            this.SearchButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SearchButton.Location = new System.Drawing.Point(978, 166);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(188, 67);
+            this.SearchButton.TabIndex = 18;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // DeleteSalaryBtn
+            // 
+            this.DeleteSalaryBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.DeleteSalaryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteSalaryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteSalaryBtn.IconChar = FontAwesome.Sharp.IconChar.MoneyBill1Wave;
+            this.DeleteSalaryBtn.IconColor = System.Drawing.Color.Black;
+            this.DeleteSalaryBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DeleteSalaryBtn.Location = new System.Drawing.Point(455, 256);
+            this.DeleteSalaryBtn.Name = "DeleteSalaryBtn";
+            this.DeleteSalaryBtn.Size = new System.Drawing.Size(202, 61);
+            this.DeleteSalaryBtn.TabIndex = 14;
+            this.DeleteSalaryBtn.Text = "Delete";
+            this.DeleteSalaryBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DeleteSalaryBtn.UseVisualStyleBackColor = false;
+            this.DeleteSalaryBtn.Click += new System.EventHandler(this.DeleteSalaryBtn_Click);
+            // 
+            // SalaryPaidButton
+            // 
+            this.SalaryPaidButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SalaryPaidButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalaryPaidButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalaryPaidButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SalaryPaidButton.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.SalaryPaidButton.IconColor = System.Drawing.Color.White;
+            this.SalaryPaidButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SalaryPaidButton.Location = new System.Drawing.Point(455, 183);
+            this.SalaryPaidButton.Name = "SalaryPaidButton";
+            this.SalaryPaidButton.Size = new System.Drawing.Size(202, 67);
+            this.SalaryPaidButton.TabIndex = 13;
+            this.SalaryPaidButton.Text = "Pay ";
+            this.SalaryPaidButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SalaryPaidButton.UseVisualStyleBackColor = false;
+            this.SalaryPaidButton.Click += new System.EventHandler(this.SalaryPaidButton_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "SalaryId";
+            this.Column1.HeaderText = "Salary Id";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "EmpId";
+            this.Column2.HeaderText = "Employee Id";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SalaryPaidAmount";
+            this.Column3.HeaderText = "Paid Amount";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "SalaryPaidDate";
+            this.Column4.HeaderText = "Paid Date";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
             // 
             // EmployeeSalary
             // 
@@ -370,5 +409,9 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2PictureBox NotificationImage;
         private Guna.UI2.WinForms.Guna2TextBox EmpIdTxt;
         private Guna.UI2.WinForms.Guna2TextBox SalaryAmountTxt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
