@@ -19,7 +19,6 @@ namespace Modern_Pharmacy_Managment_System
         {
             InitializeComponent();
         }
-
         private void sendReqbtn_Click(object sender, EventArgs e)
         {
             try

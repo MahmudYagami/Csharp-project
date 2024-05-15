@@ -125,7 +125,7 @@ namespace Modern_Pharmacy_Managment_System
             {
                 odf.RemoveOrder();
                 sif.refreshInfo();
-
+                lblAmount.Text = "0.0";
                 return;
             }
 
@@ -133,14 +133,6 @@ namespace Modern_Pharmacy_Managment_System
             lblAmount.Text = "";
             txtPhone.Text = "";
             txtPin.Text = "";
-            /*
-            Login login = new Login();
-            login.Show();
-            this.Hide();
-            */
-            // StaffDashboard of=  new StaffDashboard();
-            //   of.Show();
-            //   this.Close();
 
             if (userType == "Employee")
             {
@@ -149,6 +141,21 @@ namespace Modern_Pharmacy_Managment_System
                 this.Hide();
             }
             else
+            {
+                CustomerDashboard cd = (CustomerDashboard)this.ParentForm;
+                cd.LoadBkashFormIntoMainPanel(new OrderForm());
+                this.Hide();
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            if (userType == "Employee")
+            {
+                StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
+                staffDashboard.LoadBkashFormIntoMainPanel(new StaffInfoPanel());
+                this.Hide();
+            }else
             {
                 CustomerDashboard cd = (CustomerDashboard)this.ParentForm;
                 cd.LoadBkashFormIntoMainPanel(new OrderForm());

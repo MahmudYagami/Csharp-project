@@ -39,7 +39,7 @@ namespace Modern_Pharmacy_Managment_System
                 string.IsNullOrWhiteSpace(txtRePass.Text))
             {
                 
-                warningMessage.Show("Please fill in all fields.");        
+                warningMessage.Show("Please provide all the information.");        
                 return false;
             }
 
@@ -65,7 +65,7 @@ namespace Modern_Pharmacy_Managment_System
             // Check if the password and re-entered password match
             if (txtPass.Text != txtRePass.Text)
             {            
-                errorMessage.Show("Passwords do not match.");
+                errorMessage.Show("Passwords did not match.");
                 return false;
             }
 

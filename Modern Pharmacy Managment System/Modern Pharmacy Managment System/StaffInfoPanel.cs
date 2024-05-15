@@ -310,6 +310,8 @@ namespace Modern_Pharmacy_Managment_System
             StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
             //staffDashboard.LoadBkashFormIntoMainPanel(new RequestedMedicine());
             this.Hide();
+           staffDashboard.LoadBkashFormIntoMainPanel(new RequestedMedicin());
+           this.Hide();
         }
     }
 }
