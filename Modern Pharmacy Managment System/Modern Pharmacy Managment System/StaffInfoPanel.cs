@@ -24,7 +24,7 @@ namespace Modern_Pharmacy_Managment_System
 
 
         public void refreshInfo()
-        {         
+        {
 
             ShowTodaysMedicineSale();
 
@@ -63,7 +63,14 @@ namespace Modern_Pharmacy_Managment_System
                 int totalMedicineCount = (int)cm2.ExecuteScalar();
                 string totalMedicineDisplay = totalMedicineCount < 10 ? "0" + totalMedicineCount.ToString() : totalMedicineCount.ToString();
                 lblMadiniceCount.Text = totalMedicineDisplay;
-                con.Close();           
+               // con.Close();
+
+
+                // check total medicine requested.
+                SqlCommand cm3 = new SqlCommand("SELECT COUNT(*) FROM MedicineRequestTbl", con);
+                int totalRequestedMedicineCount = (int)cm3.ExecuteScalar();
+                lblRequestedMedicine.Text = totalRequestedMedicineCount < 10 ? "0" + totalRequestedMedicineCount.ToString() : totalRequestedMedicineCount.ToString();
+                con.Close();
             }
         }
 
@@ -298,5 +305,11 @@ namespace Modern_Pharmacy_Managment_System
             //pnale
         }
 
+        private void lblMedicineRequestedList_Click(object sender, EventArgs e)
+        {
+            StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
+           staffDashboard.LoadBkashFormIntoMainPanel(new RequestedMedicin());
+           this.Hide();
+        }
     }
 }

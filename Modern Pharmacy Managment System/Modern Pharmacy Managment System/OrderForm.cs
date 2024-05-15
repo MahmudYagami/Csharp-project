@@ -15,11 +15,13 @@ using System.Data.SqlClient;
 
 namespace Modern_Pharmacy_Managment_System
 {
-    
+
     public partial class OrderForm : Form
     {
         Functions con;
-        double grandTotal;
+
+
+
         private bool rewardUsed = false;
         private bool isCustomer = false;
         public OrderForm()
@@ -29,7 +31,7 @@ namespace Modern_Pharmacy_Managment_System
             Login login = Login.GetInstance();
             string customerPhone = login.getCustomerPhone();
             customerPanel.Visible = false;
-            
+
             if (!string.IsNullOrEmpty(customerPhone))
             {
                 // customerPhone is not empty
@@ -42,25 +44,25 @@ namespace Modern_Pharmacy_Managment_System
                 isCustomer = true;
                 using (var con = DatabaseConnection.databaseConnect())
                 {
-                    con.Open();                 
+                    con.Open();
                     string query = "SELECT cname FROM tbCustomer WHERE cphone = @cphone";
 
                     SqlCommand cmd = new SqlCommand(query, con);
-                                            
+
                     cmd.Parameters.AddWithValue("@cphone", txtCPhone.Text);
-                    object result = cmd.ExecuteScalar();                 
+                    object result = cmd.ExecuteScalar();
                     if (result != null)
                     {
-                        
+
                         txtCName.Text = result.ToString();
-                        
+
                     }
                     else
                     {
                         txtCName.Text = "";
-                    }                
+                    }
                 }
-                
+
 
             }
             else
@@ -70,7 +72,7 @@ namespace Modern_Pharmacy_Managment_System
                 customerPanel.Visible = false;
             }
         }
-       
+
         private void OrderForm_Load(object sender, EventArgs e)
         {
             showProduct();
@@ -82,8 +84,8 @@ namespace Modern_Pharmacy_Managment_System
         {
             string Query = "SELECT PId, PName, PSellingPrice, PStock FROM InventoryTbl";
             dgvProduct.DataSource = con.GetData(Query);
-        }       
-        
+        }
+
         private void showOrder()
         {
             string Query = "SELECT OId, OName, OUnit, OPrice, OTotalCost FROM OrderTbl";
@@ -121,7 +123,7 @@ namespace Modern_Pharmacy_Managment_System
             {
                 // Get the customer phone number from txtCPhone
                 string customerPhoneNumber = txtCPhone.Text.Trim();
-                
+
 
                 // SQL query to select cpoints for the customer
                 string query = "SELECT cpoints FROM tbCustomer WHERE cphone = @customerPhoneNumber";
@@ -148,8 +150,8 @@ namespace Modern_Pharmacy_Managment_System
 
                             // Display rewards in txtRewards
                             txtRewards.Text = rewards.ToString();
- 
-                        
+
+
                         }
                     }
                 }
@@ -160,11 +162,11 @@ namespace Modern_Pharmacy_Managment_System
             }
 
         }
-   
+
         private void UpdateRewardsPoints(double newRewards)
         {
             try
-            {  
+            {
                 string customerPhoneNumber = txtCPhone.Text;
 
                 // SQL query to update cpoints for the customer
@@ -178,14 +180,14 @@ namespace Modern_Pharmacy_Managment_System
                 // Call the insertData method to execute the query
                 int rowsAffected = con.insertData(cmd);
 
-                if(rowsAffected > 0)
+                if (rowsAffected > 0)
                 {
 
                     MessageBox.Show("Rewards Updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Failed to Update rewards.", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Failed to Update rewards.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -280,8 +282,25 @@ namespace Modern_Pharmacy_Managment_System
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
+
+
+            int unit;
+            if (!int.TryParse(txtUnit.Text, out unit))
+            {
+                MessageBox.Show("Please enter a valid quantity");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtUnit.Text) || txtUnit.Text == "Amount want to buy" || unit <= 0)
+            {
+                MessageBox.Show("Please enter the quantity");
+                return;
+            }
+
             try
             {
+
+
                 if (dgvProduct.SelectedRows.Count > 0)
                 {
                     // Get the selected row
@@ -292,7 +311,7 @@ namespace Modern_Pharmacy_Managment_System
                     string productName = selectedRow.Cells[1].Value.ToString();
                     int availableStock = Convert.ToInt32(selectedRow.Cells[3].Value);
                     decimal sellingPrice = Convert.ToDecimal(selectedRow.Cells[2].Value);
-                    int unit = Convert.ToInt32(txtUnit.Text);
+                    
 
                     if (unit > availableStock)
                     {
@@ -334,7 +353,7 @@ namespace Modern_Pharmacy_Managment_System
                         UpdateTotalAmount();
                     }
                     else
-                    {
+                    {    
                         errorMessage.Show("Failed to add product to cart.");
                         //MessageBox.Show("Failed to add product to cart.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -606,6 +625,13 @@ namespace Modern_Pharmacy_Managment_System
         private void btnUseReward_Click_1(object sender, EventArgs e)
         {
             rewardUsed = true;
+               
+            if (txtRewards.Text == "")
+            {
+                //MessageBox.Show("Choose a ")
+                //informationMessage.Show("Invalid Phone Number");
+                MessageBox.Show("Invalid Phone Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             try
             {
                 // Get the rewards points from txtRewards
@@ -655,7 +681,7 @@ namespace Modern_Pharmacy_Managment_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              //  MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -663,6 +689,13 @@ namespace Modern_Pharmacy_Managment_System
         {
             try
             {
+                if (dgvOrder.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("There is no medicine .", "Neuron Pharma", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
                 if (isCustomer == false)
                 {
                     // Get the parent form (StaffDashboard)

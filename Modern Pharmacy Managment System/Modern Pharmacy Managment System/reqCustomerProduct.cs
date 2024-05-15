@@ -14,12 +14,11 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class reqCustomerProduct : Form
     {
-        private string connectionString = @"Data Source=Akid\SQLEXPRESS;Initial Catalog=PMSnew;Integrated Security=True";
+        private string connectionString = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMSnew;Integrated Security=True";
         public reqCustomerProduct()
         {
             InitializeComponent();
         }
-
         private void sendReqbtn_Click(object sender, EventArgs e)
         {
             try
