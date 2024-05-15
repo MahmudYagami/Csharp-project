@@ -14,23 +14,23 @@ using System.Data;
 
 namespace Modern_Pharmacy_Managment_System
 {
-    public partial class addproductPha : Form
+    public partial class inventorydemo : UserControl
     {
-        const string connectionString = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMSnew;Integrated Security=True";
-        public addproductPha()
+        const string connectionString = @"Data Source=Akid\SQLEXPRESS;Initial Catalog=PMSnew;Integrated Security=True";
+        public inventorydemo()
         {
             InitializeComponent();
+            InitializeComponent();
             ShowDataOnGrid();
-            prdtview.CellClick += prdtview_CellClick;
-            
-
-
+            prdctview.CellClick += prdctview_CellClick;
         }
+
+
         private void ShowDataOnGrid()
         {
             try
             {
-                
+
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
@@ -43,7 +43,7 @@ namespace Modern_Pharmacy_Managment_System
                         adapter.Fill(table);
 
                         // Bind the DataTable to the DataGridView
-                        prdtview.DataSource = table;
+                        prdctview.DataSource = table;
                     }
                 }
             }
@@ -53,43 +53,6 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-
-        private void prdtview_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = prdtview.Rows[e.RowIndex];
-
-                // Retrieve the data from the selected row
-                string productId = row.Cells["PId"].Value.ToString();
-                string productName = row.Cells["PName"].Value.ToString();
-                string companyName = row.Cells["PCompanyName"].Value.ToString();
-                string genericName = row.Cells["PGeneric"].Value.ToString();
-                string stock = row.Cells["PStock"].Value.ToString();
-                string buyingPrice = row.Cells["PBuyingPrice"].Value.ToString();
-                string sellingPrice = row.Cells["PSellingPrice"].Value.ToString();
-
-                // Display the data in TextBoxes or other controls
-                invprdIdplace.Text = productId;
-                invPdrNameplace.Text = productName;
-                invCompanyplace.Text = companyName;
-                invGenericplace.Text = genericName;
-                invStockplace.Text = stock;
-                invSellingplace.Text = sellingPrice;
-                invBuyingplace.Text = buyingPrice;
-            }
-        }
-
-        private void ClearTextBoxes()
-        {
-            invprdIdplace.Clear();
-            invPdrNameplace.Clear();
-            invCompanyplace.Clear();
-            invGenericplace.Clear();
-            invStockplace.Clear();
-            invSellingplace.Clear();
-            invBuyingplace.Clear();
-        }
         private void ShowDataOnGrid(string searchTerm = "")
         {
             try
@@ -117,7 +80,7 @@ namespace Modern_Pharmacy_Managment_System
                         adapter.Fill(table);
 
                         // Bind the DataTable to the DataGridView
-                        prdtview.DataSource = table;
+                        prdctview.DataSource = table;
                     }
                 }
             }
@@ -126,59 +89,46 @@ namespace Modern_Pharmacy_Managment_System
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void searchPrdt_TextChanged(object sender, EventArgs e)
+
+        private void invcAddbtn_Click(object sender, EventArgs e)
         {
-            /*string searchTerm = searchPrdt.Text.Trim();
-            ShowDataOnGrid(searchTerm);*/
-            string searchTerm = searchPrdt.Text.Trim();
-            ShowDataOnGrid(searchTerm);
-
-        }
-
-        private void invAddbtn_Click_1(object sender, EventArgs e)
-        {
-
             try
             {
-                if (invprdIdplace.Text == "" || invPdrNameplace.Text == "" || invCompanyplace.Text == "" || invGenericplace.Text == "" || invStockplace.Text == "" || invSellingplace.Text == "" || invBuyingplace.Text == "")
+                if (invcprdIdplace.Text == "" || invPcdrNameplace.Text == "" || invcCompanyplace.Text == "" || invcGenericplace.Text == "" || invcStockplace.Text == "" || invcSellingplace.Text == "" || invcBuyingplace.Text == "")
                 {
                     MessageBox.Show("Empty field", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (decimal.Parse(invBuyingplace.Text.Trim()) > decimal.Parse(invSellingplace.Text.Trim()))
-                {
-                    MessageBox.Show("Buying price cannot be greater than selling price", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     using (SqlConnection con = new SqlConnection(connectionString))
                     {
                         con.Open();
-                        string checkProdName = "SELECT * FROM InventoryTbl WHERE PName = @PName";
+                        string checkProdId = "SELECT * FROM InventoryTbl WHERE PId = @PId";
 
-                        using (SqlCommand checkPName = new SqlCommand(checkProdName, con))
+                        using (SqlCommand checkPID = new SqlCommand(checkProdId, con))
                         {
-                            checkPName.Parameters.AddWithValue("@PName", invPdrNameplace.Text.Trim());
+                            checkPID.Parameters.AddWithValue("@PId", invcprdIdplace.Text.Trim());
 
-                            SqlDataAdapter adp = new SqlDataAdapter(checkPName);
+                            SqlDataAdapter adp = new SqlDataAdapter(checkPID);
                             DataTable table = new DataTable();
                             adp.Fill(table);
 
                             if (table.Rows.Count > 0)
                             {
-                                MessageBox.Show(invPdrNameplace.Text.Trim() + " already exists", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(invcprdIdplace.Text.Trim() + " is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else
                             {
                                 string insertData = "INSERT INTO InventoryTbl (PId, PName, PCompanyName, PGeneric, PStock, PBuyingPrice, PSellingPrice) VALUES (@PId, @PName, @PCompanyName, @PGeneric, @PStock, @PBuyingPrice, @PSellingPrice)";
                                 using (SqlCommand cmd = new SqlCommand(insertData, con))
                                 {
-                                    cmd.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PName", invPdrNameplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PCompanyName", invCompanyplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PGeneric", invGenericplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PStock", invStockplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PBuyingPrice", invBuyingplace.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@PSellingPrice", invSellingplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PId", invcprdIdplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PName", invPcdrNameplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PCompanyName", invcCompanyplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PGeneric", invcGenericplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PStock", invcStockplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PBuyingPrice", invcBuyingplace.Text.Trim());
+                                    cmd.Parameters.AddWithValue("@PSellingPrice", invcSellingplace.Text.Trim());
                                     cmd.ExecuteNonQuery();
                                     //ClearF();
                                     ShowDataOnGrid();
@@ -194,14 +144,14 @@ namespace Modern_Pharmacy_Managment_System
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
-        private void invUpdatebtn_Click(object sender, EventArgs e)
+        private void invcUpdatebtn_Click(object sender, EventArgs e)
         {
+
             try
             {
-                if (invprdIdplace.Text == "")
+                if (invcprdIdplace.Text == "")
                 {
                     MessageBox.Show("Please select a product to update", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -221,13 +171,13 @@ namespace Modern_Pharmacy_Managment_System
 
                     using (SqlCommand cmd = new SqlCommand(updateQuery, con))
                     {
-                        cmd.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PName", invPdrNameplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PCompanyName", invCompanyplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PGeneric", invGenericplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PStock", invStockplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PBuyingPrice", invBuyingplace.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PSellingPrice", invSellingplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PId", invcprdIdplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PName", invPcdrNameplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PCompanyName", invcCompanyplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PGeneric", invcGenericplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PStock", invcStockplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PBuyingPrice", invcBuyingplace.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PSellingPrice", invcSellingplace.Text.Trim());
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -249,12 +199,11 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void invDeletebtn_Click(object sender, EventArgs e)
+        private void invcDeletebtn_Click(object sender, EventArgs e)
         {
-
             try
             {
-                if (invprdIdplace.Text == "")
+                if (invcprdIdplace.Text == "")
                 {
                     MessageBox.Show("Please select a product to delete", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -270,7 +219,7 @@ namespace Modern_Pharmacy_Managment_System
 
                         using (SqlCommand cmd = new SqlCommand(deleteQuery, con))
                         {
-                            cmd.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
+                            cmd.Parameters.AddWithValue("@PId", invcprdIdplace.Text.Trim());
 
                             int rowsAffected = cmd.ExecuteNonQuery();
                             if (rowsAffected > 0)
@@ -295,11 +244,46 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-        private void invClearbtn_Click(object sender, EventArgs e)
+        private void ClearTextBoxes()
+        {
+            invcprdIdplace.Clear();
+            invPcdrNameplace.Clear();
+            invcCompanyplace.Clear();
+            invcGenericplace.Clear();
+            invcStockplace.Clear();
+            invcSellingplace.Clear();
+            invcBuyingplace.Clear();
+        }
+
+        private void invcClearbtn_Click(object sender, EventArgs e)
         {
             ClearTextBoxes();
         }
 
-        
+        private void prdctview_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = prdctview.Rows[e.RowIndex];
+
+                // Retrieve the data from the selected row
+                string productId = row.Cells["PId"].Value.ToString();
+                string productName = row.Cells["PName"].Value.ToString();
+                string companyName = row.Cells["PCompanyName"].Value.ToString();
+                string genericName = row.Cells["PGeneric"].Value.ToString();
+                string stock = row.Cells["PStock"].Value.ToString();
+                string buyingPrice = row.Cells["PBuyingPrice"].Value.ToString();
+                string sellingPrice = row.Cells["PSellingPrice"].Value.ToString();
+
+                // Display the data in TextBoxes or other controls
+                invcprdIdplace.Text = productId;
+                invPcdrNameplace.Text = productName;
+                invcCompanyplace.Text = companyName;
+                invcGenericplace.Text = genericName;
+                invcStockplace.Text = stock;
+                invcSellingplace.Text = sellingPrice;
+                invcBuyingplace.Text = buyingPrice;
+            }
+        }
     }
 }

@@ -39,6 +39,7 @@ namespace Modern_Pharmacy_Managment_System
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblSignup = new System.Windows.Forms.LinkLabel();
+            this.checkShowPassword = new Guna.UI2.WinForms.Guna2CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,7 +130,6 @@ namespace Modern_Pharmacy_Managment_System
             this.label1.Size = new System.Drawing.Size(87, 21);
             this.label1.TabIndex = 8;
             this.label1.Text = "Username";
-            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -164,12 +164,34 @@ namespace Modern_Pharmacy_Managment_System
             this.lblSignup.Text = "Signup";
             this.lblSignup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSignup_LinkClicked);
             // 
+            // checkShowPassword
+            // 
+            this.checkShowPassword.AutoSize = true;
+            this.checkShowPassword.Checked = true;
+            this.checkShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkShowPassword.CheckedState.BorderRadius = 0;
+            this.checkShowPassword.CheckedState.BorderThickness = 0;
+            this.checkShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkShowPassword.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkShowPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.checkShowPassword.Location = new System.Drawing.Point(582, 273);
+            this.checkShowPassword.Name = "checkShowPassword";
+            this.checkShowPassword.Size = new System.Drawing.Size(102, 17);
+            this.checkShowPassword.TabIndex = 14;
+            this.checkShowPassword.Text = "Show Password";
+            this.checkShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkShowPassword.UncheckedState.BorderRadius = 0;
+            this.checkShowPassword.UncheckedState.BorderThickness = 0;
+            this.checkShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkShowPassword.CheckedChanged += new System.EventHandler(this.checkShowPassword_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(733, 485);
+            this.Controls.Add(this.checkShowPassword);
             this.Controls.Add(this.lblSignup);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -199,5 +221,6 @@ namespace Modern_Pharmacy_Managment_System
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel lblSignup;
+        private Guna.UI2.WinForms.Guna2CheckBox checkShowPassword;
     }
 }

@@ -45,9 +45,9 @@ namespace Modern_Pharmacy_Managment_System
                 {
                     connection.Open();
 
-                    // SQL command to insert data into the table
+                   
                     string insertQuery = @"INSERT INTO MedicineRequestTbl (CustomerName, CustomerPhone, MedicineName, MedicineQuantity) 
-                                           VALUES (@CustomerName, @CustomerPhone, @MedicineName, @MedicineQuantity)";
+                                   VALUES (@CustomerName, @CustomerPhone, @MedicineName, @MedicineQuantity)";
 
                     using (SqlCommand command = new SqlCommand(insertQuery, connection))
                     {

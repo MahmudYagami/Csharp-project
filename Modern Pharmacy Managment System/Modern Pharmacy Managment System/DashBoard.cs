@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using Modern_Pharmacy_Managment_System.Database;
+using Modern_Pharmacy_Managment_System.Classes;
 
 namespace Modern_Pharmacy_Managment_System
 {
@@ -162,6 +163,19 @@ namespace Modern_Pharmacy_Managment_System
 
 
         //DISPLAY INDIVIDUAL FORMS
+        public void loadformAkid(object Form)
+        {
+            if (this.mainpanel.Controls.Count > 0)
+                this.mainpanel.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.FormBorderStyle = FormBorderStyle.None; // Remove border
+            f.Dock = DockStyle.Fill; // Fill the mainpanel
+            f.Size = mainpanel.Size; // Set the size to match mainpanel
+            this.mainpanel.Controls.Add(f);
+            this.mainpanel.Tag = f;
+            f.Show();
+        }
 
         public void loadform(object Form)
         {
@@ -212,7 +226,8 @@ namespace Modern_Pharmacy_Managment_System
 
         private void InventoryBtn_Click(object sender, EventArgs e)
         {
-            loadform(new addproductPha());
+            loadformAkid(new addproductPha());
+            
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)

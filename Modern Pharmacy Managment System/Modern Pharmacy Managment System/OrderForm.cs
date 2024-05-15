@@ -21,7 +21,7 @@ namespace Modern_Pharmacy_Managment_System
         Functions con;
 
 
-
+        Double grandTotal;
         private bool rewardUsed = false;
         private bool isCustomer = false;
         public OrderForm()
@@ -478,7 +478,8 @@ namespace Modern_Pharmacy_Managment_System
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            // Check if there are any items in the order
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
             if (dgvOrder.Rows.Count == 0)
             {
                 MessageBox.Show("There are no items in the order to pay for.", "Empty Order", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -542,7 +543,7 @@ namespace Modern_Pharmacy_Managment_System
             try
             {
                 // Convert txtGrandTotal to double
-                double grandTotal;
+
 
                 // Check if txtGrandTotal is not empty and contains valid data
                 if (double.TryParse(txtGrandTotal.Text, out grandTotal))
@@ -551,15 +552,16 @@ namespace Modern_Pharmacy_Managment_System
                     DateTime currentDate = DateTime.Now;
 
                     // Insert into the accountTbl
-
                     int EmployeeID = Login.EmpId;
+                    string CustomerPhone = txtCPhone.Text;
 
-                    string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date, EmpId) VALUES (@TotalOrders, @Revenue, @Date, @EmpId)";
+                    string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date, EmpId, CustomerPhone) VALUES (@TotalOrders, @Revenue, @Date, @EmpId, @CustomerPhone)";
                     SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery);
                     insertAccountCmd.Parameters.AddWithValue("@TotalOrders", totalUnits);
                     insertAccountCmd.Parameters.AddWithValue("@Revenue", grandTotal);
                     insertAccountCmd.Parameters.AddWithValue("@Date", currentDate);
                     insertAccountCmd.Parameters.AddWithValue("@EmpId", EmployeeID);
+                    insertAccountCmd.Parameters.AddWithValue("@CustomerPhone", CustomerPhone);
 
                     // Execute the insert query using Functions class
                     int rowsAffectedInsertAccount = con.insertData(insertAccountCmd);
@@ -661,7 +663,7 @@ namespace Modern_Pharmacy_Managment_System
                     else if (totalAmount >= discountAmount)
                     {
                         // Calculate the grand total after discount
-                        double grandTotal = totalAmount - discountAmount;
+                          grandTotal = totalAmount - discountAmount;
 
                         // Set txtGrandTotal to grandTotal
                         txtGrandTotal.Text = grandTotal.ToString();
@@ -763,8 +765,75 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
+        
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
 
+        }
 
+        private void print_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
 
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            
+            Font headingFont = new Font("Arial", 16, FontStyle.Bold);
+            Font normalFont = new Font("Arial", 12, FontStyle.Regular);
+
+            
+            int startX = 10;
+            int startY = 10;
+            int offsetY = 50;
+
+            
+            string invoiceText = "INVOICE";
+            SizeF textSize = e.Graphics.MeasureString(invoiceText, headingFont);
+            float centerX = (e.PageBounds.Width - textSize.Width) / 2;
+            e.Graphics.DrawString(invoiceText, headingFont, Brushes.Black, centerX, startY);
+            string HEadText = "Nuron pharma";
+            e.Graphics.DrawString(HEadText, headingFont, Brushes.Black, 350, 30);
+
+            string orderQuery = "SELECT * FROM OrderTbl WHERE ODate = @OrderDate";
+            using (var con = DatabaseConnection.databaseConnect())
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(orderQuery, con);
+                cmd.Parameters.AddWithValue("@OrderDate", DateTime.Today); 
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                
+                while (reader.Read())
+                {
+         
+                    e.Graphics.DrawString($"Product Name: {reader["OName"]}", normalFont, Brushes.Black, startX, startY + offsetY);
+                    offsetY += 40;
+                    e.Graphics.DrawString($"Price: {reader["OPrice"]}", normalFont, Brushes.Black, startX, startY + offsetY);
+                    offsetY += 20;
+                    e.Graphics.DrawString($"Quantity: {reader["OUnit"]}", normalFont, Brushes.Black, startX, startY + offsetY);
+                    offsetY += 20;
+                    e.Graphics.DrawString($"Total Cost: {reader["OTotalCost"]}", normalFont, Brushes.Black, startX, startY + offsetY);
+                    offsetY += 20;
+                    e.Graphics.DrawString($"Date: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}", normalFont, Brushes.Black, startX, startY + offsetY);
+                    offsetY += 40;
+                   
+                }
+                e.Graphics.DrawString($"GrandTotal {txtGrandTotal.Text}", headingFont, Brushes.Black, 500, startY + offsetY);
+                offsetY += 20;
+                e.Graphics.DrawString($"PAID", headingFont, Brushes.Black, 500, startY + offsetY);
+                offsetY += 20;
+                e.Graphics.DrawString($"Customer Phone: {txtCPhone.Text}", normalFont, Brushes.Black, 500, startY + offsetY);
+                offsetY += 20;
+                e.Graphics.DrawString($"Customer Name: {txtCName.Text}", normalFont, Brushes.Black, 500, startY + offsetY);
+                offsetY += 20;
+                e.Graphics.DrawString($"Reward Point: {txtRewards.Text}", normalFont, Brushes.Black, 500, startY + offsetY);
+                offsetY += 20;
+                reader.Close();
+
+            }
+        }
     }
 }
