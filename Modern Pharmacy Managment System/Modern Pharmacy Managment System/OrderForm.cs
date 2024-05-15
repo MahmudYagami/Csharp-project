@@ -553,13 +553,15 @@ namespace Modern_Pharmacy_Managment_System
                     // Insert into the accountTbl
 
                     int EmployeeID = Login.EmpId;
+                    string CustomerPhone = txtCPhone.Text;
 
-                    string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date, EmpId) VALUES (@TotalOrders, @Revenue, @Date, @EmpId)";
+                    string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date, EmpId, CustomerPhone) VALUES (@TotalOrders, @Revenue, @Date, @EmpId,@CustomerPhone)";
                     SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery);
                     insertAccountCmd.Parameters.AddWithValue("@TotalOrders", totalUnits);
                     insertAccountCmd.Parameters.AddWithValue("@Revenue", grandTotal);
                     insertAccountCmd.Parameters.AddWithValue("@Date", currentDate);
                     insertAccountCmd.Parameters.AddWithValue("@EmpId", EmployeeID);
+                    insertAccountCmd.Parameters.AddWithValue("@CustomerPhone", CustomerPhone);
 
                     // Execute the insert query using Functions class
                     int rowsAffectedInsertAccount = con.insertData(insertAccountCmd);

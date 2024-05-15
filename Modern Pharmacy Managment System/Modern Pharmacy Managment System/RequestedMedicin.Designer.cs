@@ -59,6 +59,7 @@ namespace Modern_Pharmacy_Managment_System
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCompanyName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtId = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequestedMedicine)).BeginInit();
@@ -66,6 +67,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.Controls.Add(this.txtTotalPrice);
@@ -96,7 +98,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 154);
+            this.label1.Location = new System.Drawing.Point(25, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 17);
             this.label1.TabIndex = 102;
@@ -106,7 +108,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(734, 155);
+            this.label5.Location = new System.Drawing.Point(255, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 17);
             this.label5.TabIndex = 101;
@@ -123,18 +125,19 @@ namespace Modern_Pharmacy_Managment_System
             this.txtTotalPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalPrice.Location = new System.Drawing.Point(737, 175);
+            this.txtTotalPrice.Location = new System.Drawing.Point(258, 233);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.PasswordChar = '\0';
             this.txtTotalPrice.PlaceholderText = "";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.SelectedText = "";
-            this.txtTotalPrice.Size = new System.Drawing.Size(152, 36);
+            this.txtTotalPrice.Size = new System.Drawing.Size(200, 36);
             this.txtTotalPrice.TabIndex = 100;
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(46)))));
+            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel2.Controls.Add(this.btnClose);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
@@ -156,7 +159,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnClose.Name = "btnClose";
             this.btnClose.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnClose.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnClose.Size = new System.Drawing.Size(45, 41);
+            this.btnClose.Size = new System.Drawing.Size(45, 36);
             this.btnClose.TabIndex = 61;
             this.btnClose.UseTransparentBackground = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -193,12 +196,12 @@ namespace Modern_Pharmacy_Managment_System
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRequestedMedicine.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRequestedMedicine.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.dgvRequestedMedicine.Location = new System.Drawing.Point(23, 357);
+            this.dgvRequestedMedicine.Location = new System.Drawing.Point(23, 296);
             this.dgvRequestedMedicine.Name = "dgvRequestedMedicine";
             this.dgvRequestedMedicine.ReadOnly = true;
             this.dgvRequestedMedicine.RowHeadersVisible = false;
             this.dgvRequestedMedicine.RowTemplate.Height = 30;
-            this.dgvRequestedMedicine.Size = new System.Drawing.Size(745, 242);
+            this.dgvRequestedMedicine.Size = new System.Drawing.Size(866, 335);
             this.dgvRequestedMedicine.TabIndex = 92;
             this.dgvRequestedMedicine.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.dgvRequestedMedicine.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -262,7 +265,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnAddMedicine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAddMedicine.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMedicine.ForeColor = System.Drawing.Color.White;
-            this.btnAddMedicine.Location = new System.Drawing.Point(545, 295);
+            this.btnAddMedicine.Location = new System.Drawing.Point(719, 103);
             this.btnAddMedicine.Name = "btnAddMedicine";
             this.btnAddMedicine.PressedColor = System.Drawing.Color.Aquamarine;
             this.btnAddMedicine.Size = new System.Drawing.Size(186, 45);
@@ -280,7 +283,7 @@ namespace Modern_Pharmacy_Managment_System
             this.btnRemove.FillColor = System.Drawing.Color.Red;
             this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(353, 295);
+            this.btnRemove.Location = new System.Drawing.Point(719, 165);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.PressedColor = System.Drawing.Color.Aquamarine;
             this.btnRemove.Size = new System.Drawing.Size(186, 45);
@@ -292,7 +295,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(59, 284);
+            this.label4.Location = new System.Drawing.Point(24, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 17);
             this.label4.TabIndex = 93;
@@ -303,7 +306,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(528, 155);
+            this.label9.Location = new System.Drawing.Point(493, 83);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 17);
             this.label9.TabIndex = 94;
@@ -313,7 +316,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(528, 223);
+            this.label3.Location = new System.Drawing.Point(493, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 17);
             this.label3.TabIndex = 95;
@@ -323,7 +326,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(290, 221);
+            this.label8.Location = new System.Drawing.Point(255, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 17);
             this.label8.TabIndex = 96;
@@ -333,7 +336,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(59, 220);
+            this.label2.Location = new System.Drawing.Point(24, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 17);
             this.label2.TabIndex = 97;
@@ -343,7 +346,7 @@ namespace Modern_Pharmacy_Managment_System
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(290, 154);
+            this.label7.Location = new System.Drawing.Point(255, 82);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 17);
             this.label7.TabIndex = 98;
@@ -360,7 +363,7 @@ namespace Modern_Pharmacy_Managment_System
             this.txtUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUnit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUnit.Location = new System.Drawing.Point(62, 304);
+            this.txtUnit.Location = new System.Drawing.Point(27, 232);
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.PasswordChar = '\0';
             this.txtUnit.PlaceholderText = "";
@@ -379,7 +382,7 @@ namespace Modern_Pharmacy_Managment_System
             this.txtBuyingPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBuyingPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBuyingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBuyingPrice.Location = new System.Drawing.Point(531, 175);
+            this.txtBuyingPrice.Location = new System.Drawing.Point(496, 103);
             this.txtBuyingPrice.Name = "txtBuyingPrice";
             this.txtBuyingPrice.PasswordChar = '\0';
             this.txtBuyingPrice.PlaceholderText = "";
@@ -398,7 +401,7 @@ namespace Modern_Pharmacy_Managment_System
             this.txtSellingPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSellingPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSellingPrice.Location = new System.Drawing.Point(531, 243);
+            this.txtSellingPrice.Location = new System.Drawing.Point(496, 171);
             this.txtSellingPrice.Name = "txtSellingPrice";
             this.txtSellingPrice.PasswordChar = '\0';
             this.txtSellingPrice.PlaceholderText = "";
@@ -417,7 +420,7 @@ namespace Modern_Pharmacy_Managment_System
             this.txtGeneric.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGeneric.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtGeneric.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGeneric.Location = new System.Drawing.Point(293, 243);
+            this.txtGeneric.Location = new System.Drawing.Point(258, 171);
             this.txtGeneric.Name = "txtGeneric";
             this.txtGeneric.PasswordChar = '\0';
             this.txtGeneric.PlaceholderText = "";
@@ -436,7 +439,7 @@ namespace Modern_Pharmacy_Managment_System
             this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(62, 243);
+            this.txtName.Location = new System.Drawing.Point(27, 171);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
@@ -455,7 +458,7 @@ namespace Modern_Pharmacy_Managment_System
             this.txtCompanyName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCompanyName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCompanyName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCompanyName.Location = new System.Drawing.Point(293, 174);
+            this.txtCompanyName.Location = new System.Drawing.Point(258, 102);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.PasswordChar = '\0';
             this.txtCompanyName.PlaceholderText = "";
@@ -474,13 +477,23 @@ namespace Modern_Pharmacy_Managment_System
             this.txtId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtId.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtId.Location = new System.Drawing.Point(62, 174);
+            this.txtId.Location = new System.Drawing.Point(27, 102);
             this.txtId.Name = "txtId";
             this.txtId.PasswordChar = '\0';
             this.txtId.PlaceholderText = "";
             this.txtId.SelectedText = "";
             this.txtId.Size = new System.Drawing.Size(200, 36);
             this.txtId.TabIndex = 83;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(405, 13);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(115, 19);
+            this.guna2HtmlLabel1.TabIndex = 62;
+            this.guna2HtmlLabel1.Text = "NEURON PHARMA";
             // 
             // RequestedMedicin
             // 
@@ -496,6 +509,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequestedMedicine)).EndInit();
             this.ResumeLayout(false);
 
@@ -529,5 +543,6 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private Guna.UI2.WinForms.Guna2TextBox txtCompanyName;
         private Guna.UI2.WinForms.Guna2TextBox txtId;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

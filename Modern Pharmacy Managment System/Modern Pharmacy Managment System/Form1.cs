@@ -21,5 +21,25 @@ namespace Modern_Pharmacy_Managment_System
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            // Increment the width of panel1 by 5 pixels each tick
+            panel1.Width += 15;
+
+            // Check if panel1 width has reached or exceeded 491 pixels
+            if (panel1.Width >= 291)
+            {
+                // Set the width of panel1 to the exact target width (491 pixels)
+                panel1.Width = 291;                      
+                // Stop the timer to prevent further increments
+                timer1.Stop();
+
+                Login login = new Login();
+                login.Show();
+                this.Hide();
+            }
+        }
     }
 }
