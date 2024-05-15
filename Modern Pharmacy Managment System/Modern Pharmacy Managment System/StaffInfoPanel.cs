@@ -308,8 +308,8 @@ namespace Modern_Pharmacy_Managment_System
         private void lblMedicineRequestedList_Click(object sender, EventArgs e)
         {
             StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
-            staffDashboard.LoadBkashFormIntoMainPanel(new RequestedMedicine());
-            this.Hide();
+           staffDashboard.LoadBkashFormIntoMainPanel(new RequestedMedicin());
+           this.Hide();
         }
     }
 }

@@ -46,10 +46,12 @@ namespace Modern_Pharmacy_Managment_System
             this.txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnBack = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -257,11 +259,31 @@ namespace Modern_Pharmacy_Managment_System
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.guna2Panel4.Controls.Add(this.btnBack);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(917, 70);
             this.guna2Panel4.TabIndex = 3;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnBack.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnBack.HoverState.ImageSize = new System.Drawing.Size(43, 43);
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnBack.ImageRotate = 0F;
+            this.btnBack.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnBack.Location = new System.Drawing.Point(12, 13);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnBack.PressedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnBack.Size = new System.Drawing.Size(49, 43);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.UseTransparentBackground = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Bkash
             // 
@@ -282,6 +304,7 @@ namespace Modern_Pharmacy_Managment_System
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2Panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -304,5 +327,6 @@ namespace Modern_Pharmacy_Managment_System
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Label lblUnit;
+        private Guna.UI2.WinForms.Guna2ImageButton btnBack;
     }
 }
