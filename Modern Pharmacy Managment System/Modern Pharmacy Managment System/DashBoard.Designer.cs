@@ -43,6 +43,7 @@ namespace Modern_Pharmacy_Managment_System
             this.RevenueBtn = new FontAwesome.Sharp.IconButton();
             this.InventoryBtn = new FontAwesome.Sharp.IconButton();
             this.Settings = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.DashBoardBtn = new FontAwesome.Sharp.IconButton();
             this.AdminPictureBox = new System.Windows.Forms.PictureBox();
             this.topPanel = new System.Windows.Forms.Panel();
@@ -53,7 +54,7 @@ namespace Modern_Pharmacy_Managment_System
             this.DateTimeShow = new System.Windows.Forms.Timer(this.components);
             this.mainpanel = new System.Windows.Forms.Panel();
             this.iconDropDownButton1 = new FontAwesome.Sharp.IconDropDownButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.LeftPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.DropdownPanel.SuspendLayout();
@@ -62,6 +63,7 @@ namespace Modern_Pharmacy_Managment_System
             this.topPanel.SuspendLayout();
             this.TimerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -255,6 +257,27 @@ namespace Modern_Pharmacy_Managment_System
             this.Settings.UseVisualStyleBackColor = false;
             this.Settings.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ClockRotateLeft;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(3, 200);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.iconButton1.Size = new System.Drawing.Size(268, 62);
+            this.iconButton1.TabIndex = 6;
+            this.iconButton1.Text = "Logout";
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // DashBoardBtn
             // 
             this.DashBoardBtn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -289,7 +312,8 @@ namespace Modern_Pharmacy_Managment_System
             // 
             // topPanel
             // 
-            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(253)))));
+            this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
+            this.topPanel.Controls.Add(this.pictureBox2);
             this.topPanel.Controls.Add(this.TimerPanel);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(277, 0);
@@ -367,26 +391,15 @@ namespace Modern_Pharmacy_Managment_System
             this.iconDropDownButton1.Size = new System.Drawing.Size(23, 23);
             this.iconDropDownButton1.Text = "iconDropDownButton1";
             // 
-            // iconButton1
+            // pictureBox2
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(51)))), ((int)(((byte)(66)))));
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ClockRotateLeft;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(3, 200);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.iconButton1.Size = new System.Drawing.Size(268, 62);
-            this.iconButton1.TabIndex = 6;
-            this.iconButton1.Text = "Logout";
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(304, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(501, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // DashBoard
             // 
@@ -409,6 +422,7 @@ namespace Modern_Pharmacy_Managment_System
             this.TimerPanel.ResumeLayout(false);
             this.TimerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -439,5 +453,6 @@ namespace Modern_Pharmacy_Managment_System
         private FontAwesome.Sharp.IconButton SalaryPayBtn;
         private FontAwesome.Sharp.IconDropDownButton iconDropDownButton1;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

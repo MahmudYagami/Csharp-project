@@ -19,7 +19,7 @@ namespace Modern_Pharmacy_Managment_System
 
             //Application.Run(new Form1());
             //Application.Run(new DashBoard());
-             Application.Run(new Login());         
+           //  Application.Run(new Login());         
             //Application.Run(new StaffForm());
             //Application.Run(new Category());
             //Application.Run(new LeavesForm());
@@ -39,6 +39,7 @@ namespace Modern_Pharmacy_Managment_System
             //Application.Run(new ViewLeave());
             //Application.Run(new AdminMainDashboard());
             //Application.Run(new Revenue());
+           Application.Run(new Form1());
 
         }
     }

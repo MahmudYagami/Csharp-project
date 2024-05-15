@@ -22,6 +22,9 @@ namespace Modern_Pharmacy_Managment_System
             // Disable DateStart and DateEnd controls initially
             DateStartCalender.Enabled = false;
             DateEndCalender.Enabled = false;
+
+            EmployeeCb.Enabled = false;
+            ReasonBox.Enabled = false;
         }
 
         private void ShowLeaveForm()
@@ -53,15 +56,17 @@ namespace Modern_Pharmacy_Managment_System
                 {
                     DataGridViewRow row = LeaveList.Rows[e.RowIndex];
 
-                    // Get the value of the Reason column from the selected row
+                    
                     string reason = row.Cells["Reason"].Value.ToString();
 
-                    // Populate the ReasonBox textbox with the reason
+                   
                     ReasonBox.Text = reason;
 
                     // Enable the DateStart and DateEnd controls
-                    DateStartCalender.Enabled = true;
-                    DateEndCalender.Enabled = true;
+                    DateStartCalender.Enabled = false;
+                    DateEndCalender.Enabled = false;
+                    EmployeeCb.Enabled = false;
+                    ReasonBox.Enabled = false;
 
                     // Get the original DateStart and DateEnd values
                     originalDateStart = Convert.ToDateTime(row.Cells["DateStart"].Value);

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffDashboard));
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnDropdown = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,7 +56,6 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(77)))), ((int)(((byte)(107)))));
-            this.guna2Panel2.Controls.Add(this.btnDropdown);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel2.Controls.Add(this.guna2Panel3);
             this.guna2Panel2.Controls.Add(this.label2);
@@ -67,24 +65,6 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1128, 65);
             this.guna2Panel2.TabIndex = 1;
-            // 
-            // btnDropdown
-            // 
-            this.btnDropdown.BackColor = System.Drawing.Color.Transparent;
-            this.btnDropdown.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnDropdown.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnDropdown.HoverState.ImageSize = new System.Drawing.Size(29, 29);
-            this.btnDropdown.Image = ((System.Drawing.Image)(resources.GetObject("btnDropdown.Image")));
-            this.btnDropdown.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnDropdown.ImageRotate = 0F;
-            this.btnDropdown.ImageSize = new System.Drawing.Size(27, 27);
-            this.btnDropdown.Location = new System.Drawing.Point(1076, 15);
-            this.btnDropdown.Name = "btnDropdown";
-            this.btnDropdown.PressedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnDropdown.PressedState.ImageSize = new System.Drawing.Size(27, 27);
-            this.btnDropdown.Size = new System.Drawing.Size(40, 42);
-            this.btnDropdown.TabIndex = 5;
-            this.btnDropdown.UseTransparentBackground = true;
             // 
             // guna2PictureBox1
             // 
@@ -177,7 +157,7 @@
             // 
             this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(153)))));
-            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -222,7 +202,7 @@
             // 
             this.btnLogout.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnLogout.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(153)))));
-            this.btnLogout.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnLogout.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -402,6 +382,5 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2ImageButton btnDropdown;
     }
 }

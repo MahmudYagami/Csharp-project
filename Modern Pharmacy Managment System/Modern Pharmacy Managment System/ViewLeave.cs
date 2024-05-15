@@ -62,8 +62,14 @@ namespace Modern_Pharmacy_Managment_System
             
         }
 
-        
+        private void EmpIdLbl_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

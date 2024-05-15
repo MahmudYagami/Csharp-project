@@ -7,7 +7,6 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class LeaveRequest : Form
     {
-        //private string ConStr = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMS;Integrated Security=True";
         private Functions Con;
 
         public LeaveRequest()
@@ -15,14 +14,18 @@ namespace Modern_Pharmacy_Managment_System
             InitializeComponent();
             Con = new Functions();
             RequestLeaveBtn.Click += RequestLeaveBtn_Click;
+            IdTxt.Text = Login.EmpId.ToString();
+
+            
+            DateStartCalender.Value = DateTime.Now;
+            DateEndCalender.Value = DateTime.Now;
         }
 
         private void RequestLeaveBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrEmpty(IdTxt.Text) || string.IsNullOrEmpty(ReasonTxt.Text) ||
-                    DateStartCalender.Value == null || DateEndCalender.Value == null)
+                if (string.IsNullOrEmpty(IdTxt.Text) || string.IsNullOrEmpty(ReasonTxt.Text))
                 {
                     MessageBox.Show("Please fill in all required fields.");
                     return;
@@ -35,14 +38,20 @@ namespace Modern_Pharmacy_Managment_System
                 DateTime appliedDate = DateTime.Today;
 
                 // Check if end date is earlier than start date
-                if (dateEnd < dateStart)
+                if (dateEnd < dateStart || dateStart < DateTime.Today || dateEnd < DateTime.Today)
                 {
-                    MessageBox.Show("Invalid date range. End date cannot be earlier than start date.");
+                    MessageBox.Show("Invalid date range. Date cannot be earlier than today.");
+                    return;
+                }
+
+                if (IdTxt.Text != Login.EmpId.ToString())
+                {
+                    MessageBox.Show("Your Id is invalid");
                     return;
                 }
 
                 string leaveQuery = @"INSERT INTO LeaveTbl (Employee, Reason, DateStart, DateEnd, AppliedDate, Status) 
-                              VALUES (@EmployeeId, @Reason, @DateStart, @DateEnd, @AppliedDate, 'Pending')";
+                                      VALUES (@EmployeeId, @Reason, @DateStart, @DateEnd, @AppliedDate, 'Pending')";
 
                 using (var connection = DatabaseConnection.databaseConnect())
                 {
@@ -60,7 +69,7 @@ namespace Modern_Pharmacy_Managment_System
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Leave request submitted successfully!");
-                        // Clear form fields or perform any other desired action
+                        
                     }
                     else
                     {
@@ -78,6 +87,5 @@ namespace Modern_Pharmacy_Managment_System
             }
             this.Hide();
         }
-
     }
 }

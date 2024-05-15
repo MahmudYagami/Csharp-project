@@ -289,14 +289,14 @@ namespace Modern_Pharmacy_Managment_System
 
         private void btnMedicineShortage_Click(object sender, EventArgs e)
         {
-            /*          
-             StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
-             staffDashboard.LoadBkashFormIntoMainPanel(new MedicineShortage());
-             this.Hide();
-           */
 
-            MedicineShortage ms = new MedicineShortage();
-            ms.Show();
+
+          //  MedicineShortage ms = new MedicineShortage();
+          //  ms.Show();
+
+            StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
+            staffDashboard.LoadBkashFormIntoMainPanel(new MedicineShortage());
+            this.Hide();
 
         }
 
@@ -307,9 +307,13 @@ namespace Modern_Pharmacy_Managment_System
 
         private void lblMedicineRequestedList_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
             staffDashboard.LoadBkashFormIntoMainPanel(new RequestedMedicin());
             this.Hide();
+=======
+           StaffDashboard staffDashboard = (StaffDashboard)this.ParentForm;
+>>>>>>> 649a7ce554d7c8a7fa37811fad32d42acf7290d5
            staffDashboard.LoadBkashFormIntoMainPanel(new RequestedMedicin());
            this.Hide();
         }

@@ -425,10 +425,7 @@ namespace Modern_Pharmacy_Managment_System
         }
 
 
-        private void SearchButton_Click_1(object sender, EventArgs e)
-        {
-           
-        }
+       
 
 
 
@@ -440,24 +437,7 @@ namespace Modern_Pharmacy_Managment_System
 
        
 
-        private void LeaveMng_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                LeavesForm lf = new LeavesForm();
-                Point location = new Point(598, 250); // Adjust the coordinates as needed
-
-                // Show the LeavesForm
-                lf.StartPosition = FormStartPosition.Manual;
-                lf.Location = location;
-                lf.Show();
-                this.Hide();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
+       
 
         private void pictureBoxGif1_Click(object sender, EventArgs e)
         {
@@ -493,7 +473,7 @@ namespace Modern_Pharmacy_Managment_System
                     // Check if any employees were found
                     if (searchResult.Rows.Count > 0)
                     {
-                        // Update the DataGridView with the search results
+                        
                         EmployeeList.DataSource = searchResult;
                     }
                     else
@@ -503,7 +483,7 @@ namespace Modern_Pharmacy_Managment_System
                 }
                 else
                 {
-                    // If search text is empty, display a message asking for input
+                    
                     MessageBox.Show("Please provide a phone number to search.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -520,14 +500,14 @@ namespace Modern_Pharmacy_Managment_System
             {
                 string searchText = SearchTextBox2.Text.Trim();
 
-                // Check if search text is provided
+                
                 if (!string.IsNullOrEmpty(searchText))
                 {
-                    // Construct the SQL query with a parameter
+                   
                     string query = "SELECT EmpId, EmpName, EmpGen, EmpPhone, EmpPass, EmpAdd, EmpJoiningDate, EmpSalary " +
                                    $"FROM EmployeeTbl WHERE EmpPhone LIKE '%{searchText}%'";
 
-                    // Create an instance of the Functions class
+                    
                     Functions functions = new Functions();
 
                     // Call the GetData method from the Functions instance with the query string
@@ -536,7 +516,7 @@ namespace Modern_Pharmacy_Managment_System
                     // Check if any employees were found
                     if (searchResult.Rows.Count > 0)
                     {
-                        // Update the DataGridView with the search results
+                        
                         EmployeeList.DataSource = searchResult;
                     }
                     else
@@ -573,18 +553,18 @@ namespace Modern_Pharmacy_Managment_System
                 // Check if there are employees with pending leave requests
                 if (dtPendingLeaves.Rows.Count > 0)
                 {
-                    // Generate the message with employees' leave requests
+                    
                     string leaveRequestMessage = "Pending Leave Requests:\n\n";
                     foreach (DataRow row in dtPendingLeaves.Rows)
                     {
-                        // Get the employee id, name, reason for leave, start date, and end date
+                       
                         int empId = Convert.ToInt32(row["EmpId"]);
                         string employeeName = row["EmpName"].ToString();
                         string reason = row["Reason"].ToString();
                         string startDate = Convert.ToDateTime(row["DateStart"]).ToString("yyyy-MM-dd");
                         string endDate = Convert.ToDateTime(row["DateEnd"]).ToString("yyyy-MM-dd");
 
-                        // Append employee's leave request to the message
+                        
                         leaveRequestMessage += $"Employee ID: {empId}\n  - Name: {employeeName}\n  - Reason: {reason}\n  - Start Date: {startDate}\n  - End Date: {endDate}\n\n";
                     }
 
@@ -593,23 +573,23 @@ namespace Modern_Pharmacy_Managment_System
                     messageForm.Text = "Pending Leave Requests";
                     messageForm.FormBorderStyle = FormBorderStyle.FixedDialog;
                     messageForm.StartPosition = FormStartPosition.Manual;
-                    messageForm.Location = new Point(100, 100); // Adjust the coordinates as needed
-                    messageForm.Size = new Size(500, 400); // Set the size of the form
+                    messageForm.Location = new Point(100, 100);
+                    messageForm.Size = new Size(500, 400); 
 
                     // Create a label to display the message
                     Label messageLabel = new Label();
                     messageLabel.Text = leaveRequestMessage;
                     messageLabel.AutoSize = false;
-                    messageLabel.Size = new Size(480, 320); // Set the size of the label
+                    messageLabel.Size = new Size(480, 320); 
                     messageLabel.Location = new Point(10, 10);
-                    messageLabel.Font = new Font("Arial", 10, FontStyle.Regular); // Set the font style
-                    messageLabel.ForeColor = Color.Black; // Set the font color
-                    messageLabel.BackColor = Color.LightBlue; // Set the background color
+                    messageLabel.Font = new Font("Arial", 10, FontStyle.Regular); 
+                    messageLabel.ForeColor = Color.Black; 
+                    messageLabel.BackColor = Color.LightBlue;
 
-                    // Add the label to the form
+                    
                     messageForm.Controls.Add(messageLabel);
 
-                    // Show the custom message box
+                    
                     messageForm.ShowDialog();
                 }
                 else
@@ -633,9 +613,9 @@ namespace Modern_Pharmacy_Managment_System
             try
             {
                 LeavesForm lf = new LeavesForm();
-                Point location = new Point(553, 220); // Adjust the coordinates as needed
+                Point location = new Point(553, 220); 
 
-                // Show the LeavesForm
+                
                 lf.StartPosition = FormStartPosition.Manual;
                 lf.Location = location;
                 lf.Show();

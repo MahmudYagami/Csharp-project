@@ -80,7 +80,7 @@ namespace Modern_Pharmacy_Managment_System
             this.DateStartCalender.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateStartCalender.ForeColor = System.Drawing.Color.White;
             this.DateStartCalender.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateStartCalender.Location = new System.Drawing.Point(216, 71);
+            this.DateStartCalender.Location = new System.Drawing.Point(273, 71);
             this.DateStartCalender.MaxDate = new System.DateTime(9988, 12, 31, 0, 0, 0, 0);
             this.DateStartCalender.MinDate = new System.DateTime(2024, 4, 6, 0, 0, 0, 0);
             this.DateStartCalender.Name = "DateStartCalender";
@@ -109,9 +109,9 @@ namespace Modern_Pharmacy_Managment_System
             this.EmployeeCb.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.EmployeeCb.Location = new System.Drawing.Point(30, 71);
+            this.EmployeeCb.Location = new System.Drawing.Point(12, 74);
             this.EmployeeCb.Name = "EmployeeCb";
-            this.EmployeeCb.Size = new System.Drawing.Size(121, 33);
+            this.EmployeeCb.Size = new System.Drawing.Size(255, 33);
             this.EmployeeCb.TabIndex = 45;
             this.EmployeeCb.SelectedIndexChanged += new System.EventHandler(this.EmployeeCb_SelectedIndexChanged);
             // 
@@ -152,7 +152,7 @@ namespace Modern_Pharmacy_Managment_System
             this.DateStartLabel.AutoSize = true;
             this.DateStartLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateStartLabel.ForeColor = System.Drawing.Color.Black;
-            this.DateStartLabel.Location = new System.Drawing.Point(213, 48);
+            this.DateStartLabel.Location = new System.Drawing.Point(270, 48);
             this.DateStartLabel.Name = "DateStartLabel";
             this.DateStartLabel.Size = new System.Drawing.Size(99, 23);
             this.DateStartLabel.TabIndex = 32;

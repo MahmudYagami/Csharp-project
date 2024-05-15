@@ -320,6 +320,8 @@ namespace Modern_Pharmacy_Managment_System
             DateTime startDate = Calender1.Value.Date;
             DateTime endDate = Calender2.Value.Date;
             PopulateOnlineOfflineChart(startDate: startDate, endDate: endDate);
+            PopulateProfitChart(startDate: startDate, endDate: endDate);
+            PopulateExpenseChart(startDate: startDate, endDate: endDate);
 
         }
 

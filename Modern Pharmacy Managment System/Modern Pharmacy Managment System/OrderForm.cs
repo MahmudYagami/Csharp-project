@@ -478,6 +478,7 @@ namespace Modern_Pharmacy_Managment_System
 
         private void btnPay_Click(object sender, EventArgs e)
         {
+           
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
             if (dgvOrder.Rows.Count == 0)

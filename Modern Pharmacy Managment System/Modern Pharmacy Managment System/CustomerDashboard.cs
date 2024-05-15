@@ -19,7 +19,7 @@ namespace Modern_Pharmacy_Managment_System
 
         const string connectionString = @"Data Source=DESKTOP-ES6IRGF\MSSQLSERVER01;Initial Catalog=PMSnew;Integrated Security=True";
         private int requestCount = 0;
-        const string connectionString = @"Data Source=Akid\SQLEXPRESS;Initial Catalog=PMSnew;Integrated Security=True";
+        
         public CustomerDashboard(string customerName)
         {
             InitializeComponent();
@@ -28,18 +28,18 @@ namespace Modern_Pharmacy_Managment_System
 
             CustomerNameTxt.Text = customerName;
             LoadCustomerPoints();
-            
+
 
             // Load your images into the array
-            // images[0] = Image.FromFile(@"C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\ors.jpg"); // Replace Image1 with your actual image
-            //  images[1] = Image.FromFile(@"C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\smc plus 2.jpg"); // Replace Image2 with your actual image
-            //  images[2] = Image.FromFile(@"C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\glucose-product-banner1.jpg"); // Replace Image3 with your actual image
+             images[0] = Image.FromFile(@"C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\ors.jpg"); // Replace Image1 with your actual image
+             images[1] = Image.FromFile(@"C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\smc plus 2.jpg"); // Replace Image2 with your actual image
+              images[2] = Image.FromFile(@"C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\glucose-product-banner1.jpg"); // Replace Image3 with your actual image
 
             // Set initial image
             guna2PictureBox5.Image = images[0];
 
             // Configure the timer
-            timer1.Interval = 10; // Interval in milliseconds (e.g., 2000 milliseconds = 2 seconds)
+            timer1.Interval = 1000; // Interval in milliseconds (e.g., 2000 milliseconds = 2 seconds)
             timer1.Tick += timer1_Tick;
 
             // Start the timer
