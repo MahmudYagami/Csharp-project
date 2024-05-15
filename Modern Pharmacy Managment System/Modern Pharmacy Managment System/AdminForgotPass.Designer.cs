@@ -71,7 +71,7 @@ namespace Modern_Pharmacy_Managment_System
             this.ConfirmNewPasswordTxt.PasswordChar = '\0';
             this.ConfirmNewPasswordTxt.PlaceholderText = "Confirm New Password";
             this.ConfirmNewPasswordTxt.SelectedText = "";
-            this.ConfirmNewPasswordTxt.Size = new System.Drawing.Size(316, 54);
+            this.ConfirmNewPasswordTxt.Size = new System.Drawing.Size(384, 54);
             this.ConfirmNewPasswordTxt.TabIndex = 37;
             this.ConfirmNewPasswordTxt.TextOffset = new System.Drawing.Point(25, 0);
             // 
@@ -94,7 +94,7 @@ namespace Modern_Pharmacy_Managment_System
             this.NewPasswordTxt.PasswordChar = '\0';
             this.NewPasswordTxt.PlaceholderText = "Enter Your New Password";
             this.NewPasswordTxt.SelectedText = "";
-            this.NewPasswordTxt.Size = new System.Drawing.Size(316, 54);
+            this.NewPasswordTxt.Size = new System.Drawing.Size(384, 54);
             this.NewPasswordTxt.TabIndex = 36;
             this.NewPasswordTxt.TextOffset = new System.Drawing.Point(25, 0);
             // 
@@ -117,7 +117,7 @@ namespace Modern_Pharmacy_Managment_System
             this.CurrentPasswordTxt.PasswordChar = '\0';
             this.CurrentPasswordTxt.PlaceholderText = "Enter Your Current Password";
             this.CurrentPasswordTxt.SelectedText = "";
-            this.CurrentPasswordTxt.Size = new System.Drawing.Size(316, 54);
+            this.CurrentPasswordTxt.Size = new System.Drawing.Size(384, 54);
             this.CurrentPasswordTxt.TabIndex = 35;
             this.CurrentPasswordTxt.TextOffset = new System.Drawing.Point(25, 0);
             // 

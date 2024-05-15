@@ -20,7 +20,7 @@ namespace Modern_Pharmacy_Managment_System
             InitializeComponent();
 
 
-            //initializing events
+          
             ManagementBtn.MouseEnter += ManagementBtn_MouseEnter;
             ManagementBtn.MouseLeave += ManagementBtn_MouseLeave;
             Settings.MouseEnter += logoutBtn_MouseEnter;
@@ -73,84 +73,78 @@ namespace Modern_Pharmacy_Managment_System
 
         }
 
-        private void experimentBtn_Click(object sender, EventArgs e)
-        {
+      
 
-        }
-
-        //cahnge color while hovering the mouse
+        
         private void ManagementBtn_MouseEnter(object sender, EventArgs e)
         {
-            // Change button background color when mouse enters
-            ManagementBtn.BackColor = Color.Cyan; // Change to desired color
+            
+            ManagementBtn.BackColor = Color.Cyan; 
         }
         private void ManagementBtn_MouseLeave(object sender, EventArgs e)
         {
-            // Change button background color back to normal when mouse leaves
-            ManagementBtn.BackColor = Color.FromArgb(40, 51, 66); // Change to the default background color of your form
+            ManagementBtn.BackColor = Color.FromArgb(40, 51, 66); 
         }
 
         private void DashBoardBtn_MouseEnter(object sender, EventArgs e)
         {
-            // Change button background color when mouse enters
-            DashBoardBtn.BackColor = Color.Cyan; // Change to desired color
+           
+            DashBoardBtn.BackColor = Color.Cyan; 
         }
         private void DashBoardBtn_MouseLeave(object sender, EventArgs e)
         {
-            // Change button background color back to normal when mouse leaves
-            DashBoardBtn.BackColor = Color.FromArgb(40, 51, 66); // Change to the default background color of your form
+            
+            DashBoardBtn.BackColor = Color.FromArgb(40, 51, 66); 
         }
         private void logoutBtn_MouseEnter(object sender, EventArgs e)
         {
-            // Change button background color when mouse enters
-            Settings.BackColor = Color.Cyan; // Change to desired color
+           
+            Settings.BackColor = Color.Cyan; 
         }
         private void logoutBtn_MouseLeave(object sender, EventArgs e)
         {
-            // Change button background color back to normal when mouse leaves
-            Settings.BackColor = Color.FromArgb(40, 51, 66); // Change to the default background color of your form
+           
+            Settings.BackColor = Color.FromArgb(40, 51, 66);
         }
         private void InventoryBtn_MouseEnter(object sender, EventArgs e)
         {
-            // Change button background color when mouse enters
-            InventoryBtn.BackColor = Color.Cyan; // Change to desired color
+           
+            InventoryBtn.BackColor = Color.Cyan; 
         }
         private void InventoryBtn_MouseLeave(object sender, EventArgs e)
         {
-            // Change button background color back to normal when mouse leaves
-            InventoryBtn.BackColor = Color.FromArgb(40, 51, 66); // Change to the default background color of your form
+            
+            InventoryBtn.BackColor = Color.FromArgb(40, 51, 66); 
         }
         private void RevenueBtn_MouseEnter(object sender, EventArgs e)
         {
-            // Change button background color when mouse enters
-            RevenueBtn.BackColor = Color.Cyan; // Change to desired color
+            
+            RevenueBtn.BackColor = Color.Cyan; 
         }
         private void RevenueBtn_MouseLeave(object sender, EventArgs e)
         {
-            // Change button background color back to normal when mouse leaves
-            RevenueBtn.BackColor = Color.FromArgb(40, 51, 66); // Change to the default background color of your form
+            
+            RevenueBtn.BackColor = Color.FromArgb(40, 51, 66); 
         }
 
         private void StaffBtn_MouseEnter(object sender, EventArgs e)
-        {
-            // Change button background color when mouse enters
-            StaffBtn.BackColor = Color.Red; // Change to desired color
+        {  
+            StaffBtn.BackColor = Color.Red; 
         }
         private void StaffBtn_MouseLeave(object sender, EventArgs e)
         {
-            // Change button background color back to normal when mouse leaves
-            StaffBtn.BackColor = Color.FromArgb(29, 36, 46); // Change to the default background color of your form
+            StaffBtn.BackColor = Color.FromArgb(29, 36, 46); 
         }
 
         private void SalaryPayBtn_MouseEnter(object sender, EventArgs e)
         {
-            // Change button background color when mouse enters
-            SalaryPayBtn.BackColor = Color.Purple; // Change to desired color
+            
+            SalaryPayBtn.BackColor = Color.Purple; 
         }
         private void SalaryPayBtn_MouseLeave(object sender, EventArgs e)
         {
-            // Change button background color back to normal when mouse leaves
-            SalaryPayBtn.BackColor = Color.FromArgb(29, 36, 46); // Change to the default background color of your form
+            
+            SalaryPayBtn.BackColor = Color.FromArgb(29, 36, 46); 
         }
 
         private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
