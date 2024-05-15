@@ -70,10 +70,15 @@ namespace Modern_Pharmacy_Managment_System
             this.CustomPanel.Tag = f;
             f.Show();
         }
-
-        private void Customer_settings_Btn_Click(object sender, EventArgs e)
+        public void loadformMD(object Form)
         {
-            loadform(new CustomerSettings());
+            if (this.CustomPanel.Controls.Count > 0)
+                this.CustomPanel.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.Dock = DockStyle.Fill;
+            this.CustomPanel.Controls.Add(f);
+            this.CustomPanel.Tag = f;
+            f.Show();
         }
 
         private void btncstOrder_Click(object sender, EventArgs e)

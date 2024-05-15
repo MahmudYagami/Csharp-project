@@ -59,5 +59,10 @@ namespace Modern_Pharmacy_Managment_System
             }
 
         }
+
+        private void pictureBoxGif2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -547,3 +547,4 @@ C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern P
 >>>>>>> e3667a836fb28aec1a77c0f3cc92b1d1193f1fe8
 C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.AdminForgotPass.resources
 C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.Revenue.resources
+C:\Users\nulln\Desktop\xm shas\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.inventorydemo.resources

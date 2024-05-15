@@ -47,11 +47,13 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnLeave = new Guna.UI2.WinForms.Guna2Button();
             this.mainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.inventorydemo1 = new Modern_Pharmacy_Managment_System.inventorydemo();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel2
@@ -353,11 +355,20 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.inventorydemo1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(211, 65);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(917, 652);
             this.mainPanel.TabIndex = 3;
+            // 
+            // inventorydemo1
+            // 
+            this.inventorydemo1.Location = new System.Drawing.Point(-11, -1);
+            this.inventorydemo1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.inventorydemo1.Name = "inventorydemo1";
+            this.inventorydemo1.Size = new System.Drawing.Size(1038, 653);
+            this.inventorydemo1.TabIndex = 0;
             // 
             // StaffDashboard
             // 
@@ -380,6 +391,7 @@
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -403,5 +415,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2ImageButton btnDropdown;
+        private inventorydemo inventorydemo1;
     }
 }

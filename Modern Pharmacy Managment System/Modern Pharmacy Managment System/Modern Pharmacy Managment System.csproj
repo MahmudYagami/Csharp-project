@@ -158,6 +158,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Functions.cs" />
+    <Compile Include="inventorydemo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="inventorydemo.Designer.cs">
+      <DependentUpon>inventorydemo.cs</DependentUpon>
+    </Compile>
     <Compile Include="LeaveRequest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventorydemo.resx">
+      <DependentUpon>inventorydemo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LeaveRequest.resx">
       <DependentUpon>LeaveRequest.cs</DependentUpon>
