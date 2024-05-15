@@ -44,8 +44,8 @@ namespace Modern_Pharmacy_Managment_System
             if (this.mainPanel.Controls.Count > 0)
                 this.mainPanel.Controls.RemoveAt(0);
             Form f = Form as Form;
-            
-            
+            f.TopLevel = false;
+            f.Dock = DockStyle.Top;
             this.mainPanel.Controls.Add(f);
             this.mainPanel.Tag = f;
             f.Show();
@@ -108,10 +108,9 @@ namespace Modern_Pharmacy_Managment_System
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            // product button
-            //loadformAkid(new addproductPha());
-            inventorydemo st = new inventorydemo();
-                st.Visible = true;
+            //product button
+            loadformAkid(new addproductPha());
+           
         }
 
     

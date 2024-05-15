@@ -21,7 +21,7 @@ namespace Modern_Pharmacy_Managment_System
         Functions con;
 
 
-
+        Double grandTotal;
         private bool rewardUsed = false;
         private bool isCustomer = false;
         public OrderForm()
@@ -552,15 +552,16 @@ namespace Modern_Pharmacy_Managment_System
                     DateTime currentDate = DateTime.Now;
 
                     // Insert into the accountTbl
-
                     int EmployeeID = Login.EmpId;
+                    string CustomerPhone = txtCPhone.Text;
 
-                    string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date, EmpId) VALUES (@TotalOrders, @Revenue, @Date, @EmpId)";
+                    string insertAccountQuery = "INSERT INTO AccountTbl (TotalOrders, Revenue, Date, EmpId, CustomerPhone) VALUES (@TotalOrders, @Revenue, @Date, @EmpId, @CustomerPhone)";
                     SqlCommand insertAccountCmd = new SqlCommand(insertAccountQuery);
                     insertAccountCmd.Parameters.AddWithValue("@TotalOrders", totalUnits);
                     insertAccountCmd.Parameters.AddWithValue("@Revenue", grandTotal);
                     insertAccountCmd.Parameters.AddWithValue("@Date", currentDate);
                     insertAccountCmd.Parameters.AddWithValue("@EmpId", EmployeeID);
+                    insertAccountCmd.Parameters.AddWithValue("@CustomerPhone", CustomerPhone);
 
                     // Execute the insert query using Functions class
                     int rowsAffectedInsertAccount = con.insertData(insertAccountCmd);
@@ -793,8 +794,9 @@ namespace Modern_Pharmacy_Managment_System
             SizeF textSize = e.Graphics.MeasureString(invoiceText, headingFont);
             float centerX = (e.PageBounds.Width - textSize.Width) / 2;
             e.Graphics.DrawString(invoiceText, headingFont, Brushes.Black, centerX, startY);
+            string HEadText = "Nuron pharma";
+            e.Graphics.DrawString(HEadText, headingFont, Brushes.Black, 350, 30);
 
-            
             string orderQuery = "SELECT * FROM OrderTbl WHERE ODate = @OrderDate";
             using (var con = DatabaseConnection.databaseConnect())
             {
@@ -822,7 +824,13 @@ namespace Modern_Pharmacy_Managment_System
                 e.Graphics.DrawString($"GrandTotal {txtGrandTotal.Text}", headingFont, Brushes.Black, 500, startY + offsetY);
                 offsetY += 20;
                 e.Graphics.DrawString($"PAID", headingFont, Brushes.Black, 500, startY + offsetY);
-                offsetY += 40;
+                offsetY += 20;
+                e.Graphics.DrawString($"Customer Phone: {txtCPhone.Text}", normalFont, Brushes.Black, 500, startY + offsetY);
+                offsetY += 20;
+                e.Graphics.DrawString($"Customer Name: {txtCName.Text}", normalFont, Brushes.Black, 500, startY + offsetY);
+                offsetY += 20;
+                e.Graphics.DrawString($"Reward Point: {txtRewards.Text}", normalFont, Brushes.Black, 500, startY + offsetY);
+                offsetY += 20;
                 reader.Close();
 
             }

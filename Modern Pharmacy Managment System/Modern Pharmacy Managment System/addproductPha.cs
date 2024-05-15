@@ -16,7 +16,7 @@ namespace Modern_Pharmacy_Managment_System
 {
     public partial class addproductPha : Form
     {
-        const string connectionString = @"Data Source=DESKTOP-VQFABNK;Initial Catalog=PMSnew;Integrated Security=True";
+        const string connectionString = @"Data Source=Akid\SQLEXPRESS;Initial Catalog=PMSnew;Integrated Security=True";
         public addproductPha()
         {
             InitializeComponent();
@@ -137,30 +137,35 @@ namespace Modern_Pharmacy_Managment_System
 
         private void invAddbtn_Click_1(object sender, EventArgs e)
         {
+
             try
             {
                 if (invprdIdplace.Text == "" || invPdrNameplace.Text == "" || invCompanyplace.Text == "" || invGenericplace.Text == "" || invStockplace.Text == "" || invSellingplace.Text == "" || invBuyingplace.Text == "")
                 {
                     MessageBox.Show("Empty field", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else if (decimal.Parse(invBuyingplace.Text.Trim()) > decimal.Parse(invSellingplace.Text.Trim()))
+                {
+                    MessageBox.Show("Buying price cannot be greater than selling price", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 else
                 {
                     using (SqlConnection con = new SqlConnection(connectionString))
                     {
                         con.Open();
-                        string checkProdId = "SELECT * FROM InventoryTbl WHERE PId = @PId";
+                        string checkProdName = "SELECT * FROM InventoryTbl WHERE PName = @PName";
 
-                        using (SqlCommand checkPID = new SqlCommand(checkProdId, con))
+                        using (SqlCommand checkPName = new SqlCommand(checkProdName, con))
                         {
-                            checkPID.Parameters.AddWithValue("@PId", invprdIdplace.Text.Trim());
+                            checkPName.Parameters.AddWithValue("@PName", invPdrNameplace.Text.Trim());
 
-                            SqlDataAdapter adp = new SqlDataAdapter(checkPID);
+                            SqlDataAdapter adp = new SqlDataAdapter(checkPName);
                             DataTable table = new DataTable();
                             adp.Fill(table);
 
                             if (table.Rows.Count > 0)
                             {
-                                MessageBox.Show(invprdIdplace.Text.Trim() + " is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(invPdrNameplace.Text.Trim() + " already exists", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else
                             {
@@ -189,7 +194,6 @@ namespace Modern_Pharmacy_Managment_System
             {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
 
         }
 

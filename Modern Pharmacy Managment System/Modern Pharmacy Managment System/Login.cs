@@ -126,5 +126,19 @@ namespace Modern_Pharmacy_Managment_System
             return customerPhone;
         }
 
+        private void checkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (checkShowPassword.Checked)
+            {
+                signupPhone.PasswordChar = '\0';
+              
+            }
+            else
+            {
+                signupPhone.PasswordChar = '●';
+                
+            }
+        }
     }
 }
