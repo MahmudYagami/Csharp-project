@@ -15,7 +15,7 @@ namespace Modern_Pharmacy_Managment_System
     public partial class StaffForm : Form
     {
         Functions Con;
-        int Key = 0; // For storing the selected employee's key
+        int Key = 0; 
 
         public StaffForm()
         {
@@ -37,7 +37,7 @@ namespace Modern_Pharmacy_Managment_System
             }
             finally
             {
-                // Close the connection after use
+                
                 Con.CloseConnection();
             }
         }
@@ -99,7 +99,7 @@ namespace Modern_Pharmacy_Managment_System
                     return;
                 }
 
-                // Continue with the save operation
+                
                 // Check if the phone number already exists in the database
                 string checkPhoneQuery = "SELECT COUNT(*) FROM EmployeeTbl WHERE EmpPhone = '{0}'";
                 checkPhoneQuery = string.Format(checkPhoneQuery, phone);

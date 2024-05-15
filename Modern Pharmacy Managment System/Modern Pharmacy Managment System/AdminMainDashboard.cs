@@ -79,7 +79,7 @@ namespace Modern_Pharmacy_Managment_System
                         }
                         else
                         {
-                            // Skip adding this record to the chart
+                            
                             continue;
                         }
 
@@ -90,11 +90,11 @@ namespace Modern_Pharmacy_Managment_System
                         }
                         else
                         {
-                            // Skip adding this record to the chart
+                            
                             continue;
                         }
 
-                        // Add data point to the chart
+                        
                         RevenueChart.Series["Revenue"].Points.AddXY(date, totalRevenue);
                     }
 
@@ -102,8 +102,8 @@ namespace Modern_Pharmacy_Managment_System
                 }
 
                 // Set custom interval and label format for x-axis
-                RevenueChart.ChartAreas[0].AxisX.Interval = 1; // Interval of 1 day
-                RevenueChart.ChartAreas[0].AxisX.LabelStyle.Format = "d MMM yyyy"; // Custom date format (e.g., "1 Jan 2024")
+                RevenueChart.ChartAreas[0].AxisX.Interval = 1; 
+                RevenueChart.ChartAreas[0].AxisX.LabelStyle.Format = "d MMM yyyy"; 
             }
             catch (Exception ex)
             {
@@ -201,7 +201,7 @@ namespace Modern_Pharmacy_Managment_System
                 var totalCustomer = cm.ExecuteScalar();
                 if (int.Parse(totalCustomer.ToString()) < 10)
                 {
-                    totalCustomer = "0" + totalCustomer;
+                    totalCustomer = "" + totalCustomer;
                 }
                 lblCustomerCount.Text = totalCustomer.ToString();
 
@@ -209,13 +209,13 @@ namespace Modern_Pharmacy_Managment_System
                 // Check total medicine count
                 SqlCommand cm2 = new SqlCommand("SELECT COUNT(*) FROM InventoryTbl", con);
                 int totalMedicineCount = (int)cm2.ExecuteScalar();
-                string totalMedicineDisplay = totalMedicineCount < 10 ? "0" + totalMedicineCount.ToString() : totalMedicineCount.ToString();
+                string totalMedicineDisplay = totalMedicineCount < 10 ? "" + totalMedicineCount.ToString() : totalMedicineCount.ToString();
                 lblMadiniceCount.Text = totalMedicineDisplay;
                 
-
+                // Check total medicine shortage count
                 SqlCommand cmd3 = new SqlCommand("SELECT COUNT(*) FROM InventoryTbl WHERE PStock < 50", con);
                 int shortageCount = (int)cmd3.ExecuteScalar();
-                string shortageCountDisplay = shortageCount < 10 ? "0" + shortageCount.ToString() : shortageCount.ToString();
+                string shortageCountDisplay = shortageCount < 10 ? "" + shortageCount.ToString() : shortageCount.ToString();
                 lblMadicineShortage.Text = shortageCountDisplay;
 
                 con.Close();
@@ -227,19 +227,17 @@ namespace Modern_Pharmacy_Managment_System
 
         private void TodayBtn_Click(object sender, EventArgs e)
         {
-            // Call PopulateRevenueChart with filterToday parameter set to true
+            
             PopulateRevenueChart(filterToday: true);
-
-            // Call DisplayTotalRevenueAndOrders with filterToday parameter set to true to update total revenue and orders label
             DisplayTotalRevenueOrdersAndExpense(filterToday: true);
         }
 
         private void Last7Btn_Click(object sender, EventArgs e)
         {
-            // Call PopulateRevenueChart with filterLast7Days parameter set to true
+            
             PopulateRevenueChart(filterLast7Days: true);
 
-            // Call DisplayTotalRevenueAndOrders with filterLast7Days parameter set to true to update total revenue and orders label
+            
             DisplayTotalRevenueOrdersAndExpense(filterLast7Days: true);
         }
 
@@ -263,17 +261,19 @@ namespace Modern_Pharmacy_Managment_System
             }
         }
 
-       private void PopulateLeaveCount()
-{
-    using (var con = DatabaseConnection.databaseConnect())
+       
+        
+    private void PopulateLeaveCount()
     {
+       using (var con = DatabaseConnection.databaseConnect())
+       {
         con.Open();
         SqlCommand cm = new SqlCommand("SELECT COUNT(DISTINCT Employee) FROM LeaveTbl WHERE status = 'Approved'", con);
         var totalLeave = cm.ExecuteScalar();
         lblLeaveCnt.Text = totalLeave.ToString();
         con.Close();
+       }
     }
-}
 
 
         /*private void PopulateUnpaidEmployeeCount()
@@ -308,20 +308,20 @@ namespace Modern_Pharmacy_Managment_System
         {
             PopulateRevenueChart(filterLastYear: true);
 
-            // Call DisplayTotalRevenueOrdersAndExpense with filterLastYear parameter set to true
+           
             DisplayTotalRevenueOrdersAndExpense(filterLastYear: true);
         }
 
         private void UseBtn_Click(object sender, EventArgs e)
         {
-            // Get the selected start and end dates from Calender1 and Calender2
+            
             DateTime startDate = Calender1.Value.Date;
             DateTime endDate = Calender2.Value.Date;
 
-            // Call method to display total revenue, orders, and expense for the selected date range
+            
             DisplayTotalRevenueOrdersAndExpense(startDate: startDate, endDate: endDate);
 
-            // Call method to populate revenue chart for the selected date range
+            
             PopulateRevenueChart(startDate: startDate, endDate: endDate);
         }
 

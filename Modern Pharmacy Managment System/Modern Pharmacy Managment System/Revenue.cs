@@ -59,7 +59,7 @@ namespace Modern_Pharmacy_Managment_System
 
                     SqlDataReader reader = cm.ExecuteReader();
 
-                    // Clear existing data points
+                    
                     ExpenseChart.Series["Expense"].Points.Clear();
 
                     while (reader.Read())
@@ -67,36 +67,36 @@ namespace Modern_Pharmacy_Managment_System
                         DateTime date;
                         double totalRevenue;
 
-                        // Check if the Date field is DBNull
+                      
                         if (!reader.IsDBNull(reader.GetOrdinal("Date")))
                         {
                             date = Convert.ToDateTime(reader["Date"]);
                         }
                         else
                         {
-                            // Skip adding this record to the chart
+                          
                             continue;
                         }
 
-                        // Check if the TotalRevenue field is DBNull
+                        
                         if (!reader.IsDBNull(reader.GetOrdinal("TotalRevenue")))
                         {
                             totalRevenue = Convert.ToDouble(reader["TotalRevenue"]);
                         }
                         else
                         {
-                            // Skip adding this record to the chart
+                            
                             continue;
                         }
 
-                        // Add data point to the chart
+                        
                         ExpenseChart.Series["Expense"].Points.AddXY(date, totalRevenue);
                     }
 
                     reader.Close();
                 }
 
-                // Set custom interval and label format for x-axis
+               
                 ExpenseChart.ChartAreas[0].AxisX.Interval = 1; // Interval of 1 day
                 ExpenseChart.ChartAreas[0].AxisX.LabelStyle.Format = "d MMM yyyy"; // Custom date format (e.g., "1 Jan 2024")
             }
@@ -151,7 +151,7 @@ namespace Modern_Pharmacy_Managment_System
 
                     SqlDataReader reader = cm.ExecuteReader();
 
-                    // Clear existing data points
+                    
                     ProfitChart.Series["Profit"].Points.Clear();
 
                     while (reader.Read())
@@ -159,38 +159,38 @@ namespace Modern_Pharmacy_Managment_System
                         DateTime date;
                         double totalRevenue;
 
-                        // Check if the Date field is DBNull
+                        
                         if (!reader.IsDBNull(reader.GetOrdinal("Date")))
                         {
                             date = Convert.ToDateTime(reader["Date"]);
                         }
                         else
                         {
-                            // Skip adding this record to the chart
+                            
                             continue;
                         }
 
-                        // Check if the TotalRevenue field is DBNull
+                       
                         if (!reader.IsDBNull(reader.GetOrdinal("TotalRevenue")))
                         {
                             totalRevenue = Convert.ToDouble(reader["TotalRevenue"]);
                         }
                         else
                         {
-                            // Skip adding this record to the chart
+                            
                             continue;
                         }
 
-                        // Add data point to the chart
+                        
                         ProfitChart.Series["Profit"].Points.AddXY(date, totalRevenue);
                     }
 
                     reader.Close();
                 }
 
-                // Set custom interval and label format for x-axis
-                ProfitChart.ChartAreas[0].AxisX.Interval = 1; // Interval of 1 day
-                ProfitChart.ChartAreas[0].AxisX.LabelStyle.Format = "d MMM yyyy"; // Custom date format (e.g., "1 Jan 2024")
+                
+                ProfitChart.ChartAreas[0].AxisX.Interval = 1; 
+                ProfitChart.ChartAreas[0].AxisX.LabelStyle.Format = "d MMM yyyy"; 
             }
             catch (Exception ex)
             {
@@ -212,7 +212,7 @@ namespace Modern_Pharmacy_Managment_System
                                    "END AS OrderType " +
                                    "FROM [PMSnew].[dbo].[AccountTbl] WHERE 1 = 1";
 
-                    // Add date filters if required
+                    
                     if (filterToday)
                     {
                         query += " AND CONVERT(date, Date) = CONVERT(date, GETDATE())";
@@ -249,7 +249,7 @@ namespace Modern_Pharmacy_Managment_System
 
                     SqlDataReader reader = cm.ExecuteReader();
 
-                    // Clear existing data points
+                   
                     OnlineOfflineChart.Series["OnlineOffline"].Points.Clear();
 
                     while (reader.Read())
@@ -257,36 +257,36 @@ namespace Modern_Pharmacy_Managment_System
                         double totalOrders;
                         string orderType;
 
-                        // Check if the TotalOrders field is DBNull
+                        
                         if (!reader.IsDBNull(reader.GetOrdinal("TotalOrders")))
                         {
                             totalOrders = Convert.ToDouble(reader["TotalOrders"]);
                         }
                         else
                         {
-                            // Skip adding this record to the chart
+                            
                             continue;
                         }
 
-                        // Check if the OrderType field is DBNull
+                        
                         if (!reader.IsDBNull(reader.GetOrdinal("OrderType")))
                         {
                             orderType = reader["OrderType"].ToString();
                         }
                         else
                         {
-                            // Skip adding this record to the chart
+                            
                             continue;
                         }
 
-                        // Add data point to the chart
+                        
                         OnlineOfflineChart.Series["OnlineOffline"].Points.AddXY(orderType, totalOrders);
                     }
 
                     reader.Close();
                 }
 
-                // Show data point values
+               
                 OnlineOfflineChart.Series["OnlineOffline"].IsValueShownAsLabel = true;
             }
             catch (Exception ex)

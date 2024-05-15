@@ -16,14 +16,14 @@ namespace Modern_Pharmacy_Managment_System.Classes
     {
         public static bool IsValidPhoneNumber(string phoneNumber)
         {
-            // Validate phone number length and start
+            
             if (phoneNumber.Length != 11 || !phoneNumber.StartsWith("01"))
             {
                 MessageBox.Show("Please enter a valid phone number starting with '01' and having exactly 11 digits.", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            // Validate SIM company (third digit)
+            
             char thirdDigit = phoneNumber[2];
             if (!(thirdDigit == '5' || thirdDigit == '3' || thirdDigit == '7' || thirdDigit == '9' || thirdDigit == '8' || thirdDigit == '6'))
             {

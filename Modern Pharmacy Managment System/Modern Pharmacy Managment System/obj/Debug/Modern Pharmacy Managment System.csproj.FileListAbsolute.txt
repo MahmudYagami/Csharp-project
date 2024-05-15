@@ -590,3 +590,4 @@ C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managmen
 C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern Pharmacy Managment System.csproj.CopyComplete
 C:\Users\ishti\OneDrive\Desktop\Pharmacy\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.RequestedMedicin.resources
+C:\Users\RAFSAN\Desktop\Csharp-project\Modern Pharmacy Managment System\Modern Pharmacy Managment System\obj\Debug\Modern_Pharmacy_Managment_System.RequestedMedicin.resources

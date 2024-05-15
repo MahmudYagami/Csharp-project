@@ -154,8 +154,8 @@ namespace Modern_Pharmacy_Managment_System
 
         private void DateTimeShow_Tick(object sender, EventArgs e)
         {
-           /* TimeLabel.Text = DateTime.Now.ToLongTimeString();
-            DateLabel.Text = DateTime.Now.ToLongDateString();*/
+            TimeLabel.Text = DateTime.Now.ToLongTimeString();
+            DateLabel.Text = DateTime.Now.ToLongDateString();
 
 
         }
